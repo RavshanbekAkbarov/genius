@@ -22,6 +22,10 @@ flutter run -d chrome  # brauzerda
 flutter test
 ```
 
+## Telefonda sinash (APK)
+
+Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi ishga tushish → Artifacts → genius-apk**. Zip ichidagi `app-release.apk` ni Android telefonga o'rnating ("noma'lum manbalardan o'rnatish"ga ruxsat bering).
+
 ## Tuzilma
 
 | Yo'l | Nima |
