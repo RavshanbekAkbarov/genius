@@ -17,7 +17,7 @@ class Ads {
 
   static const _ids = {
     TargetPlatform.android: (
-      banner: 'ca-app-pub-3940256099942544/6300978111',
+      banner: 'ca-app-pub-2138975626249191/3693120348',
       interstitial: 'ca-app-pub-3940256099942544/1033173712',
     ),
     TargetPlatform.iOS: (
