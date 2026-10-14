@@ -7,8 +7,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../theme.dart';
 
 /// AdMob reklamalari: pastdagi banner va mashqdan keyingi katta (interstitial) reklama.
-/// ID lar hozircha Google'ning SINOV ID lari. Chiqarishdan oldin [_ids] dagi qiymatlarni
-/// va AndroidManifest.xml / Info.plist dagi App ID ni o'zingizning AdMob ID laringizga almashtiring.
+/// Android: Aura Academy AdMob hisobining haqiqiy ID lari. iOS: hozircha Google sinov ID lari
+/// (iOS ilova AdMob'da ochilgach shu yerda va Info.plist da almashtiriladi).
 /// AdMob'da qimor va boshqa nomaqbul toifalar o'chirib qo'yiladi; ilova ham faqat
 /// "G" (hamma uchun) darajadagi reklamani so'raydi.
 class Ads {
@@ -18,7 +18,7 @@ class Ads {
   static const _ids = {
     TargetPlatform.android: (
       banner: 'ca-app-pub-2138975626249191/3693120348',
-      interstitial: 'ca-app-pub-3940256099942544/1033173712',
+      interstitial: 'ca-app-pub-2138975626249191/3270623524',
     ),
     TargetPlatform.iOS: (
       banner: 'ca-app-pub-3940256099942544/2934735716',
