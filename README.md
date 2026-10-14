@@ -42,7 +42,8 @@ Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi is
 
 - [x] Essential 1-6 so'zlari `assets/data/words.json` da (3600 so'z, tarjima va talaffuz bilan).
 - [ ] Beginner, Foundation, Pre-IELTS so'zlarini qo'shish.
-- [ ] AdMob: `lib/services/ads.dart` dagi placeholder'larni `google_mobile_ads` bilan almashtirish (qimor toifalari o'chiriladi).
+- [x] AdMob ulandi (`lib/services/ads.dart`), hozircha Google sinov ID lari bilan.
+- [ ] AdMob'dan haqiqiy App ID va reklama ID larini olib, `ads.dart`, `AndroidManifest.xml`, `Info.plist` ga qo'yish; AdMob'da qimor toifalarini o'chirish.
 - [x] Eslatmalar: `lib/services/reminders.dart`, qat'iy 09:00, 14:00, 20:00 (Toshkent vaqti).
 - [ ] Server (Railway): Telegram bot orqali Click/Payme to'lovini tasdiqlash, reyting, ota-ona hisoboti.
 - [ ] Profil "Sinab ko'rish uchun" bo'limini (kunni surish) chiqarishdan oldin olib tashlash.

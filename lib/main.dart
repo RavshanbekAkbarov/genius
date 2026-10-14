@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'data/words.dart';
 import 'screens/shell.dart';
+import 'services/ads.dart';
 import 'services/reminders.dart';
 import 'state/app_state.dart';
 import 'state/scope.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
   await WordBank.load();
   final state = AppState();
   await state.load();
+  await Ads.init();
   await Reminders.init();
   Reminders.schedule(state);
   Reminders.watch(state);
