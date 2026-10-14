@@ -1,0 +1,308 @@
+{
+ "e1|1": [
+  {
+   "en": "afraid",
+   "uz": "qo'rqqan",
+   "ipa": "/əˈfreɪd/",
+   "ex": "The little boy was afraid of the dark."
+  },
+  {
+   "en": "agree",
+   "uz": "rozi bo'lmoq",
+   "ipa": "/əˈɡriː/",
+   "ex": "We all agree that the plan is good."
+  },
+  {
+   "en": "angry",
+   "uz": "jahli chiqqan",
+   "ipa": "/ˈæŋɡri/",
+   "ex": "My mother was angry when I came home late."
+  },
+  {
+   "en": "arrive",
+   "uz": "yetib kelmoq",
+   "ipa": "/əˈraɪv/",
+   "ex": "The bus will arrive at nine o'clock."
+  },
+  {
+   "en": "attack",
+   "uz": "hujum qilmoq",
+   "ipa": "/əˈtæk/",
+   "ex": "The dog tried to attack the cat."
+  },
+  {
+   "en": "bottom",
+   "uz": "tag, ost",
+   "ipa": "/ˈbɒtəm/",
+   "ex": "The keys are at the bottom of my bag."
+  },
+  {
+   "en": "clever",
+   "uz": "aqlli",
+   "ipa": "/ˈklevər/",
+   "ex": "She is a clever student."
+  },
+  {
+   "en": "cruel",
+   "uz": "shafqatsiz",
+   "ipa": "/ˈkruːəl/",
+   "ex": "It is cruel to hurt animals."
+  },
+  {
+   "en": "finally",
+   "uz": "nihoyat",
+   "ipa": "/ˈfaɪnəli/",
+   "ex": "After a long wait, the rain finally stopped."
+  },
+  {
+   "en": "hide",
+   "uz": "yashirinmoq",
+   "ipa": "/haɪd/",
+   "ex": "The children like to hide behind the tree."
+  },
+  {
+   "en": "hunt",
+   "uz": "ov qilmoq",
+   "ipa": "/hʌnt/",
+   "ex": "Lions hunt at night."
+  },
+  {
+   "en": "lot",
+   "uz": "ko'p",
+   "ipa": "/lɒt/",
+   "ex": "I have a lot of homework today."
+  },
+  {
+   "en": "middle",
+   "uz": "o'rta",
+   "ipa": "/ˈmɪdl/",
+   "ex": "Our house is in the middle of the street."
+  },
+  {
+   "en": "moment",
+   "uz": "lahza",
+   "ipa": "/ˈməʊmənt/",
+   "ex": "Please wait a moment."
+  },
+  {
+   "en": "pleased",
+   "uz": "mamnun",
+   "ipa": "/pliːzd/",
+   "ex": "The teacher was pleased with my answer."
+  },
+  {
+   "en": "promise",
+   "uz": "va'da bermoq",
+   "ipa": "/ˈprɒmɪs/",
+   "ex": "I promise to call you tomorrow."
+  },
+  {
+   "en": "reply",
+   "uz": "javob bermoq",
+   "ipa": "/rɪˈplaɪ/",
+   "ex": "He did not reply to my message."
+  },
+  {
+   "en": "safe",
+   "uz": "xavfsiz",
+   "ipa": "/seɪf/",
+   "ex": "This street is safe at night."
+  },
+  {
+   "en": "trick",
+   "uz": "hiyla",
+   "ipa": "/trɪk/",
+   "ex": "The fox used a trick to get the food."
+  },
+  {
+   "en": "well",
+   "uz": "yaxshi",
+   "ipa": "/wel/",
+   "ex": "She speaks English very well."
+  }
+ ],
+ "e1|2": [
+  {
+   "en": "alone",
+   "uz": "yolg'iz",
+   "ipa": "/əˈləʊn/",
+   "ex": "He lives alone in a small house."
+  },
+  {
+   "en": "apartment",
+   "uz": "kvartira",
+   "ipa": "/əˈpɑːtmənt/",
+   "ex": "Our apartment is on the fifth floor."
+  },
+  {
+   "en": "article",
+   "uz": "maqola",
+   "ipa": "/ˈɑːtɪkl/",
+   "ex": "I read an article about space."
+  },
+  {
+   "en": "artist",
+   "uz": "rassom",
+   "ipa": "/ˈɑːtɪst/",
+   "ex": "The artist painted a beautiful picture."
+  },
+  {
+   "en": "attitude",
+   "uz": "munosabat",
+   "ipa": "/ˈætɪtjuːd/",
+   "ex": "She has a good attitude to work."
+  },
+  {
+   "en": "compare",
+   "uz": "solishtirmoq",
+   "ipa": "/kəmˈpeər/",
+   "ex": "Compare these two pictures."
+  },
+  {
+   "en": "judge",
+   "uz": "baholamoq, hakam",
+   "ipa": "/dʒʌdʒ/",
+   "ex": "Do not judge people by their clothes."
+  },
+  {
+   "en": "magazine",
+   "uz": "jurnal",
+   "ipa": "/ˌmæɡəˈziːn/",
+   "ex": "My sister buys a magazine every week."
+  },
+  {
+   "en": "material",
+   "uz": "material",
+   "ipa": "/məˈtɪəriəl/",
+   "ex": "This bag is made of strong material."
+  },
+  {
+   "en": "meal",
+   "uz": "ovqat",
+   "ipa": "/miːl/",
+   "ex": "Breakfast is my favourite meal."
+  },
+  {
+   "en": "method",
+   "uz": "usul",
+   "ipa": "/ˈmeθəd/",
+   "ex": "This is a new method of learning."
+  },
+  {
+   "en": "neighbor",
+   "uz": "qo'shni",
+   "ipa": "/ˈneɪbər/",
+   "ex": "Our neighbor has a big dog."
+  },
+  {
+   "en": "professional",
+   "uz": "professional",
+   "ipa": "/prəˈfeʃənl/",
+   "ex": "He is a professional football player."
+  },
+  {
+   "en": "profit",
+   "uz": "foyda",
+   "ipa": "/ˈprɒfɪt/",
+   "ex": "The shop made a good profit this year."
+  },
+  {
+   "en": "quality",
+   "uz": "sifat",
+   "ipa": "/ˈkwɒləti/",
+   "ex": "These shoes are of high quality."
+  },
+  {
+   "en": "shape",
+   "uz": "shakl",
+   "ipa": "/ʃeɪp/",
+   "ex": "The cake has the shape of a heart."
+  },
+  {
+   "en": "space",
+   "uz": "bo'sh joy, fazo",
+   "ipa": "/speɪs/",
+   "ex": "There is no space in my bag."
+  },
+  {
+   "en": "stair",
+   "uz": "zinapoya",
+   "ipa": "/steər/",
+   "ex": "He ran up the stairs."
+  },
+  {
+   "en": "symbol",
+   "uz": "belgi",
+   "ipa": "/ˈsɪmbl/",
+   "ex": "The dove is a symbol of peace."
+  },
+  {
+   "en": "thin",
+   "uz": "ingichka, ozg'in",
+   "ipa": "/θɪn/",
+   "ex": "The book has thin pages."
+  }
+ ],
+ "e2|1": [
+  {
+   "en": "anxious",
+   "uz": "xavotirlangan",
+   "ipa": "/ˈæŋkʃəs/",
+   "ex": "She was anxious about the exam."
+  },
+  {
+   "en": "awful",
+   "uz": "juda yomon",
+   "ipa": "/ˈɔːfl/",
+   "ex": "The weather was awful yesterday."
+  },
+  {
+   "en": "consist",
+   "uz": "iborat bo'lmoq",
+   "ipa": "/kənˈsɪst/",
+   "ex": "The team consists of ten players."
+  },
+  {
+   "en": "desire",
+   "uz": "xohlamoq",
+   "ipa": "/dɪˈzaɪər/",
+   "ex": "He has a strong desire to win."
+  },
+  {
+   "en": "eager",
+   "uz": "ishtiyoqli",
+   "ipa": "/ˈiːɡər/",
+   "ex": "The students are eager to learn."
+  },
+  {
+   "en": "intend",
+   "uz": "niyat qilmoq",
+   "ipa": "/ɪnˈtend/",
+   "ex": "I intend to study abroad."
+  },
+  {
+   "en": "delay",
+   "uz": "kechiktirmoq",
+   "ipa": "/dɪˈleɪ/",
+   "ex": "The rain will delay the game."
+  },
+  {
+   "en": "examine",
+   "uz": "tekshirmoq",
+   "ipa": "/ɪɡˈzæmɪn/",
+   "ex": "The doctor will examine you now."
+  },
+  {
+   "en": "fault",
+   "uz": "ayb",
+   "ipa": "/fɔːlt/",
+   "ex": "It was not your fault."
+  },
+  {
+   "en": "honest",
+   "uz": "halol",
+   "ipa": "/ˈɒnɪst/",
+   "ex": "He is an honest man."
+  }
+ ]
+}
