@@ -39,7 +39,8 @@ Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi is
 
 ## Keyingi qadamlar
 
-- [ ] Kitoblarning to'liq so'z ro'yxatini `assets/data/words.json` ga qo'shish (hozir namuna: Essential 1 Unit 1–2, Essential 2 Unit 1).
+- [x] Essential 1-6 so'zlari `assets/data/words.json` da (3600 so'z, tarjima va talaffuz bilan).
+- [ ] Beginner, Foundation, Pre-IELTS so'zlarini qo'shish.
 - [ ] AdMob: `lib/services/ads.dart` dagi placeholder'larni `google_mobile_ads` bilan almashtirish (qimor toifalari o'chiriladi).
 - [ ] Eslatmalar: `flutter_local_notifications` bilan 09:00, 14:00, 20:00.
 - [ ] Server (Railway): Telegram bot orqali Click/Payme to'lovini tasdiqlash, reyting, ota-ona hisoboti.

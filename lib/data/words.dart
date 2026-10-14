@@ -16,7 +16,7 @@ class Word {
 }
 
 /// Kitob so'zlari: "kitobId|unit" -> so'zlar ro'yxati.
-/// Hozircha namuna; kitoblar kelgach assets/data/words.json to'liq ro'yxat bilan almashtiriladi.
+/// Essential 1-6 to'liq (180 unit, 3600 so'z); tarjimalar kitob PDF'laridan olingan.
 class WordBank {
   static Map<String, List<Word>> _data = {};
 
