@@ -31,7 +31,7 @@ Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi is
 | Yo'l | Nima |
 |---|---|
 | `lib/data/catalog.dart` | kitoblar, narxlar, oraliqlar, unvonlar |
-| `assets/data/words.json` | kitob so'zlari: `"kitob|unit": [{en, uz, ipa, ex}]` |
+| `assets/data/words.json` | kitob so'zlari: `"kitob\|unit": [{en, uz, ipa, ex}]` |
 | `lib/state/app_state.dart` | butun holat va mantiq (takror, olov, limit, Premium) |
 | `lib/screens/` | ekranlar |
 | `lib/services/ads.dart` | reklama joylari |
