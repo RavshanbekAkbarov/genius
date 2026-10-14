@@ -35,13 +35,15 @@ Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi is
 | `lib/state/app_state.dart` | butun holat va mantiq (takror, olov, limit, Premium) |
 | `lib/screens/` | ekranlar |
 | `lib/services/ads.dart` | reklama joylari |
+| `lib/services/reminders.dart` | kunlik eslatmalar (09:00, 14:00, 20:00) |
 | `lib/services/speech.dart` | inglizcha talaffuz (telefonning ovoz dvigateli) |
 
 ## Keyingi qadamlar
 
 - [x] Essential 1-6 so'zlari `assets/data/words.json` da (3600 so'z, tarjima va talaffuz bilan).
 - [ ] Beginner, Foundation, Pre-IELTS so'zlarini qo'shish.
-- [ ] AdMob: `lib/services/ads.dart` dagi placeholder'larni `google_mobile_ads` bilan almashtirish (qimor toifalari o'chiriladi).
-- [ ] Eslatmalar: `flutter_local_notifications` bilan 09:00, 14:00, 20:00.
+- [x] AdMob ulandi (`lib/services/ads.dart`): Android'da haqiqiy ID lar.
+- [ ] iOS uchun AdMob ilova va ID lar (`ads.dart`, `Info.plist`).
+- [x] Eslatmalar: `lib/services/reminders.dart`, qat'iy 09:00, 14:00, 20:00 (Toshkent vaqti).
 - [ ] Server (Railway): Telegram bot orqali Click/Payme to'lovini tasdiqlash, reyting, ota-ona hisoboti.
 - [ ] Profil "Sinab ko'rish uchun" bo'limini (kunni surish) chiqarishdan oldin olib tashlash.

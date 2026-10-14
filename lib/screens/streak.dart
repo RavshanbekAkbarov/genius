@@ -21,7 +21,7 @@ class _StreakScreenState extends State<StreakScreen> {
   int watched = 0;
 
   Future<void> watch() async {
-    await Ads.showInterstitial(context, label: 'Olovni saqlash: ${watched + 1}/3');
+    await Ads.showInterstitial(context, label: 'Olovni saqlash: ${watched + 1}/3', fallback: true);
     if (!mounted) return;
     setState(() => watched++);
     if (watched >= 3) AppScope.read(context).saveStreakDay(todayMode: widget.todayMode);

@@ -63,7 +63,6 @@ class AppState extends ChangeNotifier {
   Set<String> owned = {};
   int invited = 0;
   bool parentLinked = false;
-  bool reminders = true;
   String currentBook = 'e2';
   String askedSave = '';
   String evening = '';
@@ -104,7 +103,6 @@ class AppState extends ChangeNotifier {
         'owned': owned.toList(),
         'invited': invited,
         'parent': parentLinked,
-        'reminders': reminders,
         'book': currentBook,
         'askedSave': askedSave,
         'evening': evening,
@@ -126,7 +124,6 @@ class AppState extends ChangeNotifier {
     owned = ((j['owned'] ?? []) as List).cast<String>().toSet();
     invited = (j['invited'] ?? 0) as int;
     parentLinked = j['parent'] == true;
-    reminders = j['reminders'] != false;
     currentBook = (j['book'] ?? 'e2') as String;
     askedSave = (j['askedSave'] ?? '') as String;
     evening = (j['evening'] ?? '') as String;
@@ -165,7 +162,6 @@ class AppState extends ChangeNotifier {
     owned = {};
     invited = 0;
     parentLinked = false;
-    reminders = true;
     currentBook = 'e2';
     askedSave = '';
     evening = '';
@@ -437,11 +433,6 @@ class AppState extends ChangeNotifier {
 
   void linkParent() {
     parentLinked = true;
-    changed();
-  }
-
-  void toggleReminders() {
-    reminders = !reminders;
     changed();
   }
 

@@ -1,15 +1,81 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../theme.dart';
 
-/// Reklama joylari. Hozircha joy egallovchi (placeholder): AdMob ID lari olingach
-/// shu fayldagi ikkita widget google_mobile_ads bilan almashtiriladi, qolgan kod o'zgarmaydi.
-/// AdMob'da qimor va boshqa nomaqbul toifalar o'chirib qo'yiladi.
+/// AdMob reklamalari: pastdagi banner va mashqdan keyingi katta (interstitial) reklama.
+/// Android: Aura Academy AdMob hisobining haqiqiy ID lari. iOS: hozircha Google sinov ID lari
+/// (iOS ilova AdMob'da ochilgach shu yerda va Info.plist da almashtiriladi).
+/// AdMob'da qimor va boshqa nomaqbul toifalar o'chirib qo'yiladi; ilova ham faqat
+/// "G" (hamma uchun) darajadagi reklamani so'raydi.
 class Ads {
+  static bool _ready = false;
+  static InterstitialAd? _interstitial;
+
+  static const _ids = {
+    TargetPlatform.android: (
+      banner: 'ca-app-pub-2138975626249191/3693120348',
+      interstitial: 'ca-app-pub-2138975626249191/3270623524',
+    ),
+    TargetPlatform.iOS: (
+      banner: 'ca-app-pub-3940256099942544/2934735716',
+      interstitial: 'ca-app-pub-3940256099942544/4411468910',
+    ),
+  };
+
+  static ({String banner, String interstitial})? get _unit => kIsWeb ? null : _ids[defaultTargetPlatform];
+
+  static Future<void> init() async {
+    if (_unit == null) return;
+    try {
+      await MobileAds.instance.initialize();
+      await MobileAds.instance.updateRequestConfiguration(
+        RequestConfiguration(maxAdContentRating: MaxAdContentRating.g),
+      );
+      _ready = true;
+      _loadInterstitial();
+    } catch (e) {
+      debugPrint('AdMob ishga tushmadi: $e');
+    }
+  }
+
+  static void _loadInterstitial() {
+    if (!_ready) return;
+    InterstitialAd.load(
+      adUnitId: _unit!.interstitial,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) => _interstitial = ad,
+        onAdFailedToLoad: (e) => debugPrint('Interstitial yuklanmadi: $e'),
+      ),
+    );
+  }
+
   /// Mashq tugagach yoki olovni saqlashda ko'rsatiladigan katta reklama.
-  static Future<void> showInterstitial(BuildContext context, {String label = 'Reklama'}) {
+  /// Reklama tayyor bo'lmasa: [fallback] bo'lsa 5 soniyalik ichki oyna, aks holda hech narsa.
+  static Future<void> showInterstitial(BuildContext context, {String label = 'Reklama', bool fallback = false}) {
+    final ad = _interstitial;
+    if (ad != null) {
+      _interstitial = null;
+      final done = Completer<void>();
+      void finish(InterstitialAd a) {
+        a.dispose();
+        _loadInterstitial();
+        if (!done.isCompleted) done.complete();
+      }
+
+      ad.fullScreenContentCallback = FullScreenContentCallback(
+        onAdDismissedFullScreenContent: finish,
+        onAdFailedToShowFullScreenContent: (a, _) => finish(a),
+      );
+      ad.show();
+      return done.future;
+    }
+    _loadInterstitial();
+    if (!fallback) return Future.value();
     return Navigator.of(context, rootNavigator: true).push(PageRouteBuilder(
       opaque: true,
       pageBuilder: (_, _, _) => _Interstitial(label: label),
@@ -86,25 +152,56 @@ class _InterstitialState extends State<_Interstitial> {
   }
 }
 
-/// Pastdagi kichik banner.
-class AdBanner extends StatelessWidget {
+/// Pastdagi kichik banner (AdMob).
+class AdBanner extends StatefulWidget {
   const AdBanner({super.key});
   @override
+  State<AdBanner> createState() => _AdBannerState();
+}
+
+class _AdBannerState extends State<AdBanner> {
+  BannerAd? _ad;
+  bool _loaded = false;
+  bool _failed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (!Ads._ready) {
+      _failed = true;
+      return;
+    }
+    _ad = BannerAd(
+      size: AdSize.banner,
+      adUnitId: Ads._unit!.banner,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (_) {
+          if (mounted) setState(() => _loaded = true);
+        },
+        onAdFailedToLoad: (ad, e) {
+          ad.dispose();
+          _ad = null;
+          if (mounted) setState(() => _failed = true);
+        },
+      ),
+    )..load();
+  }
+
+  @override
+  void dispose() {
+    _ad?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_failed) return const SizedBox.shrink();
     return Container(
-      height: 46,
+      height: 50,
       color: C.sf2,
       alignment: Alignment.center,
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
-          decoration: BoxDecoration(color: C.gold, borderRadius: BorderRadius.circular(4)),
-          child: const Text('Ad', style: TextStyle(color: Color(0xFF241800), fontSize: 9, fontWeight: FontWeight.w800)),
-        ),
-        const SizedBox(width: 10),
-        const Text('REKLAMA · BANNER',
-            style: TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w800, letterSpacing: .6)),
-      ]),
+      child: _loaded && _ad != null ? SizedBox(width: 320, height: 50, child: AdWidget(ad: _ad!)) : null,
     );
   }
 }
