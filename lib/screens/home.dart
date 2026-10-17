@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
+import '../data/quotes.dart';
 import '../data/words.dart';
 import '../services/speech.dart';
+import '../services/word_widget.dart';
 import '../state/app_state.dart';
 import '../state/scope.dart';
 import '../theme.dart';
 import '../widgets/add_word_sheet.dart';
+import '../widgets/calendar.dart';
 import '../widgets/common.dart';
+import '../widgets/tools.dart';
 import 'books.dart';
+import 'listen.dart';
 import 'schedule.dart';
 import 'setup.dart';
 import 'shell.dart';
@@ -57,43 +62,56 @@ class _HomeTabState extends State<HomeTab> {
         sliver: SliverList.list(children: [
           if (q.isNotEmpty) ...[_searchResults(s), const SizedBox(height: 14)],
           if (s.eveningWarning) ...[_eveningWarn(s), const SizedBox(height: 14)],
-          _learnCard(s, b),
+          _dailyCard(s),
           const SizedBox(height: 12),
-          _practiceCard(s, b),
+          Row(children: [
+            Expanded(
+                child: _tile(Icons.menu_book_rounded, "O'rganish", b.title, () => openBook(context, b))),
+            const SizedBox(width: 10),
+            Expanded(child: _tile(Icons.view_carousel_rounded, 'Mashq', 'kartalar · yozish', () => openSetup(context, b.id))),
+            const SizedBox(width: 10),
+            Expanded(
+                child: _tile(Icons.headphones_rounded, 'Tinglash', "eshitib yuring",
+                    () => push(context, ListenScreen(bookId: b.isMine && s.myWords.isEmpty ? 'e1' : b.id)))),
+          ]),
           const SizedBox(height: 18),
-          SectionTitle('Bugungi takrorlar', action: 'Jadval', onAction: () => push(context, const ScheduleScreen())),
+          Row(children: [
+            Expanded(child: Text('Bugungi takrorlar', style: display(17))),
+            Material(
+              color: C.gold,
+              borderRadius: BorderRadius.circular(14),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(14),
+                onTap: () => push(context, const ScheduleScreen()),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [
+                    Icon(Icons.calendar_month_rounded, size: 19, color: Color(0xFF241800)),
+                    SizedBox(width: 6),
+                    Text('Jadval', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 15, color: Color(0xFF241800))),
+                  ]),
+                ),
+              ),
+            ),
+          ]),
           const SizedBox(height: 10),
           ..._dueList(s),
           const SizedBox(height: 14),
           const WeekCard(),
+          const SizedBox(height: 14),
+          _wordOfDay(s),
+          const SizedBox(height: 12),
+          QuoteCard(quote: quoteOfDay(s.today)),
           const SizedBox(height: 18),
           SectionTitle('4000 Essential Words', action: 'Hammasi', onAction: () => ShellScope.of(context).goTab(1)),
           const SizedBox(height: 10),
-          _shelf(books.where((b) => b.group == BookGroup.essential).toList(), s),
+          _shelf(booksOf(BookGroup.essential), s),
           const SizedBox(height: 18),
           const SectionTitle('Markaz kitoblari'),
           const SizedBox(height: 10),
-          _shelf([...books.where((b) => b.group == BookGroup.center), bookById(myBookId)], s),
+          _shelf([...booksOf(BookGroup.center), bookById(myBookId)], s),
           const SizedBox(height: 18),
-          const ActivityHeatmap(),
-          const SizedBox(height: 18),
-          SectionTitle('IELTS kitoblari', action: "Do'kon", onAction: () => ShellScope.of(context).goTab(3)),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 124,
-            child: ListView(scrollDirection: Axis.horizontal, children: [
-              for (final ib in ieltsBooks) ...[
-                BookCover(
-                  badge: ib.badge,
-                  title: ib.title,
-                  gradient: ib.gradient,
-                  corner: s.owned.contains('${ib.id}:read') ? null : 'Pullik',
-                  onTap: () => ShellScope.of(context).goTab(3),
-                ),
-                const SizedBox(width: 12),
-              ]
-            ]),
-          ),
+          const ActivityCalendar(),
         ]),
       ),
     ]);
@@ -117,6 +135,8 @@ class _HomeTabState extends State<HomeTab> {
                   style: TextStyle(fontSize: 11, letterSpacing: 1.2, fontWeight: FontWeight.w800, color: Colors.white70)),
             ]),
           ),
+          const VoiceButton(light: true),
+          const SizedBox(width: 10),
           Semantics(label: '${b.title}: ${s.bookPct(b.id)}% yodlangan', child: BookBadge(b, size: 30)),
           const SizedBox(width: 10),
           PctRing(s.bookPct(b.id)),
@@ -222,73 +242,88 @@ class _HomeTabState extends State<HomeTab> {
         ]),
       );
 
-  Widget _learnCard(AppState s, Book b) {
-    final u = s.nextUnit(b.id);
+  /// Bitta bosishda kunlik ish: avval takrorlar, keyin yangi so'zlar.
+  Widget _dailyCard(AppState s) {
+    final due = s.dueGroups;
+    final fresh = s.nextNewCards();
+    final sub = due.isNotEmpty
+        ? "${due.length} ta takror${fresh.isNotEmpty ? ", keyin ${fresh.length} ta yangi so'z" : ''}"
+        : fresh.isNotEmpty
+            ? "Takror yo'q · Unit ${fresh.first.unit} dan ${fresh.length} ta yangi so'z"
+            : "Bu kitob tugadi, boshqasini tanlang";
     return Material(
-      color: C.sf,
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: () => push(context, UnitsScreen(bookId: b.id)),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: C.ln)),
-          child: Row(children: [
-            BookBadge(b, size: 34),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                const Text("O'rganish", style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17)),
-                Text('${b.title} · ${u != null ? 'Unit $u dan davom eting' : 'barcha unitlar'}',
-                    style: const TextStyle(color: C.mut, fontSize: 12)),
-                const SizedBox(height: 7),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: LinearProgressIndicator(
-                      value: s.bookPct(b.id) / 100, minHeight: 6, color: C.good, backgroundColor: C.sf2),
-                ),
-              ]),
-            ),
-            const SizedBox(width: 8),
-            const Icon(Icons.chevron_right_rounded, color: C.mut),
-          ]),
+      borderRadius: BorderRadius.circular(22),
+      clipBehavior: Clip.antiAlias,
+      child: Ink(
+        decoration: const BoxDecoration(gradient: C.grad),
+        child: InkWell(
+          onTap: () => startDaily(context),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 18, 16, 18),
+            child: Row(children: [
+              Container(
+                width: 56,
+                height: 56,
+                decoration: const BoxDecoration(color: C.gold, shape: BoxShape.circle),
+                child: const Icon(Icons.play_arrow_rounded, color: Color(0xFF241800), size: 36),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text('Bugungi mashq', style: display(19, color: Colors.white)),
+                  const SizedBox(height: 3),
+                  Text(sub, style: const TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.w600)),
+                  if (!s.isPremium)
+                    Text('bugun ${s.sessionsLeft}/$freeSessions bepul mashq · takrorlar bepul',
+                        style: const TextStyle(fontSize: 11, color: Colors.white70)),
+                ]),
+              ),
+            ]),
+          ),
         ),
       ),
     );
   }
 
-  Widget _practiceCard(AppState s, Book b) {
-    return Material(
-      borderRadius: BorderRadius.circular(20),
-      clipBehavior: Clip.antiAlias,
-      child: Ink(
-        decoration: const BoxDecoration(gradient: C.grad),
+  Widget _tile(IconData icon, String title, String sub, VoidCallback onTap) => Material(
+        color: C.sf,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18), side: const BorderSide(color: C.ln)),
         child: InkWell(
-          onTap: () => openSetup(context, b.id),
+          borderRadius: BorderRadius.circular(18),
+          onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(children: [
-              Container(
-                width: 48,
-                height: 48,
-                decoration: BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.circular(14)),
-                child: const Icon(Icons.style_rounded, color: Colors.white),
-              ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  const Text('Kartalarda yodlash',
-                      style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: Colors.white)),
-                  Text(
-                      '${b.title} · kartalar yoki yozish${s.isPremium ? '' : ' · bugun ${s.sessionsLeft}/$freeSessions mashq'}',
-                      style: const TextStyle(fontSize: 12, color: Colors.white70)),
-                ]),
-              ),
-              const Icon(Icons.chevron_right_rounded, color: Colors.white, size: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 14),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Icon(icon, color: C.ac, size: 26),
+              const SizedBox(height: 8),
+              Text(title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
+              Text(sub,
+                  maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: C.mut, fontSize: 11)),
             ]),
           ),
         ),
-      ),
+      );
+
+  Widget _wordOfDay(AppState s) {
+    final w = wordOfDay(s);
+    return AppCard(
+      child: Row(children: [
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Eyebrow("Kunning so'zi"),
+            const SizedBox(height: 6),
+            Text(w.en, style: display(20, color: C.ac)),
+            if (w.ipa.isNotEmpty) Text(w.ipa, style: const TextStyle(color: C.mut, fontSize: 12)),
+            const SizedBox(height: 4),
+            Text(w.uz, style: const TextStyle(fontWeight: FontWeight.w700)),
+          ]),
+        ),
+        IconButton.filledTonal(
+          tooltip: 'Talaffuz',
+          onPressed: () => Speech.speak(w.en),
+          icon: const Icon(Icons.volume_up_rounded),
+        ),
+      ]),
     );
   }
 
@@ -325,9 +360,9 @@ class _HomeTabState extends State<HomeTab> {
               badge: b.badge,
               title: b.title,
               gradient: b.gradient,
-              corner: b.isMine ? "${s.myWords.length} so'z" : null,
+              corner: b.isMine ? "${s.myWords.length} so'z" : (s.locked(b) ? '🔒' : null),
               progress: s.bookPct(b.id) / 100,
-              onTap: () => b.isMine ? push(context, UnitsScreen(bookId: b.id)) : openSetup(context, b.id),
+              onTap: () => openBook(context, b),
             ),
             const SizedBox(width: 12),
           ]
@@ -430,16 +465,19 @@ class WeekCard extends StatelessWidget {
     final mon = addDays(t, -(t.weekday - 1));
     return AppCard(
       child: Column(children: [
-        const SectionTitle('Shu hafta', note: "kuniga $dailyGoal so'z"),
+        SectionTitle('Shu hafta', note: "kuniga ${s.dailyGoal} so'z · kunni bosing"),
         const SizedBox(height: 12),
         Row(children: [
           for (var i = 0; i < 7; i++)
             Expanded(child: Builder(builder: (_) {
               final d = addDays(mon, i);
               final c = s.log[ds(d)] ?? 0;
-              final p = d.isAfter(t) ? 0 : (c / dailyGoal * 100).clamp(0, 100).round();
+              final p = d.isAfter(t) ? 0 : (c / s.dailyGoal * 100).clamp(0, 100).round();
               final isToday = d == t;
-              return Container(
+              final planned = d.isAfter(t) ? s.dueOn(d) : 0;
+              return GestureDetector(
+                onTap: () => showDaySheet(context, d),
+                child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 2),
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 decoration: BoxDecoration(
@@ -461,107 +499,11 @@ class WeekCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 6),
-                  Text('$p%', style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w800)),
+                  Text(planned > 0 ? '🔁' : '$p%', style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w800)),
                 ]),
+              ),
               );
             })),
-        ]),
-      ]),
-    );
-  }
-}
-
-/// Faollik jadvali: joriy yilning yanvaridan dekabrigacha.
-class ActivityHeatmap extends StatefulWidget {
-  const ActivityHeatmap({super.key});
-  @override
-  State<ActivityHeatmap> createState() => _ActivityHeatmapState();
-}
-
-class _ActivityHeatmapState extends State<ActivityHeatmap> {
-  final scroll = ScrollController();
-  static const cell = 12.0, gap = 3.0;
-
-  @override
-  void dispose() {
-    scroll.dispose();
-    super.dispose();
-  }
-
-  int lv(int n) => n == 0 ? 0 : n < 5 ? 1 : n < 10 ? 2 : n < 20 ? 3 : 4;
-
-  @override
-  Widget build(BuildContext context) {
-    final s = AppScope.of(context);
-    final t = s.today;
-    final j1 = DateTime(t.year, 1, 1);
-    final start = addDays(j1, -(j1.weekday - 1));
-    final end = DateTime(t.year, 12, 31);
-    final weeks = ((end.difference(start).inDays + 1) / 7).ceil();
-    final curW = t.difference(start).inDays ~/ 7;
-    var activeDays = 0;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (scroll.hasClients && scroll.offset == 0) {
-        final target = (curW * (cell + gap) - scroll.position.viewportDimension / 2)
-            .clamp(0.0, scroll.position.maxScrollExtent);
-        scroll.jumpTo(target);
-      }
-    });
-    final cols = <Widget>[];
-    final labels = <Widget>[];
-    var lastM = -1;
-    for (var w = 0; w < weeks; w++) {
-      final wEnd = addDays(start, w * 7 + 6);
-      final showM = wEnd.month - 1 != lastM && wEnd.day <= 7 && wEnd.year == t.year;
-      if (wEnd.day <= 7) lastM = wEnd.month - 1;
-      labels.add(SizedBox(
-        width: cell + gap,
-        child: Text(showM ? months[wEnd.month - 1] : '',
-            softWrap: false, overflow: TextOverflow.visible, style: const TextStyle(fontSize: 10, color: C.mut)),
-      ));
-      final cells = <Widget>[];
-      for (var d = 0; d < 7; d++) {
-        final day = addDays(start, w * 7 + d);
-        final inYear = day.year == t.year;
-        final fut = day.isAfter(t);
-        final n = s.log[ds(day)] ?? 0;
-        if (!fut && n > 0 && inYear) activeDays++;
-        cells.add(Container(
-          width: cell,
-          height: cell,
-          margin: const EdgeInsets.only(bottom: gap),
-          decoration: BoxDecoration(
-            color: !inYear ? Colors.transparent : C.heat[fut ? 0 : lv(n)].withValues(alpha: fut ? .35 : 1),
-            borderRadius: BorderRadius.circular(3),
-            border: day == t ? Border.all(color: C.ac, width: 1.5) : null,
-          ),
-        ));
-      }
-      cols.add(Padding(padding: const EdgeInsets.only(right: gap), child: Column(children: cells)));
-    }
-    return AppCard(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        SectionTitle('Faollik jadvali', note: '${t.year} · $activeDays faol kun'),
-        const SizedBox(height: 12),
-        SingleChildScrollView(
-          controller: scroll,
-          scrollDirection: Axis.horizontal,
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(children: labels),
-            const SizedBox(height: 4),
-            Row(crossAxisAlignment: CrossAxisAlignment.start, children: cols),
-          ]),
-        ),
-        const SizedBox(height: 8),
-        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          const Text('Kam ', style: TextStyle(fontSize: 11, color: C.mut)),
-          for (final c in C.heat)
-            Container(
-                width: 11,
-                height: 11,
-                margin: const EdgeInsets.symmetric(horizontal: 1.5),
-                decoration: BoxDecoration(color: c, borderRadius: BorderRadius.circular(3))),
-          const Text(" Ko'p", style: TextStyle(fontSize: 11, color: C.mut)),
         ]),
       ]),
     );

@@ -6,6 +6,7 @@ import '../data/catalog.dart';
 import '../state/app_state.dart';
 import '../state/scope.dart';
 import '../theme.dart';
+import '../widgets/calendar.dart';
 import '../widgets/common.dart';
 
 /// Takror jadvali: har unit uchun 1·3·7·15·30 bosqichlari.
@@ -20,20 +21,47 @@ class ScheduleScreen extends StatelessWidget {
       final parts = k.split('|');
       g.putIfAbsent('${parts[0]}|${parts[1]}', () => []).add(p);
     });
-    final next = [for (var n = 1; n <= 3; n++) (addDays(s.today, n), s.dueOn(addDays(s.today, n)))]
-        .where((e) => e.$2 > 0)
-        .toList();
     final dueNow = s.dueKeys.length;
     return Scaffold(
       appBar: const TopBar(title: 'Takror jadvali', subtitle: '1 · 3 · 7 · 15 · 30 kun'),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
-        Wrap(spacing: 6, runSpacing: 6, crossAxisAlignment: WrapCrossAlignment.center, children: [
+        Row(children: [
           const Text('Bugun:', style: TextStyle(color: C.mut, fontSize: 13)),
-          Pill("$dueNow so'z", bg: dueNow > 0 ? C.bad : C.sf2, fg: dueNow > 0 ? const Color(0xFF2A0606) : C.fg),
           const SizedBox(width: 6),
-          const Text('Keyingi:', style: TextStyle(color: C.mut, fontSize: 13)),
-          if (next.isEmpty) const Text("3 kun ichida yo'q", style: TextStyle(color: C.mut, fontSize: 13)),
-          for (final e in next) Pill("${e.$1.day} ${months[e.$1.month - 1]} · ${e.$2} so'z"),
+          Pill("$dueNow so'z", bg: dueNow > 0 ? C.bad : C.sf2, fg: dueNow > 0 ? const Color(0xFF2A0606) : C.fg),
+        ]),
+        const SizedBox(height: 12),
+        const Eyebrow('Kunlar (bosing: tafsilot)'),
+        const SizedBox(height: 8),
+        Row(children: [
+          for (var n = -3; n <= 3; n++)
+            Expanded(child: Builder(builder: (_) {
+              final d = addDays(s.today, n);
+              final done = s.dayOf(d)?.reviewUnits.length ?? 0;
+              final plan = s.plannedOn(d).length;
+              return GestureDetector(
+                onTap: () => showDaySheet(context, d),
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 2),
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  decoration: BoxDecoration(
+                    color: C.sf2,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: n == 0 ? C.ac : Colors.transparent, width: 1.5),
+                  ),
+                  child: Column(children: [
+                    Text(weekdays[d.weekday - 1], style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800)),
+                    Text('${d.day}', style: const TextStyle(fontSize: 12, color: C.mut)),
+                    const SizedBox(height: 4),
+                    Text(done > 0 ? '✓$done' : (plan > 0 ? '$plan' : '·'),
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w900,
+                            color: done > 0 ? C.good : (plan > 0 ? (n < 0 ? C.bad : C.ac) : C.mut))),
+                  ]),
+                ),
+              );
+            })),
         ]),
         const SizedBox(height: 14),
         if (g.isEmpty) const EmptyBox("Hali yodlangan so'z yo'q. Bitta unitni kartalarda yodlang."),
@@ -49,7 +77,14 @@ class ScheduleScreen extends StatelessWidget {
                   BookBadge(bookById(parts[0]), size: 20),
                   const SizedBox(width: 9),
                   Expanded(child: Text('Unit ${parts[1]}', style: const TextStyle(fontWeight: FontWeight.w800))),
-                  Text("${ps.length} so'z", style: const TextStyle(color: C.mut, fontSize: 12)),
+                  Flexible(
+                    child: Text(
+                        st >= intervals.length
+                            ? "${ps.length} so'z · mustahkam"
+                            : "${ps.length} so'z · keyingi: ${shortDate(DateTime.parse(dd))}",
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(color: C.mut, fontSize: 12)),
+                  ),
                 ]),
                 const SizedBox(height: 10),
                 Row(children: [

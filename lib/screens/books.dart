@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
+import '../data/words.dart';
+import '../services/ads.dart';
+import '../services/speech.dart';
 import '../state/app_state.dart';
 import '../state/scope.dart';
 import '../theme.dart';
 import '../widgets/add_word_sheet.dart';
 import '../widgets/common.dart';
+import '../widgets/tools.dart';
 import 'home.dart';
+import 'profile.dart';
 import 'shell.dart';
+import 'shop.dart';
 import 'study.dart';
 
 class BooksTab extends StatelessWidget {
@@ -22,13 +28,16 @@ class BooksTab extends StatelessWidget {
             title: b.title,
             subtitle: b.isMine
                 ? "${s.myWords.length} so'z · o'zingiz qo'shasiz"
-                : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
-            trailing: '${s.bookPct(b.id)}%',
+                : s.locked(b)
+                    ? "${b.fixedUnits} unit · ${money(b.price)} so'm"
+                    : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
+            trailing: s.locked(b) ? '🔒' : '${s.bookPct(b.id)}%',
             fill: s.bookPct(b.id) / 100,
-            onTap: () => push(context, UnitsScreen(bookId: b.id)),
+            onTap: () => openBook(context, b),
           ),
         );
     Widget h(String t) => Padding(padding: const EdgeInsets.fromLTRB(0, 14, 0, 10), child: Text(t, style: display(17)));
+    final center = booksOf(BookGroup.center);
     return ListView(padding: EdgeInsets.zero, children: [
       const TabHeader(title: 'Kitoblar', subtitle: 'Genius'),
       Padding(
@@ -37,13 +46,26 @@ class BooksTab extends StatelessWidget {
           h('Shaxsiy'),
           row(bookById(myBookId)),
           h('4000 Essential Words'),
-          ...books.where((b) => b.group == BookGroup.essential).map(row),
+          ...booksOf(BookGroup.essential).map(row),
           h('Markaz kitoblari'),
-          ...books.where((b) => b.group == BookGroup.center).map(row),
+          if (center.isEmpty)
+            const EmptyBox("Aura Academy kitoblari tez orada shu yerda chiqadi.")
+          else
+            ...center.map(row),
         ]),
       ),
     ]);
   }
+}
+
+/// Kitobni ochish: pullik va sotib olinmagan bo'lsa do'kondagi sotib olish oynasi.
+void openBook(BuildContext context, Book b) {
+  final s = AppScope.read(context);
+  if (s.locked(b)) {
+    showBookBuySheet(context, b);
+    return;
+  }
+  push(context, UnitsScreen(bookId: b.id));
 }
 
 /// Kitobning unitlari ro'yxati.
@@ -61,17 +83,15 @@ class UnitsScreen extends StatelessWidget {
         title: b.title,
         book: b,
         subtitle: "${b.isMine ? "${s.myWords.length} so'z · " : ''}${s.bookPct(b.id)}% yodlangan",
+        actions: const [VoiceButton()],
       ),
+      bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
-        Row(children: [
-          Expanded(child: Btn('Mashq qilish', onTap: empty ? null : () => openSetup(context, b.id))),
-          const SizedBox(width: 10),
-          Expanded(child: Btn("+ So'z qo'shish", kind: BtnKind.ghost, onTap: () => showAddWordSheet(context))),
-        ]),
+        Btn('Mashq qilish', onTap: empty ? null : () => openSetup(context, b.id)),
         const SizedBox(height: 12),
         if (empty)
           const EmptyBox(
-              "Tashqaridan topgan so'zlaringizni shu yerga qo'shing. Har 20 ta so'z bitta unit bo'ladi va ular ham kartalar, yozish va 1·3·7·15·30 takrorga tushadi.")
+              "Tashqaridan topgan so'zlaringizni bosh sahifadagi «So'z qo'shish» tugmasi bilan qo'shing. Har 20 ta so'z bitta unit bo'ladi va ular ham kartalar, yozish va 1·3·7·15·30 takrorga tushadi.")
         else
           for (var u = 1; u <= units; u++)
             Padding(
@@ -94,7 +114,7 @@ class UnitsScreen extends StatelessWidget {
   }
 }
 
-/// Bitta unitning so'zlari.
+/// Bitta unitning so'zlari: har so'z alohida blokda, inglizcha va o'zbekcha yonma-yon.
 class UnitScreen extends StatelessWidget {
   final String bookId;
   final int unit;
@@ -116,7 +136,13 @@ class UnitScreen extends StatelessWidget {
     final w = s.words(bookId, unit);
     final l = s.unitLearned(bookId, unit);
     return Scaffold(
-      appBar: TopBar(title: 'Unit $unit', book: b, subtitle: "${w.length} so'z · $l yodlangan"),
+      appBar: TopBar(
+        title: 'Unit $unit',
+        book: b,
+        subtitle: '${b.title} · $l/${w.length} yodlangan',
+        actions: const [FontButtons(), VoiceButton()],
+      ),
+      bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
         if (w.isEmpty)
           const EmptyBox("Bu unit so'zlari kitoblaringiz kelgach qo'shiladi.")
@@ -128,49 +154,89 @@ class UnitScreen extends StatelessWidget {
             const SizedBox(width: 10),
             Expanded(child: Btn('Hammasi (${w.length})', kind: BtnKind.ghost, onTap: () => quick(context, s, false))),
           ]),
-          const SizedBox(height: 12),
+          const SizedBox(height: 14),
           for (var i = 0; i < w.length; i++)
             Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Builder(builder: (_) {
-                final p = s.prog[wkey(bookId, unit, i)];
-                final isL = p?.learned ?? false;
-                return WordRow(
-                  word: w[i],
-                  learned: isL,
-                  extra: isL
-                      ? Align(
-                          alignment: Alignment.centerLeft,
-                          child: Pill(
-                            p!.stage >= intervals.length
-                                ? 'Mustahkam'
-                                : 'Keyingi takror: ${p.due.substring(8)}.${p.due.substring(5, 7)}',
-                            bg: p.due.compareTo(s.td) <= 0 ? C.ac : C.sf2,
-                            fg: p.due.compareTo(s.td) <= 0 ? C.onAc : C.fg,
-                          ),
-                        )
-                      : null,
-                  trailing: b.isMine
-                      ? IconButton(
-                          tooltip: 'Tahrirlash',
-                          style: IconButton.styleFrom(backgroundColor: C.sf2),
-                          icon: const Icon(Icons.edit_outlined, size: 18, color: C.mut),
-                          onPressed: () => showAddWordSheet(context, editIndex: (unit - 1) * 20 + i),
-                        )
-                      : null,
-                );
-              }),
+              padding: const EdgeInsets.only(bottom: 10),
+              child: WordBlock(
+                n: i + 1,
+                word: w[i],
+                learned: s.learned(wkey(bookId, unit, i)),
+                scale: s.fontScale,
+                onEdit: b.isMine ? () => showAddWordSheet(context, editIndex: (unit - 1) * 20 + i) : null,
+              ),
             ),
         ],
-        const SizedBox(height: 4),
-        Btn(
-          b.isMine
-              ? (w.length < 20 ? "+ So'z qo'shish (${20 - w.length} ta joy bor)" : "+ So'z qo'shish")
-              : "+ Yangi so'z qo'shish (Mening so'zlarimga)",
-          kind: BtnKind.ghost,
-          onTap: () => showAddWordSheet(context),
-        ),
+        if (!s.isPremium) ...[
+          const SizedBox(height: 8),
+          PremiumPromo(onTap: () => push(context, const PremiumScreen())),
+        ],
       ]),
     );
   }
 }
+
+/// So'z bloki: raqam, inglizcha (talaffuz bilan) va o'zbekcha yonma-yon. Yodlangan so'z yashil.
+class WordBlock extends StatelessWidget {
+  final int n;
+  final Word word;
+  final bool learned;
+  final double scale;
+  final VoidCallback? onEdit;
+  const WordBlock({super.key, required this.n, required this.word, required this.learned, this.scale = 1, this.onEdit});
+
+  @override
+  Widget build(BuildContext context) {
+    final f = scale;
+    final edge = learned ? C.good : C.ln;
+    return Material(
+      color: learned ? Color.alphaBlend(C.good.withValues(alpha: .12), C.sf) : C.sf,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: edge, width: 1.5)),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => Speech.speak(word.en),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 12, 8, 12),
+          child: Row(children: [
+            Container(
+              width: 28,
+              height: 28,
+              decoration: BoxDecoration(shape: BoxShape.circle, color: learned ? C.good : C.sf2),
+              alignment: Alignment.center,
+              child: Text('$n',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900, fontSize: 12, color: learned ? const Color(0xFF052611) : C.mut)),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              flex: 5,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(word.en, style: TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 17 * f)),
+                if (word.ipa.isNotEmpty) Text(word.ipa, style: TextStyle(color: C.mut, fontSize: 12 * f)),
+              ]),
+            ),
+            Container(width: 1, height: 30 * f, color: C.ln, margin: const EdgeInsets.symmetric(horizontal: 10)),
+            Expanded(
+              flex: 6,
+              child: Text(word.uz, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16 * f)),
+            ),
+            if (onEdit != null)
+              IconButton(
+                tooltip: 'Tahrirlash',
+                icon: const Icon(Icons.edit_outlined, size: 18, color: C.mut),
+                onPressed: onEdit,
+              )
+            else
+              const Padding(
+                padding: EdgeInsets.only(left: 4),
+                child: Icon(Icons.volume_up_rounded, color: C.mut, size: 18),
+              ),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+/// Bosh sahifa va menyudan "Kitoblar" bo'limiga o'tish.
+void goBooks(BuildContext context) => ShellScope.of(context).goTab(1);

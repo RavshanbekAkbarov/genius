@@ -3,13 +3,17 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
+import '../data/quotes.dart';
 import '../services/ads.dart';
+import '../services/net.dart';
 import '../services/speech.dart';
 import '../state/app_state.dart';
 import '../state/scope.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/tools.dart';
 import 'home.dart';
+import 'offline.dart';
 import 'profile.dart';
 
 export '../state/app_state.dart' show CardItem;
@@ -21,33 +25,70 @@ class Session {
   final bool review; // 1·3·7·15·30 takrori: limitga kirmaydi
   final bool typing;
   final bool reverse;
+  final bool daily; // "Bugungi mashq": takrorlardan keyin yangi so'zlarga o'tadi
   int pos = 0;
   int easy = 0;
   final Set<String> hard = {};
-  Session(List<CardItem> list, {required this.review, required this.typing, required this.reverse})
+  final Map<int, bool> graded = {}; // karta o'rni -> Oson (true) / Qiyin (false)
+  Session(List<CardItem> list,
+      {required this.review, required this.typing, required this.reverse, this.daily = false})
       : src = List.of(list),
         deck = List.of(list);
 
   String get unitLabel {
     final us = src.map((c) => c.unit).toSet().toList()..sort();
+    if (src.map((c) => c.book).toSet().length > 1) return 'Bugungi takrorlar';
     return us.length > 1 ? 'Unit ${us.first}–${us.last}' : 'Unit ${us.first}';
   }
 }
 
 /// Mashqni boshlash. Bepul limit tugagan bo'lsa (takrorlardan tashqari) limit oynasi chiqadi.
-void startSession(BuildContext context, List<CardItem> list,
-    {required bool review, bool typing = false, bool reverse = false, bool replace = false}) {
+/// Internet yo'q bo'lsa kuniga [offlineSessions] ta mashq ruxsat, keyin "Internetni yoqing" oynasi.
+Future<void> startSession(BuildContext context, List<CardItem> list,
+    {required bool review, bool typing = false, bool? reverse, bool replace = false, bool daily = false}) async {
   final s = AppScope.read(context);
   if (list.isEmpty) return;
   if (!review && s.sessionsLeft <= 0) {
     showLimitSheet(context);
     return;
   }
+  if (!s.isPremium) {
+    var online = Net.online.value || await Net.check();
+    if (!context.mounted) return;
+    if (!online) {
+      if (s.offlineLeft <= 0) {
+        online = await Navigator.of(context).push<bool>(MaterialPageRoute(builder: (_) => const OfflineScreen())) ?? false;
+        if (!online || !context.mounted) return;
+      } else {
+        s.useOffline();
+        toast(context, "Internet yo'q: bugun yana ${s.offlineLeft} ta mashq qilish mumkin");
+      }
+    }
+  }
   if (!review) s.useSession();
+  s.logSession();
   s.pickBook(list.first.book);
-  final session = Session(list, review: review, typing: review ? false : typing, reverse: review ? false : reverse);
+  Ads.preload();
+  final session =
+      Session(list, review: review, typing: review ? false : typing, reverse: reverse ?? s.reverse, daily: daily);
   final route = MaterialPageRoute(builder: (_) => StudyScreen(session: session));
   replace ? Navigator.of(context).pushReplacement(route) : Navigator.of(context).push(route);
+}
+
+/// "Bugungi mashq": avval hamma takrorlar, keyin yangi so'zlar.
+void startDaily(BuildContext context) {
+  final s = AppScope.read(context);
+  final reviews = s.allReviewCards();
+  if (reviews.isNotEmpty) {
+    startSession(context, reviews, review: true, daily: true);
+    return;
+  }
+  final fresh = s.nextNewCards();
+  if (fresh.isEmpty) {
+    toast(context, "Bu kitobdagi hamma so'zlar yodlangan. Boshqa kitobni tanlang");
+    return;
+  }
+  startSession(context, fresh, review: false);
 }
 
 void showLimitSheet(BuildContext context) {
@@ -73,11 +114,6 @@ void showLimitSheet(BuildContext context) {
           Navigator.pop(ctx);
           push(context, const PremiumScreen());
         }),
-        const SizedBox(height: 10),
-        Btn("Do'st taklif qilish: 1 hafta bepul", kind: BtnKind.ghost, onTap: () {
-          Navigator.pop(ctx);
-          push(context, const InviteScreen());
-        }),
         const SizedBox(height: 4),
         Btn('Ertaga davom etaman', kind: BtnKind.text, onTap: () => Navigator.pop(ctx)),
       ]),
@@ -94,21 +130,20 @@ class StudyScreen extends StatefulWidget {
 
 class _StudyScreenState extends State<StudyScreen> {
   Session get ss => widget.session;
-  bool flipped = false;
-  bool pulse = false;
+  final pages = PageController(viewportFraction: .8);
   final answer = TextEditingController();
   final answerFocus = FocusNode();
   ({String value, bool ok})? answered;
+  bool finishing = false;
 
   CardItem get card => ss.deck[min(ss.pos, ss.deck.length - 1)];
 
-  /// Hozir inglizcha tomon ko'rinyaptimi.
-  bool get enSide => ss.reverse ? flipped : !flipped;
-
   @override
   void dispose() {
+    pages.dispose();
     answer.dispose();
     answerFocus.dispose();
+    Speech.stop();
     super.dispose();
   }
 
@@ -116,7 +151,12 @@ class _StudyScreenState extends State<StudyScreen> {
     AppScope.read(context).markHard(c, review: ss.review);
     ss.hard.add(c.key);
     // So'z 3 ta kartadan keyin yana chiqadi.
-    ss.deck.insert(min(ss.deck.length, ss.pos + 4), c);
+    final at = min(ss.deck.length, ss.pos + 4);
+    ss.deck.insert(at, c);
+    final moved = {for (final e in ss.graded.entries) (e.key >= at ? e.key + 1 : e.key): e.value};
+    ss.graded
+      ..clear()
+      ..addAll(moved);
   }
 
   void markEasy(CardItem c) {
@@ -124,14 +164,36 @@ class _StudyScreenState extends State<StudyScreen> {
     ss.easy++;
   }
 
+  /// Kartalar: baholash va keyingi baholanmagan kartaga o'tish.
   void grade(bool easy) {
+    if (ss.graded.containsKey(ss.pos)) {
+      _goNext();
+      return;
+    }
+    ss.graded[ss.pos] = easy;
     easy ? markEasy(card) : markHard(card);
-    next();
+    _goNext();
   }
 
+  void _goNext() {
+    if (ss.graded.length >= ss.deck.length) {
+      finish();
+      return;
+    }
+    var next = ss.pos + 1;
+    while (next < ss.deck.length && ss.graded.containsKey(next)) {
+      next++;
+    }
+    if (next >= ss.deck.length) {
+      next = List.generate(ss.deck.length, (i) => i).firstWhere((i) => !ss.graded.containsKey(i));
+    }
+    setState(() {});
+    pages.animateToPage(next, duration: const Duration(milliseconds: 320), curve: Curves.easeOutCubic);
+  }
+
+  /// Yozish rejimi: keyingi so'z.
   void next() {
     ss.pos++;
-    flipped = false;
     answered = null;
     answer.clear();
     if (ss.pos >= ss.deck.length) {
@@ -139,10 +201,12 @@ class _StudyScreenState extends State<StudyScreen> {
       return;
     }
     setState(() {});
-    if (ss.typing) answerFocus.requestFocus();
+    answerFocus.requestFocus();
   }
 
   Future<void> finish() async {
+    if (finishing) return;
+    finishing = true;
     final s = AppScope.read(context);
     if (!s.isPremium) await Ads.showInterstitial(context, label: 'Mashq tugadi');
     if (!mounted) return;
@@ -172,142 +236,97 @@ class _StudyScreenState extends State<StudyScreen> {
     setState(() => answered = (value: '', ok: false));
   }
 
-  void tapCard() {
-    // Faqat inglizcha tomonda ovoz chiqadi.
-    if (!enSide) return;
-    Speech.speak(card.word.en);
-    setState(() => pulse = true);
-    Future.delayed(const Duration(milliseconds: 350), () {
-      if (mounted) setState(() => pulse = false);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final s = AppScope.of(context);
     final b = bookById(card.book);
     final mode = ss.review ? 'Takrorlash' : ss.typing ? 'Yozish' : 'Kartalar';
+    final done = ss.typing ? ss.pos : ss.graded.length;
     return Scaffold(
       appBar: TopBar(
-          title: ss.unitLabel, book: b, subtitle: '$mode · ${min(ss.pos + 1, ss.deck.length)}/${ss.deck.length}'),
+        title: ss.unitLabel,
+        book: b,
+        subtitle: '$mode · ${min(ss.pos + 1, ss.deck.length)}/${ss.deck.length}',
+        actions: const [FontButtons(), VoiceButton()],
+      ),
       bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 6, 16, 12),
+          padding: const EdgeInsets.fromLTRB(16, 6, 16, 10),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(6),
             child: LinearProgressIndicator(
-                value: ss.pos / ss.deck.length, minHeight: 7, color: C.gold, backgroundColor: C.sf2),
+                value: done / ss.deck.length, minHeight: 7, color: C.gold, backgroundColor: C.sf2),
           ),
         ),
-        Expanded(child: ss.typing ? _typing() : _cards()),
+        Expanded(child: ss.typing ? _typing(s) : _cards(s)),
       ]),
     );
   }
 
-  Widget _cards() {
-    final w = card.word;
-    final en = enSide;
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-      child: Column(children: [
-        Expanded(
-          child: Semantics(
-            button: true,
-            label: en ? 'Bosing: talaffuz' : 'Karta',
-            child: GestureDetector(
-              onTap: tapCard,
-              child: AnimatedScale(
-                scale: pulse ? .98 : 1,
-                duration: const Duration(milliseconds: 150),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: en ? C.grad : null,
-                    color: en ? null : C.sf2,
-                    borderRadius: BorderRadius.circular(26),
-                    border: Border.all(color: pulse ? Colors.white54 : (en ? Colors.transparent : C.ln), width: 2),
+  Widget _cards(AppState s) {
+    final g = ss.graded[ss.pos];
+    return Column(children: [
+      const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Text('Kartani bosing: aylanadi · suring: keyingi va oldingi karta',
+            textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+      ),
+      const SizedBox(height: 12),
+      Expanded(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 380),
+            child: PageView.builder(
+              controller: pages,
+              itemCount: ss.deck.length,
+              onPageChanged: (i) => setState(() => ss.pos = i),
+              itemBuilder: (_, i) => AnimatedScale(
+                scale: i == ss.pos ? 1 : .9,
+                duration: const Duration(milliseconds: 220),
+                child: AnimatedOpacity(
+                  opacity: i == ss.pos ? 1 : .45,
+                  duration: const Duration(milliseconds: 220),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: FlipCard(
+                      key: ValueKey('card-$i-${ss.deck[i].key}'),
+                      item: ss.deck[i],
+                      reverse: ss.reverse,
+                      scale: s.fontScale,
+                      active: i == ss.pos,
+                      grade: ss.graded[i],
+                    ),
                   ),
-                  padding: const EdgeInsets.fromLTRB(18, 14, 18, 14),
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(en ? 'INGLIZCHA' : "O'ZBEKCHA",
-                          style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: .9,
-                              color: (en ? Colors.white : C.fg).withValues(alpha: .75))),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Column(mainAxisSize: MainAxisSize.min, children: [
-                          Text(en ? w.en : w.uz,
-                              textAlign: TextAlign.center,
-                              style: display(34, color: en ? Colors.white : C.fg)),
-                          const SizedBox(height: 10),
-                          if (en && w.ipa.isNotEmpty)
-                            Text(w.ipa, style: const TextStyle(fontSize: 15, color: Colors.white70)),
-                          if (!en && w.ex.isNotEmpty)
-                            Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 12),
-                              child: Text(w.ex,
-                                  textAlign: TextAlign.center, style: const TextStyle(fontSize: 14, color: C.mut)),
-                            ),
-                        ]),
-                      ),
-                    ),
-                    Text(en ? "Kartaning istalgan joyini bosing: talaffuz" : "Bu tomonda bosganda ovoz chiqmaydi",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w600, color: (en ? Colors.white : C.mut).withValues(alpha: .8))),
-                    const SizedBox(height: 10),
-                    // Aylantirish tugmasi kartaning ichida, to'liq enida.
-                    Material(
-                      color: en ? Colors.black26 : C.sf,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          side: en ? BorderSide.none : const BorderSide(color: C.ac, width: 1.5)),
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(16),
-                        onTap: () => setState(() => flipped = !flipped),
-                        child: SizedBox(
-                          height: 52,
-                          width: double.infinity,
-                          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                            Icon(Icons.sync_rounded, color: en ? Colors.white : C.ac, size: 26),
-                            const SizedBox(width: 10),
-                            Text('Aylantirish',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800, fontSize: 16, color: en ? Colors.white : C.fg)),
-                          ]),
-                        ),
-                      ),
-                    ),
-                  ]),
                 ),
               ),
             ),
           ),
         ),
-        const SizedBox(height: 14),
-        Row(children: [
+      ),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
+        child: Row(children: [
           Expanded(
-              child: _gradeBtn('Qiyin', ss.review ? 'ertaga yana' : "yana ko'rsatiladi", C.bad, () => grade(false))),
+              child: _gradeBtn('Qiyin', ss.review ? 'ertaga yana' : "yana ko'rsatiladi", C.bad, g == false,
+                  () => grade(false))),
           const SizedBox(width: 12),
-          Expanded(child: _gradeBtn('Oson', ss.review ? 'keyingi bosqich' : 'yodladim', C.good, () => grade(true))),
+          Expanded(
+              child:
+                  _gradeBtn('Oson', ss.review ? 'keyingi bosqich' : 'yodladim', C.good, g == true, () => grade(true))),
         ]),
-      ]),
-    );
+      ),
+    ]);
   }
 
-  Widget _gradeBtn(String t, String sub, Color c, VoidCallback onTap) => Material(
-        color: C.sf,
+  Widget _gradeBtn(String t, String sub, Color c, bool chosen, VoidCallback onTap) => Material(
+        color: chosen ? c.withValues(alpha: .22) : C.sf,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18), side: BorderSide(color: c, width: 2)),
         child: InkWell(
           borderRadius: BorderRadius.circular(18),
           onTap: onTap,
           child: SizedBox(
-            height: 66,
+            height: 62,
             child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(t, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17)),
               Text(sub, style: const TextStyle(color: C.mut, fontSize: 12)),
@@ -316,27 +335,22 @@ class _StudyScreenState extends State<StudyScreen> {
         ),
       );
 
-  Widget _typing() {
+  Widget _typing(AppState s) {
     final w = card.word;
     final promptEn = !ss.reverse;
     final a = answered;
+    final f = s.fontScale;
     return ListView(padding: const EdgeInsets.fromLTRB(16, 0, 16, 16), children: [
       GestureDetector(
         onTap: promptEn ? () => Speech.speak(w.en) : null,
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 16),
-          decoration: BoxDecoration(
-            gradient: promptEn ? C.grad : null,
-            color: promptEn ? null : C.sf2,
-            borderRadius: BorderRadius.circular(24),
-          ),
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          decoration: BoxDecoration(gradient: C.grad, borderRadius: BorderRadius.circular(24)),
           child: Column(children: [
             Text(promptEn ? "O'zbekchasini yozing" : 'Inglizchasini yozing',
-                style: TextStyle(
-                    fontSize: 12, fontWeight: FontWeight.w800, color: (promptEn ? Colors.white : C.fg).withValues(alpha: .85))),
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: Colors.white.withValues(alpha: .85))),
             const SizedBox(height: 10),
-            Text(promptEn ? w.en : w.uz,
-                textAlign: TextAlign.center, style: display(32, color: promptEn ? Colors.white : C.fg)),
+            Text(promptEn ? w.en : w.uz, textAlign: TextAlign.center, style: display(30 * f, color: Colors.white)),
             if (promptEn) ...[
               const SizedBox(height: 10),
               Container(
@@ -363,7 +377,7 @@ class _StudyScreenState extends State<StudyScreen> {
         autocorrect: false,
         enableSuggestions: false,
         onSubmitted: (_) => a == null ? check() : next(),
-        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18 * f),
         decoration: InputDecoration(
           hintText: 'Javobni yozing',
           enabledBorder: OutlineInputBorder(
@@ -375,7 +389,7 @@ class _StudyScreenState extends State<StudyScreen> {
       const SizedBox(height: 12),
       if (a != null) ...[
         Text(a.ok ? "✓ To'g'ri!" : "✕ To'g'ri javob: ${promptEn ? w.uz : w.en}",
-            style: TextStyle(color: a.ok ? C.good : C.bad, fontWeight: FontWeight.w800, fontSize: 16)),
+            style: TextStyle(color: a.ok ? C.good : C.bad, fontWeight: FontWeight.w800, fontSize: 16 * f)),
         const SizedBox(height: 6),
         Align(
           alignment: Alignment.centerLeft,
@@ -397,23 +411,154 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 }
 
+/// Ikki tomonlama karta: bosganda 3D aylanadi. Ikkala tomon bir xil ko'rinishda.
+class FlipCard extends StatefulWidget {
+  final CardItem item;
+  final bool reverse;
+  final double scale;
+  final bool active;
+  final bool? grade;
+  const FlipCard(
+      {super.key, required this.item, required this.reverse, required this.scale, required this.active, this.grade});
+  @override
+  State<FlipCard> createState() => _FlipCardState();
+}
+
+class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin {
+  late final AnimationController anim = AnimationController(vsync: this, duration: const Duration(milliseconds: 450));
+  bool back = false;
+
+  @override
+  void dispose() {
+    anim.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(FlipCard old) {
+    super.didUpdateWidget(old);
+    // Boshqa kartaga o'tilganda old tomoniga qaytadi.
+    if (old.active && !widget.active && back) {
+      back = false;
+      anim.value = 0;
+    }
+  }
+
+  void flip() {
+    if (!widget.active) return;
+    back = !back;
+    back ? anim.forward() : anim.reverse();
+    final enNow = widget.reverse ? back : !back;
+    if (enNow) Speech.speak(widget.item.word.en);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: 'Karta: aylantirish',
+      child: GestureDetector(
+        onTap: flip,
+        child: AnimatedBuilder(
+          animation: anim,
+          builder: (_, _) {
+            final a = Curves.easeInOut.transform(anim.value) * pi;
+            final showBack = a > pi / 2;
+            return Transform(
+              alignment: Alignment.center,
+              transform: Matrix4.identity()
+                ..setEntry(3, 2, .0012)
+                ..rotateY(a),
+              child: showBack
+                  ? Transform(alignment: Alignment.center, transform: Matrix4.rotationY(pi), child: _side(true))
+                  : _side(false),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _side(bool isBack) {
+    final w = widget.item.word;
+    final en = widget.reverse ? isBack : !isBack;
+    final f = widget.scale;
+    final g = widget.grade;
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: C.grad,
+        borderRadius: BorderRadius.circular(26),
+        border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: 2),
+        boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 18, offset: Offset(0, 8))],
+      ),
+      padding: const EdgeInsets.fromLTRB(18, 8, 8, 14),
+      child: Column(children: [
+        Row(children: [
+          Expanded(
+            child: Text(en ? 'INGLIZCHA' : "O'ZBEKCHA",
+                style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: .9,
+                    color: Colors.white.withValues(alpha: .75))),
+          ),
+          if (en)
+            IconButton(
+              tooltip: 'Talaffuz',
+              onPressed: () => Speech.speak(w.en),
+              icon: const Icon(Icons.volume_up_rounded, color: Colors.white),
+            )
+          else
+            const SizedBox(height: 48),
+        ]),
+        Expanded(
+          child: Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(right: 10),
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                Text(en ? w.en : w.uz, textAlign: TextAlign.center, style: display(30 * f, color: Colors.white)),
+                if (en && w.ipa.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  Text(w.ipa, style: TextStyle(fontSize: 15 * f, color: Colors.white70)),
+                ],
+                if (isBack && w.ex.isNotEmpty) ...[
+                  const SizedBox(height: 12),
+                  Text(w.ex,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 14 * f, color: Colors.white.withValues(alpha: .8), fontStyle: FontStyle.italic)),
+                ],
+              ]),
+            ),
+          ),
+        ),
+        Icon(Icons.threesixty_rounded, color: Colors.white.withValues(alpha: .5), size: 22),
+      ]),
+    );
+  }
+}
+
 class DoneScreen extends StatelessWidget {
   final Session session;
   const DoneScreen({super.key, required this.session});
   @override
   Widget build(BuildContext context) {
     final ss = session;
+    final s = AppScope.of(context);
     final hardN = ss.hard.length;
     final xp = ss.review ? ss.easy * 5 : ss.easy * 10;
+    final fresh = ss.daily ? s.nextNewCards() : const <CardItem>[];
+    final q = quoteOfDay(s.today, slot: 1);
     return Scaffold(
       body: SafeArea(
-        child: ListView(padding: const EdgeInsets.fromLTRB(16, 40, 16, 24), children: [
+        child: ListView(padding: const EdgeInsets.fromLTRB(16, 32, 16, 24), children: [
           Center(
             child: Container(
-              width: 100,
-              height: 100,
+              width: 96,
+              height: 96,
               decoration: const BoxDecoration(shape: BoxShape.circle, gradient: C.grad),
-              child: const Icon(Icons.check_rounded, size: 52, color: Colors.white),
+              child: const Icon(Icons.check_rounded, size: 50, color: Colors.white),
             ),
           ),
           const SizedBox(height: 18),
@@ -430,19 +575,30 @@ class DoneScreen extends StatelessWidget {
             const SizedBox(width: 10),
             Expanded(child: _stat('$hardN', "qiyin so'z")),
           ]),
-          const SizedBox(height: 16),
-          Btn('Davom etish', onTap: () => Navigator.of(context).pop()),
+          const SizedBox(height: 14),
+          QuoteCard(quote: q),
+          const SizedBox(height: 14),
+          if (fresh.isNotEmpty) ...[
+            Btn("Yangi so'zlarga o'tish · Unit ${fresh.first.unit} (${fresh.length})",
+                onTap: () => startSession(context, fresh, review: false, replace: true)),
+            const SizedBox(height: 10),
+          ],
+          Btn('Davom etish',
+              kind: fresh.isNotEmpty ? BtnKind.ghost : BtnKind.primary, onTap: () => Navigator.of(context).pop()),
           const SizedBox(height: 10),
-          Btn('Qaytarish (hammasini qayta)',
-              kind: BtnKind.ghost,
-              onTap: () => startSession(context, ss.src, review: ss.review, typing: ss.typing, reverse: ss.reverse, replace: true)),
-          const SizedBox(height: 10),
+          if (!ss.review) ...[
+            Btn('Qaytarish (hammasini qayta)',
+                kind: BtnKind.ghost,
+                onTap: () =>
+                    startSession(context, ss.src, review: false, typing: ss.typing, reverse: ss.reverse, replace: true)),
+            const SizedBox(height: 10),
+          ],
           Btn("Qiyinlarini qayta ko'rish${hardN > 0 ? ' ($hardN)' : ''}",
               kind: BtnKind.ghost,
               onTap: hardN == 0
                   ? null
                   : () => startSession(context, ss.src.where((c) => ss.hard.contains(c.key)).toList(),
-                      review: ss.review, typing: ss.typing, reverse: ss.reverse, replace: true)),
+                      review: false, typing: ss.typing, reverse: ss.reverse, replace: true)),
         ]),
       ),
     );
@@ -452,6 +608,28 @@ class DoneScreen extends StatelessWidget {
         child: Column(children: [
           Text(v, style: display(22)),
           Text(l, style: const TextStyle(color: C.mut, fontSize: 12)),
+        ]),
+      );
+}
+
+/// Motivatsion gap: inglizcha asl matn va o'zbekcha tarjimasi.
+class QuoteCard extends StatelessWidget {
+  final Quote quote;
+  const QuoteCard({super.key, required this.quote});
+  @override
+  Widget build(BuildContext context) => AppCard(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Row(children: [
+            Icon(Icons.format_quote_rounded, color: C.gold),
+            SizedBox(width: 6),
+            Eyebrow('Kunning gapi'),
+          ]),
+          const SizedBox(height: 8),
+          Text(quote.en, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15, height: 1.35)),
+          const SizedBox(height: 6),
+          Text(quote.uz, style: const TextStyle(color: C.mut, fontSize: 13, height: 1.35)),
+          const SizedBox(height: 8),
+          Text('— ${quote.author}', style: const TextStyle(color: C.gold, fontWeight: FontWeight.w800, fontSize: 13)),
         ]),
       );
 }

@@ -146,14 +146,11 @@ class AppCard extends StatelessWidget {
   final Color? border;
   const AppCard({super.key, required this.child, this.padding = const EdgeInsets.all(14), this.color, this.border});
   @override
-  Widget build(BuildContext context) => Container(
-        padding: padding,
-        decoration: BoxDecoration(
-          color: color ?? C.sf,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: border ?? C.ln),
-        ),
-        child: child,
+  Widget build(BuildContext context) => Material(
+        color: color ?? C.sf,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20), side: BorderSide(color: border ?? C.ln)),
+        child: Padding(padding: padding, child: child),
       );
 }
 
@@ -263,7 +260,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   final String? subtitle;
   final Book? book;
   final VoidCallback? onBack;
-  const TopBar({super.key, required this.title, this.subtitle, this.book, this.onBack});
+  final List<Widget> actions;
+  const TopBar({super.key, required this.title, this.subtitle, this.book, this.onBack, this.actions = const []});
   @override
   Size get preferredSize => const Size.fromHeight(68);
   @override
@@ -289,9 +287,13 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
               Text(title, style: display(18), maxLines: 1, overflow: TextOverflow.ellipsis),
               if (subtitle != null)
-                Text(subtitle!, style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+                Text(subtitle!,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
             ]),
           ),
+          for (final a in actions) ...[const SizedBox(width: 6), a],
         ]),
       ),
     );
@@ -379,6 +381,69 @@ class SwitchRow extends StatelessWidget {
             ),
             Switch(value: value, onChanged: (_) => onTap()),
           ]),
+        ),
+      );
+}
+
+/// Kichik kvadrat tugma (A-, A+, 🔊).
+class SquareBtn extends StatelessWidget {
+  final Widget child;
+  final VoidCallback? onTap;
+  final String tooltip;
+  final Color? color;
+  const SquareBtn({super.key, required this.child, required this.onTap, required this.tooltip, this.color});
+  @override
+  Widget build(BuildContext context) => Tooltip(
+        message: tooltip,
+        child: Material(
+          color: color ?? C.sf2,
+          borderRadius: BorderRadius.circular(12),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(12),
+            onTap: onTap,
+            child: SizedBox(width: 40, height: 40, child: Center(child: child)),
+          ),
+        ),
+      );
+}
+
+/// Genius Premium reklamasi (Premium bo'lmaganlarga).
+class PremiumPromo extends StatelessWidget {
+  final VoidCallback onTap;
+  const PremiumPromo({super.key, required this.onTap});
+  @override
+  Widget build(BuildContext context) => Material(
+        borderRadius: BorderRadius.circular(20),
+        clipBehavior: Clip.antiAlias,
+        child: Ink(
+          decoration: const BoxDecoration(gradient: C.premiumGrad),
+          child: InkWell(
+            onTap: onTap,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                const Row(children: [
+                  Icon(Icons.workspace_premium_rounded, color: Color(0xFF3A2208)),
+                  SizedBox(width: 6),
+                  Text('GENIUS PREMIUM',
+                      style: TextStyle(fontSize: 11, letterSpacing: 1, fontWeight: FontWeight.w900, color: Color(0xFF3A2208))),
+                ]),
+                const SizedBox(height: 6),
+                Text('Reklamasiz va cheksiz mashq', style: display(17, color: const Color(0xFF241200))),
+                const SizedBox(height: 4),
+                const Text(
+                    "Kuniga $freeSessions ta emas, xohlagancha mashq. Reklamalar yo'q, internetsiz ham ishlaydi, olovni saqlash bepul.",
+                    style: TextStyle(color: Color(0xFF3A2208), fontSize: 13, fontWeight: FontWeight.w600)),
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  decoration: BoxDecoration(color: const Color(0xFF241200), borderRadius: BorderRadius.circular(14)),
+                  child: Text("Premium · ${money(premiumPrice)} so'm/oy",
+                      style: const TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
+                ),
+              ]),
+            ),
+          ),
         ),
       );
 }

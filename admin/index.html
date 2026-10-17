@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genius — Admin panel</title>
+<style>
+  :root {
+    --bg: #08101F;
+    --panel: #0F1A2E;
+    --panel2: #142240;
+    --line: #1F2E4D;
+    --text: #E8EEF9;
+    --muted: #8A9BB8;
+    --accent: #4C8DFF;
+    --accent2: #2F6FE0;
+    --ok: #34C77B;
+    --bad: #FF5C6C;
+    --warn: #FFB347;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  a { color: var(--accent); }
+  h1, h2, h3 { margin: 0 0 12px; font-weight: 650; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 16px; color: var(--muted); margin-top: 24px; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+  .hidden { display: none !important; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 13px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .grow { flex: 1; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
+  input, select, textarea {
+    width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line);
+    border-radius: 10px; padding: 9px 11px; font: inherit;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  input[type=checkbox] { width: auto; transform: scale(1.2); margin-right: 6px; }
+  input[type=color] { padding: 2px; height: 40px; }
+  textarea { min-height: 220px; font-family: ui-monospace, Consolas, monospace; font-size: 14px; }
+  button {
+    background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 9px 16px;
+    font: inherit; font-weight: 600; cursor: pointer;
+  }
+  button:hover { background: var(--accent2); }
+  button:disabled { opacity: .5; cursor: default; }
+  button.ghost { background: transparent; border: 1px solid var(--line); color: var(--text); }
+  button.ghost:hover { background: var(--panel2); }
+  button.ok { background: var(--ok); }
+  button.bad { background: var(--bad); }
+  button.sm { padding: 5px 10px; font-size: 13px; }
+  header.top {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--panel);
+  }
+  header.top .logo { font-weight: 800; font-size: 19px; }
+  header.top .logo span { color: var(--accent); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 18px 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+  .stat .v { font-size: 24px; font-weight: 750; }
+  .stat .l { color: var(--muted); font-size: 13px; }
+  nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  nav.tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); }
+  nav.tabs button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; }
+  .tablebox { overflow-x: auto; }
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+  .b-pending { background: rgba(255,179,71,.15); color: var(--warn); }
+  .b-approved { background: rgba(52,199,123,.15); color: var(--ok); }
+  .b-rejected { background: rgba(255,92,108,.15); color: var(--bad); }
+  .b-awaiting_receipt { background: rgba(138,155,184,.15); color: var(--muted); }
+  .err-row td { background: rgba(255,92,108,.08); }
+  .swatch { display: inline-block; width: 46px; height: 18px; border-radius: 6px; vertical-align: middle; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 14px; }
+  #toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50;
+    background: var(--panel2); border: 1px solid var(--line); padding: 10px 18px; border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.4); max-width: 90vw;
+  }
+  #toast.bad { border-color: var(--bad); }
+  .modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 40;
+    display: flex; align-items: center; justify-content: center; padding: 16px;
+  }
+  .modal .box { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; max-width: 95vw; max-height: 92vh; overflow: auto; }
+  .modal img { max-width: 100%; max-height: 78vh; display: block; margin: 10px auto 0; border-radius: 8px; }
+  .login { max-width: 380px; margin: 10vh auto; }
+  .empty { padding: 16px 4px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- KIRISH -->
+<div id="loginView" class="hidden">
+  <div class="wrap">
+    <div class="card login">
+      <h1 style="font-size:24px">Genius <span style="color:var(--accent)">Admin</span></h1>
+      <p class="muted small">Administrator hisobingiz bilan kiring.</p>
+      <div id="configWarn" class="hidden" style="color:var(--bad);margin-bottom:10px">
+        Avval shu faylni Bloknot (Notepad) bilan ochib, eng yuqoridagi <b>SUPABASE_URL</b> va
+        <b>SUPABASE_ANON_KEY</b> o'rniga o'z qiymatlaringizni qo'ying.
+      </div>
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="email" type="email" autocomplete="username" required>
+        <label>Parol</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <div style="margin-top:16px"><button type="submit" style="width:100%">Kirish</button></div>
+      </form>
+      <p id="loginErr" style="color:var(--bad)"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ASOSIY -->
+<div id="appView" class="hidden">
+  <header class="top">
+    <div class="logo">Genius <span>Admin</span></div>
+    <div class="grow"></div>
+    <span id="meEmail" class="muted small"></span>
+    <button class="ghost sm" id="refreshBtn">↻ Yangilash</button>
+    <button class="ghost sm" id="logoutBtn">Chiqish</button>
+  </header>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="v" id="stUsers">—</div><div class="l">Foydalanuvchilar</div></div>
+      <div class="stat"><div class="v" id="stPremium">—</div><div class="l">Premium foydalanuvchilar</div></div>
+      <div class="stat"><div class="v" id="stRevenue">—</div><div class="l">Shu oydagi tushum</div></div>
+      <div class="stat"><div class="v" id="stPending">—</div><div class="l">Tekshirilishi kerak</div></div>
+    </div>
+
+    <nav class="tabs">
+      <button data-tab="pay" class="on">To'lovlar</button>
+      <button data-tab="books">Kitoblar</button>
+      <button data-tab="words">So'z qo'shish</button>
+      <button data-tab="groups">Guruhlar</button>
+      <button data-tab="users">Foydalanuvchilar</button>
+    </nav>
+
+    <!-- TO'LOVLAR -->
+    <section id="tab-pay" class="card">
+      <h2>Tekshirilishi kerak bo'lgan to'lovlar</h2>
+      <div class="tablebox" id="pendingBox"></div>
+      <h3>Oxirgi to'lovlar tarixi</h3>
+      <div class="tablebox" id="historyBox"></div>
+    </section>
+
+    <!-- KITOBLAR -->
+    <section id="tab-books" class="card hidden">
+      <div class="row"><h2 class="grow" style="margin:0">Markaz kitoblari</h2>
+        <button id="newBookBtn">+ Yangi kitob</button></div>
+      <div class="tablebox" id="booksBox" style="margin-top:12px"></div>
+
+      <div id="bookForm" class="hidden" style="margin-top:20px;border-top:1px solid var(--line);padding-top:14px">
+        <h3 id="bookFormTitle" style="margin-top:0;color:var(--text)">Yangi kitob</h3>
+        <div class="grid2">
+          <div><label>ID (lotin harflari, raqam va "-", masalan: <i>beginner-1</i>)</label><input id="bId"></div>
+          <div><label>Kitob nomi</label><input id="bTitle"></div>
+          <div><label>Daraja belgisi (masalan A1, B2)</label><input id="bBadge" value="A1"></div>
+          <div><label>Bo'limlar (unit) soni</label><input id="bUnits" type="number" min="1" max="200" value="20"></div>
+          <div><label>Narxi (so'm). 0 = bepul</label><input id="bPrice" type="number" min="0" step="1000" value="0"></div>
+          <div><label>Tartib raqami (kichigi oldinda)</label><input id="bSort" type="number" value="0"></div>
+          <div><label>1-rang</label><input id="bColor1" type="color" value="#FFB347"></div>
+          <div><label>2-rang</label><input id="bColor2" type="color" value="#F07B1D"></div>
+        </div>
+        <label style="margin-top:14px;color:var(--text)"><input id="bPublished" type="checkbox"> Ilovada ko'rinsin (nashr qilingan)</label>
+        <div class="row" style="margin-top:14px">
+          <button id="saveBookBtn">Saqlash</button>
+          <button class="ghost" id="cancelBookBtn">Bekor qilish</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SO'Z QO'SHISH -->
+    <section id="tab-words" class="card hidden">
+      <h2>So'z qo'shish</h2>
+      <div class="grid2">
+        <div><label>Kitob</label><select id="wBook"></select></div>
+        <div><label>Bo'lim (unit)</label><select id="wUnit"></select></div>
+      </div>
+      <p class="muted small" id="wInfo"></p>
+      <label>So'zlarni shu yerga qo'ying — har bir qatorda bitta so'z:</label>
+      <div class="muted small" style="margin-bottom:6px">
+        <code>english ; o'zbekcha ; /talaffuz/ ; misol gap</code> — talaffuz va misol ixtiyoriy.
+        Excel'dan ustunlarni nusxalab qo'ysangiz ham bo'ladi (inglizcha, o'zbekcha, talaffuz, misol).
+      </div>
+      <textarea id="wText" placeholder="apple ; olma ; /ˈæp.əl/ ; I eat an apple every day.&#10;book ; kitob&#10;cat ; mushuk ; /kæt/"></textarea>
+      <div class="row" style="margin-top:10px">
+        <button class="ghost" id="wLoadBtn">Bo'limdagi hozirgi so'zlarni yuklash</button>
+        <button class="ghost" id="wPreviewBtn">Ko'rib chiqish</button>
+        <div class="grow"></div>
+        <button id="wSendBtn" disabled>Ilovaga yuborish</button>
+      </div>
+      <div class="tablebox" id="wPreview" style="margin-top:14px"></div>
+    </section>
+
+    <!-- GURUHLAR -->
+    <section id="tab-groups" class="card hidden">
+      <h2>Guruhlar</h2>
+      <div class="row">
+        <input id="gName" class="grow" placeholder="Yangi guruh nomi (masalan: A1 — ertalabki)" style="width:auto">
+        <button id="gAddBtn">+ Qo'shish</button>
+      </div>
+      <div class="tablebox" id="groupsBox" style="margin-top:12px"></div>
+    </section>
+
+    <!-- FOYDALANUVCHILAR -->
+    <section id="tab-users" class="card hidden">
+      <h2>Foydalanuvchilar</h2>
+      <div class="row">
+        <input id="uSearch" class="grow" placeholder="Taxallus yoki Telegram nomi bo'yicha qidirish" style="width:auto">
+        <button id="uSearchBtn">Qidirish</button>
+      </div>
+      <p class="muted small" id="uInfo"></p>
+      <div class="tablebox" id="usersBox"></div>
+    </section>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden"><div class="box">
+  <div class="row"><b class="grow" id="modalTitle">Chek</b><button class="ghost sm" id="modalClose">Yopish ✕</button></div>
+  <div id="modalBody"></div>
+</div></div>
+<div id="toast" class="hidden"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script>
+// ===== SHU IKKI QATORNI O'ZGARTIRING (Supabase → Project Settings → API) =====
+const SUPABASE_URL = 'PASTE_SUPABASE_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_SUPABASE_ANON_KEY_HERE';
+// ============================================================================
+
+const configured = !SUPABASE_URL.startsWith('PASTE') && !SUPABASE_ANON_KEY.startsWith('PASTE');
+const sb = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+const $ = (id) => document.getElementById(id);
+let books = [];
+let groups = [];
+let parsedWords = [];
+
+// ---------- yordamchilar ----------
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function money(n) {
+  return String(Math.round(Number(n) || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + " so'm";
+}
+function dmy(iso) {
+  if (!iso) return '—';
+  const s = String(iso).slice(0, 10).split('-');
+  return s[2] + '.' + s[1] + '.' + s[0];
+}
+function dt(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleString('ru-RU', { timeZone: 'Asia/Tashkent', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+function tashkentToday() {
+  return new Date(Date.now() + 5 * 3600 * 1000).toISOString().slice(0, 10);
+}
+let toastTimer;
+function toast(msg, bad) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.className = bad ? 'bad' : '';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.add('hidden'), bad ? 6000 : 3000);
+}
+function fail(e) {
+  console.error(e);
+  toast('Xatolik: ' + (e && (e.message || e.error_description) || e), true);
+}
+async function adminCall(body) {
+  const { data, error } = await sb.functions.invoke('admin', { body });
+  if (error) {
+    let msg = error.message;
+    try { const j = await error.context.json(); if (j && j.error) msg = j.error; } catch (_) { /* bo'sh */ }
+    throw new Error(msg);
+  }
+  return data;
+}
+function kindText(kind) {
+  if (kind === 'premium') return 'Premium (30 kun)';
+  if (String(kind).startsWith('book:')) {
+    const id = kind.slice(5);
+    const b = books.find((x) => x.id === id);
+    return 'Kitob: ' + (b ? b.title : id);
+  }
+  return kind;
+}
+const STATUS = { awaiting_receipt: 'Chek kutilmoqda', pending: 'Tekshirilmoqda', approved: 'Tasdiqlangan', rejected: 'Rad etilgan' };
+
+// ---------- kirish ----------
+async function start() {
+  if (!configured) {
+    $('loginView').classList.remove('hidden');
+    $('configWarn').classList.remove('hidden');
+    return;
+  }
+  const { data } = await sb.auth.getSession();
+  if (data.session) await enter(data.session);
+  else $('loginView').classList.remove('hidden');
+}
+
+async function enter(session) {
+  const { data: isAdmin, error } = await sb.rpc('is_admin');
+  if (error || !isAdmin) {
+    await sb.auth.signOut();
+    $('appView').classList.add('hidden');
+    $('loginView').classList.remove('hidden');
+    $('loginErr').textContent = error ? ('Xatolik: ' + error.message) : "Bu hisob administrator emas. Qo'llanmadagi SQL buyrug'ini bajaring.";
+    return;
+  }
+  $('loginView').classList.add('hidden');
+  $('appView').classList.remove('hidden');
+  $('meEmail').textContent = session.user.email || '';
+  await refreshAll();
+}
+
+$('loginForm').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  $('loginErr').textContent = '';
+  if (!configured) return;
+  const { data, error } = await sb.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+  if (error) { $('loginErr').textContent = "Kirib bo'lmadi: email yoki parol noto'g'ri."; return; }
+  await enter(data.session);
+});
+$('logoutBtn').onclick = async () => { await sb.auth.signOut(); location.reload(); };
+$('refreshBtn').onclick = () => refreshAll();
+
+// ---------- bo'limlar (tab) ----------
+document.querySelectorAll('nav.tabs button').forEach((b) => {
+  b.onclick = () => {
+    document.querySelectorAll('nav.tabs button').forEach((x) => x.classList.toggle('on', x === b));
+    document.querySelectorAll('section[id^="tab-"]').forEach((s) => s.classList.add('hidden'));
+    $('tab-' + b.dataset.tab).classList.remove('hidden');
+  };
+});
+
+async function refreshAll() {
+  try {
+    await loadBooks();
+    await Promise.all([loadStats(), loadPayments(), loadGroups(), loadUsers()]);
+  } catch (e) { fail(e); }
+}
+
+// ---------- statistika ----------
+async function loadStats() {
+  try {
+    const s = await adminCall({ action: 'stats' });
+    $('stUsers').textContent = s.users;
+    $('stPremium').textContent = s.premium;
+    $('stRevenue').textContent = money(s.revenue_month);
+    $('stPending').textContent = s.pending;
+  } catch (e) { fail(e); }
+}
+
+// ---------- to'lovlar ----------
+const PAY_COLS = 'id, kind, amount, status, created_at, decided_at, receipt_file_id, profiles(nickname, tg_username)';
+
+function payRow(p, withActions) {
+  const nick = p.profiles ? p.profiles.nickname : '?';
+  const tgu = p.profiles && p.profiles.tg_username ? ' <span class="muted small">@' + esc(p.profiles.tg_username) + '</span>' : '';
+  let actions = '';
+  if (p.receipt_file_id) actions += '<button class="ghost sm" data-receipt="' + p.id + '">Chekni ko\'rish</button> ';
+  if (withActions) {
+    actions += '<button class="ok sm" data-approve="' + p.id + '">✅ Tasdiqlash</button> ' +
+               '<button class="bad sm" data-reject="' + p.id + '">❌ Rad etish</button>';
+  }
+  return '<tr><td>#' + p.id + '</td><td>' + esc(nick) + tgu + '</td><td>' + esc(kindText(p.kind)) + '</td><td>' +
+    money(p.amount) + '</td><td>' + dt(p.created_at) + '</td><td><span class="badge b-' + esc(p.status) + '">' +
+    esc(STATUS[p.status] || p.status) + '</span></td><td>' + actions + '</td></tr>';
+}
+const PAY_HEAD = '<tr><th>№</th><th>Foydalanuvchi</th><th>Nima uchun</th><th>Summa</th><th>Sana</th><th>Holat</th><th></th></tr>';
+
+async function loadPayments() {
+  const [pend, hist] = await Promise.all([
+    sb.from('payments').select(PAY_COLS).eq('status', 'pending').order('created_at', { ascending: true }),
+    sb.from('payments').select(PAY_COLS).neq('status', 'pending').order('created_at', { ascending: false }).limit(60),
+  ]);
+  if (pend.error) throw pend.error;
+  if (hist.error) throw hist.error;
+  $('pendingBox').innerHTML = pend.data.length
+    ? '<table>' + PAY_HEAD + pend.data.map((p) => payRow(p, true)).join('') + '</table>'
+    : '<div class="empty">Hozircha tekshiriladigan to\'lov yo\'q 🎉</div>';
+  $('historyBox').innerHTML = hist.data.length
+    ? '<table>' + PAY_HEAD + hist.data.map((p) => payRow(p, false)).join('') + '</table>'
+    : '<div class="empty">Tarix bo\'sh.</div>';
+}
+
+$('tab-pay').addEventListener('click', async (ev) => {
+  const t = ev.target.closest('button');
+  if (!t) return;
+  try {
+    if (t.dataset.receipt) {
+      t.disabled = true;
+      try { await showReceipt(Number(t.dataset.receipt)); } finally { t.disabled = false; }
+    } else if (t.dataset.approve || t.dataset.reject) {
+      const approve = !!t.dataset.approve;
+      const id = Number(t.dataset.approve || t.dataset.reject);
+      const q = approve ? "#" + id + " to'lovni TASDIQLAYSIZMI? Foydalanuvchiga xarid ochiladi."
+                        : "#" + id + " to'lovni RAD ETASIZMI?";
+      if (!confirm(q)) return;
+      t.disabled = true;
+      const r = await adminCall({ action: approve ? 'approve' : 'reject', id });
+      if (r.ok) toast(approve ? "✅ Tasdiqlandi. Foydalanuvchiga Telegram'da xabar yuborildi." : '❌ Rad etildi.');
+      else toast("Bu to'lov allaqachon ko'rib chiqilgan (" + (STATUS[r.status] || r.status) + ').', true);
+      await Promise.all([loadPayments(), loadStats()]);
+    }
+  } catch (e) { fail(e); t.disabled = false; }
+});
+
+async function showReceipt(id) {
+  const r = await adminCall({ action: 'receipt', id });
+  const res = await fetch(r.url);
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  if ((r.mime || '').startsWith('image/')) {
+    $('modalTitle').textContent = "To'lov #" + id + ' cheki';
+    $('modalBody').innerHTML = '<img alt="Chek" src="' + url + '">';
+    $('modal').classList.remove('hidden');
+  } else {
+    window.open(url, '_blank');
+  }
+}
+$('modalClose').onclick = () => $('modal').classList.add('hidden');
+$('modal').onclick = (ev) => { if (ev.target === $('modal')) $('modal').classList.add('hidden'); };
+
+// ---------- kitoblar ----------
+async function loadBooks() {
+  const { data, error } = await sb.from('books').select('*').order('sort').order('title');
+  if (error) throw error;
+  books = data;
+  $('booksBox').innerHTML = books.length
+    ? '<table><tr><th>ID</th><th>Nomi</th><th>Daraja</th><th>Rang</th><th>Bo\'limlar</th><th>Narx</th><th>Holat</th><th></th></tr>' +
+      books.map((b) => '<tr><td><code>' + esc(b.id) + '</code></td><td>' + esc(b.title) + '</td><td>' + esc(b.badge) +
+        '</td><td><span class="swatch" style="background:linear-gradient(90deg,' + esc(b.color1) + ',' + esc(b.color2) + ')"></span></td><td>' +
+        b.units + '</td><td>' + (b.price > 0 ? money(b.price) : 'Bepul') + '</td><td>' +
+        (b.published ? '<span class="badge b-approved">Ilovada</span>' : '<span class="badge b-awaiting_receipt">Yashirin</span>') +
+        '</td><td><button class="ghost sm" data-edit="' + esc(b.id) + '">Tahrirlash</button></td></tr>').join('') + '</table>'
+    : '<div class="empty">Hali kitob yo\'q. "+ Yangi kitob" tugmasini bosing.</div>';
+  fillWordBooks();
+}
+
+let editingBook = null;
+function openBookForm(b) {
+  editingBook = b ? b.id : null;
+  $('bookFormTitle').textContent = b ? 'Kitobni tahrirlash' : 'Yangi kitob';
+  $('bId').value = b ? b.id : '';
+  $('bId').disabled = !!b;
+  $('bTitle').value = b ? b.title : '';
+  $('bBadge').value = b ? b.badge : 'A1';
+  $('bUnits').value = b ? b.units : 20;
+  $('bPrice').value = b ? b.price : 0;
+  $('bSort').value = b ? b.sort : 0;
+  $('bColor1').value = b && /^#[0-9a-fA-F]{6}$/.test(b.color1) ? b.color1 : '#FFB347';
+  $('bColor2').value = b && /^#[0-9a-fA-F]{6}$/.test(b.color2) ? b.color2 : '#F07B1D';
+  $('bPublished').checked = b ? b.published : false;
+  $('bookForm').classList.remove('hidden');
+  $('bookForm').scrollIntoView({ behavior: 'smooth' });
+}
+$('newBookBtn').onclick = () => openBookForm(null);
+$('cancelBookBtn').onclick = () => $('bookForm').classList.add('hidden');
+$('booksBox').addEventListener('click', (ev) => {
+  const t = ev.target.closest('button[data-edit]');
+  if (t) openBookForm(books.find((b) => b.id === t.dataset.edit));
+});
+$('saveBookBtn').onclick = async () => {
+  const id = $('bId').value.trim().toLowerCase();
+  const row = {
+    id,
+    title: $('bTitle').value.trim(),
+    badge: $('bBadge').value.trim() || 'A1',
+    color1: $('bColor1').value.toUpperCase(),
+    color2: $('bColor2').value.toUpperCase(),
+    units: parseInt($('bUnits').value, 10),
+    price: parseInt($('bPrice').value, 10) || 0,
+    sort: parseInt($('bSort').value, 10) || 0,
+    published: $('bPublished').checked,
+  };
+  if (!/^[a-z0-9][a-z0-9-]{1,40}$/.test(id)) return toast("ID faqat lotin kichik harflari, raqamlar va \"-\" dan iborat bo'lsin (masalan: beginner-1).", true);
+  if (!row.title) return toast('Kitob nomini yozing.', true);
+  if (!(row.units >= 1 && row.units <= 200)) return toast("Bo'limlar soni 1 dan 200 gacha bo'lsin.", true);
+  if (row.price < 0) return toast("Narx manfiy bo'lishi mumkin emas.", true);
+  if (!editingBook && books.some((b) => b.id === id)) return toast('Bunday ID li kitob bor. Boshqa ID tanlang.', true);
+  try {
+    const { error } = await sb.from('books').upsert(row, { onConflict: 'id' });
+    if (error) throw error;
+    toast('Kitob saqlandi ✅');
+    $('bookForm').classList.add('hidden');
+    await loadBooks();
+  } catch (e) { fail(e); }
+};
+
+// ---------- so'z qo'shish ----------
+function fillWordBooks() {
+  const sel = $('wBook');
+  const prev = sel.value;
+  sel.innerHTML = books.length
+    ? books.map((b) => '<option value="' + esc(b.id) + '">' + esc(b.title) + ' (' + esc(b.id) + ')</option>').join('')
+    : '<option value="">— avval kitob qo\'shing —</option>';
+  if (books.some((b) => b.id === prev)) sel.value = prev;
+  fillUnits();
+}
+function fillUnits() {
+  const b = books.find((x) => x.id === $('wBook').value);
+  const sel = $('wUnit');
+  const prev = sel.value;
+  const n = b ? b.units : 0;
+  let html = '';
+  for (let i = 1; i <= n; i++) html += '<option value="' + i + '">' + i + '-bo\'lim</option>';
+  sel.innerHTML = html;
+  if (prev && Number(prev) <= n) sel.value = prev;
+  unitInfo();
+}
+async function unitInfo() {
+  const book = $('wBook').value; const unit = Number($('wUnit').value);
+  if (!book || !unit) { $('wInfo').textContent = ''; return; }
+  const { count, error } = await sb.from('words').select('idx', { count: 'exact', head: true }).eq('book_id', book).eq('unit', unit);
+  $('wInfo').textContent = error ? '' : ("Bu bo'limda hozir " + count + " ta so'z bor.");
+}
+$('wBook').onchange = fillUnits;
+$('wUnit').onchange = unitInfo;
+
+function parseWords(text) {
+  const out = [];
+  text.split(/\r?\n/).forEach((line, i) => {
+    if (!line.trim()) return;
+    let parts = line.includes('\t') ? line.split('\t') : line.split(';');
+    parts = parts.map((s) => s.trim());
+    if (parts.length > 4) parts = parts.slice(0, 3).concat([parts.slice(3).join(line.includes('\t') ? ' ' : '; ')]);
+    const [en = '', uz = '', ipa = '', ex = ''] = parts;
+    let err = '';
+    if (!en) err = "inglizcha so'z yo'q";
+    else if (!uz) err = "o'zbekcha tarjima yo'q";
+    out.push({ line: i + 1, en, uz, ipa, ex, err });
+  });
+  return out;
+}
+function preview() {
+  parsedWords = parseWords($('wText').value);
+  const bad = parsedWords.filter((w) => w.err).length;
+  if (!parsedWords.length) {
+    $('wPreview').innerHTML = '<div class="empty">Hech narsa yozilmagan.</div>';
+    $('wSendBtn').disabled = true;
+    return;
+  }
+  $('wPreview').innerHTML =
+    '<p class="small ' + (bad ? '' : 'muted') + '" style="' + (bad ? 'color:var(--bad)' : '') + '">' +
+    (bad ? bad + " ta qatorda xato bor — tuzating, keyin yuboring." : "Jami " + parsedWords.length + " ta so'z. Hammasi joyida ✅") + '</p>' +
+    '<table><tr><th>#</th><th>English</th><th>O\'zbekcha</th><th>Talaffuz</th><th>Misol</th><th></th></tr>' +
+    parsedWords.map((w, k) => '<tr class="' + (w.err ? 'err-row' : '') + '"><td>' + (k + 1) + '</td><td>' + esc(w.en) + '</td><td>' + esc(w.uz) +
+      '</td><td>' + esc(w.ipa) + '</td><td>' + esc(w.ex) + '</td><td class="small" style="color:var(--bad)">' +
+      (w.err ? w.line + '-qator: ' + esc(w.err) : '') + '</td></tr>').join('') + '</table>';
+  $('wSendBtn').disabled = bad > 0 || !$('wBook').value || !$('wUnit').value;
+}
+$('wPreviewBtn').onclick = preview;
+$('wText').addEventListener('input', () => { $('wSendBtn').disabled = true; });
+
+$('wLoadBtn').onclick = async () => {
+  const book = $('wBook').value; const unit = Number($('wUnit').value);
+  if (!book || !unit) return toast('Kitob va bo\'limni tanlang.', true);
+  try {
+    const { data, error } = await sb.from('words').select('en, uz, ipa, ex').eq('book_id', book).eq('unit', unit).order('idx');
+    if (error) throw error;
+    if (!data.length) return toast("Bu bo'limda hali so'z yo'q.");
+    if ($('wText').value.trim() && !confirm("Yozilgan matn o'chirilib, bo'limdagi so'zlar yuklanadi. Davom etasizmi?")) return;
+    $('wText').value = data.map((w) => [w.en, w.uz, w.ipa, w.ex].join(' ; ').replace(/( ; )+$/, '')).join('\n');
+    preview();
+  } catch (e) { fail(e); }
+};
+
+$('wSendBtn').onclick = async () => {
+  preview();
+  if ($('wSendBtn').disabled) return;
+  const book = $('wBook').value; const unit = Number($('wUnit').value);
+  const b = books.find((x) => x.id === book);
+  if (!confirm('«' + (b ? b.title : book) + '», ' + unit + "-bo'limga " + parsedWords.length +
+      " ta so'z yuboriladi. Bu bo'limdagi eski so'zlar almashtiriladi. Davom etasizmi?")) return;
+  $('wSendBtn').disabled = true;
+  try {
+    const rows = parsedWords.map((w, i) => ({ book_id: book, unit, idx: i, en: w.en, uz: w.uz, ipa: w.ipa, ex: w.ex }));
+    for (let i = 0; i < rows.length; i += 500) {
+      const { error } = await sb.from('words').upsert(rows.slice(i, i + 500), { onConflict: 'book_id,unit,idx' });
+      if (error) throw error;
+    }
+    const { error: delErr } = await sb.from('words').delete().eq('book_id', book).eq('unit', unit).gte('idx', rows.length);
+    if (delErr) throw delErr;
+    toast("✅ " + rows.length + " ta so'z ilovaga yuborildi.");
+    unitInfo();
+  } catch (e) { fail(e); } finally { $('wSendBtn').disabled = false; }
+};
+
+// ---------- guruhlar ----------
+async function loadGroups() {
+  const { data, error } = await sb.from('groups').select('*').order('active', { ascending: false }).order('sort').order('name');
+  if (error) throw error;
+  groups = data;
+  $('groupsBox').innerHTML = groups.length
+    ? '<table><tr><th>Nomi</th><th>Tartib</th><th>Holat</th><th></th></tr>' + groups.map((g) =>
+        '<tr><td><input data-gname="' + g.id + '" value="' + esc(g.name) + '"></td>' +
+        '<td style="width:90px"><input type="number" data-gsort="' + g.id + '" value="' + g.sort + '"></td>' +
+        '<td>' + (g.active ? '<span class="badge b-approved">Faol</span>' : '<span class="badge b-awaiting_receipt">O\'chirilgan</span>') + '</td>' +
+        '<td style="white-space:nowrap"><button class="sm" data-gsave="' + g.id + '">Saqlash</button> ' +
+        '<button class="ghost sm" data-gtoggle="' + g.id + '">' + (g.active ? "O'chirish" : 'Yoqish') + '</button></td></tr>').join('') + '</table>'
+    : '<div class="empty">Hali guruh yo\'q. Yuqorida nomini yozib, "+ Qo\'shish" ni bosing.</div>';
+}
+$('gAddBtn').onclick = async () => {
+  const name = $('gName').value.trim();
+  if (!name) return toast('Guruh nomini yozing.', true);
+  try {
+    const { error } = await sb.from('groups').insert({ name, sort: groups.length });
+    if (error) throw error;
+    $('gName').value = '';
+    toast("Guruh qo'shildi ✅");
+    await loadGroups();
+  } catch (e) { fail(e); }
+};
+$('groupsBox').addEventListener('click', async (ev) => {
+  const t = ev.target.closest('button');
+  if (!t) return;
+  try {
+    if (t.dataset.gsave) {
+      const id = t.dataset.gsave;
+      const name = document.querySelector('[data-gname="' + id + '"]').value.trim();
+      const sort = parseInt(document.querySelector('[data-gsort="' + id + '"]').value, 10) || 0;
+      if (!name) return toast('Guruh nomi bo\'sh bo\'lmasin.', true);
+      const { error } = await sb.from('groups').update({ name, sort }).eq('id', id);
+      if (error) throw error;
+      toast('Saqlandi ✅');
+    } else if (t.dataset.gtoggle) {
+      const g = groups.find((x) => x.id === t.dataset.gtoggle);
+      if (g.active && !confirm("«" + g.name + "» guruhini o'chirasizmi? Yangi o'quvchilar uni tanlay olmaydi (eski a'zolar qoladi).")) return;
+      const { error } = await sb.from('groups').update({ active: !g.active }).eq('id', g.id);
+      if (error) throw error;
+    }
+    await loadGroups();
+  } catch (e) { fail(e); }
+});
+
+// ---------- foydalanuvchilar ----------
+async function loadUsers() {
+  const q = $('uSearch').value.trim().replace(/[,()%*\\]/g, '');
+  let req = sb.from('profiles').select('id, nickname, avatar, premium_until, tg_username, created_at, groups(name)', { count: 'exact' })
+    .order('created_at', { ascending: false }).limit(300);
+  if (q) req = req.or('nickname.ilike.%' + q + '%,tg_username.ilike.%' + q + '%');
+  const { data, error, count } = await req;
+  if (error) throw error;
+  const today = tashkentToday();
+  $('uInfo').textContent = (q ? 'Topildi: ' : 'Jami: ') + count + ' ta' + (count > data.length ? ' (oxirgi ' + data.length + ' tasi ko\'rsatilgan)' : '');
+  $('usersBox').innerHTML = data.length
+    ? '<table><tr><th></th><th>Taxallus</th><th>Telegram</th><th>Guruh</th><th>Premium</th><th>Ro\'yxatdan o\'tgan</th><th></th></tr>' +
+      data.map((u) => {
+        const prem = u.premium_until && u.premium_until >= today;
+        return '<tr><td>' + esc(u.avatar) + '</td><td>' + esc(u.nickname) + '</td><td>' +
+          (u.tg_username ? '@' + esc(u.tg_username) : '<span class="muted">—</span>') + '</td><td>' +
+          (u.groups ? esc(u.groups.name) : '<span class="muted">—</span>') + '</td><td>' +
+          (prem ? '<span class="badge b-approved">' + dmy(u.premium_until) + ' gacha</span>' : '<span class="muted">yo\'q</span>') +
+          '</td><td class="small muted">' + dt(u.created_at) + '</td><td style="white-space:nowrap">' +
+          '<button class="sm" data-prem="' + u.id + '" data-nick="' + esc(u.nickname) + '">+ Premium</button>' +
+          (prem ? ' <button class="ghost sm" data-unprem="' + u.id + '" data-nick="' + esc(u.nickname) + '">Olib tashlash</button>' : '') +
+          '</td></tr>';
+      }).join('') + '</table>'
+    : '<div class="empty">Hech kim topilmadi.</div>';
+}
+$('uSearchBtn').onclick = () => loadUsers().catch(fail);
+$('uSearch').addEventListener('keydown', (ev) => { if (ev.key === 'Enter') loadUsers().catch(fail); });
+$('usersBox').addEventListener('click', async (ev) => {
+  const t = ev.target.closest('button');
+  if (!t) return;
+  try {
+    if (t.dataset.prem) {
+      const v = prompt(t.dataset.nick + ' uchun necha kunlik Premium berasiz?', '30');
+      if (v === null) return;
+      const days = parseInt(v, 10);
+      if (!(days >= 1 && days <= 3650)) return toast("Kun soni 1 dan 3650 gacha bo'lsin.", true);
+      const { data, error } = await sb.rpc('admin_grant_premium', { p_user: t.dataset.prem, p_days: days });
+      if (error) throw error;
+      toast('✅ Premium ' + dmy(data) + ' gacha yoqildi.');
+    } else if (t.dataset.unprem) {
+      if (!confirm(t.dataset.nick + ' dan Premium olib tashlansinmi?')) return;
+      const { error } = await sb.rpc('admin_grant_premium', { p_user: t.dataset.unprem, p_days: 0 });
+      if (error) throw error;
+      toast('Premium olib tashlandi.');
+    }
+    await Promise.all([loadUsers(), loadStats()]);
+  } catch (e) { fail(e); }
+});
+
+start().catch(fail);
+</script>
+</body>
+</html>
