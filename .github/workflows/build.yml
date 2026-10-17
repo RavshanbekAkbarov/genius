@@ -23,7 +23,12 @@ jobs:
       - run: flutter analyze
       - run: flutter test
       # Sinov uchun APK (debug kalit bilan imzolangan). Actions sahifasidan "genius-apk" ni yuklab, telefonga o'rnatiladi.
-      - run: flutter build apk --release
+      # Server manzili va ochiq (anon) kalit repo Variables'dan olinadi; bo'sh bo'lsa ilova serversiz ishlaydi.
+      - run: >-
+          flutter build apk --release
+          --dart-define=SUPABASE_URL=${{ vars.SUPABASE_URL }}
+          --dart-define=SUPABASE_ANON_KEY=${{ vars.SUPABASE_ANON_KEY }}
+          --dart-define=BOT_USERNAME=${{ vars.BOT_USERNAME || 'GeniusAuraBot' }}
       - uses: actions/upload-artifact@v4
         with:
           name: genius-apk

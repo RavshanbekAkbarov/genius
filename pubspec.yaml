@@ -40,7 +40,8 @@ dependencies:
   flutter_local_notifications: ^22.3.2
   timezone: ^0.11.2
   google_mobile_ads: ^9.1.0
-
+  supabase_flutter: ^2.18.3
+  url_launcher: ^6.3.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -27,6 +27,9 @@ class WordBank {
         k, (v as List).map((e) => Word.fromJson(e as Map<String, dynamic>)).toList()));
   }
 
-  static List<Word> unit(String book, int unit) => _data['$book|$unit'] ?? const [];
-  static Map<String, List<Word>> get all => _data;
+  /// Admin paneldan qo'shilgan markaz kitoblari so'zlari (serverdan keladi, telefonda saqlanadi).
+  static Map<String, List<Word>> remote = {};
+
+  static List<Word> unit(String book, int unit) => _data['$book|$unit'] ?? remote['$book|$unit'] ?? const [];
+  static Map<String, List<Word>> get all => {..._data, ...remote};
 }
