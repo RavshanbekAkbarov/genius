@@ -148,8 +148,6 @@ class AppState extends ChangeNotifier {
   bool loginSeen = false; // birinchi ochilishdagi kirish oynasi ko'rsatildimi
   String? account; // 'google' | 'telegram' | null
   String? accountLabel;
-  String? groupId;
-  String? groupName;
   int updatedAt = 0; // oxirgi o'zgarish vaqti (ms), server nusxasi bilan solishtirish uchun
 
   // ---------- saqlash ----------
@@ -205,7 +203,6 @@ class AppState extends ChangeNotifier {
         'loginSeen': loginSeen,
         'account': account,
         'accountLabel': accountLabel,
-        'group': groupId == null ? null : {'id': groupId, 'name': groupName},
         'updatedAt': updatedAt,
       };
 
@@ -246,16 +243,13 @@ class AppState extends ChangeNotifier {
     loginSeen = j['loginSeen'] == true;
     account = j['account'] as String?;
     accountLabel = j['accountLabel'] as String?;
-    final g = j['group'] as Map<String, dynamic>?;
-    groupId = g?['id'] as String?;
-    groupName = g?['name'] as String?;
     updatedAt = (j['updatedAt'] ?? 0) as int;
   }
 
   /// Serverga yuboriladigan nusxa: o'quv holati (hisob va qurilma sozlamalarisiz).
   Map<String, dynamic> progressJson() {
     final j = toJson();
-    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'group', 'voice', 'owned']) {
+    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'voice', 'owned']) {
       j.remove(k);
     }
     return j;
@@ -269,7 +263,6 @@ class AppState extends ChangeNotifier {
       'loginSeen': loginSeen,
       'account': account,
       'accountLabel': accountLabel,
-      'group': groupId == null ? null : {'id': groupId, 'name': groupName},
       'voice': voiceName == null ? null : {'name': voiceName, 'locale': voiceLocale},
       'owned': owned.toList(),
     };
@@ -755,7 +748,8 @@ class AppState extends ChangeNotifier {
     changed();
   }
 
-  // ---------- reyting ----------
+  // ---------- statistika ----------
+  /// [per]: 0 bugun, 1 hafta, 2 oy, 3 umumiy.
   int myScore(int per) {
     const days = [1, 7, 30, 99999];
     var n = 0;

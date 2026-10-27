@@ -10,24 +10,7 @@ import '../data/catalog.dart';
 import '../data/words.dart';
 import '../state/app_state.dart';
 
-/// Reytingdagi bitta qator.
-class LbRow {
-  final int rank;
-  final String nickname;
-  final String avatar;
-  final bool premium;
-  final int score;
-  final bool me;
-  const LbRow(this.rank, this.nickname, this.avatar, this.premium, this.score, this.me);
-}
-
-class Group {
-  final String id;
-  final String name;
-  const Group(this.id, this.name);
-}
-
-/// Server (Supabase): hisob, reyting, guruhlar, Premium, markaz kitoblari, progress nusxasi.
+/// Server (Supabase): hisob, Premium, markaz kitoblari, progress nusxasi.
 /// Server sozlanmagan yoki internet yo'q bo'lsa hamma chaqiruv jim o'tadi, ilova telefonda ishlayveradi.
 class Cloud {
   static bool _ready = false;
@@ -126,8 +109,6 @@ class Cloud {
     if (s != null) {
       s.account = null;
       s.accountLabel = null;
-      s.groupId = null;
-      s.groupName = null;
       s.premiumUntil = null;
       s.owned = {};
       s.refresh();
@@ -156,12 +137,7 @@ class Cloud {
         s.nickname = (p['nickname'] ?? s.nickname) as String;
         s.avatar = (p['avatar'] ?? s.avatar) as String;
         s.premiumUntil = p['premium_until'] as String?;
-        s.groupId = p['group_id'] as String?;
         if (p['tg_username'] != null && s.account == 'telegram') s.accountLabel = '@${p['tg_username']}';
-        if (s.groupId != null) {
-          final g = await _db.from('groups').select('name').eq('id', s.groupId!).maybeSingle();
-          s.groupName = g?['name'] as String?;
-        }
       }
       final bought = await _db.from('purchases').select('book_id');
       s.owned = {for (final r in bought) r['book_id'] as String};
@@ -238,39 +214,6 @@ class Cloud {
     } catch (e) {
       return "Serverga saqlanmadi: taxallus 2–20 harf bo'lsin";
     }
-  }
-
-  // ---------- reyting va guruhlar ----------
-  static Future<List<Group>> groups() async {
-    if (!enabled) return const [];
-    final rows = await _db.from('groups').select('id, name').eq('active', true).order('sort').order('name');
-    return [for (final r in rows) Group(r['id'] as String, r['name'] as String)];
-  }
-
-  static Future<String?> setGroup(Group g) async {
-    try {
-      await _db.rpc('set_group', params: {'p_group': g.id});
-      final s = _s!;
-      s.groupId = g.id;
-      s.groupName = g.name;
-      s.refresh();
-      return null;
-    } catch (e) {
-      return '$e'.contains('group_already_set')
-          ? "Guruh allaqachon tanlangan. O'zgartirish uchun o'qituvchingizga ayting."
-          : "Saqlanmadi, internetni tekshiring";
-    }
-  }
-
-  /// [scope]: 'group' yoki 'all'; [period]: 'day', 'week', 'month'.
-  static Future<List<LbRow>> leaderboard(String scope, String period) async {
-    await _pushNow();
-    final rows = await _db.rpc('leaderboard', params: {'p_scope': scope, 'p_period': period}) as List;
-    return [
-      for (final r in rows)
-        LbRow((r['rank'] as num).toInt(), (r['nickname'] ?? '') as String, (r['avatar'] ?? '🦁') as String,
-            r['premium'] == true, (r['score'] as num).toInt(), r['me'] == true),
-    ];
   }
 
   // ---------- to'lov ----------

@@ -43,7 +43,7 @@ void main() {
   testWidgets('bosh sahifa va bo\'limlar', (t) async {
     await show(t, const SizedBox());
     expect(find.text('Bugungi mashq'), findsOneWidget);
-    for (final tab in ['Kitoblar', 'Reyting', "Do'kon", 'Profil']) {
+    for (final tab in ['Kitoblar', "Do'kon", 'Profil']) {
       await t.tap(find.text(tab).last);
       await t.pump(const Duration(milliseconds: 400));
     }

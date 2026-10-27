@@ -135,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Btn('Hozircha kirmasdan boshlash', kind: BtnKind.text, onTap: skip),
             const SizedBox(height: 8),
             const Text(
-              "Telegram bilan kirsangiz to'lov ham shu hisobga bog'lanadi. Kirmasangiz ham ilova ishlaydi, faqat reyting va to'lov uchun hisob kerak.",
+              "Telegram bilan kirsangiz to'lov ham shu hisobga bog'lanadi. Kirmasangiz ham ilova ishlaydi, faqat to'lov uchun hisob kerak.",
               textAlign: TextAlign.center,
               style: TextStyle(color: C.mut, fontSize: 12),
             ),

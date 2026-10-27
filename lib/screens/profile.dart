@@ -12,7 +12,6 @@ import '../widgets/common.dart';
 import '../widgets/tools.dart';
 import 'home.dart';
 import 'login.dart';
-import 'rating.dart';
 import 'shell.dart';
 import 'streak.dart';
 
@@ -153,10 +152,6 @@ class _ProfileTabState extends State<ProfileTab> {
                     fg: prem ? const Color(0xFF052611) : C.onAc,
                   ),
                   onTap: () => push(context, const PremiumScreen())),
-              row('Guruh',
-                  leading: const Icon(Icons.groups_rounded, color: C.mut),
-                  sub: s.groupName ?? (Cloud.signedIn ? 'Tanlanmagan' : 'Hisobga kirgach tanlanadi'),
-                  onTap: Cloud.signedIn && s.groupId == null ? () => showGroupPicker(context) : null),
               row('Ovoz',
                   leading: const Icon(Icons.record_voice_over_rounded, color: C.mut),
                   sub: 'Talaffuz uchun ovozni tanlash',
@@ -326,7 +321,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
           decoration: const InputDecoration(hintText: 'Masalan: Sardor_07', counterText: ''),
         ),
         const SizedBox(height: 4),
-        const Text("Reytingda shu ko'rinadi. Haqiqiy ism va telefon raqami so'ralmaydi.",
+        const Text("Ilovada shu ko'rinadi. Haqiqiy ism va telefon raqami so'ralmaydi.",
             style: TextStyle(color: C.mut, fontSize: 12)),
         const SizedBox(height: 16),
         const Eyebrow('Kunlik maqsad'),
@@ -355,14 +350,6 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               trailing: Cloud.signedIn
                   ? null
                   : TextButton(onPressed: () => push(context, const LoginScreen()), child: const Text('Kirish')),
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: const Text('Guruh', style: TextStyle(fontWeight: FontWeight.w700)),
-              subtitle: Text(s.groupName ?? 'Tanlanmagan', style: const TextStyle(color: C.mut, fontSize: 12)),
-              trailing: Cloud.signedIn && s.groupId == null
-                  ? TextButton(onPressed: () => showGroupPicker(context), child: const Text('Tanlash'))
-                  : null,
             ),
             ListTile(
               contentPadding: EdgeInsets.zero,
@@ -474,7 +461,6 @@ class PremiumScreen extends StatelessWidget {
       ('Cheksiz mashq', "Bepulda kuniga $freeSessions ta mashq, Premiumda cheklov yo'q"),
       ('Internetsiz ishlaydi', 'Internet bo\'lmasa ham cheklovsiz mashq qilasiz'),
       ('Olovni reklamasiz saqlash', "O'tkazib yuborilgan kun uchun reklama ko'rish shart emas"),
-      ('Premium nishoni', 'Reytingda ismingiz yonida toj'),
     ];
     return Scaffold(
       appBar: const TopBar(title: 'Genius Premium'),

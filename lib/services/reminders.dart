@@ -47,7 +47,6 @@ class Reminders {
   static const eveningFire = ["{olov} kunlik olov sizdan bitta takror kutyapti 🔥"];
   static const late = [
     "Karnaychidan bitta puff, bor-yo'g'i 20 ta so'z 🎺 Olov o'chmasin endi!",
-    "Guruhdoshlaringiz reytingda o'tib ketyapti 👀 Bitta takror bilan joyingizni qaytarib oling!",
     "Uxlashdan oldin 5 daqiqa: olov ham, so'zlar ham saqlanib qoladi 🌙",
   ];
   static const lateFire = ["Oxirgi imkoniyat! {olov} kunlik olovingiz yarim tunda o'chadi 😱"];

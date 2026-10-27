@@ -9,7 +9,7 @@ Aura Academy o'quvchilari uchun inglizcha so'z yodlash ilovasi (Flutter: Android
 - **Takror:** 1 · 3 · 7 · 15 · 30 kunlik takrorlar, takror jadvali, "Bugungi takrorlar".
 - **Olov (streak):** o'tkazib yuborilgan kunni 3 ta reklama bilan saqlash. 20:00 da mashq qilinmasa "Marrangiz kuyadi" ogohlantirishi chiqadi.
 - **Limit va Premium:** bepulda kuniga 8 ta mashq, takrorlar doim bepul. Premium 10 000 so'm/oy, Telegram bot orqali (Click/Payme).
-- **Boshqa bo'limlar:** reyting, do'kon (IELTS kitoblari), do'st taklifi, ota-ona hisoboti, faollik jadvali.
+- **Boshqa bo'limlar:** do'kon (IELTS kitoblari), do'st taklifi, ota-ona hisoboti, faollik jadvali.
 
 Hamma ma'lumot telefonda saqlanadi (`shared_preferences`).
 
@@ -45,5 +45,5 @@ Har push'dan keyin GitHub Actions APK yig'adi: **Actions → Build → oxirgi is
 - [x] AdMob ulandi (`lib/services/ads.dart`): Android'da haqiqiy ID lar.
 - [ ] iOS uchun AdMob ilova va ID lar (`ads.dart`, `Info.plist`).
 - [x] Eslatmalar: `lib/services/reminders.dart`, qat'iy 09:00, 14:00, 20:00 (Toshkent vaqti).
-- [ ] Server (Railway): Telegram bot orqali Click/Payme to'lovini tasdiqlash, reyting, ota-ona hisoboti.
+- [ ] Server (Railway): Telegram bot orqali Click/Payme to'lovini tasdiqlash, ota-ona hisoboti.
 - [ ] Profil "Sinab ko'rish uchun" bo'limini (kunni surish) chiqarishdan oldin olib tashlash.

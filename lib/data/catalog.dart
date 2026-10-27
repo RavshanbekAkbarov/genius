@@ -96,20 +96,6 @@ const titles = <(int, String)>[
   (4000, "Lug'at ustasi"),
 ];
 
-/// Server ulanmaguncha reytingda ko'rinadigan namuna: [bugun, hafta, oy].
-const samplePeople = <(String, List<int>)>[
-  ('Madina R.', [38, 190, 720, 4100]),
-  ('Jasur T.', [31, 214, 650, 3820]),
-  ('Sevara K.', [27, 160, 700, 2950]),
-  ('Bekzod A.', [24, 140, 540, 2600]),
-  ('Dilnoza M.', [19, 120, 480, 2210]),
-  ('Sardor N.', [15, 98, 410, 1980]),
-  ('Malika Y.', [12, 85, 300, 1500]),
-  ('Otabek S.', [9, 60, 250, 1100]),
-  ('Nigora F.', [6, 44, 190, 870]),
-  ('Azizbek O.', [4, 30, 120, 640]),
-];
-
 const months = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
 const weekdays = ['Du', 'Se', 'Ch', 'Pa', 'Ju', 'Sh', 'Ya'];
 

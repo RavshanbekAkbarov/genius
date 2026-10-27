@@ -140,7 +140,6 @@
       <button data-tab="pay" class="on">To'lovlar</button>
       <button data-tab="books">Kitoblar</button>
       <button data-tab="words">So'z qo'shish</button>
-      <button data-tab="groups">Guruhlar</button>
       <button data-tab="users">Foydalanuvchilar</button>
     </nav>
 
@@ -201,16 +200,6 @@
       <div class="tablebox" id="wPreview" style="margin-top:14px"></div>
     </section>
 
-    <!-- GURUHLAR -->
-    <section id="tab-groups" class="card hidden">
-      <h2>Guruhlar</h2>
-      <div class="row">
-        <input id="gName" class="grow" placeholder="Yangi guruh nomi (masalan: A1 — ertalabki)" style="width:auto">
-        <button id="gAddBtn">+ Qo'shish</button>
-      </div>
-      <div class="tablebox" id="groupsBox" style="margin-top:12px"></div>
-    </section>
-
     <!-- FOYDALANUVCHILAR -->
     <section id="tab-users" class="card hidden">
       <h2>Foydalanuvchilar</h2>
@@ -242,7 +231,6 @@ const sb = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON
 
 const $ = (id) => document.getElementById(id);
 let books = [];
-let groups = [];
 let parsedWords = [];
 
 // ---------- yordamchilar ----------
@@ -347,7 +335,7 @@ document.querySelectorAll('nav.tabs button').forEach((b) => {
 async function refreshAll() {
   try {
     await loadBooks();
-    await Promise.all([loadStats(), loadPayments(), loadGroups(), loadUsers()]);
+    await Promise.all([loadStats(), loadPayments(), loadUsers()]);
   } catch (e) { fail(e); }
 }
 
@@ -598,57 +586,10 @@ $('wSendBtn').onclick = async () => {
   } catch (e) { fail(e); } finally { $('wSendBtn').disabled = false; }
 };
 
-// ---------- guruhlar ----------
-async function loadGroups() {
-  const { data, error } = await sb.from('groups').select('*').order('active', { ascending: false }).order('sort').order('name');
-  if (error) throw error;
-  groups = data;
-  $('groupsBox').innerHTML = groups.length
-    ? '<table><tr><th>Nomi</th><th>Tartib</th><th>Holat</th><th></th></tr>' + groups.map((g) =>
-        '<tr><td><input data-gname="' + g.id + '" value="' + esc(g.name) + '"></td>' +
-        '<td style="width:90px"><input type="number" data-gsort="' + g.id + '" value="' + g.sort + '"></td>' +
-        '<td>' + (g.active ? '<span class="badge b-approved">Faol</span>' : '<span class="badge b-awaiting_receipt">O\'chirilgan</span>') + '</td>' +
-        '<td style="white-space:nowrap"><button class="sm" data-gsave="' + g.id + '">Saqlash</button> ' +
-        '<button class="ghost sm" data-gtoggle="' + g.id + '">' + (g.active ? "O'chirish" : 'Yoqish') + '</button></td></tr>').join('') + '</table>'
-    : '<div class="empty">Hali guruh yo\'q. Yuqorida nomini yozib, "+ Qo\'shish" ni bosing.</div>';
-}
-$('gAddBtn').onclick = async () => {
-  const name = $('gName').value.trim();
-  if (!name) return toast('Guruh nomini yozing.', true);
-  try {
-    const { error } = await sb.from('groups').insert({ name, sort: groups.length });
-    if (error) throw error;
-    $('gName').value = '';
-    toast("Guruh qo'shildi ✅");
-    await loadGroups();
-  } catch (e) { fail(e); }
-};
-$('groupsBox').addEventListener('click', async (ev) => {
-  const t = ev.target.closest('button');
-  if (!t) return;
-  try {
-    if (t.dataset.gsave) {
-      const id = t.dataset.gsave;
-      const name = document.querySelector('[data-gname="' + id + '"]').value.trim();
-      const sort = parseInt(document.querySelector('[data-gsort="' + id + '"]').value, 10) || 0;
-      if (!name) return toast('Guruh nomi bo\'sh bo\'lmasin.', true);
-      const { error } = await sb.from('groups').update({ name, sort }).eq('id', id);
-      if (error) throw error;
-      toast('Saqlandi ✅');
-    } else if (t.dataset.gtoggle) {
-      const g = groups.find((x) => x.id === t.dataset.gtoggle);
-      if (g.active && !confirm("«" + g.name + "» guruhini o'chirasizmi? Yangi o'quvchilar uni tanlay olmaydi (eski a'zolar qoladi).")) return;
-      const { error } = await sb.from('groups').update({ active: !g.active }).eq('id', g.id);
-      if (error) throw error;
-    }
-    await loadGroups();
-  } catch (e) { fail(e); }
-});
-
 // ---------- foydalanuvchilar ----------
 async function loadUsers() {
   const q = $('uSearch').value.trim().replace(/[,()%*\\]/g, '');
-  let req = sb.from('profiles').select('id, nickname, avatar, premium_until, tg_username, created_at, groups(name)', { count: 'exact' })
+  let req = sb.from('profiles').select('id, nickname, avatar, premium_until, tg_username, created_at', { count: 'exact' })
     .order('created_at', { ascending: false }).limit(300);
   if (q) req = req.or('nickname.ilike.%' + q + '%,tg_username.ilike.%' + q + '%');
   const { data, error, count } = await req;
@@ -656,12 +597,11 @@ async function loadUsers() {
   const today = tashkentToday();
   $('uInfo').textContent = (q ? 'Topildi: ' : 'Jami: ') + count + ' ta' + (count > data.length ? ' (oxirgi ' + data.length + ' tasi ko\'rsatilgan)' : '');
   $('usersBox').innerHTML = data.length
-    ? '<table><tr><th></th><th>Taxallus</th><th>Telegram</th><th>Guruh</th><th>Premium</th><th>Ro\'yxatdan o\'tgan</th><th></th></tr>' +
+    ? '<table><tr><th></th><th>Taxallus</th><th>Telegram</th><th>Premium</th><th>Ro\'yxatdan o\'tgan</th><th></th></tr>' +
       data.map((u) => {
         const prem = u.premium_until && u.premium_until >= today;
         return '<tr><td>' + esc(u.avatar) + '</td><td>' + esc(u.nickname) + '</td><td>' +
           (u.tg_username ? '@' + esc(u.tg_username) : '<span class="muted">—</span>') + '</td><td>' +
-          (u.groups ? esc(u.groups.name) : '<span class="muted">—</span>') + '</td><td>' +
           (prem ? '<span class="badge b-approved">' + dmy(u.premium_until) + ' gacha</span>' : '<span class="muted">yo\'q</span>') +
           '</td><td class="small muted">' + dt(u.created_at) + '</td><td style="white-space:nowrap">' +
           '<button class="sm" data-prem="' + u.id + '" data-nick="' + esc(u.nickname) + '">+ Premium</button>' +

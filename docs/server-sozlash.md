@@ -1,6 +1,6 @@
 # Genius serverini sozlash bo'yicha qo'llanma
 
-Bu qo'llanma Genius ilovasining "server" qismini (reyting, guruhlar, Telegram orqali kirish, to'lovlar va
+Bu qo'llanma Genius ilovasining "server" qismini (hisob va progress nusxasi, Telegram orqali kirish, to'lovlar va
 admin panel) ishga tushirish uchun. Dasturchi bo'lish shart emas — qadamlarni tartib bilan bajaring.
 Hammasi bepul. Taxminan 1 soat vaqt ketadi.
 
@@ -163,7 +163,6 @@ Yana bir nechta qiymat tayyorlab qo'ying:
    - **To'lovlar** — chekni ko'rib, ✅ Tasdiqlash yoki ❌ Rad etish;
    - **Kitoblar** — markaz kitoblarini qo'shish, narx qo'yish, ilovada ko'rsatish;
    - **So'z qo'shish** — kitob va bo'limni tanlab, so'zlarni qo'yish va **Ilovaga yuborish**;
-   - **Guruhlar** — o'quv guruhlarini qo'shish (o'quvchilar ilovada o'z guruhini tanlaydi);
    - **Foydalanuvchilar** — ro'yxat, qidiruv va qo'lda Premium berish.
 
 > To'lov cheklari Telegram'da ham sizga keladi — u yerdagi ✅ / ❌ tugmalari ham ishlaydi.

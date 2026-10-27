@@ -7,10 +7,9 @@ import '../widgets/book_drawer.dart';
 import 'books.dart';
 import 'home.dart';
 import 'profile.dart';
-import 'rating.dart';
 import 'shop.dart';
 
-/// Asosiy oyna: 5 ta bo'lim, ☰ menyusi va eng pastda reklama banneri.
+/// Asosiy oyna: 4 ta bo'lim, ☰ menyusi va eng pastda reklama banneri.
 class Shell extends StatefulWidget {
   const Shell({super.key});
   @override
@@ -35,7 +34,6 @@ class ShellState extends State<Shell> {
         body: IndexedStack(index: tab, children: const [
           HomeTab(),
           BooksTab(),
-          RatingTab(),
           ShopTab(),
           ProfileTab(),
         ]),
@@ -58,7 +56,6 @@ class ShellState extends State<Shell> {
               destinations: const [
                 NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded), label: 'Asosiy'),
                 NavigationDestination(icon: Icon(Icons.menu_book_outlined), selectedIcon: Icon(Icons.menu_book_rounded), label: 'Kitoblar'),
-                NavigationDestination(icon: Icon(Icons.emoji_events_outlined), selectedIcon: Icon(Icons.emoji_events_rounded), label: 'Reyting'),
                 NavigationDestination(icon: Icon(Icons.shopping_bag_outlined), selectedIcon: Icon(Icons.shopping_bag_rounded), label: "Do'kon"),
                 NavigationDestination(icon: Icon(Icons.person_outline_rounded), selectedIcon: Icon(Icons.person_rounded), label: 'Profil'),
               ],
@@ -95,7 +92,7 @@ class BurgerButton extends StatelessWidget {
       );
 }
 
-/// Bo'limlar uchun ko'k sarlavha (Kitoblar, Reyting, Do'kon, Profil).
+/// Bo'limlar uchun ko'k sarlavha (Kitoblar, Do'kon, Profil).
 class TabHeader extends StatelessWidget {
   final String title, subtitle;
   final Widget? bottom;
