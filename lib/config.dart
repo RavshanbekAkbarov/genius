@@ -1,5 +1,5 @@
 /// Server (Supabase) va Telegram bot sozlamalari.
-/// Bo'sh bo'lsa ilova serversiz ishlaydi: kirish, reyting va to'lov o'chiq, qolgani telefonda.
+/// Bo'sh bo'lsa ilova serversiz ishlaydi: kirish va to'lov o'chiq, qolgani telefonda.
 /// anon kalit ochiq kalit: u ilova ichida bo'lishi uchun mo'ljallangan (maxfiy service_role kaliti emas).
 const supabaseUrl = String.fromEnvironment('SUPABASE_URL');
 const supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');

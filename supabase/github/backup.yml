@@ -46,7 +46,7 @@ jobs:
 
       - name: Keep-alive (loyiha to'xtab qolmasligi uchun)
         run: |
-          curl -fsS "${SUPABASE_URL%/}/rest/v1/groups?select=id&limit=1" \
+          curl -fsS "${SUPABASE_URL%/}/rest/v1/books?select=id&limit=1" \
             -H "apikey: ${SUPABASE_ANON_KEY}" -o /dev/null -w "REST javobi: %{http_code}\n"
 
       - name: PostgreSQL 17 klientini o'rnatish

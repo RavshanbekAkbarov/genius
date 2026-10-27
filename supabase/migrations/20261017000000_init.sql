@@ -5,19 +5,10 @@
 -- JADVALLAR
 -- ============================================================
 
-create table if not exists public.groups (
-  id uuid primary key default gen_random_uuid(),
-  name text not null,
-  active boolean not null default true,
-  sort int not null default 0,
-  created_at timestamptz default now()
-);
-
 create table if not exists public.profiles (
   id uuid primary key references auth.users on delete cascade,
   nickname text not null check (char_length(nickname) between 2 and 20),
   avatar text not null default '🦁',
-  group_id uuid null references public.groups,
   premium_until date null,
   tg_id bigint unique null,
   tg_username text null,
@@ -191,7 +182,6 @@ create trigger on_auth_user_created
 -- RLS
 -- ============================================================
 
-alter table public.groups enable row level security;
 alter table public.profiles enable row level security;
 alter table public.daily_scores enable row level security;
 alter table public.user_state enable row level security;
@@ -201,14 +191,6 @@ alter table public.purchases enable row level security;
 alter table public.payments enable row level security;
 alter table public.tg_logins enable row level security;
 alter table public.admins enable row level security;
-
--- groups
-drop policy if exists groups_select_active on public.groups;
-create policy groups_select_active on public.groups
-  for select to anon, authenticated using (active);
-drop policy if exists groups_admin_all on public.groups;
-create policy groups_admin_all on public.groups
-  for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
 -- profiles
 drop policy if exists profiles_select_own on public.profiles;
@@ -281,18 +263,15 @@ create policy admins_select_own on public.admins
 -- ============================================================
 
 revoke all on table
-  public.groups, public.profiles, public.daily_scores, public.user_state, public.books,
+  public.profiles, public.daily_scores, public.user_state, public.books,
   public.words, public.purchases, public.payments, public.tg_logins, public.admins
 from anon, authenticated;
 
 grant all on table
-  public.groups, public.profiles, public.daily_scores, public.user_state, public.books,
+  public.profiles, public.daily_scores, public.user_state, public.books,
   public.words, public.purchases, public.payments, public.tg_logins, public.admins
 to service_role;
 grant usage, select on all sequences in schema public to service_role;
-
-grant select on public.groups to anon, authenticated;
-grant insert, update, delete on public.groups to authenticated;
 
 grant select on public.profiles to authenticated;
 -- faqat nickname va avatar ni o'zgartirish mumkin
@@ -316,34 +295,6 @@ grant select on public.admins to authenticated;
 -- ============================================================
 -- RPC FUNKSIYALAR
 -- ============================================================
-
--- Guruhni bir marta tanlash
-create or replace function public.set_group(p_group uuid)
-returns void
-language plpgsql
-security definer
-set search_path = public
-as $$
-declare
-  v_uid uuid := auth.uid();
-  v_cur uuid;
-begin
-  if v_uid is null then
-    raise exception 'not_authenticated';
-  end if;
-  select group_id into v_cur from public.profiles where id = v_uid for update;
-  if not found then
-    raise exception 'no_profile';
-  end if;
-  if v_cur is not null then
-    raise exception 'group_already_set';
-  end if;
-  if not exists (select 1 from public.groups where id = p_group and active) then
-    raise exception 'group_not_found';
-  end if;
-  update public.profiles set group_id = p_group where id = v_uid;
-end;
-$$;
 
 -- To'lov kodi yaratish ('premium' yoki 'book:<id>')
 create or replace function public.create_pay_code(p_kind text)
@@ -456,70 +407,6 @@ begin
 end;
 $$;
 
--- Reyting: p_scope 'group' | 'all', p_period 'day' | 'week' | 'month'
-create or replace function public.leaderboard(p_scope text, p_period text)
-returns table (rank int, nickname text, avatar text, premium boolean, score int, me boolean)
-language plpgsql
-stable
-security definer
-set search_path = public
-as $$
-#variable_conflict use_column
-declare
-  v_uid uuid := auth.uid();
-  v_today date := (now() at time zone 'Asia/Tashkent')::date;
-  v_from date;
-  v_group uuid;
-begin
-  if v_uid is null then
-    raise exception 'not_authenticated';
-  end if;
-
-  v_from := case p_period
-    when 'day' then v_today
-    when 'week' then date_trunc('week', v_today::timestamp)::date
-    when 'month' then date_trunc('month', v_today::timestamp)::date
-    else null
-  end;
-  if v_from is null then
-    raise exception 'bad_period';
-  end if;
-
-  if p_scope = 'group' then
-    select pr.group_id into v_group from public.profiles pr where pr.id = v_uid;
-    if v_group is null then
-      return;
-    end if;
-  elsif p_scope is distinct from 'all' then
-    raise exception 'bad_scope';
-  end if;
-
-  return query
-  with s as (
-    select d.user_id, sum(d.score)::int as total
-    from public.daily_scores d
-    join public.profiles pr on pr.id = d.user_id
-    where d.day between v_from and v_today
-      and (v_group is null or pr.group_id = v_group)
-    group by d.user_id
-    having sum(d.score) > 0
-  ), r as (
-    select s.user_id, s.total,
-           (rank() over (order by s.total desc))::int as rk,
-           row_number() over (order by s.total desc, s.user_id) as rn
-    from s
-  )
-  select r.rk, pr.nickname, pr.avatar,
-         coalesce(pr.premium_until >= v_today, false),
-         r.total,
-         r.user_id = v_uid
-  from r
-  join public.profiles pr on pr.id = r.user_id
-  where r.rn <= 50 or r.user_id = v_uid
-  order by r.rn;
-end;
-$$;
-
 -- Admin: qo'lda Premium berish (p_days kun). p_days = 0 bo'lsa Premium olib tashlanadi.
 create or replace function public.admin_grant_premium(p_user uuid, p_days int)
 returns date
@@ -618,19 +505,15 @@ revoke all on function public.is_admin() from public, anon;
 revoke all on function public.can_read_book(text) from public;
 revoke all on function public._rand_code(int) from public, anon, authenticated;
 revoke all on function public.handle_new_user() from public, anon, authenticated;
-revoke all on function public.set_group(uuid) from public, anon;
 revoke all on function public.create_pay_code(text) from public, anon;
 revoke all on function public.submit_day(date, int, int, int, int) from public, anon;
-revoke all on function public.leaderboard(text, text) from public, anon;
 revoke all on function public.admin_grant_premium(uuid, int) from public, anon;
 revoke all on function public.decide_payment(bigint, boolean) from public, anon, authenticated;
 
 grant execute on function public.is_admin() to authenticated, service_role;
 grant execute on function public.can_read_book(text) to anon, authenticated, service_role;
-grant execute on function public.set_group(uuid) to authenticated;
 grant execute on function public.create_pay_code(text) to authenticated;
 grant execute on function public.submit_day(date, int, int, int, int) to authenticated;
-grant execute on function public.leaderboard(text, text) to authenticated;
 grant execute on function public.admin_grant_premium(uuid, int) to authenticated;
 grant execute on function public.decide_payment(bigint, boolean) to service_role;
 grant execute on function public._rand_code(int) to service_role;
