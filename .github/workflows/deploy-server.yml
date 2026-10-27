@@ -1,0 +1,95 @@
+# Supabase serverini yangilash: SQL migratsiyalar, edge funksiyalar, secret'lar va Telegram webhook.
+# Repo secret'lari hali qo'shilmagan bo'lsa, ish xatosiz o'tkazib yuboriladi (qizil bo'lmaydi).
+name: Deploy server
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "supabase/**"
+
+concurrency:
+  group: deploy-server
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.c.outputs.ready }}
+    steps:
+      - id: c
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -n "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::SUPABASE_ACCESS_TOKEN secret'i yo'q - server yangilanishi o'tkazib yuborildi."
+          fi
+
+  deploy:
+    needs: check
+    if: needs.check.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+      TG_WEBHOOK_SECRET: ${{ secrets.TG_WEBHOOK_SECRET }}
+      ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+      CLICK_QR_URL: ${{ secrets.CLICK_QR_URL }}
+      PAY_TEXT: ${{ secrets.PAY_TEXT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Loyihaga ulanish
+        run: |
+          if [ -z "$SUPABASE_PROJECT_REF" ] || [ -z "$SUPABASE_DB_PASSWORD" ]; then
+            echo "::error::SUPABASE_PROJECT_REF va SUPABASE_DB_PASSWORD secret'larini qo'shing."
+            exit 1
+          fi
+          supabase link --project-ref "$SUPABASE_PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
+
+      - name: Ma'lumotlar bazasi (migratsiyalar)
+        run: supabase db push --password "$SUPABASE_DB_PASSWORD"
+
+      - name: Funksiya secret'lari
+        run: |
+          args=()
+          for name in TG_BOT_TOKEN TG_WEBHOOK_SECRET ADMIN_CHAT_ID CLICK_QR_URL PAY_TEXT; do
+            value="${!name}"
+            if [ -n "$value" ]; then
+              args+=("$name=$value")
+            fi
+          done
+          if [ ${#args[@]} -gt 0 ]; then
+            supabase secrets set --project-ref "$SUPABASE_PROJECT_REF" "${args[@]}"
+          else
+            echo "Secret'lar yo'q, o'tkazib yuborildi."
+          fi
+
+      - name: Edge funksiyalar
+        run: |
+          supabase functions deploy bot --project-ref "$SUPABASE_PROJECT_REF" --no-verify-jwt
+          supabase functions deploy tg-login --project-ref "$SUPABASE_PROJECT_REF" --no-verify-jwt
+          supabase functions deploy admin --project-ref "$SUPABASE_PROJECT_REF"
+
+      - name: Telegram webhook
+        run: |
+          if [ -z "$TG_BOT_TOKEN" ] || [ -z "$TG_WEBHOOK_SECRET" ]; then
+            echo "TG_BOT_TOKEN yoki TG_WEBHOOK_SECRET yo'q - webhook o'rnatilmadi."
+            exit 0
+          fi
+          curl -fsS "https://api.telegram.org/bot${TG_BOT_TOKEN}/setWebhook" \
+            --data-urlencode "url=https://${SUPABASE_PROJECT_REF}.supabase.co/functions/v1/bot" \
+            --data-urlencode "secret_token=${TG_WEBHOOK_SECRET}" \
+            --data-urlencode 'allowed_updates=["message","callback_query"]'
+          echo

@@ -6,8 +6,11 @@ const intervals = [1, 3, 7, 15, 30];
 /// Bepul foydalanuvchi uchun kunlik mashq soni. Takrorlar bu limitga kirmaydi.
 const freeSessions = 8;
 
-/// Kunlik maqsad (so'z).
-const dailyGoal = 20;
+/// Kunlik maqsad (so'z), foydalanuvchi profilda o'zgartirmaguncha.
+const defaultDailyGoal = 20;
+
+/// Internetsiz kuniga ruxsat etilgan mashqlar (Premium'da cheklov yo'q).
+const offlineSessions = 3;
 
 /// Premium narxi, so'm/oy.
 const premiumPrice = 10000;
@@ -25,9 +28,38 @@ class Book {
   final List<Color> colors;
   final BookGroup group;
 
-  const Book(this.id, this.badge, this.title, this.fixedUnits, this.colors, this.group);
+  /// Markaz kitobi narxi (so'm). 0 bo'lsa bepul.
+  final int price;
+
+  /// Serverdan (admin paneldan) kelgan kitob.
+  final bool remote;
+
+  const Book(this.id, this.badge, this.title, this.fixedUnits, this.colors, this.group,
+      {this.price = 0, this.remote = false});
 
   bool get isMine => id == myBookId;
+  bool get paid => price > 0;
+
+  factory Book.fromJson(Map<String, dynamic> j) => Book(
+        j['id'] as String,
+        (j['badge'] ?? 'A1') as String,
+        (j['title'] ?? '') as String,
+        (j['units'] ?? 20) as int,
+        [_hex(j['color1'] as String?, 0xFFFFB347), _hex(j['color2'] as String?, 0xFFF07B1D)],
+        BookGroup.center,
+        price: (j['price'] ?? 0) as int,
+        remote: true,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'badge': badge,
+        'title': title,
+        'units': fixedUnits,
+        'color1': '#${(colors[0].toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0')}',
+        'color2': '#${(colors[1].toARGB32() & 0xFFFFFF).toRadixString(16).padLeft(6, '0')}',
+        'price': price,
+      };
   LinearGradient get gradient =>
       LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: colors);
 }
@@ -40,28 +72,20 @@ const books = <Book>[
   Book('e4', '4', 'Essential 4', 30, [Color(0xFFB35BE0), Color(0xFF7A2FA8)], BookGroup.essential),
   Book('e5', '5', 'Essential 5', 30, [Color(0xFF2FA3A0), Color(0xFF1A6F6D)], BookGroup.essential),
   Book('e6', '6', 'Essential 6', 30, [Color(0xFF3A5FD9), Color(0xFF1F3596)], BookGroup.essential),
-  Book('beg', 'A1', 'Beginner', 20, [Color(0xFFFFB347), Color(0xFFF07B1D)], BookGroup.center),
-  Book('fou', 'A2', 'Foundation', 20, [Color(0xFFFF8A65), Color(0xFFD84B2A)], BookGroup.center),
-  Book('pre', 'B1', 'Pre-IELTS', 20, [Color(0xFF7E8CFF), Color(0xFF4B55C9)], BookGroup.center),
 ];
 
-Book bookById(String id) => books.firstWhere((b) => b.id == id, orElse: () => books[1]);
-
-class IeltsBook {
-  final String id;
-  final String badge;
-  final String title;
-  final List<Color> colors;
-  final int readPrice, wordsPrice, bothPrice;
-  const IeltsBook(this.id, this.badge, this.title, this.colors, this.readPrice, this.wordsPrice, this.bothPrice);
-  LinearGradient get gradient =>
-      LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: colors);
+Color _hex(String? s, int fallback) {
+  final v = int.tryParse((s ?? '').replaceFirst('#', ''), radix: 16);
+  return Color(v == null ? fallback : 0xFF000000 | v);
 }
 
-const ieltsBooks = <IeltsBook>[
-  IeltsBook('ie1', 'I', 'IELTS kitobi 1', [Color(0xFFC9334F), Color(0xFF7D1530)], 39000, 19000, 49000),
-  IeltsBook('ie2', 'II', 'IELTS kitobi 2', [Color(0xFF304A6E), Color(0xFF16243A)], 39000, 19000, 49000),
-];
+/// Markaz kitoblari: admin paneldan qo'shiladi va serverdan keladi.
+List<Book> remoteBooks = [];
+
+List<Book> get allBooks => [...books, ...remoteBooks];
+List<Book> booksOf(BookGroup g) => allBooks.where((b) => b.group == g).toList();
+
+Book bookById(String id) => allBooks.firstWhere((b) => b.id == id, orElse: () => books[1]);
 
 /// XP bo'yicha unvonlar.
 const titles = <(int, String)>[
@@ -70,20 +94,6 @@ const titles = <(int, String)>[
   (500, 'Bilimdon'),
   (1500, 'Ustoz'),
   (4000, "Lug'at ustasi"),
-];
-
-/// Reyting uchun namuna ishtirokchilar: [bugun, hafta, oy, umumiy]. Haqiqiy reyting serverdan keladi.
-const samplePeople = <(String, List<int>)>[
-  ('Madina R.', [38, 190, 720, 4100]),
-  ('Jasur T.', [31, 214, 650, 3820]),
-  ('Sevara K.', [27, 160, 700, 2950]),
-  ('Bekzod A.', [24, 140, 540, 2600]),
-  ('Dilnoza M.', [19, 120, 480, 2210]),
-  ('Sardor N.', [15, 98, 410, 1980]),
-  ('Malika Y.', [12, 85, 300, 1500]),
-  ('Otabek S.', [9, 60, 250, 1100]),
-  ('Nigora F.', [6, 44, 190, 870]),
-  ('Azizbek O.', [4, 30, 120, 640]),
 ];
 
 const months = ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyn', 'Iyl', 'Avg', 'Sen', 'Okt', 'Noy', 'Dek'];
@@ -98,3 +108,14 @@ String money(int n) {
   }
   return b.toString();
 }
+
+const monthsFull = [
+  'yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentabr', 'oktabr', 'noyabr', 'dekabr'
+];
+const weekdaysFull = ['dushanba', 'seshanba', 'chorshanba', 'payshanba', 'juma', 'shanba', 'yakshanba'];
+
+/// "17-oktabr, juma"
+String dayLabel(DateTime d) => '${d.day}-${monthsFull[d.month - 1]}, ${weekdaysFull[d.weekday - 1]}';
+
+/// "17-okt"
+String shortDate(DateTime d) => '${d.day}-${months[d.month - 1].toLowerCase()}';

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,9 @@ import '../theme.dart';
 class Ads {
   static bool _ready = false;
   static InterstitialAd? _interstitial;
+  static bool _loading = false;
+  static int _fails = 0;
+  static Timer? _retry;
 
   static const _ids = {
     TargetPlatform.android: (
@@ -42,21 +46,45 @@ class Ads {
     }
   }
 
+  /// Katta reklamani oldindan yuklash. Yuklanmasa 5, 10, 20, 40, 60 soniyadan keyin qayta uriniladi.
   static void _loadInterstitial() {
-    if (!_ready) return;
+    if (!_ready || _loading || _interstitial != null) return;
+    _loading = true;
+    _retry?.cancel();
     InterstitialAd.load(
       adUnitId: _unit!.interstitial,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (ad) => _interstitial = ad,
-        onAdFailedToLoad: (e) => debugPrint('Interstitial yuklanmadi: $e'),
+        onAdLoaded: (ad) {
+          _interstitial = ad;
+          _loading = false;
+          _fails = 0;
+        },
+        onAdFailedToLoad: (e) {
+          debugPrint('Interstitial yuklanmadi: $e');
+          _loading = false;
+          _fails++;
+          _retry = Timer(Duration(seconds: min(60, 5 * (1 << min(_fails - 1, 4)))), _loadInterstitial);
+        },
       ),
     );
   }
 
+  /// Mashq boshlanganda chaqiriladi: tugaguncha reklama tayyor bo'lib turadi.
+  static void preload() => _loadInterstitial();
+
   /// Mashq tugagach yoki olovni saqlashda ko'rsatiladigan katta reklama.
-  /// Reklama tayyor bo'lmasa: [fallback] bo'lsa 5 soniyalik ichki oyna, aks holda hech narsa.
-  static Future<void> showInterstitial(BuildContext context, {String label = 'Reklama', bool fallback = false}) {
+  /// Tayyor bo'lmasa 3 soniyagacha kutiladi. Baribir bo'lmasa: [fallback] bo'lsa 5 soniyalik
+  /// ichki oyna, aks holda hech narsa.
+  static Future<void> showInterstitial(BuildContext context, {String label = 'Reklama', bool fallback = false}) async {
+    if (_interstitial == null && _ready) {
+      _loadInterstitial();
+      final end = DateTime.now().add(const Duration(seconds: 3));
+      while (_interstitial == null && DateTime.now().isBefore(end)) {
+        await Future<void>.delayed(const Duration(milliseconds: 200));
+      }
+    }
+    if (!context.mounted) return;
     final ad = _interstitial;
     if (ad != null) {
       _interstitial = null;
@@ -75,8 +103,8 @@ class Ads {
       return done.future;
     }
     _loadInterstitial();
-    if (!fallback) return Future.value();
-    return Navigator.of(context, rootNavigator: true).push(PageRouteBuilder(
+    if (!fallback) return;
+    await Navigator.of(context, rootNavigator: true).push(PageRouteBuilder(
       opaque: true,
       pageBuilder: (_, _, _) => _Interstitial(label: label),
       transitionsBuilder: (_, a, _, child) => FadeTransition(opacity: a, child: child),
@@ -163,6 +191,8 @@ class _AdBannerState extends State<AdBanner> {
   BannerAd? _ad;
   bool _loaded = false;
   bool _failed = false;
+  int _tries = 0;
+  Timer? _retry;
 
   @override
   void initState() {
@@ -171,6 +201,12 @@ class _AdBannerState extends State<AdBanner> {
       _failed = true;
       return;
     }
+    _load();
+  }
+
+  /// Banner yuklanmasa 20 soniyadan keyin yana uriniladi (3 martagacha).
+  void _load() {
+    _tries++;
     _ad = BannerAd(
       size: AdSize.banner,
       adUnitId: Ads._unit!.banner,
@@ -182,7 +218,14 @@ class _AdBannerState extends State<AdBanner> {
         onAdFailedToLoad: (ad, e) {
           ad.dispose();
           _ad = null;
-          if (mounted) setState(() => _failed = true);
+          if (!mounted) return;
+          if (_tries < 3) {
+            _retry = Timer(const Duration(seconds: 20), () {
+              if (mounted) _load();
+            });
+          } else {
+            setState(() => _failed = true);
+          }
         },
       ),
     )..load();
@@ -190,6 +233,7 @@ class _AdBannerState extends State<AdBanner> {
 
   @override
   void dispose() {
+    _retry?.cancel();
     _ad?.dispose();
     super.dispose();
   }

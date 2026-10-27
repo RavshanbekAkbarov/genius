@@ -1,0 +1,90 @@
+# Genius zaxira nusxasi (backup) — SHABLON.
+#
+# MUHIM: bu faylni ochiq (public) genius repozitoriyasida ISHLATMANG!
+# Uni alohida YOPIQ (Private) repozitoriyaga (masalan: genius-backup) shu yo'lga qo'ying:
+#   .github/workflows/backup.yml
+# Sababi: zaxira faylida barcha foydalanuvchilar, ularning email/Telegram ma'lumotlari va
+# to'lovlar tarixi bo'ladi. Ochiq repoda buni hamma yuklab olishi mumkin bo'lib qoladi.
+#
+# Yopiq repoga qo'shiladigan secret'lar (Settings → Secrets and variables → Actions):
+#   SUPABASE_URL       — https://<ref>.supabase.co
+#   SUPABASE_ANON_KEY  — anon (publishable) kalit
+#   SUPABASE_DB_URL    — Connect → "Session pooler" ulanish satri (parol bilan), masalan:
+#                        postgresql://postgres.<ref>:<PAROL>@aws-0-eu-central-1.pooler.supabase.com:5432/postgres
+#                        ("Direct connection" emas: GitHub serverlari IPv6 ga ulana olmaydi)
+#
+# Har kuni:
+#   1) Supabase'ga kichik so'rov yuboradi — bepul loyiha 7 kun harakatsiz qolsa to'xtatiladi (pause), bu uni "uyg'oq" saqlaydi;
+#   2) bazaning to'liq nusxasini backups/YYYY-MM-DD.sql.gz ga yozadi va oxirgi 30 tasini saqlaydi.
+#
+# Qayta tiklash (kerak bo'lsa) — buni mutaxassis yoki Claude yordamida qiling:
+#   gunzip -c backups/KUN.sql.gz | psql "<YANGI BAZA URL>"
+#   so'ng genius repodagi migratsiyani qayta ishga tushiring (auth.users dagi trigger tiklanadi).
+name: Genius backup
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # har kuni 02:00 (Toshkent vaqti)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Keep-alive (loyiha to'xtab qolmasligi uchun)
+        run: |
+          curl -fsS "${SUPABASE_URL%/}/rest/v1/books?select=id&limit=1" \
+            -H "apikey: ${SUPABASE_ANON_KEY}" -o /dev/null -w "REST javobi: %{http_code}\n"
+
+      - name: PostgreSQL 17 klientini o'rnatish
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y -qq postgresql-client-17
+
+      - name: Zaxira nusxa olish
+        run: |
+          set -o pipefail
+          mkdir -p backups
+          DAY=$(TZ=Asia/Tashkent date +%F)
+          PGDUMP=/usr/lib/postgresql/17/bin/pg_dump
+          {
+            echo "-- Genius zaxira: $DAY"
+            # Avval auth foydalanuvchilari: public jadvallar ularga bog'langan (foreign key)
+            echo "-- 1-qism: auth foydalanuvchilari (faqat ma'lumot)"
+            "$PGDUMP" "$SUPABASE_DB_URL" --data-only --table=auth.users --table=auth.identities --no-owner --no-privileges
+            echo "-- 2-qism: public sxemasi (jadvallar + ma'lumotlar)"
+            "$PGDUMP" "$SUPABASE_DB_URL" --schema=public --no-owner --no-privileges
+          } | gzip -9 > "backups/$DAY.sql.gz"
+          ls -lh "backups/$DAY.sql.gz"
+
+      - name: Eski nusxalarni o'chirish (oxirgi 30 tasi qoladi)
+        run: |
+          ls -1 backups/*.sql.gz | sort | head -n -30 | xargs -r git rm -q --ignore-unmatch
+          ls -1 backups/*.sql.gz | sort | head -n -30 | xargs -r rm -f
+
+      - name: Commit
+        run: |
+          git config user.name "genius-backup-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A backups
+          if git diff --cached --quiet; then
+            echo "O'zgarish yo'q."
+            exit 0
+          fi
+          git commit -q -m "Zaxira: $(TZ=Asia/Tashkent date +%F)"
+          git push

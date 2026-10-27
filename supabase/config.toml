@@ -1,0 +1,13 @@
+# Genius Supabase sozlamalari (supabase CLI uchun)
+project_id = "genius"
+
+[functions.bot]
+# Telegram webhook: JWT yo'q, o'rniga X-Telegram-Bot-Api-Secret-Token tekshiriladi
+verify_jwt = false
+
+[functions.tg-login]
+# Ilova hali tizimga kirmagan holatda chaqiradi
+verify_jwt = false
+
+[functions.admin]
+verify_jwt = true
