@@ -265,7 +265,7 @@ class _HomeTabState extends State<HomeTab> {
                 width: 56,
                 height: 56,
                 decoration: const BoxDecoration(color: C.gold, shape: BoxShape.circle),
-                child: const Icon(Icons.play_arrow_rounded, color: Color(0xFF241800), size: 36),
+                child: const Icon(Icons.bolt_rounded, color: Color(0xFF241800), size: 36),
               ),
               const SizedBox(width: 14),
               Expanded(

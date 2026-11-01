@@ -130,7 +130,7 @@ class StudyScreen extends StatefulWidget {
 
 class _StudyScreenState extends State<StudyScreen> {
   Session get ss => widget.session;
-  final pages = PageController(viewportFraction: .8);
+  final pages = PageController(viewportFraction: .86);
   final answer = TextEditingController();
   final answerFocus = FocusNode();
   ({String value, bool ok})? answered;
@@ -269,14 +269,14 @@ class _StudyScreenState extends State<StudyScreen> {
     return Column(children: [
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Text('Kartani bosing: aylanadi · suring: keyingi va oldingi karta',
+        child: Text("Kartani bosing: aylanadi · inglizcha so'zni bosing: talaffuz",
             textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
       ),
       const SizedBox(height: 12),
       Expanded(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 380),
+            constraints: const BoxConstraints(maxHeight: 560),
             child: PageView.builder(
               controller: pages,
               itemCount: ss.deck.length,
@@ -448,8 +448,6 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
     if (!widget.active) return;
     back = !back;
     back ? anim.forward() : anim.reverse();
-    final enNow = widget.reverse ? back : !back;
-    if (enNow) Speech.speak(widget.item.word.en);
   }
 
   @override
@@ -503,25 +501,48 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
                     letterSpacing: .9,
                     color: Colors.white.withValues(alpha: .75))),
           ),
-          if (en)
-            IconButton(
-              tooltip: 'Talaffuz',
-              onPressed: () => Speech.speak(w.en),
-              icon: const Icon(Icons.volume_up_rounded, color: Colors.white),
-            )
-          else
-            const SizedBox(height: 48),
+          const SizedBox(height: 48),
         ]),
         Expanded(
           child: Center(
             child: SingleChildScrollView(
               padding: const EdgeInsets.only(right: 10),
               child: Column(mainAxisSize: MainAxisSize.min, children: [
-                Text(en ? w.en : w.uz, textAlign: TextAlign.center, style: display(30 * f, color: Colors.white)),
-                if (en && w.ipa.isNotEmpty) ...[
-                  const SizedBox(height: 8),
-                  Text(w.ipa, style: TextStyle(fontSize: 15 * f, color: Colors.white70)),
-                ],
+                if (en)
+                  // Inglizcha so'z va talaffuz belgisini bossa o'qiladi; kartaning boshqa joyini bossa aylanadi.
+                  Semantics(
+                    button: true,
+                    label: 'Talaffuz',
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onTap: widget.active ? () => Speech.speak(w.en) : null,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(children: [
+                          Text(w.en, textAlign: TextAlign.center, style: display(32 * f, color: Colors.white)),
+                          const SizedBox(height: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+                            decoration: BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.circular(20)),
+                            child: Row(mainAxisSize: MainAxisSize.min, children: [
+                              const Icon(Icons.volume_up_rounded, size: 20, color: Colors.white),
+                              if (w.ipa.isNotEmpty) ...[
+                                const SizedBox(width: 6),
+                                Flexible(
+                                  child: Text(w.ipa,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 15 * f, color: Colors.white, fontWeight: FontWeight.w700)),
+                                ),
+                              ],
+                            ]),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  )
+                else
+                  Text(w.uz, textAlign: TextAlign.center, style: display(32 * f, color: Colors.white)),
                 if (isBack && w.ex.isNotEmpty) ...[
                   const SizedBox(height: 12),
                   Text(w.ex,

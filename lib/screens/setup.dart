@@ -85,8 +85,19 @@ class _SetupScreenState extends State<SetupScreen> {
     final cnt = pool(s).length;
     return Scaffold(
       appBar: TopBar(title: 'Mashq qilish', subtitle: b.title, book: b, actions: const [VoiceButton()]),
-      bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
-      body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
+      // Boshlash tugmasi doim pastda ko'rinib turadi (skroll shart emas).
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+            child: Btn("Boshlash · $cnt so'z",
+                onTap: cnt == 0 ? null : () => startSession(context, ordered(s, pool(s)), review: false, typing: typing)),
+          ),
+          if (!s.isPremium) const AdBanner(),
+        ]),
+      ),
+      body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 16), children: [
         AppCard(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
@@ -95,9 +106,9 @@ class _SetupScreenState extends State<SetupScreen> {
             ]),
             const SizedBox(height: 12),
             GridView.count(
-              crossAxisCount: 6,
-              mainAxisSpacing: 9,
-              crossAxisSpacing: 9,
+              crossAxisCount: 8,
+              mainAxisSpacing: 7,
+              crossAxisSpacing: 7,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
@@ -140,9 +151,6 @@ class _SetupScreenState extends State<SetupScreen> {
           ]),
         ),
         const SizedBox(height: 14),
-        Btn("Boshlash · $cnt so'z",
-            onTap: cnt == 0 ? null : () => startSession(context, ordered(s, pool(s)), review: false, typing: typing)),
-        const SizedBox(height: 12),
         Text(
           s.isPremium ? 'Premium: mashqlar cheklanmagan' : 'Bugun ${s.sessionsLeft}/$freeSessions mashq qoldi',
           textAlign: TextAlign.center,
@@ -215,13 +223,13 @@ class _SetupScreenState extends State<SetupScreen> {
               shape: BoxShape.circle,
               color: bg,
               border: Border.all(
-                  color: on && done ? C.good : (part ? C.good.withValues(alpha: .7) : Colors.transparent), width: 2.5),
+                  color: on && done ? C.good : (part ? C.good.withValues(alpha: .7) : Colors.transparent), width: 2),
             ),
             alignment: Alignment.center,
             child: Text('$u',
                 style: TextStyle(
                     fontWeight: FontWeight.w900,
-                    fontSize: 15,
+                    fontSize: 13,
                     color: on ? C.onAc : (done ? const Color(0xFF052611) : C.fg))),
           ),
         ),
