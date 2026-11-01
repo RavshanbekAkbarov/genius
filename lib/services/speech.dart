@@ -1,3 +1,9 @@
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:audioplayers/audioplayers.dart';
+import 'package:crypto/crypto.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
 /// Telefondagi bitta inglizcha ovoz.
@@ -16,6 +22,8 @@ class Speech {
   static String? _voice;
   static String? _voiceLocale;
   static bool? _uz;
+  static Set<String>? _uzFiles;
+  static final AudioPlayer _player = AudioPlayer();
 
   /// Odatdagi tezlik (flutter_tts da 0.5 oddiy tezlik).
   static const baseRate = 0.45;
@@ -60,8 +68,41 @@ class Speech {
     }
   }
 
-  /// O'zbekcha o'qish (faqat telefonda o'zbek ovozi bo'lsa).
+  /// Ilova ichidagi o'zbekcha ovoz fayli nomi (tool/uz_audio.py dagi key() bilan bir xil).
+  static String uzAudioKey(String text) =>
+      sha1.convert(utf8.encode(text.trim().replaceAll(RegExp(r'\s+'), ' '))).toString().substring(0, 12);
+
+  static Future<Set<String>> _uzAudio() async {
+    if (_uzFiles != null) return _uzFiles!;
+    try {
+      final m = await AssetManifest.loadFromAssetBundle(rootBundle);
+      _uzFiles = m.listAssets().where((a) => a.startsWith('assets/audio/uz/') && a.endsWith('.mp3')).toSet();
+    } catch (_) {
+      _uzFiles = {};
+    }
+    return _uzFiles!;
+  }
+
+  /// Bu o'zbekcha matn uchun ilovada tayyor ovoz bormi.
+  static Future<bool> hasUzAudio(String text) async =>
+      (await _uzAudio()).contains('assets/audio/uz/${uzAudioKey(text)}.mp3');
+
+  /// O'zbekcha o'qish: avval ilova ichidagi yozib olingan ovoz, bo'lmasa telefonning o'zbek ovozi (bo'lsa).
   static Future<void> speakUz(String text, {double speed = 1.0}) async {
+    if (await hasUzAudio(text)) {
+      try {
+        await _tts.stop();
+        await _player.stop();
+        await _player.setPlaybackRate(speed);
+        final done = _player.onPlayerComplete.first;
+        await _player.play(AssetSource('audio/uz/${uzAudioKey(text)}.mp3'));
+        await done.timeout(const Duration(seconds: 10));
+        return;
+      } catch (_) {
+        // Fayl o'ynamasa telefon ovoziga o'tamiz.
+      }
+    }
+    if (!await hasUzbek()) return;
     try {
       await _init();
       await _tts.stop();
@@ -79,8 +120,12 @@ class Speech {
   static Future<void> stop() async {
     try {
       await _tts.stop();
+      await _player.stop();
     } catch (_) {}
   }
+
+  /// O'zbekcha o'qish mumkinmi: ilovada yozib olingan ovozlar yoki telefonda o'zbek ovozi bor.
+  static Future<bool> canSpeakUz() async => (await _uzAudio()).isNotEmpty || await hasUzbek();
 
   /// Telefonda o'zbek tilidagi ovoz bormi.
   static Future<bool> hasUzbek() async {

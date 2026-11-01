@@ -32,7 +32,7 @@ class _ListenScreenState extends State<ListenScreen> {
     final s = AppScope.read(context);
     selected.add(s.nextUnit(widget.bookId) ?? 1);
     _rebuild(s);
-    Speech.hasUzbek().then((v) {
+    Speech.canSpeakUz().then((v) {
       if (mounted) setState(() => hasUz = v);
     });
   }
@@ -82,7 +82,7 @@ class _ListenScreenState extends State<ListenScreen> {
     final gen = ++_gen;
     setState(() => playing = true);
     final s = AppScope.read(context);
-    final uz = hasUz ?? await Speech.hasUzbek();
+    final uz = hasUz ?? await Speech.canSpeakUz();
     while (mounted && gen == _gen && i < queue.length) {
       final w = queue[i].word;
       for (var r = 0; r < s.listenRepeat && gen == _gen; r++) {
@@ -132,9 +132,9 @@ class _ListenScreenState extends State<ListenScreen> {
             ]),
             const SizedBox(height: 10),
             GridView.count(
-              crossAxisCount: 6,
-              mainAxisSpacing: 8,
-              crossAxisSpacing: 8,
+              crossAxisCount: 8,
+              mainAxisSpacing: 7,
+              crossAxisSpacing: 7,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
