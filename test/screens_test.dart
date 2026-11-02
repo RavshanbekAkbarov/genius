@@ -62,7 +62,7 @@ void main() {
     final w = s.words('e1', 4);
     final list = [for (var i = 0; i < 3; i++) CardItem(wkey('e1', 4, i), 'e1', 4, w[i])];
     await show(t, StudyScreen(session: Session(list, review: false, typing: false, reverse: false)));
-    await t.tap(find.byType(FlipCard).first);
+    await t.tap(find.text('Aylantirish').first);
     await t.pump(const Duration(milliseconds: 600));
     await t.tap(find.text('Oson'));
     await t.pump(const Duration(milliseconds: 600));

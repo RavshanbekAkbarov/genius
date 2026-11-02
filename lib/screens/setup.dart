@@ -106,9 +106,9 @@ class _SetupScreenState extends State<SetupScreen> {
             ]),
             const SizedBox(height: 12),
             GridView.count(
-              crossAxisCount: 8,
-              mainAxisSpacing: 7,
-              crossAxisSpacing: 7,
+              crossAxisCount: 6,
+              mainAxisSpacing: 9,
+              crossAxisSpacing: 9,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
@@ -229,7 +229,7 @@ class _SetupScreenState extends State<SetupScreen> {
             child: Text('$u',
                 style: TextStyle(
                     fontWeight: FontWeight.w900,
-                    fontSize: 13,
+                    fontSize: 15,
                     color: on ? C.onAc : (done ? const Color(0xFF052611) : C.fg))),
           ),
         ),
