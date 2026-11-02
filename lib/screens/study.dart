@@ -269,7 +269,7 @@ class _StudyScreenState extends State<StudyScreen> {
     return Column(children: [
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Text("Kartani bosing: aylanadi · inglizcha so'zni bosing: talaffuz",
+        child: Text("Inglizcha so'zni bosing: talaffuz",
             textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
       ),
       const SizedBox(height: 12),
@@ -452,28 +452,22 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      label: 'Karta: aylantirish',
-      child: GestureDetector(
-        onTap: flip,
-        child: AnimatedBuilder(
-          animation: anim,
-          builder: (_, _) {
-            final a = Curves.easeInOut.transform(anim.value) * pi;
-            final showBack = a > pi / 2;
-            return Transform(
-              alignment: Alignment.center,
-              transform: Matrix4.identity()
-                ..setEntry(3, 2, .0012)
-                ..rotateY(a),
-              child: showBack
-                  ? Transform(alignment: Alignment.center, transform: Matrix4.rotationY(pi), child: _side(true))
-                  : _side(false),
-            );
-          },
-        ),
-      ),
+    // Karta faqat pastdagi "Aylantirish" tugmasi bosilganda aylanadi.
+    return AnimatedBuilder(
+      animation: anim,
+      builder: (_, _) {
+        final a = Curves.easeInOut.transform(anim.value) * pi;
+        final showBack = a > pi / 2;
+        return Transform(
+          alignment: Alignment.center,
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, .0012)
+            ..rotateY(a),
+          child: showBack
+              ? Transform(alignment: Alignment.center, transform: Matrix4.rotationY(pi), child: _side(true))
+              : _side(false),
+        );
+      },
     );
   }
 
@@ -490,7 +484,7 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
         border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: 2),
         boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 18, offset: Offset(0, 8))],
       ),
-      padding: const EdgeInsets.fromLTRB(18, 8, 8, 14),
+      padding: const EdgeInsets.fromLTRB(18, 8, 18, 16),
       child: Column(children: [
         Row(children: [
           Expanded(
@@ -506,10 +500,9 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
         Expanded(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.only(right: 10),
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 if (en)
-                  // Inglizcha so'z va talaffuz belgisini bossa o'qiladi; kartaning boshqa joyini bossa aylanadi.
+                  // Inglizcha so'z va talaffuz belgisini bossa o'qiladi.
                   Semantics(
                     button: true,
                     label: 'Talaffuz',
@@ -554,7 +547,22 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
             ),
           ),
         ),
-        Icon(Icons.threesixty_rounded, color: Colors.white.withValues(alpha: .5), size: 22),
+        SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: FilledButton.icon(
+            onPressed: widget.active ? flip : null,
+            style: FilledButton.styleFrom(
+              backgroundColor: Colors.white.withValues(alpha: .16),
+              disabledBackgroundColor: Colors.white.withValues(alpha: .08),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+            ),
+            icon: const Icon(Icons.threesixty_rounded),
+            label: const Text('Aylantirish'),
+          ),
+        ),
       ]),
     );
   }

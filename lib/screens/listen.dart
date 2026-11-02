@@ -132,9 +132,9 @@ class _ListenScreenState extends State<ListenScreen> {
             ]),
             const SizedBox(height: 10),
             GridView.count(
-              crossAxisCount: 8,
-              mainAxisSpacing: 7,
-              crossAxisSpacing: 7,
+              crossAxisCount: 6,
+              mainAxisSpacing: 9,
+              crossAxisSpacing: 9,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
