@@ -269,7 +269,7 @@ class _StudyScreenState extends State<StudyScreen> {
     return Column(children: [
       const Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Text("Inglizcha so'zni bosing: talaffuz",
+        child: Text("Inglizcha tomonini bosing: talaffuz",
             textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
       ),
       const SizedBox(height: 12),
@@ -476,39 +476,39 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
     final en = widget.reverse ? isBack : !isBack;
     final f = widget.scale;
     final g = widget.grade;
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        gradient: C.grad,
-        borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: 2),
-        boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 18, offset: Offset(0, 8))],
-      ),
-      padding: const EdgeInsets.fromLTRB(18, 8, 18, 16),
-      child: Column(children: [
-        Row(children: [
+    // Inglizcha tomonning istalgan joyini bossa o'qiladi ("Aylantirish" tugmasi bundan mustasno).
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: en && widget.active ? () => Speech.speak(w.en) : null,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: C.grad,
+          borderRadius: BorderRadius.circular(26),
+          border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: 2),
+          boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 18, offset: Offset(0, 8))],
+        ),
+        padding: const EdgeInsets.fromLTRB(18, 8, 18, 16),
+        child: Column(children: [
+          Row(children: [
+            Expanded(
+              child: Text(en ? 'INGLIZCHA' : "O'ZBEKCHA",
+                  style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: .9,
+                      color: Colors.white.withValues(alpha: .75))),
+            ),
+            const SizedBox(height: 48),
+          ]),
           Expanded(
-            child: Text(en ? 'INGLIZCHA' : "O'ZBEKCHA",
-                style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: .9,
-                    color: Colors.white.withValues(alpha: .75))),
-          ),
-          const SizedBox(height: 48),
-        ]),
-        Expanded(
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                if (en)
-                  // Inglizcha so'z va talaffuz belgisini bossa o'qiladi.
-                  Semantics(
-                    button: true,
-                    label: 'Talaffuz',
-                    child: GestureDetector(
-                      behavior: HitTestBehavior.opaque,
-                      onTap: widget.active ? () => Speech.speak(w.en) : null,
+            child: Center(
+              child: SingleChildScrollView(
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  if (en)
+                    Semantics(
+                      button: true,
+                      label: 'Talaffuz',
                       child: Padding(
                         padding: const EdgeInsets.all(8),
                         child: Column(children: [
@@ -532,38 +532,38 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
                           ),
                         ]),
                       ),
-                    ),
-                  )
-                else
-                  Text(w.uz, textAlign: TextAlign.center, style: display(32 * f, color: Colors.white)),
-                if (isBack && w.ex.isNotEmpty) ...[
-                  const SizedBox(height: 12),
-                  Text(w.ex,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontSize: 14 * f, color: Colors.white.withValues(alpha: .8), fontStyle: FontStyle.italic)),
-                ],
-              ]),
+                    )
+                  else
+                    Text(w.uz, textAlign: TextAlign.center, style: display(32 * f, color: Colors.white)),
+                  if (isBack && w.ex.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    Text(w.ex,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 14 * f, color: Colors.white.withValues(alpha: .8), fontStyle: FontStyle.italic)),
+                  ],
+                ]),
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          width: double.infinity,
-          height: 50,
-          child: FilledButton.icon(
-            onPressed: widget.active ? flip : null,
-            style: FilledButton.styleFrom(
-              backgroundColor: Colors.white.withValues(alpha: .16),
-              disabledBackgroundColor: Colors.white.withValues(alpha: .08),
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-              textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+          SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: FilledButton.icon(
+              onPressed: widget.active ? flip : null,
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.white.withValues(alpha: .16),
+                disabledBackgroundColor: Colors.white.withValues(alpha: .08),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+              ),
+              icon: const Icon(Icons.threesixty_rounded),
+              label: const Text('Aylantirish'),
             ),
-            icon: const Icon(Icons.threesixty_rounded),
-            label: const Text('Aylantirish'),
           ),
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 }
