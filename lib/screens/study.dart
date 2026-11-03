@@ -299,8 +299,21 @@ class _StudyScreenState extends State<StudyScreen> {
           ),
         ),
       ),
+      // Baholash tugmalari reklamadan uzoqroq, bosh barmoq yetadigan joyda.
+      Padding(
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+        child: Row(children: [
+          Expanded(
+              child: _gradeBtn('Qiyin', ss.review ? 'ertaga yana' : "yana ko'rsatiladi", C.bad, g == false,
+                  () => grade(false))),
+          const SizedBox(width: 12),
+          Expanded(
+              child:
+                  _gradeBtn('Oson', ss.review ? 'keyingi bosqich' : 'yodladim', C.good, g == true, () => grade(true))),
+        ]),
+      ),
       const Padding(
-        padding: EdgeInsets.fromLTRB(16, 14, 16, 0),
+        padding: EdgeInsets.fromLTRB(16, 12, 16, 22),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Icon(Icons.touch_app_rounded, size: 16, color: C.mut),
           SizedBox(width: 6),
@@ -310,18 +323,6 @@ class _StudyScreenState extends State<StudyScreen> {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
           ),
-        ]),
-      ),
-      Padding(
-        padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
-        child: Row(children: [
-          Expanded(
-              child: _gradeBtn('Qiyin', ss.review ? 'ertaga yana' : "yana ko'rsatiladi", C.bad, g == false,
-                  () => grade(false))),
-          const SizedBox(width: 12),
-          Expanded(
-              child:
-                  _gradeBtn('Oson', ss.review ? 'keyingi bosqich' : 'yodladim', C.good, g == true, () => grade(true))),
         ]),
       ),
     ]);
