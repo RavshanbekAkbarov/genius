@@ -271,7 +271,7 @@ class _StudyScreenState extends State<StudyScreen> {
       Expanded(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 440),
+            constraints: const BoxConstraints(maxHeight: 600),
             child: PageView.builder(
               controller: pages,
               itemCount: ss.deck.length,
