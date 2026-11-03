@@ -39,7 +39,7 @@ class BooksTab extends StatelessWidget {
     Widget h(String t) => Padding(padding: const EdgeInsets.fromLTRB(0, 14, 0, 10), child: Text(t, style: display(17)));
     final center = booksOf(BookGroup.center);
     return ListView(padding: EdgeInsets.zero, children: [
-      const TabHeader(title: 'Kitoblar', subtitle: 'Genius'),
+      const TabHeader(title: 'Kitoblar', subtitle: "O'qiyotgan kitobingizni tanlang"),
       Padding(
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [

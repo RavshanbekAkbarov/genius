@@ -256,7 +256,7 @@ class _StudyScreenState extends State<StudyScreen> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(6),
             child: LinearProgressIndicator(
-                value: done / ss.deck.length, minHeight: 7, color: C.gold, backgroundColor: C.sf2),
+                value: done / ss.deck.length, minHeight: 8, color: C.good, backgroundColor: C.sf2),
           ),
         ),
         Expanded(child: ss.typing ? _typing(s) : _cards(s)),
@@ -276,7 +276,7 @@ class _StudyScreenState extends State<StudyScreen> {
       Expanded(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 560),
+            constraints: const BoxConstraints(maxHeight: 480),
             child: PageView.builder(
               controller: pages,
               itemCount: ss.deck.length,
@@ -320,16 +320,32 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 
   Widget _gradeBtn(String t, String sub, Color c, bool chosen, VoidCallback onTap) => Material(
-        color: chosen ? c.withValues(alpha: .22) : C.sf,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18), side: BorderSide(color: c, width: 2)),
+        color: chosen ? c.withValues(alpha: .30) : c.withValues(alpha: .12),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(R.lg),
+            side: BorderSide(color: chosen ? c : c.withValues(alpha: .35), width: chosen ? 2 : 1.5)),
         child: InkWell(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(R.lg),
           onTap: onTap,
           child: SizedBox(
-            height: 62,
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(t, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17)),
-              Text(sub, style: const TextStyle(color: C.mut, fontSize: 12)),
+            height: 64,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Container(
+                width: 30,
+                height: 30,
+                decoration: BoxDecoration(color: c, shape: BoxShape.circle),
+                child: Icon(c == C.good ? Icons.check_rounded : Icons.close_rounded, color: C.bg, size: 20),
+              ),
+              const SizedBox(width: 10),
+              Flexible(
+                child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(t, style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17, color: c)),
+                  Text(sub,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+                ]),
+              ),
             ]),
           ),
         ),
@@ -483,10 +499,13 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          gradient: C.grad,
-          borderRadius: BorderRadius.circular(26),
-          border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: 2),
-          boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 18, offset: Offset(0, 8))],
+          gradient: en ? C.grad : const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color(0xFF7A5CFF), Color(0xFF4B3BC9), Color(0xFF2D2496)]),
+          borderRadius: BorderRadius.circular(R.xl),
+          border: Border.all(color: g == null ? Colors.white12 : (g ? C.good : C.bad), width: g == null ? 1 : 3),
+          boxShadow: [BoxShadow(color: C.acDeep.withValues(alpha: .35), blurRadius: 30, offset: const Offset(0, 14))],
         ),
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 16),
         child: Column(children: [
@@ -556,7 +575,7 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
                 disabledBackgroundColor: Colors.white.withValues(alpha: .08),
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                textStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+                textStyle: const TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.w800, fontSize: 16),
               ),
               icon: const Icon(Icons.threesixty_rounded),
               label: const Text('Aylantirish'),

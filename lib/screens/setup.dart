@@ -138,10 +138,12 @@ class _SetupScreenState extends State<SetupScreen> {
             Wrap(spacing: 6, runSpacing: 6, children: [
               for (final o in WordOrder.values)
                 ChoiceChip(
-                  label: Text(orderLabels[o]!, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800)),
+                  label: Text(orderLabels[o]!,
+                      style: TextStyle(
+                          fontSize: 12.5, fontWeight: FontWeight.w800, color: order == o ? Colors.white : C.fg)),
                   selected: order == o,
+                  showCheckmark: false,
                   visualDensity: VisualDensity.compact,
-                  selectedColor: C.ac.withValues(alpha: .25),
                   onSelected: (_) => setState(() => order = o),
                 ),
             ]),
@@ -166,7 +168,7 @@ class _SetupScreenState extends State<SetupScreen> {
   Widget _modeTile(String label, IconData icon, bool on, VoidCallback onTap) => Material(
         color: on ? C.ac.withValues(alpha: .16) : C.sf,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16), side: BorderSide(color: on ? C.ac : C.ln, width: on ? 2 : 1)),
+            borderRadius: BorderRadius.circular(R.md), side: BorderSide(color: on ? C.ac : C.ln, width: on ? 2 : 1)),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
           onTap: onTap,
@@ -203,7 +205,7 @@ class _SetupScreenState extends State<SetupScreen> {
     final on = selected.contains(u);
     final done = w > 0 && l == w;
     final part = l > 0 && !done;
-    final bg = on ? C.ac : (done ? C.good : C.sf2);
+    final bg = on ? C.ac : (done ? C.good.withValues(alpha: .18) : C.sf2);
     return Semantics(
       button: true,
       selected: on,
@@ -230,7 +232,7 @@ class _SetupScreenState extends State<SetupScreen> {
                 style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 15,
-                    color: on ? C.onAc : (done ? const Color(0xFF052611) : C.fg))),
+                    color: on ? C.onAc : (done ? C.good : C.fg))),
           ),
         ),
       ),

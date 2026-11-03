@@ -26,15 +26,23 @@ class BookBadge extends StatelessWidget {
     final fs = size * (book.badge.length > 1 ? .36 : .5);
     return Container(
       width: size,
-      height: size * 1.3,
+      height: size * 1.28,
       decoration: BoxDecoration(
         gradient: book.gradient,
-        borderRadius: BorderRadius.circular(6),
-        boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 6, offset: Offset(0, 2))],
+        borderRadius: BorderRadius.circular(size * .22),
+        boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 8, offset: Offset(0, 3))],
       ),
       child: Stack(children: [
-        Positioned(left: 0, top: 0, bottom: 0, width: 4, child: Container(color: Colors.black26)),
-        Center(child: Text(book.badge, style: display(fs, color: Colors.white, weight: FontWeight.w700))),
+        Positioned(
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: size * .14,
+            child: DecoratedBox(
+                decoration: BoxDecoration(
+                    color: Colors.black26,
+                    borderRadius: BorderRadius.horizontal(left: Radius.circular(size * .22))))),
+        Center(child: Text(book.badge, style: display(fs, color: Colors.white))),
       ]),
     );
   }
@@ -52,43 +60,73 @@ class BookCover extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 92,
+      width: 100,
       child: GestureDetector(
         onTap: onTap,
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Container(
-            height: 124,
-            padding: const EdgeInsets.all(9),
+            height: 132,
             decoration: BoxDecoration(
               gradient: gradient,
-              borderRadius: BorderRadius.circular(11),
-              boxShadow: const [BoxShadow(color: Colors.black45, blurRadius: 16, offset: Offset(0, 6))],
+              borderRadius: BorderRadius.circular(R.md),
+              boxShadow: const [BoxShadow(color: Colors.black54, blurRadius: 18, offset: Offset(0, 8))],
             ),
             child: Stack(children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(badge, style: display(30, color: Colors.white, weight: FontWeight.w700)),
-                Text(title.toUpperCase(),
-                    style: const TextStyle(fontSize: 9, letterSpacing: .4, fontWeight: FontWeight.w800, color: Colors.white)),
-              ]),
+              // Kitob umurtqasi va yaltiroq.
+              Positioned(
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 7,
+                  child: DecoratedBox(
+                      decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: .22),
+                          borderRadius: const BorderRadius.horizontal(left: Radius.circular(R.md))))),
+              Positioned(
+                  right: -30,
+                  top: -30,
+                  child: Container(
+                      width: 90,
+                      height: 90,
+                      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: .10)))),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(badge, style: display(32, color: Colors.white)),
+                      Text(title,
+                          maxLines: 2,
+                          style: const TextStyle(
+                              fontSize: 11, height: 1.2, fontWeight: FontWeight.w800, color: Colors.white)),
+                    ]),
+              ),
               if (corner != null)
                 Positioned(
-                  top: 0,
-                  right: 0,
+                  top: 8,
+                  right: 8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                    decoration: BoxDecoration(color: Colors.black38, borderRadius: BorderRadius.circular(7)),
-                    child: Text(corner!, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.w800, color: Colors.white)),
+                    padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                    decoration: BoxDecoration(color: Colors.black38, borderRadius: BorderRadius.circular(8)),
+                    child: Text(corner!, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w800, color: Colors.white)),
                   ),
                 ),
             ]),
           ),
           if (progress != null) ...[
-            const SizedBox(height: 7),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: LinearProgressIndicator(
-                  value: progress, minHeight: 5, color: C.good, backgroundColor: C.sf2),
-            ),
+            const SizedBox(height: 9),
+            Row(children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(value: progress, minHeight: 5, color: C.good, backgroundColor: C.sf2),
+                ),
+              ),
+              const SizedBox(width: 6),
+              Text('${(progress! * 100).round()}%',
+                  style: const TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
+            ]),
           ],
         ]),
       ),
@@ -96,47 +134,82 @@ class BookCover extends StatelessWidget {
   }
 }
 
-/// Tepadagi katta foiz halqasi: yodlangan qismi to'qroq.
+/// Halqa ko'rinishidagi progress (0..1). Ichiga istalgan narsa qo'yiladi.
+class Ring extends StatelessWidget {
+  final double value;
+  final double size, stroke;
+  final Color color, track;
+  final Widget? child;
+  const Ring(this.value,
+      {super.key, this.size = 58, this.stroke = 6, this.color = C.ac, this.track = C.sf2, this.child});
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        width: size,
+        height: size,
+        child: CustomPaint(
+          painter: _RingPainter(value.clamp(0, 1).toDouble(), stroke, color, track),
+          child: Center(child: child),
+        ),
+      );
+}
+
+/// Kitob foizi halqasi (sarlavhalarda).
 class PctRing extends StatelessWidget {
   final int pct;
   final double size;
   const PctRing(this.pct, {super.key, this.size = 58});
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: size,
-      height: size,
-      child: CustomPaint(
-        painter: _RingPainter(pct / 100),
-        child: Center(child: Text('$pct%', style: display(14, color: Colors.white, weight: FontWeight.w700))),
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Ring(pct / 100,
+      size: size,
+      color: C.good,
+      child: Text('$pct%', style: display(size * .24, color: C.fg)));
 }
 
 class _RingPainter extends CustomPainter {
-  final double v;
-  _RingPainter(this.v);
+  final double v, stroke;
+  final Color color, track;
+  _RingPainter(this.v, this.stroke, this.color, this.track);
   @override
   void paint(Canvas canvas, Size s) {
     final c = s.center(Offset.zero);
-    final r = s.width / 2 - 3.5;
-    final bg = Paint()
-      ..color = Colors.white30
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 7;
-    final fg = Paint()
-      ..color = const Color(0xFF081A4A)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 7
-      ..strokeCap = StrokeCap.round;
-    canvas.drawCircle(c, r, Paint()..color = const Color(0xFF2552C4));
-    canvas.drawCircle(c, r, bg);
-    canvas.drawArc(Rect.fromCircle(center: c, radius: r), -pi / 2, 2 * pi * max(v, .01), false, fg);
+    final r = s.width / 2 - stroke / 2;
+    canvas.drawCircle(
+        c,
+        r,
+        Paint()
+          ..color = track
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = stroke);
+    if (v <= 0) return;
+    canvas.drawArc(
+        Rect.fromCircle(center: c, radius: r),
+        -pi / 2,
+        2 * pi * max(v, .02),
+        false,
+        Paint()
+          ..color = color
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = stroke
+          ..strokeCap = StrokeCap.round);
   }
 
   @override
-  bool shouldRepaint(_RingPainter o) => o.v != v;
+  bool shouldRepaint(_RingPainter o) => o.v != v || o.color != color || o.track != track;
+}
+
+/// Rangli fonli ikonka (ro'yxat va plitkalarda).
+class IconBox extends StatelessWidget {
+  final IconData icon;
+  final Color color;
+  final double size;
+  const IconBox(this.icon, {super.key, this.color = C.ac, this.size = 40});
+  @override
+  Widget build(BuildContext context) => Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(color: color.withValues(alpha: .16), borderRadius: BorderRadius.circular(size * .32)),
+        child: Icon(icon, color: color, size: size * .55),
+      );
 }
 
 class AppCard extends StatelessWidget {
@@ -144,17 +217,22 @@ class AppCard extends StatelessWidget {
   final EdgeInsets padding;
   final Color? color;
   final Color? border;
-  const AppCard({super.key, required this.child, this.padding = const EdgeInsets.all(14), this.color, this.border});
+  final VoidCallback? onTap;
+  const AppCard(
+      {super.key, required this.child, this.padding = const EdgeInsets.all(16), this.color, this.border, this.onTap});
   @override
   Widget build(BuildContext context) => Material(
         color: color ?? C.sf,
+        clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20), side: BorderSide(color: border ?? C.ln)),
-        child: Padding(padding: padding, child: child),
+            borderRadius: BorderRadius.circular(R.lg), side: BorderSide(color: border ?? C.ln)),
+        child: onTap == null
+            ? Padding(padding: padding, child: child)
+            : InkWell(onTap: onTap, child: Padding(padding: padding, child: child)),
       );
 }
 
-enum BtnKind { primary, ghost, telegram, text }
+enum BtnKind { primary, ghost, telegram, text, gold }
 
 class Btn extends StatelessWidget {
   final String label;
@@ -168,27 +246,32 @@ class Btn extends StatelessWidget {
       BtnKind.primary => C.ac,
       BtnKind.ghost => C.sf2,
       BtnKind.telegram => C.tg,
+      BtnKind.gold => C.gold,
       BtnKind.text => Colors.transparent,
     };
     final fg = switch (kind) {
-      BtnKind.primary => C.onAc,
-      BtnKind.telegram => Colors.white,
+      BtnKind.primary || BtnKind.telegram => Colors.white,
+      BtnKind.gold => C.onGold,
+      BtnKind.text => C.ac,
       _ => C.fg,
     };
     return Opacity(
       opacity: onTap == null ? .45 : 1,
       child: Material(
         color: bg,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(R.md),
         child: InkWell(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(R.md),
           onTap: onTap,
           child: Container(
-            constraints: const BoxConstraints(minHeight: 50),
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            constraints: const BoxConstraints(minHeight: 52),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             alignment: Alignment.center,
             child: Row(mainAxisSize: MainAxisSize.min, children: [
-              if (icon != null) ...[icon!, const SizedBox(width: 8)],
+              if (icon != null) ...[
+                IconTheme(data: IconThemeData(color: fg, size: 20), child: icon!),
+                const SizedBox(width: 8)
+              ],
               Flexible(
                   child: Text(label,
                       textAlign: TextAlign.center,
@@ -221,12 +304,19 @@ class SectionTitle extends StatelessWidget {
   const SectionTitle(this.title, {super.key, this.action, this.onAction, this.note});
   @override
   Widget build(BuildContext context) => Row(children: [
-        Expanded(child: Text(title, style: display(17))),
-        if (note != null) Text(note!, style: const TextStyle(color: C.mut, fontSize: 12)),
+        Expanded(child: Text(title, style: display(18))),
+        if (note != null) Text(note!, style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
         if (action != null)
-          GestureDetector(
+          InkWell(
+            borderRadius: BorderRadius.circular(10),
             onTap: onAction,
-            child: Text(action!, style: const TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 13)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                Text(action!, style: const TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 13)),
+                const Icon(Icons.chevron_right_rounded, color: C.ac, size: 18),
+              ]),
+            ),
           ),
       ]);
 }
@@ -236,7 +326,7 @@ class Eyebrow extends StatelessWidget {
   const Eyebrow(this.text, {super.key});
   @override
   Widget build(BuildContext context) => Text(text.toUpperCase(),
-      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1, color: C.mut));
+      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.1, color: C.mut));
 }
 
 class EmptyBox extends StatelessWidget {
@@ -244,13 +334,13 @@ class EmptyBox extends StatelessWidget {
   const EmptyBox(this.text, {super.key});
   @override
   Widget build(BuildContext context) => Container(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
         decoration: BoxDecoration(
           color: C.sf,
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(R.lg),
           border: Border.all(color: C.ln),
         ),
-        child: Text(text, textAlign: TextAlign.center, style: const TextStyle(color: C.mut)),
+        child: Text(text, textAlign: TextAlign.center, style: const TextStyle(color: C.mut, height: 1.45)),
       );
 }
 
@@ -273,12 +363,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(children: [
           Material(
             color: C.sf2,
-            borderRadius: BorderRadius.circular(14),
+            shape: const CircleBorder(),
             child: InkWell(
-              borderRadius: BorderRadius.circular(14),
+              customBorder: const CircleBorder(),
               onTap: onBack ?? () => Navigator.of(context).maybePop(),
               child: const SizedBox(
-                  width: 40, height: 40, child: Icon(Icons.chevron_left_rounded, size: 28, semanticLabel: 'Orqaga')),
+                  width: 42, height: 42, child: Icon(Icons.arrow_back_rounded, size: 22, semanticLabel: 'Orqaga')),
             ),
           ),
           const SizedBox(width: 12),
@@ -322,7 +412,7 @@ class FillRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: C.sf,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(R.md),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
@@ -336,11 +426,11 @@ class FillRow extends StatelessWidget {
               child: FractionallySizedBox(
                 alignment: Alignment.centerLeft,
                 widthFactor: fill.clamp(0, 1),
-                child: Container(color: C.good.withValues(alpha: .13)),
+                child: Container(color: C.good.withValues(alpha: .12)),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
               child: Row(children: [
                 if (leading != null) ...[leading!, const SizedBox(width: 12)],
                 Expanded(
@@ -397,11 +487,11 @@ class SquareBtn extends StatelessWidget {
         message: tooltip,
         child: Material(
           color: color ?? C.sf2,
-          borderRadius: BorderRadius.circular(12),
+          shape: const CircleBorder(),
           child: InkWell(
-            borderRadius: BorderRadius.circular(12),
+            customBorder: const CircleBorder(),
             onTap: onTap,
-            child: SizedBox(width: 40, height: 40, child: Center(child: child)),
+            child: SizedBox(width: 42, height: 42, child: Center(child: child)),
           ),
         ),
       );
