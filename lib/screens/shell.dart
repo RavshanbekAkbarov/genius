@@ -56,16 +56,17 @@ class ShellScope extends InheritedWidget {
 }
 
 class BurgerButton extends StatelessWidget {
-  const BurgerButton({super.key});
+  final bool light;
+  const BurgerButton({super.key, this.light = false});
   @override
   Widget build(BuildContext context) => Material(
-        color: C.sf2,
+        color: light ? Colors.black.withValues(alpha: .18) : C.sf2,
         shape: const CircleBorder(),
         child: InkWell(
           customBorder: const CircleBorder(),
           onTap: () => ShellScope.of(context).openDrawer(),
-          child: const SizedBox(
-              width: 44, height: 44, child: Icon(Icons.menu_rounded, color: C.fg, size: 22, semanticLabel: 'Menyu')),
+          child: SizedBox(
+              width: 44, height: 44, child: Icon(Icons.menu_rounded, color: light ? Colors.white : C.fg, size: 22, semanticLabel: 'Menyu')),
         ),
       );
 }

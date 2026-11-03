@@ -58,7 +58,7 @@ class _HomeTabState extends State<HomeTab> {
     return CustomScrollView(slivers: [
       SliverToBoxAdapter(child: _header(s, b)),
       SliverPadding(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 28),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         sliver: SliverList.list(children: [
           if (q.isNotEmpty) ...[_searchResults(s), const SizedBox(height: 16)],
           if (s.eveningWarning) ...[_eveningWarn(s), const SizedBox(height: 16)],
@@ -100,73 +100,116 @@ class _HomeTabState extends State<HomeTab> {
     ]);
   }
 
-  /// Yuqori qism: kitob almashtirgich, olov, salom va qidiruv.
+  Widget _eveningWarn(AppState s) => AppCard(
+        color: Color.alphaBlend(C.bad.withValues(alpha: .12), C.sf),
+        border: C.bad,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          const Row(children: [
+            Icon(Icons.local_fire_department_rounded, color: C.bad),
+            SizedBox(width: 8),
+            Text('Olovingiz kuyadi!', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+          ]),
+          const SizedBox(height: 6),
+          Text(
+              "Bugun hali so'z yodlamadingiz va takrorlamadingiz. ${s.streak} kunlik olovni yo'qotmaslik uchun hozir mashq qiling yoki 3 ta reklama ko'rib saqlab qoling.",
+              style: const TextStyle(color: C.mut, fontSize: 13)),
+          const SizedBox(height: 10),
+          Row(children: [
+            Expanded(child: Btn('Mashq qilish', onTap: () => openSetup(context, s.currentBook))),
+            const SizedBox(width: 10),
+            Expanded(
+                child: Btn('Reklama bilan saqlash',
+                    kind: BtnKind.ghost, onTap: () => push(context, const StreakScreen(todayMode: true)))),
+          ]),
+        ]),
+      );
+
+  /// Yuqori ko'k qism: Genius brendi, kitob va uning foizi, olov, qidiruv.
   Widget _header(AppState s, Book b) {
     final pct = s.bookPct(b.id);
-    return Padding(
-      padding: EdgeInsets.fromLTRB(16, MediaQuery.of(context).padding.top + 10, 16, 16),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: const BoxDecoration(
+        gradient: C.grad,
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(R.xl)),
+      ),
+      padding: EdgeInsets.fromLTRB(16, MediaQuery.of(context).padding.top + 12, 16, 18),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Row(children: [
-          // Kitob almashtirgich: ☰ menyusini ochadi.
+          const BurgerButton(light: true),
+          const SizedBox(width: 12),
           Expanded(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Semantics(
-                button: true,
-                label: '${b.title}: $pct% yodlangan. Kitobni almashtirish',
-                child: Material(
-                  color: C.sf,
-                  shape: const StadiumBorder(side: BorderSide(color: C.ln)),
-                  child: InkWell(
-                    customBorder: const StadiumBorder(),
-                    onTap: () => ShellScope.of(context).openDrawer(),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(8, 6, 10, 6),
-                      child: Row(mainAxisSize: MainAxisSize.min, children: [
-                        PctRing(pct, size: 38),
-                        const SizedBox(width: 10),
-                        Flexible(
-                          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-                            Text(b.title,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
-                            const Text('kitobni almashtirish',
-                                style: TextStyle(color: C.mut, fontSize: 11, fontWeight: FontWeight.w600)),
-                          ]),
-                        ),
-                        const SizedBox(width: 2),
-                        const Icon(Icons.expand_more_rounded, color: C.mut, size: 20),
-                      ]),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('Genius', style: display(26, color: Colors.white)),
+              Text('AURA ACADEMY',
+                  style: TextStyle(
+                      fontSize: 11,
+                      letterSpacing: 1.6,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white.withValues(alpha: .7))),
+            ]),
           ),
-          const SizedBox(width: 8),
           _streakChip(s),
           const SizedBox(width: 8),
-          const VoiceButton(),
+          const VoiceButton(light: true),
         ]),
-        const SizedBox(height: 22),
-        Text(s.nickname.isEmpty ? 'Salom!' : 'Salom, ${s.nickname}!', style: display(26)),
-        const SizedBox(height: 4),
-        Text(_greetingLine(s), style: const TextStyle(color: C.mut, fontSize: 14, fontWeight: FontWeight.w600)),
         const SizedBox(height: 16),
+        // Hozirgi kitob: bosilsa kitob tanlash menyusi ochiladi.
+        Semantics(
+          button: true,
+          label: '${b.title}: $pct% yodlangan. Kitobni almashtirish',
+          child: _glass(
+            onTap: () => ShellScope.of(context).openDrawer(),
+            child: Row(children: [
+              BookBadge(b, size: 30),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Row(children: [
+                    Expanded(
+                      child: Text(b.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: Colors.white)),
+                    ),
+                    Text('$pct%', style: display(15, color: Colors.white)),
+                  ]),
+                  const SizedBox(height: 7),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: LinearProgressIndicator(
+                        value: pct / 100,
+                        minHeight: 6,
+                        color: C.good,
+                        backgroundColor: Colors.white.withValues(alpha: .18)),
+                  ),
+                ]),
+              ),
+              const SizedBox(width: 10),
+              const Icon(Icons.swap_horiz_rounded, color: Colors.white, size: 22, semanticLabel: 'Almashtirish'),
+            ]),
+          ),
+        ),
+        const SizedBox(height: 10),
         Row(children: [
           Expanded(
             child: TextField(
               controller: search,
               onChanged: (v) => setState(() => q = v.trim().toLowerCase()),
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              cursorColor: Colors.white,
               decoration: InputDecoration(
                 hintText: "So'z qidirish",
-                fillColor: C.sf,
-                prefixIcon: const Icon(Icons.search_rounded, color: C.mut),
+                hintStyle: TextStyle(color: Colors.white.withValues(alpha: .7)),
+                fillColor: Colors.black.withValues(alpha: .18),
+                prefixIcon: const Icon(Icons.search_rounded, color: Colors.white),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(R.md),
+                    borderSide: const BorderSide(color: Colors.white54, width: 1.5)),
                 suffixIcon: q.isEmpty
                     ? null
                     : IconButton(
-                        icon: const Icon(Icons.close_rounded),
+                        icon: const Icon(Icons.close_rounded, color: Colors.white),
                         onPressed: () => setState(() {
                               search.clear();
                               q = '';
@@ -195,29 +238,32 @@ class _HomeTabState extends State<HomeTab> {
     );
   }
 
-  String _greetingLine(AppState s) {
-    final due = s.dueGroups.fold<int>(0, (a, g) => a + g.keys.length);
-    if (due > 0) return 'Bugun $due ta so\'z takrorni kutyapti';
-    if (s.active(s.today)) return 'Bugungi reja bajarildi. Zo\'r!';
-    return "Bugun ${s.dailyGoal} ta yangi so'z o'rganamizmi?";
-  }
+  Widget _glass({required Widget child, VoidCallback? onTap}) => Material(
+        color: Colors.black.withValues(alpha: .18),
+        borderRadius: BorderRadius.circular(R.md),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(R.md),
+          onTap: onTap,
+          child: Padding(padding: const EdgeInsets.fromLTRB(12, 11, 14, 11), child: child),
+        ),
+      );
 
   Widget _streakChip(AppState s) {
     final on = s.active(s.today);
     return Semantics(
       label: '${s.streak} kunlik olov',
       child: Material(
-        color: on ? C.gold.withValues(alpha: .16) : C.sf,
-        shape: StadiumBorder(side: BorderSide(color: on ? C.gold.withValues(alpha: .5) : C.ln)),
+        color: Colors.black.withValues(alpha: .18),
+        shape: const StadiumBorder(),
         child: InkWell(
           customBorder: const StadiumBorder(),
           onTap: () => push(context, const StreakScreen(todayMode: true)),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 14, 10),
+            padding: const EdgeInsets.fromLTRB(10, 9, 14, 9),
             child: Row(mainAxisSize: MainAxisSize.min, children: [
-              Icon(Icons.local_fire_department_rounded, color: on ? C.gold : C.mut, size: 22),
+              Icon(Icons.local_fire_department_rounded, color: on ? C.gold : Colors.white70, size: 22),
               const SizedBox(width: 4),
-              Text('${s.streak}', style: display(17, color: on ? C.gold : C.fg)),
+              Text('${s.streak}', style: display(17, color: Colors.white)),
             ]),
           ),
         ),
@@ -225,124 +271,59 @@ class _HomeTabState extends State<HomeTab> {
     );
   }
 
-  Widget _eveningWarn(AppState s) => AppCard(
-        color: Color.alphaBlend(C.bad.withValues(alpha: .12), C.sf),
-        border: C.bad,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          const Row(children: [
-            Icon(Icons.local_fire_department_rounded, color: C.bad),
-            SizedBox(width: 8),
-            Text('Olovingiz kuyadi!', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
-          ]),
-          const SizedBox(height: 6),
-          Text(
-              "Bugun hali so'z yodlamadingiz va takrorlamadingiz. ${s.streak} kunlik olovni yo'qotmaslik uchun hozir mashq qiling yoki 3 ta reklama ko'rib saqlab qoling.",
-              style: const TextStyle(color: C.mut, fontSize: 13)),
-          const SizedBox(height: 10),
-          Row(children: [
-            Expanded(child: Btn('Mashq qilish', onTap: () => openSetup(context, s.currentBook))),
-            const SizedBox(width: 10),
-            Expanded(
-                child: Btn('Reklama bilan saqlash',
-                    kind: BtnKind.ghost, onTap: () => push(context, const StreakScreen(todayMode: true)))),
-          ]),
-        ]),
-      );
-
   /// Bitta bosishda kunlik ish: avval takrorlar, keyin yangi so'zlar.
   Widget _dailyCard(AppState s) {
     final due = s.dueGroups;
     final dueWords = due.fold<int>(0, (a, g) => a + g.keys.length);
     final fresh = s.nextNewCards();
-    final title = dueWords > 0
-        ? '$dueWords ta takror'
-        : fresh.isNotEmpty
-            ? "${fresh.length} ta yangi so'z"
-            : 'Kitob tugadi 🎉';
     final sub = dueWords > 0
-        ? (fresh.isNotEmpty ? "keyin Unit ${fresh.first.unit} dan yangi so'zlar" : 'hammasi bir bosishda')
+        ? "$dueWords ta takror${fresh.isNotEmpty ? ", keyin Unit ${fresh.first.unit}" : ''}"
         : fresh.isNotEmpty
-            ? 'Unit ${fresh.first.unit} · takror yo\'q'
-            : 'boshqa kitobni tanlang';
+            ? "Unit ${fresh.first.unit} dan ${fresh.length} ta yangi so'z"
+            : 'Kitob tugadi, boshqasini tanlang';
     final today = s.log[ds(s.today)] ?? 0;
-    return Material(
-      borderRadius: BorderRadius.circular(R.xl),
-      clipBehavior: Clip.antiAlias,
-      child: Ink(
-        decoration: const BoxDecoration(gradient: C.grad),
-        child: InkWell(
-          onTap: () => startDaily(context),
-          child: Stack(children: [
-            Positioned(right: -40, top: -50, child: _blob(170, .08)),
-            Positioned(right: 60, bottom: -70, child: _blob(130, .05)),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 18, 18),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Expanded(
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      Text('Bugungi mashq',
-                          style: TextStyle(
-                              fontSize: 13,
-                              letterSpacing: .2,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white.withValues(alpha: .75))),
-                      const SizedBox(height: 6),
-                      Text(title, style: display(24, color: Colors.white)),
-                      const SizedBox(height: 4),
-                      Text(sub,
-                          style: TextStyle(
-                              fontSize: 13, color: Colors.white.withValues(alpha: .85), fontWeight: FontWeight.w600)),
-                    ]),
-                  ),
-                  const SizedBox(width: 12),
-                  Semantics(
-                    label: "Bugun $today / ${s.dailyGoal} so'z",
-                    child: Ring(today / s.dailyGoal,
-                        size: 74,
-                        stroke: 7,
-                        color: Colors.white,
-                        track: Colors.white.withValues(alpha: .18),
-                        child: Column(mainAxisSize: MainAxisSize.min, children: [
-                          Text('$today', style: display(20, color: Colors.white)),
-                          Text('/ ${s.dailyGoal}',
-                              style: TextStyle(
-                                  fontSize: 11, color: Colors.white.withValues(alpha: .75), fontWeight: FontWeight.w700)),
-                        ])),
-                  ),
-                ]),
-                const SizedBox(height: 18),
-                Row(children: [
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(18, 12, 14, 12),
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(R.md)),
-                    child: const Row(mainAxisSize: MainAxisSize.min, children: [
-                      Text('Boshlash', style: TextStyle(color: C.acDeep, fontWeight: FontWeight.w800, fontSize: 15)),
-                      SizedBox(width: 4),
-                      Icon(Icons.play_arrow_rounded, color: C.acDeep, size: 22),
-                    ]),
-                  ),
-                  const SizedBox(width: 12),
-                  if (!s.isPremium)
-                    Expanded(
-                      child: Text('${s.sessionsLeft}/$freeSessions bepul mashq\ntakrorlar doim bepul',
-                          style: TextStyle(
-                              fontSize: 11.5,
-                              height: 1.35,
-                              color: Colors.white.withValues(alpha: .75),
-                              fontWeight: FontWeight.w600)),
-                    ),
-                ]),
-              ]),
-            ),
-          ]),
-        ),
-      ),
+    return AppCard(
+      onTap: () => startDaily(context),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Row(children: [
+          Container(
+            width: 52,
+            height: 52,
+            decoration: const BoxDecoration(color: C.gold, shape: BoxShape.circle),
+            child: const Icon(Icons.bolt_rounded, color: C.onGold, size: 32),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('Bugungi mashq', style: display(19)),
+              const SizedBox(height: 3),
+              Text(sub, style: const TextStyle(fontSize: 13, color: C.mut, fontWeight: FontWeight.w600)),
+            ]),
+          ),
+          const SizedBox(width: 10),
+          Semantics(
+            label: "Bugun $today / ${s.dailyGoal} so'z",
+            child: Ring(today / s.dailyGoal,
+                size: 52,
+                stroke: 5,
+                color: C.good,
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  Text('$today', style: display(14)),
+                  Text('/${s.dailyGoal}', style: const TextStyle(fontSize: 9, color: C.mut, fontWeight: FontWeight.w700)),
+                ])),
+          ),
+        ]),
+        const SizedBox(height: 14),
+        Btn('Boshlash', icon: const Icon(Icons.play_arrow_rounded), onTap: () => startDaily(context)),
+        if (!s.isPremium) ...[
+          const SizedBox(height: 8),
+          Text('Bugun ${s.sessionsLeft}/$freeSessions bepul mashq · takrorlar doim bepul',
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 11.5, color: C.mut, fontWeight: FontWeight.w600)),
+        ],
+      ]),
     );
   }
-
-  Widget _blob(double d, double a) => Container(
-      width: d, height: d, decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: a)));
 
   Widget _tile(IconData icon, Color color, String title, String sub, VoidCallback onTap) => AppCard(
         onTap: onTap,
