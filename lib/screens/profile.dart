@@ -50,12 +50,13 @@ class _ProfileTabState extends State<ProfileTab> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Container(
             padding: const EdgeInsets.all(18),
-            decoration: BoxDecoration(gradient: C.grad, borderRadius: BorderRadius.circular(R.xl)),
+            decoration: BoxDecoration(
+                color: C.sf, borderRadius: BorderRadius.circular(R.xl), border: Border.all(color: C.ln)),
             child: Row(children: [
               Container(
                 width: 60,
                 height: 60,
-                decoration: BoxDecoration(color: Colors.white.withValues(alpha: .18), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: C.tint(C.ac, .3), shape: BoxShape.circle),
                 alignment: Alignment.center,
                 child: Text(s.avatar, style: const TextStyle(fontSize: 30)),
               ),
@@ -65,19 +66,19 @@ class _ProfileTabState extends State<ProfileTab> {
                   Row(children: [
                     Flexible(
                         child: Text(s.displayName,
-                            style: display(20, color: Colors.white))),
+                            style: display(20))),
                     if (prem) ...[
                       const SizedBox(width: 6),
                       const Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
                     ],
                   ]),
                   Text("🔥 ${s.streak} kun · ${s.totalLearned} so'z yodlangan",
-                      style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                      style: const TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
                   Text(
                       Cloud.signedIn
                           ? (s.accountLabel ?? 'Hisobga kirilgan')
                           : 'Hisobga kirilmagan: yutuqlar faqat shu telefonda',
-                      style: const TextStyle(color: Colors.white60, fontSize: 11)),
+                      style: const TextStyle(color: C.dim, fontSize: 11.5)),
                 ]),
               ),
               IconButton.filledTonal(

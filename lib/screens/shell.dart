@@ -71,24 +71,29 @@ class BurgerButton extends StatelessWidget {
       );
 }
 
-/// Bo'limlar sarlavhasi (Kitoblar, Do'kon, Profil): katta, toza sarlavha.
+/// Bo'limlar sarlavhasi (Kitoblar, Do'kon, Profil): bosh ekrandagidek ko'k, brendli.
 class TabHeader extends StatelessWidget {
   final String title, subtitle;
   final Widget? bottom;
   const TabHeader({super.key, required this.title, required this.subtitle, this.bottom});
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: EdgeInsets.fromLTRB(16, MediaQuery.of(context).padding.top + 12, 16, 4),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+  Widget build(BuildContext context) => Container(
+        decoration: const BoxDecoration(
+          gradient: C.grad,
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(R.xl)),
+        ),
+        padding: EdgeInsets.fromLTRB(16, MediaQuery.of(context).padding.top + 12, 16, 20),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Row(children: [
+            const BurgerButton(light: true),
+            const SizedBox(width: 12),
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(title, style: display(28)),
-                const SizedBox(height: 2),
-                Text(subtitle, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: C.mut)),
+                Text(title, style: display(26, color: Colors.white)),
+                Text(subtitle,
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white.withValues(alpha: .75))),
               ]),
             ),
-            const BurgerButton(),
           ]),
           if (bottom != null) ...[const SizedBox(height: 14), bottom!],
         ]),

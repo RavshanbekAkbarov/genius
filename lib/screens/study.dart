@@ -267,16 +267,11 @@ class _StudyScreenState extends State<StudyScreen> {
   Widget _cards(AppState s) {
     final g = ss.graded[ss.pos];
     return Column(children: [
-      const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Text("Inglizcha tomonini bosing: talaffuz",
-            textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
-      ),
-      const SizedBox(height: 12),
+      const SizedBox(height: 8),
       Expanded(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: 480),
+            constraints: const BoxConstraints(maxHeight: 440),
             child: PageView.builder(
               controller: pages,
               itemCount: ss.deck.length,
@@ -303,6 +298,19 @@ class _StudyScreenState extends State<StudyScreen> {
             ),
           ),
         ),
+      ),
+      const Padding(
+        padding: EdgeInsets.fromLTRB(16, 14, 16, 0),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Icon(Icons.touch_app_rounded, size: 16, color: C.mut),
+          SizedBox(width: 6),
+          Flexible(
+            child: Text('Inglizcha tomonini bossangiz, talaffuz qilinadi',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+          ),
+        ]),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
@@ -600,29 +608,40 @@ class DoneScreen extends StatelessWidget {
     final q = quoteOfDay(s.today, slot: 1);
     return Scaffold(
       body: SafeArea(
-        child: ListView(padding: const EdgeInsets.fromLTRB(16, 32, 16, 24), children: [
-          Center(
-            child: Container(
-              width: 96,
-              height: 96,
-              decoration: const BoxDecoration(shape: BoxShape.circle, gradient: C.grad),
-              child: const Icon(Icons.check_rounded, size: 50, color: Colors.white),
-            ),
+        child: ListView(padding: const EdgeInsets.fromLTRB(16, 16, 16, 24), children: [
+          Container(
+            padding: const EdgeInsets.fromLTRB(20, 28, 20, 20),
+            decoration: BoxDecoration(gradient: C.grad, borderRadius: BorderRadius.circular(R.xl)),
+            child: Column(children: [
+              Container(
+                width: 84,
+                height: 84,
+                decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: .18)),
+                child: Center(
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                    child: const Icon(Icons.check_rounded, size: 38, color: C.acDeep),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text('${ss.unitLabel} tugadi!', textAlign: TextAlign.center, style: display(24, color: Colors.white)),
+              const SizedBox(height: 6),
+              Text("Osonlari 1, 3, 7, 15 va 30 kundan keyin takrorlashga qaytadi.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white.withValues(alpha: .8), fontSize: 13, fontWeight: FontWeight.w600)),
+              const SizedBox(height: 18),
+              Row(children: [
+                Expanded(child: _stat('+$xp', 'XP', C.gold)),
+                const SizedBox(width: 8),
+                Expanded(child: _stat('${ss.easy}', 'oson', C.good)),
+                const SizedBox(width: 8),
+                Expanded(child: _stat('$hardN', 'qiyin', C.bad)),
+              ]),
+            ]),
           ),
-          const SizedBox(height: 18),
-          Text('${ss.unitLabel} tugadi!', textAlign: TextAlign.center, style: display(22)),
-          const SizedBox(height: 8),
-          Text(
-            "${ss.src.length} ta so'z: ${ss.easy} tasi \"Oson\", $hardN tasi \"Qiyin\". Osonlari 1, 3, 7, 15 va 30 kundan keyin takrorlashga qaytadi.",
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: C.mut),
-          ),
-          const SizedBox(height: 18),
-          Row(children: [
-            Expanded(child: _stat('+$xp', 'XP')),
-            const SizedBox(width: 10),
-            Expanded(child: _stat('$hardN', "qiyin so'z")),
-          ]),
           const SizedBox(height: 14),
           QuoteCard(quote: q),
           const SizedBox(height: 14),
@@ -652,10 +671,13 @@ class DoneScreen extends StatelessWidget {
     );
   }
 
-  Widget _stat(String v, String l) => AppCard(
+  Widget _stat(String v, String l, Color c) => Container(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        decoration: BoxDecoration(color: Colors.black.withValues(alpha: .2), borderRadius: BorderRadius.circular(R.md)),
         child: Column(children: [
-          Text(v, style: display(22)),
-          Text(l, style: const TextStyle(color: C.mut, fontSize: 12)),
+          Text(v, style: display(22, color: c)),
+          const SizedBox(height: 2),
+          Text(l, style: TextStyle(color: Colors.white.withValues(alpha: .75), fontSize: 12, fontWeight: FontWeight.w700)),
         ]),
       );
 }
