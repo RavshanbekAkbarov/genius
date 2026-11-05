@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
 import '../services/ads.dart';
+import '../services/background.dart';
 import '../services/speech.dart';
 import '../state/app_state.dart';
 import '../state/scope.dart';
@@ -41,6 +42,7 @@ class _ListenScreenState extends State<ListenScreen> {
   void dispose() {
     _gen++;
     Speech.stop();
+    Background.stop();
     super.dispose();
   }
 
@@ -57,6 +59,7 @@ class _ListenScreenState extends State<ListenScreen> {
   void _stop() {
     _gen++;
     Speech.stop();
+    Background.stop();
     playing = false;
   }
 
@@ -83,8 +86,21 @@ class _ListenScreenState extends State<ListenScreen> {
     setState(() => playing = true);
     final s = AppScope.read(context);
     final uz = hasUz ?? await Speech.canSpeakUz();
-    while (mounted && gen == _gen && i < queue.length) {
+    // Ekran o'chsa yoki ilovadan chiqilsa ham o'qish davom etadi (Android bildirishnomasi bilan).
+    await Background.start("So'zlar o'qilmoqda", onStop: () {
+      if (mounted && playing) setState(_stop);
+    });
+    // Ro'yxat tugasa boshidan takrorlanadi: to'xtatilmaguncha o'qilaveradi.
+    while (mounted && gen == _gen) {
+      if (i >= queue.length) {
+        if (queue.isEmpty) break;
+        setState(() {
+          if (s.listenShuffle) queue.shuffle();
+          i = 0;
+        });
+      }
       final w = queue[i].word;
+      Background.update('${w.en} — ${w.uz}');
       for (var r = 0; r < s.listenRepeat && gen == _gen; r++) {
         if (s.listenUzFirst && uz) {
           await Speech.speakUz(w.uz, speed: s.listenSpeed);
@@ -101,7 +117,7 @@ class _ListenScreenState extends State<ListenScreen> {
       if (!mounted || gen != _gen) return;
       setState(() => i++);
     }
-    if (mounted && gen == _gen) setState(() => playing = false);
+    if (mounted && gen == _gen) setState(_stop);
   }
 
   Future<void> _pause(int gen, int ms) => Future.delayed(Duration(milliseconds: ms));
