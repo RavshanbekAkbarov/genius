@@ -65,13 +65,16 @@ class R {
 
 const fontFamily = 'Jakarta';
 
+/// Jakarta'da yo'q harflar (talaffuz belgilari) shu shriftlardan olinadi.
+const fontFallback = ['Ipa', 'Roboto'];
+
 /// Sarlavha shrifti (Plus Jakarta Sans, qalin).
 TextStyle display(double size, {Color color = C.fg, FontWeight weight = FontWeight.w800}) => TextStyle(
-    fontFamily: fontFamily, fontSize: size, fontWeight: weight, color: color, height: 1.18, letterSpacing: -.3);
+    fontFamily: fontFamily, fontFamilyFallback: fontFallback, fontSize: size, fontWeight: weight, color: color, height: 1.18, letterSpacing: -.3);
 
 ThemeData buildTheme() {
   final base = ThemeData(
-      brightness: Brightness.dark, useMaterial3: true, fontFamily: fontFamily, fontFamilyFallback: const ['Roboto']);
+      brightness: Brightness.dark, useMaterial3: true, fontFamily: fontFamily, fontFamilyFallback: fontFallback);
   final text = base.textTheme.apply(bodyColor: C.fg, displayColor: C.fg);
   return base.copyWith(
     scaffoldBackgroundColor: C.bg,
@@ -101,8 +104,8 @@ ThemeData buildTheme() {
       selectedColor: C.ac,
       side: BorderSide.none,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      labelStyle: const TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.w700, color: C.fg),
-      secondaryLabelStyle: const TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.w800, color: Colors.white),
+      labelStyle: const TextStyle(fontFamily: fontFamily, fontFamilyFallback: fontFallback, fontWeight: FontWeight.w700, color: C.fg),
+      secondaryLabelStyle: const TextStyle(fontFamily: fontFamily, fontFamilyFallback: fontFallback, fontWeight: FontWeight.w800, color: Colors.white),
       checkmarkColor: Colors.white,
     ),
     bottomSheetTheme: const BottomSheetThemeData(
@@ -130,7 +133,7 @@ ThemeData buildTheme() {
       behavior: SnackBarBehavior.floating,
       backgroundColor: C.sf3,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(R.md)),
-      contentTextStyle: const TextStyle(fontFamily: fontFamily, color: C.fg, fontWeight: FontWeight.w700),
+      contentTextStyle: const TextStyle(fontFamily: fontFamily, fontFamilyFallback: fontFallback, color: C.fg, fontWeight: FontWeight.w700),
     ),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: FadeForwardsPageTransitionsBuilder(),

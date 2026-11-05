@@ -10,13 +10,11 @@ import 'package:genius/screens/schedule.dart';
 import 'package:genius/screens/setup.dart';
 import 'package:genius/screens/study.dart';
 import 'package:genius/state/app_state.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Har bir oyna xatosiz chiziladimi (telefon o'lchamida, sig'masa xato chiqadi).
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  GoogleFonts.config.allowRuntimeFetching = false;
   late AppState s;
 
   setUp(() async {
@@ -72,5 +70,19 @@ void main() {
   testWidgets('yozish', (t) async {
     final w = s.words('e1', 4);
     await show(t, StudyScreen(session: Session([CardItem(wkey('e1', 4, 0), 'e1', 4, w[0])], review: false, typing: true, reverse: false)));
+  });
+
+  testWidgets('katta shrift (1.3x) bilan ham sig\'adi', (t) async {
+    t.platformDispatcher.textScaleFactorTestValue = 1.3;
+    addTearDown(t.platformDispatcher.clearTextScaleFactorTestValue);
+    await show(t, const SizedBox());
+    for (final tab in ['Kitoblar', "Do'kon", 'Profil']) {
+      await t.tap(find.text(tab).last);
+      await t.pump(const Duration(milliseconds: 400));
+    }
+    final w = s.words('e1', 4);
+    await show(t, StudyScreen(session: Session([CardItem(wkey('e1', 4, 0), 'e1', 4, w[0])], review: false, typing: false, reverse: false)));
+    await show(t, const SetupScreen(bookId: 'e1'));
+    await show(t, const UnitScreen(bookId: 'e1', unit: 1));
   });
 }

@@ -42,6 +42,14 @@ class GeniusApp extends StatelessWidget {
         title: 'Genius',
         debugShowCheckedModeBanner: false,
         theme: buildTheme(),
+        // Telefonda juda katta shrift yoqilgan bo'lsa ham ekranlar buzilmasin: 1.3 barobargacha.
+        builder: (context, child) {
+          final mq = MediaQuery.of(context);
+          return MediaQuery(
+            data: mq.copyWith(textScaler: mq.textScaler.clamp(minScaleFactor: .9, maxScaleFactor: 1.3)),
+            child: child!,
+          );
+        },
         // Birinchi ochilishda (server ulangan bo'lsa) kirish oynasi.
         home: cloudEnabled && !state.loginSeen && !Cloud.signedIn ? const LoginScreen(first: true) : const Shell(),
       ),

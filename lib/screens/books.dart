@@ -291,13 +291,17 @@ class UnitScreen extends StatelessWidget {
         if (w.isEmpty)
           const EmptyBox("Bu unit so'zlari kitoblaringiz kelgach qo'shiladi.")
         else ...[
-          Row(children: [
-            Expanded(
-                child: Btn('Yodlanmaganlar (${w.length - l})',
-                    onTap: l == w.length ? null : () => quick(context, s, true))),
-            const SizedBox(width: 10),
-            Expanded(child: Btn('Hammasi (${w.length})', kind: BtnKind.ghost, onTap: () => quick(context, s, false))),
-          ]),
+          if (l == w.length)
+            Btn("Hammasi yodlangan ✓ · qayta mashq (${w.length})",
+                kind: BtnKind.ghost,
+                icon: const Icon(Icons.replay_rounded),
+                onTap: () => quick(context, s, false))
+          else
+            Row(children: [
+              Expanded(child: Btn('Yodlanmaganlar (${w.length - l})', onTap: () => quick(context, s, true))),
+              const SizedBox(width: 10),
+              Expanded(child: Btn('Hammasi (${w.length})', kind: BtnKind.ghost, onTap: () => quick(context, s, false))),
+            ]),
           const SizedBox(height: 14),
           for (var i = 0; i < w.length; i++)
             Padding(

@@ -121,8 +121,9 @@ class _NavBar extends StatelessWidget {
         ),
         child: SafeArea(
           top: false,
-          child: SizedBox(
-            height: 66,
+          // Balandlik yozuvga qarab o'sadi: katta shriftda ham sig'adi.
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 9),
             child: Row(children: [
               for (var i = 0; i < items.length; i++)
                 Expanded(
@@ -132,7 +133,7 @@ class _NavBar extends StatelessWidget {
                     child: InkResponse(
                       onTap: () => onTap(i),
                       radius: 40,
-                      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 220),
                           curve: Curves.easeOutCubic,

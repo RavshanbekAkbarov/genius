@@ -584,7 +584,7 @@ class _FlipCardState extends State<FlipCard> with SingleTickerProviderStateMixin
                 disabledBackgroundColor: Colors.white.withValues(alpha: .08),
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                textStyle: const TextStyle(fontFamily: fontFamily, fontWeight: FontWeight.w800, fontSize: 16),
+                textStyle: const TextStyle(fontFamily: fontFamily, fontFamilyFallback: fontFallback, fontWeight: FontWeight.w800, fontSize: 16),
               ),
               icon: const Icon(Icons.threesixty_rounded),
               label: const Text('Aylantirish'),

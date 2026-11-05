@@ -177,7 +177,12 @@ class _SetupScreenState extends State<SetupScreen> {
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Icon(icon, color: on ? C.ac : C.mut, size: 22),
               const SizedBox(width: 8),
-              Text(label, style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: on ? C.fg : C.mut)),
+              Flexible(
+                child: Text(label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: on ? C.fg : C.mut)),
+              ),
             ]),
           ),
         ),
