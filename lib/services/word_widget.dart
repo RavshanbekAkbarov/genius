@@ -11,6 +11,9 @@ import '../state/app_state.dart';
 /// Kunning so'zi: har kuni tanlangan kitobdan bitta so'z (hamma uchun bir xil tartibda).
 Word wordOfDay(AppState s, [DateTime? day]) {
   final d = day ?? s.today;
+  // Admin paneldan shu kunga qo'yilgan so'z bo'lsa, o'shani ko'rsatamiz.
+  final fixed = s.dailyWords[ds(d)];
+  if (fixed != null) return fixed;
   final b = bookById(s.currentBook);
   final all = <Word>[];
   for (var u = 1; u <= s.unitsOf(b); u++) {

@@ -98,7 +98,7 @@ class _AddWordSheetState extends State<_AddWordSheet> {
 
   Widget field(String label, TextEditingController c, {String? hint, FocusNode? focus, bool small = false}) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(label, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: C.mut)),
+      Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: C.mut)),
       const SizedBox(height: 6),
       TextField(
         controller: c,
@@ -138,11 +138,11 @@ class _AddWordSheetState extends State<_AddWordSheet> {
           Text(
             '${editing ? '' : '"Mening so\'zlarim" kitobining Unit $nextUnit iga saqlanadi (har unitda 20 ta so\'z). '}'
             "Talaffuzni bilmasangiz bo'sh qoldiring: karta bosilganda baribir o'qib beradi.",
-            style: const TextStyle(color: C.mut, fontSize: 12),
+            style: TextStyle(color: C.mut, fontSize: 12),
           ),
           if (error != null) ...[
             const SizedBox(height: 8),
-            Text(error!, style: const TextStyle(color: C.bad, fontWeight: FontWeight.w800)),
+            Text(error!, style: TextStyle(color: C.bad, fontWeight: FontWeight.w800)),
           ],
           const SizedBox(height: 12),
           Btn(editing ? 'Saqlash' : "Qo'shish", onTap: submit),

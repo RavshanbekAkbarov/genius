@@ -4,32 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Genius — Admin panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #08101F;
-    --panel: #0F1A2E;
-    --panel2: #142240;
-    --line: #1F2E4D;
-    --text: #E8EEF9;
-    --muted: #8A9BB8;
-    --accent: #4C8DFF;
-    --accent2: #2F6FE0;
-    --ok: #34C77B;
-    --bad: #FF5C6C;
-    --warn: #FFB347;
+    /* Ilova bilan bir xil "Tungi osmon" ranglari */
+    --bg: #090E1C;
+    --panel: #111831;
+    --panel2: #19223F;
+    --line: #212B49;
+    --text: #F3F6FF;
+    --muted: #8E99B9;
+    --accent: #5B83FF;
+    --accent2: #3557E6;
+    --ok: #2FD38A;
+    --bad: #FF6672;
+    --warn: #FFB84D;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
-    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font: 500 15px/1.45 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
   a { color: var(--accent); }
-  h1, h2, h3 { margin: 0 0 12px; font-weight: 650; }
+  h1, h2, h3 { margin: 0 0 12px; font-weight: 800; letter-spacing: -.2px; }
   h2 { font-size: 20px; }
   h3 { font-size: 16px; color: var(--muted); margin-top: 24px; }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
   .hidden { display: none !important; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
   .muted { color: var(--muted); }
   .small { font-size: 13px; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -37,15 +40,15 @@
   label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
   input, select, textarea {
     width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line);
-    border-radius: 10px; padding: 9px 11px; font: inherit;
+    border-radius: 12px; padding: 11px 13px; font: inherit;
   }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
   input[type=checkbox] { width: auto; transform: scale(1.2); margin-right: 6px; }
   input[type=color] { padding: 2px; height: 40px; }
   textarea { min-height: 220px; font-family: ui-monospace, Consolas, monospace; font-size: 14px; }
   button {
-    background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 9px 16px;
-    font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--accent); color: #fff; border: 0; border-radius: 12px; padding: 10px 18px;
+    font: inherit; font-weight: 800; cursor: pointer;
   }
   button:hover { background: var(--accent2); }
   button:disabled { opacity: .5; cursor: default; }
@@ -56,16 +59,19 @@
   button.sm { padding: 5px 10px; font-size: 13px; }
   header.top {
     display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-    padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--panel);
+    padding: 16px 20px; border-bottom: 0; color: #fff;
+    background: linear-gradient(135deg, #5B83FF 0%, #3F52E3 55%, #2B2A9E 100%);
   }
   header.top .logo { font-weight: 800; font-size: 19px; }
-  header.top .logo span { color: var(--accent); }
+  header.top .logo span { color: rgba(255,255,255,.75); }
+  header.top button.ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+  header.top .muted { color: rgba(255,255,255,.8); }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 18px 0; }
-  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-  .stat .v { font-size: 24px; font-weight: 750; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+  .stat .v { font-size: 26px; font-weight: 800; }
   .stat .l { color: var(--muted); font-size: 13px; }
   nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-  nav.tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); }
+  nav.tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); border-radius: 99px; }
   nav.tabs button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
   table { width: 100%; border-collapse: collapse; }
   th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -140,6 +146,7 @@
       <button data-tab="pay" class="on">To'lovlar</button>
       <button data-tab="books">Kitoblar</button>
       <button data-tab="words">So'z qo'shish</button>
+      <button data-tab="daily">Kun so'zi va iqtiboslar</button>
       <button data-tab="users">Foydalanuvchilar</button>
     </nav>
 
@@ -200,6 +207,50 @@
       <div class="tablebox" id="wPreview" style="margin-top:14px"></div>
     </section>
 
+    <!-- KUN SO'ZI VA IQTIBOSLAR -->
+    <section id="tab-daily" class="hidden">
+      <div class="card">
+        <div class="row"><h2 class="grow" style="margin:0">Kunning so'zi</h2></div>
+        <p class="muted small">Bosh ekrandagi "Kunning so'zi" kartasi va telefon vidjeti uchun. Qaysi kunga so'z qo'yilmagan bo'lsa,
+          ilova o'quvchining kitobidan o'zi tanlaydi. Bitta kunga bitta so'z.</p>
+        <div class="grid2">
+          <div><label>Sana</label><input id="dDay" type="date"></div>
+          <div><label>Inglizcha</label><input id="dEn" placeholder="resilient"></div>
+          <div><label>O'zbekcha</label><input id="dUz" placeholder="chidamli, bardoshli"></div>
+          <div><label>Talaffuz (ixtiyoriy)</label><input id="dIpa" placeholder="/rɪˈzɪliənt/"></div>
+        </div>
+        <label>Misol gap (ixtiyoriy)</label><input id="dEx" placeholder="She is resilient and never gives up.">
+        <div class="row" style="margin-top:12px">
+          <button id="dSaveBtn">Saqlash</button>
+          <button class="ghost" id="dClearBtn">Tozalash</button>
+        </div>
+        <h3>Rejadagi so'zlar (bugundan keyin)</h3>
+        <div class="tablebox" id="dBox"></div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="row"><h2 class="grow" style="margin:0">Motivatsion iqtiboslar</h2>
+          <button id="qNewBtn">+ Yangi iqtibos</button></div>
+        <p class="muted small">Ilova har kuni ro'yxatdan navbatdagisini ko'rsatadi (bosh ekran va mashq tugaganda).
+          "Ko'rinmaydi" qilingan iqtibos ilovaga chiqmaydi. Faqat muallifi aniq bo'lgan gaplarni qo'shing.</p>
+        <div id="qForm" class="hidden" style="margin:14px 0;border-top:1px solid var(--line);padding-top:14px">
+          <h3 id="qFormTitle" style="margin-top:0;color:var(--text)">Yangi iqtibos</h3>
+          <label>Inglizcha matn</label><textarea id="qEn" style="min-height:70px;font-family:inherit"></textarea>
+          <label>O'zbekcha tarjima</label><textarea id="qUz" style="min-height:70px;font-family:inherit"></textarea>
+          <div class="grid2">
+            <div><label>Muallif</label><input id="qAuthor" placeholder="Albert Einstein"></div>
+            <div><label>Tartib raqami (kichigi oldinda)</label><input id="qSort" type="number" value="0"></div>
+          </div>
+          <label style="margin-top:12px;color:var(--text)"><input id="qActive" type="checkbox" checked> Ilovada ko'rinsin</label>
+          <div class="row" style="margin-top:12px">
+            <button id="qSaveBtn">Saqlash</button>
+            <button class="ghost" id="qCancelBtn">Bekor qilish</button>
+          </div>
+        </div>
+        <div class="tablebox" id="qBox" style="margin-top:12px"></div>
+      </div>
+    </section>
+
     <!-- FOYDALANUVCHILAR -->
     <section id="tab-users" class="card hidden">
       <h2>Foydalanuvchilar</h2>
@@ -222,8 +273,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
 <script>
 // ===== SHU IKKI QATORNI O'ZGARTIRING (Supabase → Project Settings → API) =====
-const SUPABASE_URL = 'PASTE_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'PASTE_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_URL = 'https://ggvpqmbvjiqylbgyuxld.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_9Ac4HTwkBPx26XXbWwdFSQ_fAqEi4gi';
 // ============================================================================
 
 const configured = !SUPABASE_URL.startsWith('PASTE') && !SUPABASE_ANON_KEY.startsWith('PASTE');
@@ -335,7 +386,7 @@ document.querySelectorAll('nav.tabs button').forEach((b) => {
 async function refreshAll() {
   try {
     await loadBooks();
-    await Promise.all([loadStats(), loadPayments(), loadUsers()]);
+    await Promise.all([loadStats(), loadPayments(), loadUsers(), loadDaily(), loadQuotes()]);
   } catch (e) { fail(e); }
 }
 
@@ -635,6 +686,126 @@ $('usersBox').addEventListener('click', async (ev) => {
 });
 
 start().catch(fail);
+
+// ---------- kunning so'zi ----------
+let dailyRows = [];
+function tomorrow() {
+  const d = new Date(Date.now() + 5 * 3600 * 1000 + 24 * 3600 * 1000);
+  return d.toISOString().slice(0, 10);
+}
+function clearDaily() {
+  $('dDay').value = tomorrow();
+  ['dEn', 'dUz', 'dIpa', 'dEx'].forEach((id) => { $(id).value = ''; });
+}
+async function loadDaily() {
+  const { data, error } = await sb.from('daily_words').select('*').gte('day', tashkentToday()).order('day');
+  if (error) throw error;
+  dailyRows = data;
+  $('dBox').innerHTML = data.length
+    ? '<table><tr><th>Sana</th><th>Inglizcha</th><th>O\'zbekcha</th><th>Talaffuz</th><th></th></tr>' +
+      data.map((w) => '<tr><td>' + dmy(w.day) + '</td><td><b>' + esc(w.en) + '</b></td><td>' + esc(w.uz) + '</td><td class="muted">' +
+        esc(w.ipa) + '</td><td style="white-space:nowrap"><button class="ghost sm" data-dedit="' + esc(w.day) + '">Tahrirlash</button> ' +
+        '<button class="bad sm" data-ddel="' + esc(w.day) + '">O\'chirish</button></td></tr>').join('') + '</table>'
+    : '<div class="empty">Hali rejada so\'z yo\'q. Yuqoridagi formadan qo\'shing.</div>';
+}
+$('dClearBtn').onclick = clearDaily;
+$('dSaveBtn').onclick = async () => {
+  const row = { day: $('dDay').value, en: $('dEn').value.trim(), uz: $('dUz').value.trim(), ipa: $('dIpa').value.trim(), ex: $('dEx').value.trim() };
+  if (!row.day) return toast('Sanani tanlang.', true);
+  if (!row.en || !row.uz) return toast("Inglizcha so'z va tarjimasini yozing.", true);
+  try {
+    const { error } = await sb.from('daily_words').upsert(row, { onConflict: 'day' });
+    if (error) throw error;
+    toast(dmy(row.day) + ' uchun so\'z saqlandi ✅');
+    clearDaily();
+    await loadDaily();
+  } catch (e) { fail(e); }
+};
+$('dBox').addEventListener('click', async (ev) => {
+  const ed = ev.target.closest('button[data-dedit]');
+  const del = ev.target.closest('button[data-ddel]');
+  if (ed) {
+    const w = dailyRows.find((x) => x.day === ed.dataset.dedit);
+    $('dDay').value = w.day; $('dEn').value = w.en; $('dUz').value = w.uz; $('dIpa').value = w.ipa; $('dEx').value = w.ex;
+    $('dDay').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  if (del) {
+    if (!confirm(dmy(del.dataset.ddel) + " kungi so'z o'chirilsinmi?")) return;
+    try {
+      const { error } = await sb.from('daily_words').delete().eq('day', del.dataset.ddel);
+      if (error) throw error;
+      toast("O'chirildi");
+      await loadDaily();
+    } catch (e) { fail(e); }
+  }
+});
+
+// ---------- iqtiboslar ----------
+let quoteRows = [];
+let editingQuote = null;
+async function loadQuotes() {
+  const { data, error } = await sb.from('quotes').select('*').order('sort').order('id');
+  if (error) throw error;
+  quoteRows = data;
+  $('qBox').innerHTML = data.length
+    ? '<table><tr><th>#</th><th>Iqtibos</th><th>Muallif</th><th>Holat</th><th></th></tr>' +
+      data.map((q) => '<tr><td class="muted">' + q.sort + '</td><td><b>' + esc(q.en) + '</b><div class="muted small">' + esc(q.uz) +
+        '</div></td><td>' + esc(q.author) + '</td><td>' +
+        (q.active ? '<span class="badge b-approved">Ilovada</span>' : '<span class="badge b-awaiting_receipt">Ko\'rinmaydi</span>') +
+        '</td><td style="white-space:nowrap"><button class="ghost sm" data-qedit="' + q.id + '">Tahrirlash</button> ' +
+        '<button class="ghost sm" data-qtoggle="' + q.id + '">' + (q.active ? 'Yashirish' : 'Ko\'rsatish') + '</button> ' +
+        '<button class="bad sm" data-qdel="' + q.id + '">O\'chirish</button></td></tr>').join('') + '</table>'
+    : '<div class="empty">Iqtibos yo\'q. Ilova o\'zidagi tayyor ro\'yxatni ko\'rsatadi.</div>';
+}
+function openQuoteForm(q) {
+  editingQuote = q ? q.id : null;
+  $('qFormTitle').textContent = q ? 'Iqtibosni tahrirlash' : 'Yangi iqtibos';
+  $('qEn').value = q ? q.en : '';
+  $('qUz').value = q ? q.uz : '';
+  $('qAuthor').value = q ? q.author : '';
+  $('qSort').value = q ? q.sort : (quoteRows.reduce((m, x) => Math.max(m, x.sort), -1) + 1);
+  $('qActive').checked = q ? q.active : true;
+  $('qForm').classList.remove('hidden');
+  $('qForm').scrollIntoView({ behavior: 'smooth' });
+}
+$('qNewBtn').onclick = () => openQuoteForm(null);
+$('qCancelBtn').onclick = () => $('qForm').classList.add('hidden');
+$('qSaveBtn').onclick = async () => {
+  const row = { en: $('qEn').value.trim(), uz: $('qUz').value.trim(), author: $('qAuthor').value.trim(),
+    sort: parseInt($('qSort').value, 10) || 0, active: $('qActive').checked };
+  if (!row.en || !row.uz || !row.author) return toast('Matn, tarjima va muallifni to\'ldiring.', true);
+  try {
+    const { error } = editingQuote
+      ? await sb.from('quotes').update(row).eq('id', editingQuote)
+      : await sb.from('quotes').insert(row);
+    if (error) throw error;
+    toast('Iqtibos saqlandi ✅');
+    $('qForm').classList.add('hidden');
+    await loadQuotes();
+  } catch (e) { fail(e); }
+};
+$('qBox').addEventListener('click', async (ev) => {
+  const b = ev.target.closest('button');
+  if (!b) return;
+  const id = Number(b.dataset.qedit || b.dataset.qtoggle || b.dataset.qdel);
+  const q = quoteRows.find((x) => x.id === id);
+  if (!q) return;
+  try {
+    if (b.dataset.qedit) return openQuoteForm(q);
+    if (b.dataset.qtoggle) {
+      const { error } = await sb.from('quotes').update({ active: !q.active }).eq('id', id);
+      if (error) throw error;
+    }
+    if (b.dataset.qdel) {
+      if (!confirm('Iqtibos butunlay o\'chirilsinmi?')) return;
+      const { error } = await sb.from('quotes').delete().eq('id', id);
+      if (error) throw error;
+      toast("O'chirildi");
+    }
+    await loadQuotes();
+  } catch (e) { fail(e); }
+});
+clearDaily();
 </script>
 </body>
 </html>

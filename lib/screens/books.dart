@@ -126,7 +126,7 @@ class BookRow extends StatelessWidget {
                     : locked
                         ? "${b.fixedUnits} unit · ${money(b.price)} so'm"
                         : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
-                style: const TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
+                style: TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
             const SizedBox(height: 9),
             ClipRRect(
               borderRadius: BorderRadius.circular(4),
@@ -136,7 +136,7 @@ class BookRow extends StatelessWidget {
         ),
         const SizedBox(width: 14),
         locked
-            ? const Icon(Icons.lock_rounded, color: C.gold, size: 22)
+            ? Icon(Icons.lock_rounded, color: C.gold, size: 22)
             : SizedBox(
                 width: 40,
                 child: Text('$pct%', textAlign: TextAlign.right, style: display(15, color: pct > 0 ? C.good : C.mut))),
@@ -190,7 +190,7 @@ class UnitsScreen extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                       "$units unit · ${[for (var u = 1; u <= units; u++) s.unitLearned(b.id, u)].fold<int>(0, (a, x) => a + x)} so'z yodlangan",
-                      style: const TextStyle(color: C.mut, fontSize: 13, fontWeight: FontWeight.w600)),
+                      style: TextStyle(color: C.mut, fontSize: 13, fontWeight: FontWeight.w600)),
                 ]),
               ),
             ]),
@@ -246,12 +246,12 @@ class _UnitTile extends StatelessWidget {
               stroke: 4,
               color: C.good,
               child: done
-                  ? const Icon(Icons.check_rounded, color: C.good, size: 22)
+                  ? Icon(Icons.check_rounded, color: C.good, size: 22)
                   : Text('$unit', style: display(15))),
           const SizedBox(height: 8),
           Text('Unit $unit', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13)),
           Text(w == 0 ? 'tez orada' : '$l/$total',
-              style: const TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+              style: TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
         ]),
       ),
     );
@@ -291,13 +291,17 @@ class UnitScreen extends StatelessWidget {
         if (w.isEmpty)
           const EmptyBox("Bu unit so'zlari kitoblaringiz kelgach qo'shiladi.")
         else ...[
-          Row(children: [
-            Expanded(
-                child: Btn('Yodlanmaganlar (${w.length - l})',
-                    onTap: l == w.length ? null : () => quick(context, s, true))),
-            const SizedBox(width: 10),
-            Expanded(child: Btn('Hammasi (${w.length})', kind: BtnKind.ghost, onTap: () => quick(context, s, false))),
-          ]),
+          if (l == w.length)
+            Btn("Hammasi yodlangan · qayta mashq (${w.length})",
+                kind: BtnKind.ghost,
+                icon: const Icon(Icons.replay_rounded),
+                onTap: () => quick(context, s, false))
+          else
+            Row(children: [
+              Expanded(child: Btn('Yodlanmaganlar (${w.length - l})', onTap: () => quick(context, s, true))),
+              const SizedBox(width: 10),
+              Expanded(child: Btn('Hammasi (${w.length})', kind: BtnKind.ghost, onTap: () => quick(context, s, false))),
+            ]),
           const SizedBox(height: 14),
           for (var i = 0; i < w.length; i++)
             Padding(
@@ -368,11 +372,11 @@ class WordBlock extends StatelessWidget {
             if (onEdit != null)
               IconButton(
                 tooltip: 'Tahrirlash',
-                icon: const Icon(Icons.edit_outlined, size: 18, color: C.mut),
+                icon: Icon(Icons.edit_outlined, size: 18, color: C.mut),
                 onPressed: onEdit,
               )
             else
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(left: 4),
                 child: Icon(Icons.volume_up_rounded, color: C.mut, size: 18),
               ),

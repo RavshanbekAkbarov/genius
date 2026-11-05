@@ -38,8 +38,8 @@ class _ProfileTabState extends State<ProfileTab> {
           contentPadding: EdgeInsets.zero,
           leading: leading,
           title: Text(title, style: const TextStyle(fontWeight: FontWeight.w700)),
-          subtitle: sub == null ? null : Text(sub, style: const TextStyle(color: C.mut, fontSize: 12)),
-          trailing: trailing ?? (onTap == null ? null : const Icon(Icons.chevron_right_rounded, color: C.mut)),
+          subtitle: sub == null ? null : Text(sub, style: TextStyle(color: C.mut, fontSize: 12)),
+          trailing: trailing ?? (onTap == null ? null : Icon(Icons.chevron_right_rounded, color: C.mut)),
           onTap: onTap,
         );
     final best = s.bestStreaks();
@@ -69,16 +69,16 @@ class _ProfileTabState extends State<ProfileTab> {
                             style: display(20))),
                     if (prem) ...[
                       const SizedBox(width: 6),
-                      const Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
+                      Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
                     ],
                   ]),
                   Text("🔥 ${s.streak} kun · ${s.totalLearned} so'z yodlangan",
-                      style: const TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
+                      style: TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
                   Text(
                       Cloud.signedIn
                           ? (s.accountLabel ?? 'Hisobga kirilgan')
                           : 'Hisobga kirilmagan: yutuqlar faqat shu telefonda',
-                      style: const TextStyle(color: C.dim, fontSize: 11.5)),
+                      style: TextStyle(color: C.dim, fontSize: 11.5)),
                 ]),
               ),
               IconButton.filledTonal(
@@ -108,7 +108,7 @@ class _ProfileTabState extends State<ProfileTab> {
               const SectionTitle('Eng uzun seriyalar'),
               const SizedBox(height: 10),
               if (best.isEmpty)
-                const Text("Hali seriya yo'q. Ketma-ket kunlar mashq qiling.", style: TextStyle(color: C.mut))
+                Text("Hali seriya yo'q. Ketma-ket kunlar mashq qiling.", style: TextStyle(color: C.mut))
               else
                 for (final r in best)
                   Padding(
@@ -116,7 +116,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     child: Row(children: [
                       SizedBox(
                           width: 64,
-                          child: Text(shortDate(r.start), style: const TextStyle(color: C.mut, fontSize: 12))),
+                          child: Text(shortDate(r.start), style: TextStyle(color: C.mut, fontSize: 12))),
                       Expanded(
                         child: LayoutBuilder(builder: (_, c) {
                           final w = c.maxWidth * (r.length / best.first.length).clamp(.15, 1.0);
@@ -136,7 +136,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       SizedBox(
                           width: 64,
                           child: Text(shortDate(r.end),
-                              textAlign: TextAlign.right, style: const TextStyle(color: C.mut, fontSize: 12))),
+                              textAlign: TextAlign.right, style: TextStyle(color: C.mut, fontSize: 12))),
                     ]),
                   ),
             ]),
@@ -146,7 +146,7 @@ class _ProfileTabState extends State<ProfileTab> {
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 2),
             child: Column(children: [
               row('Genius Premium',
-                  leading: const Icon(Icons.workspace_premium_rounded, color: C.gold),
+                  leading: Icon(Icons.workspace_premium_rounded, color: C.gold),
                   trailing: Pill(
                     prem ? 'faol · ${dmy(s.premiumUntil!)} gacha' : '${money(premiumPrice)}/oy',
                     bg: prem ? C.good : C.ac,
@@ -154,14 +154,19 @@ class _ProfileTabState extends State<ProfileTab> {
                   ),
                   onTap: () => push(context, const PremiumScreen())),
               row('Ovoz',
-                  leading: const Icon(Icons.record_voice_over_rounded, color: C.mut),
+                  leading: Icon(Icons.record_voice_over_rounded, color: C.mut),
                   sub: 'Talaffuz uchun ovozni tanlash',
                   onTap: () => showVoiceSheet(context)),
+              row("Yorug' rejim",
+                  leading: Icon(s.lightMode ? Icons.light_mode_rounded : Icons.dark_mode_rounded, color: C.mut),
+                  sub: s.lightMode ? 'Kunduzi, quyoshda o\'qish uchun qulay' : "Hozir qorong'i rejim",
+                  trailing: Switch(value: s.lightMode, onChanged: s.setLight),
+                  onTap: () => s.setLight(!s.lightMode)),
               row('Eslatmalar',
-                  leading: const Icon(Icons.notifications_active_rounded, color: C.mut),
+                  leading: Icon(Icons.notifications_active_rounded, color: C.mut),
                   sub: "08:00, 14:00, 20:00, 21:30 · bajarilgan bo'lsa kelmaydi"),
               row('Kunlik maqsad',
-                  leading: const Icon(Icons.flag_rounded, color: C.mut), trailing: Pill("${s.dailyGoal} so'z")),
+                  leading: Icon(Icons.flag_rounded, color: C.mut), trailing: Pill("${s.dailyGoal} so'z")),
             ]),
           ),
           const SizedBox(height: 12),
@@ -172,7 +177,7 @@ class _ProfileTabState extends State<ProfileTab> {
               const SizedBox(height: 4),
               Text(
                   "Takror, olov va limitni ko'rish uchun kunni suring. Hozirgi sana: ${s.today.day.toString().padLeft(2, '0')}.${s.today.month.toString().padLeft(2, '0')}.${s.today.year}",
-                  style: const TextStyle(color: C.mut, fontSize: 13)),
+                  style: TextStyle(color: C.mut, fontSize: 13)),
               const SizedBox(height: 10),
               Row(children: [
                 Expanded(
@@ -226,7 +231,7 @@ class _ProfileTabState extends State<ProfileTab> {
           Text(l,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: C.mut, fontSize: 12, height: 1.25, fontWeight: FontWeight.w600)),
+              style: TextStyle(color: C.mut, fontSize: 12, height: 1.25, fontWeight: FontWeight.w600)),
         ]),
       );
 }
@@ -327,7 +332,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
           decoration: const InputDecoration(hintText: 'Masalan: Sardor_07', counterText: ''),
         ),
         const SizedBox(height: 4),
-        const Text("Ilovada shu ko'rinadi. Haqiqiy ism va telefon raqami so'ralmaydi.",
+        Text("Ilovada shu ko'rinadi. Haqiqiy ism va telefon raqami so'ralmaydi.",
             style: TextStyle(color: C.mut, fontSize: 12)),
         const SizedBox(height: 16),
         const Eyebrow('Kunlik maqsad'),
@@ -352,7 +357,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                   Cloud.signedIn
                       ? '${s.account == 'telegram' ? 'Telegram' : 'Google'} · ${s.accountLabel ?? ''}'
                       : 'Kirilmagan',
-                  style: const TextStyle(color: C.mut, fontSize: 12)),
+                  style: TextStyle(color: C.mut, fontSize: 12)),
               trailing: Cloud.signedIn
                   ? null
                   : TextButton(onPressed: () => push(context, const LoginScreen()), child: const Text('Kirish')),
@@ -361,7 +366,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               contentPadding: EdgeInsets.zero,
               title: const Text('Premium', style: TextStyle(fontWeight: FontWeight.w700)),
               subtitle: Text(s.isPremium ? 'Faol · ${dmy(s.premiumUntil!)} gacha' : 'Faol emas',
-                  style: const TextStyle(color: C.mut, fontSize: 12)),
+                  style: TextStyle(color: C.mut, fontSize: 12)),
               trailing: s.isPremium
                   ? null
                   : TextButton(onPressed: () => push(context, const PremiumScreen()), child: const Text('Olish')),
@@ -478,10 +483,10 @@ class PremiumScreen extends StatelessWidget {
             for (final p in perks)
               ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: const CircleAvatar(
+                leading: CircleAvatar(
                     radius: 13, backgroundColor: C.good, child: Icon(Icons.check, size: 16, color: Color(0xFF052611))),
                 title: Text(p.$1, style: const TextStyle(fontWeight: FontWeight.w800)),
-                subtitle: Text(p.$2, style: const TextStyle(color: C.mut, fontSize: 12)),
+                subtitle: Text(p.$2, style: TextStyle(color: C.mut, fontSize: 12)),
               ),
           ]),
         ),
@@ -489,8 +494,8 @@ class PremiumScreen extends StatelessWidget {
         if (s.isPremium)
           AppCard(
             child: Column(children: [
-              const Text('Premium faol', style: TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
-              Text('${dmy(s.premiumUntil!)} gacha', style: const TextStyle(color: C.mut, fontSize: 13)),
+              Text('Premium faol', style: TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
+              Text('${dmy(s.premiumUntil!)} gacha', style: TextStyle(color: C.mut, fontSize: 13)),
             ]),
           )
         else ...[
@@ -502,7 +507,7 @@ class PremiumScreen extends StatelessWidget {
               border: Border.all(color: C.gold, width: 2),
             ),
             child: Row(children: [
-              const Expanded(
+              Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('1 oy', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
                   Text("avtomatik yechilmaydi, o'zingiz uzaytirasiz", style: TextStyle(color: C.mut, fontSize: 12)),
@@ -543,7 +548,7 @@ class PayStepsText extends StatelessWidget {
             CircleAvatar(
                 radius: 11,
                 backgroundColor: C.sf2,
-                child: Text('${i + 1}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800))),
+                child: Text('${i + 1}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: C.fg))),
             const SizedBox(width: 10),
             Expanded(child: Text(t, style: const TextStyle(fontSize: 13))),
           ]),
@@ -635,7 +640,7 @@ class _PayWaitScreenState extends State<PayWaitScreen> with WidgetsBindingObserv
           const SizedBox(height: 12),
           Btn(checking ? 'Tekshirilmoqda…' : 'Tasdiqlandimi? Tekshirish', onTap: checking ? null : () => check()),
           const SizedBox(height: 8),
-          const Text("Tasdiqlangach bot sizga xabar yuboradi. Odatda bir necha daqiqa ichida.",
+          Text("Tasdiqlangach bot sizga xabar yuboradi. Odatda bir necha daqiqa ichida.",
               textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12)),
         ],
       ]),

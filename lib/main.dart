@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'config.dart';
 import 'data/words.dart';
@@ -38,13 +39,62 @@ class GeniusApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScope(
       state: state,
-      child: MaterialApp(
-        title: 'Genius',
-        debugShowCheckedModeBanner: false,
-        theme: buildTheme(),
-        // Birinchi ochilishda (server ulangan bo'lsa) kirish oynasi.
-        home: cloudEnabled && !state.loginSeen && !Cloud.signedIn ? const LoginScreen(first: true) : const Shell(),
+      // Mavzu (qorong'i/yorug') o'zgarsa butun ilova yangi ranglar bilan qayta quriladi.
+      child: ThemeSwitcher(
+        state: state,
+        builder: (light) {
+          C.light = light;
+          SystemChrome.setSystemUIOverlayStyle(light ? SystemUiOverlayStyle.dark : SystemUiOverlayStyle.light);
+          return MaterialApp(
+            key: ValueKey(light),
+            title: 'Genius',
+            debugShowCheckedModeBanner: false,
+            theme: buildTheme(),
+            // Telefonda juda katta shrift yoqilgan bo'lsa ham ekranlar buzilmasin: 1.3 barobargacha.
+            builder: (context, child) {
+              final mq = MediaQuery.of(context);
+              return MediaQuery(
+                data: mq.copyWith(textScaler: mq.textScaler.clamp(minScaleFactor: .9, maxScaleFactor: 1.3)),
+                child: child!,
+              );
+            },
+            // Birinchi ochilishda (server ulangan bo'lsa) kirish oynasi.
+            home: cloudEnabled && !state.loginSeen && !Cloud.signedIn ? const LoginScreen(first: true) : const Shell(),
+          );
+        },
       ),
     );
   }
+}
+
+/// Faqat [AppState.lightMode] o'zgarganda qayta quradi.
+class ThemeSwitcher extends StatefulWidget {
+  final AppState state;
+  final Widget Function(bool light) builder;
+  const ThemeSwitcher({super.key, required this.state, required this.builder});
+  @override
+  State<ThemeSwitcher> createState() => _ThemeSwitcherState();
+}
+
+class _ThemeSwitcherState extends State<ThemeSwitcher> {
+  late bool light = widget.state.lightMode;
+
+  void _on() {
+    if (widget.state.lightMode != light) setState(() => light = widget.state.lightMode);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    widget.state.addListener(_on);
+  }
+
+  @override
+  void dispose() {
+    widget.state.removeListener(_on);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => widget.builder(light);
 }

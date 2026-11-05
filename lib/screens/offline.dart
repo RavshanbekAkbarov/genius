@@ -58,7 +58,7 @@ class _OfflineScreenState extends State<OfflineScreen> {
                 width: 110,
                 height: 110,
                 decoration: BoxDecoration(shape: BoxShape.circle, color: C.sf2, border: Border.all(color: C.ln, width: 2)),
-                child: const Icon(Icons.wifi_off_rounded, size: 52, color: C.gold),
+                child: Icon(Icons.wifi_off_rounded, size: 52, color: C.gold),
               ),
             ),
             const SizedBox(height: 20),
@@ -70,7 +70,7 @@ class _OfflineScreenState extends State<OfflineScreen> {
               style: TextStyle(fontSize: 15, height: 1.4),
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               "Internet yoqilishi bilan qolgan joyingizdan davom etasiz.",
               textAlign: TextAlign.center,
               style: TextStyle(color: C.mut, fontSize: 14),
@@ -83,7 +83,7 @@ class _OfflineScreenState extends State<OfflineScreen> {
             Text(
               "Internetsiz kuniga $offlineSessions ta mashq va kitobdan so'z o'rganish mumkin. Premium foydalanuvchilar internetsiz cheklovsiz ishlaydi.",
               textAlign: TextAlign.center,
-              style: const TextStyle(color: C.mut, fontSize: 12),
+              style: TextStyle(color: C.mut, fontSize: 12),
             ),
             const SizedBox(height: 6),
             Btn('Premium haqida', kind: BtnKind.text, onTap: () => push(context, const PremiumScreen())),

@@ -25,7 +25,7 @@ class ShopTab extends StatelessWidget {
             AppCard(
               border: C.gold,
               child: Row(children: [
-                const Icon(Icons.workspace_premium_rounded, color: C.gold, size: 30),
+                Icon(Icons.workspace_premium_rounded, color: C.gold, size: 30),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text('Premium faol · ${dmy(s.premiumUntil!)} gacha',
@@ -38,7 +38,7 @@ class ShopTab extends StatelessWidget {
           const SizedBox(height: 18),
           Text('Markaz kitoblari', style: display(17)),
           const SizedBox(height: 4),
-          const Text("Aura Academy kitoblari. 4000 Essential Words kitoblari bepul.",
+          Text("Aura Academy kitoblari. 4000 Essential Words kitoblari bepul.",
               style: TextStyle(color: C.mut, fontSize: 13)),
           const SizedBox(height: 12),
           if (center.isEmpty) const EmptyBox('Markaz kitoblari tez orada shu yerda chiqadi.'),
@@ -51,10 +51,10 @@ class ShopTab extends StatelessWidget {
                   child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                     Text(b.title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
                     Text("${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
-                        style: const TextStyle(color: C.mut, fontSize: 12)),
+                        style: TextStyle(color: C.mut, fontSize: 12)),
                     const SizedBox(height: 10),
                     if (s.owned.contains(b.id))
-                      const Pill('Sizda bor', bg: C.good, fg: Color(0xFF052611))
+                      Pill('Sizda bor', bg: C.good, fg: Color(0xFF052611))
                     else
                       Btn("${money(b.price)} so'm · Sotib olish",
                           kind: BtnKind.telegram, onTap: () => showBookBuySheet(context, b)),

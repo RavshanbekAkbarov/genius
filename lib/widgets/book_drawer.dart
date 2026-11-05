@@ -26,7 +26,7 @@ class BookDrawer extends StatelessWidget {
             title: Text(b.title,
                 style: TextStyle(fontWeight: FontWeight.w800, color: sel ? C.ac : C.fg, fontSize: 15)),
             trailing: Text(b.isMine ? "${s.myWords.length} so'z" : '${s.bookPct(b.id)}%',
-                style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w700)),
+                style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w700)),
             onTap: () {
               s.pickBook(b.id);
               Navigator.pop(context);

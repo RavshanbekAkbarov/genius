@@ -7,8 +7,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../config.dart';
 import '../data/catalog.dart';
+import '../data/quotes.dart';
 import '../data/words.dart';
 import '../state/app_state.dart';
+import 'word_widget.dart';
 
 /// Server (Supabase): hisob, Premium, markaz kitoblari, progress nusxasi.
 /// Server sozlanmagan yoki internet yo'q bo'lsa hamma chaqiruv jim o'tadi, ilova telefonda ishlayveradi.
@@ -127,6 +129,7 @@ class Cloud {
     final s = _s;
     if (!enabled || s == null) return;
     final u = user;
+    unawaited(_syncDaily(s));
     if (u == null) {
       await _syncBooks(s);
       return;
@@ -152,6 +155,20 @@ class Cloud {
       await _syncBooks(s);
     } catch (e) {
       debugPrint('Sinxronlash xatosi: $e');
+    }
+  }
+
+  /// Admin paneldagi iqtiboslar va kunning so'zlari (kechadan 60 kun oldinga).
+  static Future<void> _syncDaily(AppState s) async {
+    try {
+      final qs = await _db.from('quotes').select('en, uz, author').eq('active', true).order('sort').order('id');
+      final from = ds(addDays(s.today, -1));
+      final to = ds(addDays(s.today, 60));
+      final ws = await _db.from('daily_words').select('day, en, uz, ipa, ex').gte('day', from).lte('day', to);
+      s.setDaily([for (final q in qs) Quote.fromJson(q)], {for (final w in ws) w['day'] as String: Word.fromJson(w)});
+      WordWidget.update(s);
+    } catch (e) {
+      debugPrint('Kunlik ma\'lumotni olib bo\'lmadi: $e');
     }
   }
 

@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const SizedBox(height: 16),
             Text('Genius', textAlign: TextAlign.center, style: display(28)),
-            const Text('AURA ACADEMY',
+            Text('AURA ACADEMY',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 11, letterSpacing: 1.4, fontWeight: FontWeight.w800, color: C.mut)),
             const SizedBox(height: 18),
@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 6),
             Btn('Hozircha kirmasdan boshlash', kind: BtnKind.text, onTap: skip),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               "Telegram bilan kirsangiz to'lov ham shu hisobga bog'lanadi. Kirmasangiz ham ilova ishlaydi, faqat to'lov uchun hisob kerak.",
               textAlign: TextAlign.center,
               style: TextStyle(color: C.mut, fontSize: 12),

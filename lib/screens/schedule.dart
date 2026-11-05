@@ -26,7 +26,7 @@ class ScheduleScreen extends StatelessWidget {
       appBar: const TopBar(title: 'Takror jadvali', subtitle: '1 · 3 · 7 · 15 · 30 kun'),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
         Row(children: [
-          const Text('Bugun:', style: TextStyle(color: C.mut, fontSize: 13)),
+          Text('Bugun:', style: TextStyle(color: C.mut, fontSize: 13)),
           const SizedBox(width: 6),
           Pill("$dueNow so'z", bg: dueNow > 0 ? C.bad : C.sf2, fg: dueNow > 0 ? const Color(0xFF2A0606) : C.fg),
         ]),
@@ -51,7 +51,7 @@ class ScheduleScreen extends StatelessWidget {
                   ),
                   child: Column(children: [
                     Text(weekdays[d.weekday - 1], style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800)),
-                    Text('${d.day}', style: const TextStyle(fontSize: 12, color: C.mut)),
+                    Text('${d.day}', style: TextStyle(fontSize: 12, color: C.mut)),
                     const SizedBox(height: 4),
                     Text(done > 0 ? '✓$done' : (plan > 0 ? '$plan' : '·'),
                         style: TextStyle(
@@ -83,7 +83,7 @@ class ScheduleScreen extends StatelessWidget {
                             ? "${ps.length} so'z · mustahkam"
                             : "${ps.length} so'z · keyingi: ${shortDate(DateTime.parse(dd))}",
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(color: C.mut, fontSize: 12)),
+                        style: TextStyle(color: C.mut, fontSize: 12)),
                   ),
                 ]),
                 const SizedBox(height: 10),
@@ -99,11 +99,11 @@ class ScheduleScreen extends StatelessWidget {
         if (g.isNotEmpty)
           Wrap(spacing: 8, runSpacing: 8, crossAxisAlignment: WrapCrossAlignment.center, children: [
             SizedBox(width: 36, child: _chip('done', '✓')),
-            const Text('bajarildi', style: TextStyle(color: C.mut, fontSize: 12)),
+            Text('bajarildi', style: TextStyle(color: C.mut, fontSize: 12)),
             SizedBox(width: 36, child: _chip('today', '3')),
-            const Text('bugun', style: TextStyle(color: C.mut, fontSize: 12)),
+            Text('bugun', style: TextStyle(color: C.mut, fontSize: 12)),
             SizedBox(width: 36, child: _chip('miss', '3')),
-            const Text("o'tkazib yuborildi", style: TextStyle(color: C.mut, fontSize: 12)),
+            Text("o'tkazib yuborildi", style: TextStyle(color: C.mut, fontSize: 12)),
           ]),
       ]),
     );

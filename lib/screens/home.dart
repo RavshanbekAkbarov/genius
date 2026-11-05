@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
-import '../data/quotes.dart';
 import '../data/words.dart';
 import '../services/speech.dart';
 import '../services/word_widget.dart';
@@ -84,7 +83,7 @@ class _HomeTabState extends State<HomeTab> {
           const SizedBox(height: 12),
           _wordOfDay(s),
           const SizedBox(height: 12),
-          QuoteCard(quote: quoteOfDay(s.today)),
+          QuoteCard(quote: s.quote),
           const SizedBox(height: 28),
           SectionTitle('4000 Essential Words', action: 'Hammasi', onAction: () => ShellScope.of(context).goTab(1)),
           const SizedBox(height: 12),
@@ -104,7 +103,7 @@ class _HomeTabState extends State<HomeTab> {
         color: Color.alphaBlend(C.bad.withValues(alpha: .12), C.sf),
         border: C.bad,
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          const Row(children: [
+          Row(children: [
             Icon(Icons.local_fire_department_rounded, color: C.bad),
             SizedBox(width: 8),
             Text('Olovingiz kuyadi!', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
@@ -112,7 +111,7 @@ class _HomeTabState extends State<HomeTab> {
           const SizedBox(height: 6),
           Text(
               "Bugun hali so'z yodlamadingiz va takrorlamadingiz. ${s.streak} kunlik olovni yo'qotmaslik uchun hozir mashq qiling yoki 3 ta reklama ko'rib saqlab qoling.",
-              style: const TextStyle(color: C.mut, fontSize: 13)),
+              style: TextStyle(color: C.mut, fontSize: 13)),
           const SizedBox(height: 10),
           Row(children: [
             Expanded(child: Btn('Mashq qilish', onTap: () => openSetup(context, s.currentBook))),
@@ -289,7 +288,7 @@ class _HomeTabState extends State<HomeTab> {
           Container(
             width: 52,
             height: 52,
-            decoration: const BoxDecoration(color: C.gold, shape: BoxShape.circle),
+            decoration: BoxDecoration(color: C.gold, shape: BoxShape.circle),
             child: const Icon(Icons.bolt_rounded, color: C.onGold, size: 32),
           ),
           const SizedBox(width: 14),
@@ -297,7 +296,7 @@ class _HomeTabState extends State<HomeTab> {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('Bugungi mashq', style: display(19)),
               const SizedBox(height: 3),
-              Text(sub, style: const TextStyle(fontSize: 13, color: C.mut, fontWeight: FontWeight.w600)),
+              Text(sub, style: TextStyle(fontSize: 13, color: C.mut, fontWeight: FontWeight.w600)),
             ]),
           ),
           const SizedBox(width: 10),
@@ -309,7 +308,7 @@ class _HomeTabState extends State<HomeTab> {
                 color: C.good,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   Text('$today', style: display(14)),
-                  Text('/${s.dailyGoal}', style: const TextStyle(fontSize: 9, color: C.mut, fontWeight: FontWeight.w700)),
+                  Text('/${s.dailyGoal}', style: TextStyle(fontSize: 9, color: C.mut, fontWeight: FontWeight.w700)),
                 ])),
           ),
         ]),
@@ -319,7 +318,7 @@ class _HomeTabState extends State<HomeTab> {
           const SizedBox(height: 8),
           Text('Bugun ${s.sessionsLeft}/$freeSessions bepul mashq · takrorlar doim bepul',
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 11.5, color: C.mut, fontWeight: FontWeight.w600)),
+              style: TextStyle(fontSize: 11.5, color: C.mut, fontWeight: FontWeight.w600)),
         ],
       ]),
     );
@@ -336,7 +335,7 @@ class _HomeTabState extends State<HomeTab> {
           Text(sub,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+              style: TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
         ]),
       );
 
@@ -352,16 +351,16 @@ class _HomeTabState extends State<HomeTab> {
             Text(w.en, style: display(24, color: C.fg)),
             if (w.ipa.isNotEmpty) ...[
               const SizedBox(height: 2),
-              Text(w.ipa, style: const TextStyle(color: C.ac, fontSize: 13, fontWeight: FontWeight.w700)),
+              Text(w.ipa, style: TextStyle(color: C.ac, fontSize: 13, fontWeight: FontWeight.w700)),
             ],
             const SizedBox(height: 6),
-            Text(w.uz, style: const TextStyle(fontWeight: FontWeight.w600, color: C.mut)),
+            Text(w.uz, style: TextStyle(fontWeight: FontWeight.w600, color: C.mut)),
           ]),
         ),
         Container(
           width: 52,
           height: 52,
-          decoration: const BoxDecoration(shape: BoxShape.circle, color: C.ac),
+          decoration: BoxDecoration(shape: BoxShape.circle, color: C.ac),
           child: const Icon(Icons.volume_up_rounded, color: Colors.white, semanticLabel: 'Talaffuz'),
         ),
       ]),
@@ -480,18 +479,18 @@ class WordRow extends StatelessWidget {
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text.rich(TextSpan(children: [
-                  TextSpan(text: word.en, style: const TextStyle(color: C.fg, fontWeight: FontWeight.w800, fontSize: 16)),
+                  TextSpan(text: word.en, style: TextStyle(color: C.fg, fontWeight: FontWeight.w800, fontSize: 16)),
                   if (word.ipa.isNotEmpty)
-                    TextSpan(text: '  ${word.ipa}', style: const TextStyle(color: C.mut, fontSize: 12)),
+                    TextSpan(text: '  ${word.ipa}', style: TextStyle(color: C.mut, fontSize: 12)),
                 ])),
                 const SizedBox(height: 2),
-                Text(word.uz, style: const TextStyle(color: C.fg, fontWeight: FontWeight.w500)),
-                if (word.ex.isNotEmpty) Text(word.ex, style: const TextStyle(color: C.mut, fontSize: 12)),
-                if (note != null) Text(note!, style: const TextStyle(color: C.mut, fontSize: 12)),
+                Text(word.uz, style: TextStyle(color: C.fg, fontWeight: FontWeight.w500)),
+                if (word.ex.isNotEmpty) Text(word.ex, style: TextStyle(color: C.mut, fontSize: 12)),
+                if (note != null) Text(note!, style: TextStyle(color: C.mut, fontSize: 12)),
                 if (extra != null) ...[const SizedBox(height: 6), extra!],
               ]),
             ),
-            const Icon(Icons.volume_up_rounded, color: C.ac, size: 20),
+            Icon(Icons.volume_up_rounded, color: C.ac, size: 20),
             if (trailing != null) ...[const SizedBox(width: 6), trailing!],
           ]),
         ),
@@ -541,7 +540,7 @@ class WeekCard extends StatelessWidget {
                           color: p >= 1 ? C.good : C.ac,
                           track: isToday ? C.ac.withValues(alpha: .25) : C.sf2,
                           child: p >= 1
-                              ? const Icon(Icons.check_rounded, size: 18, color: C.good)
+                              ? Icon(Icons.check_rounded, size: 18, color: C.good)
                               : Text('${d.day}',
                                   style: TextStyle(
                                       fontSize: 12,
