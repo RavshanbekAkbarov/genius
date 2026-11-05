@@ -132,6 +132,7 @@ class AppState extends ChangeNotifier {
   String nickname = '';
   String avatar = '🦁';
   int dailyGoal = defaultDailyGoal;
+  bool lightMode = false;
   List<Word> myWords = [];
 
   // Sozlamalar
@@ -198,6 +199,7 @@ class AppState extends ChangeNotifier {
         'my': myWords.map((w) => w.toJson()).toList(),
         'reverse': reverse,
         'font': fontScale,
+        'light': lightMode,
         'voice': voiceName == null ? null : {'name': voiceName, 'locale': voiceLocale},
         'listen': {'r': listenRepeat, 's': listenSpeed, 'mix': listenShuffle, 'uz': listenUzFirst},
         'loginSeen': loginSeen,
@@ -232,6 +234,7 @@ class AppState extends ChangeNotifier {
     myWords = ((j['my'] ?? []) as List).map((e) => Word.fromJson(e as Map<String, dynamic>)).toList();
     reverse = j['reverse'] == true;
     fontScale = ((j['font'] ?? 1.0) as num).toDouble();
+    lightMode = j['light'] == true;
     final v = j['voice'] as Map<String, dynamic>?;
     voiceName = v?['name'] as String?;
     voiceLocale = v?['locale'] as String?;
@@ -249,7 +252,7 @@ class AppState extends ChangeNotifier {
   /// Serverga yuboriladigan nusxa: o'quv holati (hisob va qurilma sozlamalarisiz).
   Map<String, dynamic> progressJson() {
     final j = toJson();
-    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'voice', 'owned']) {
+    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'voice', 'owned', 'light']) {
       j.remove(k);
     }
     return j;
@@ -368,6 +371,12 @@ class AppState extends ChangeNotifier {
   void bumpFont(int dir) {
     fontScale = ((fontScale + dir * .1) * 10).round() / 10;
     fontScale = fontScale.clamp(fontMin, fontMax);
+    changed();
+  }
+
+  /// Yorug' (kunduzgi) rejim.
+  void setLight(bool v) {
+    lightMode = v;
     changed();
   }
 

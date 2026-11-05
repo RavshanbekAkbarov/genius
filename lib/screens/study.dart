@@ -100,12 +100,12 @@ void showLimitSheet(BuildContext context) {
       padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
       child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Row(children: [
-          const Pill('$freeSessions/$freeSessions', bg: C.bad, fg: Color(0xFF2A0606)),
+          Pill('$freeSessions/$freeSessions', bg: C.bad, fg: Color(0xFF2A0606)),
           const SizedBox(width: 10),
           Expanded(child: Text('Bugungi bepul mashqlar tugadi', style: display(17))),
         ]),
         const SizedBox(height: 10),
-        const Text(
+        Text(
             "Bepulda kuniga $freeSessions ta mashq qilish mumkin. Ertaga soat 00:00 da yana $freeSessions ta ochiladi. 1·3·7·15·30 kunlik takrorlar doim bepul.",
             style: TextStyle(color: C.mut, fontSize: 13)),
         const SizedBox(height: 14),
@@ -312,7 +312,7 @@ class _StudyScreenState extends State<StudyScreen> {
                   _gradeBtn('Oson', ss.review ? 'keyingi bosqich' : 'yodladim', C.good, g == true, () => grade(true))),
         ]),
       ),
-      const Padding(
+      Padding(
         padding: EdgeInsets.fromLTRB(16, 12, 16, 22),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Icon(Icons.touch_app_rounded, size: 16, color: C.mut),
@@ -352,7 +352,7 @@ class _StudyScreenState extends State<StudyScreen> {
                   Text(sub,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+                      style: TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
                 ]),
               ),
             ]),
@@ -690,7 +690,7 @@ class QuoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => AppCard(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Row(children: [
+          Row(children: [
             Icon(Icons.format_quote_rounded, color: C.gold),
             SizedBox(width: 6),
             Eyebrow('Kunning gapi'),
@@ -698,9 +698,9 @@ class QuoteCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(quote.en, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15, height: 1.35)),
           const SizedBox(height: 6),
-          Text(quote.uz, style: const TextStyle(color: C.mut, fontSize: 13, height: 1.35)),
+          Text(quote.uz, style: TextStyle(color: C.mut, fontSize: 13, height: 1.35)),
           const SizedBox(height: 8),
-          Text('— ${quote.author}', style: const TextStyle(color: C.gold, fontWeight: FontWeight.w800, fontSize: 13)),
+          Text('— ${quote.author}', style: TextStyle(color: C.gold, fontWeight: FontWeight.w800, fontSize: 13)),
         ]),
       );
 }

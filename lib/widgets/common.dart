@@ -125,7 +125,7 @@ class BookCover extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               Text('${(progress! * 100).round()}%',
-                  style: const TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
+                  style: TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
             ]),
           ],
         ]),
@@ -138,16 +138,15 @@ class BookCover extends StatelessWidget {
 class Ring extends StatelessWidget {
   final double value;
   final double size, stroke;
-  final Color color, track;
+  final Color? color, track;
   final Widget? child;
-  const Ring(this.value,
-      {super.key, this.size = 58, this.stroke = 6, this.color = C.ac, this.track = C.sf2, this.child});
+  const Ring(this.value, {super.key, this.size = 58, this.stroke = 6, this.color, this.track, this.child});
   @override
   Widget build(BuildContext context) => SizedBox(
         width: size,
         height: size,
         child: CustomPaint(
-          painter: _RingPainter(value.clamp(0, 1).toDouble(), stroke, color, track),
+          painter: _RingPainter(value.clamp(0, 1).toDouble(), stroke, color ?? C.ac, track ?? C.sf2),
           child: Center(child: child),
         ),
       );
@@ -200,15 +199,15 @@ class _RingPainter extends CustomPainter {
 /// Rangli fonli ikonka (ro'yxat va plitkalarda).
 class IconBox extends StatelessWidget {
   final IconData icon;
-  final Color color;
+  final Color? color;
   final double size;
-  const IconBox(this.icon, {super.key, this.color = C.ac, this.size = 40});
+  const IconBox(this.icon, {super.key, this.color, this.size = 40});
   @override
   Widget build(BuildContext context) => Container(
         width: size,
         height: size,
-        decoration: BoxDecoration(color: color.withValues(alpha: .16), borderRadius: BorderRadius.circular(size * .32)),
-        child: Icon(icon, color: color, size: size * .55),
+        decoration: BoxDecoration(color: (color ?? C.ac).withValues(alpha: .16), borderRadius: BorderRadius.circular(size * .32)),
+        child: Icon(icon, color: color ?? C.ac, size: size * .55),
       );
 }
 
@@ -286,13 +285,13 @@ class Btn extends StatelessWidget {
 
 class Pill extends StatelessWidget {
   final String text;
-  final Color bg, fg;
-  const Pill(this.text, {super.key, this.bg = C.sf2, this.fg = C.fg});
+  final Color? bg, fg;
+  const Pill(this.text, {super.key, this.bg, this.fg});
   @override
   Widget build(BuildContext context) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-        decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(20)),
-        child: Text(text, style: TextStyle(color: fg, fontWeight: FontWeight.w800, fontSize: 12)),
+        decoration: BoxDecoration(color: bg ?? C.sf2, borderRadius: BorderRadius.circular(20)),
+        child: Text(text, style: TextStyle(color: fg ?? C.fg, fontWeight: FontWeight.w800, fontSize: 12)),
       );
 }
 
@@ -305,7 +304,7 @@ class SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(children: [
         Expanded(child: Text(title, style: display(18))),
-        if (note != null) Text(note!, style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+        if (note != null) Text(note!, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
         if (action != null)
           InkWell(
             borderRadius: BorderRadius.circular(10),
@@ -313,8 +312,8 @@ class SectionTitle extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
               child: Row(mainAxisSize: MainAxisSize.min, children: [
-                Text(action!, style: const TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 13)),
-                const Icon(Icons.chevron_right_rounded, color: C.ac, size: 18),
+                Text(action!, style: TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 13)),
+                Icon(Icons.chevron_right_rounded, color: C.ac, size: 18),
               ]),
             ),
           ),
@@ -326,7 +325,7 @@ class Eyebrow extends StatelessWidget {
   const Eyebrow(this.text, {super.key});
   @override
   Widget build(BuildContext context) => Text(text.toUpperCase(),
-      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.1, color: C.mut));
+      style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 1.1, color: C.mut));
 }
 
 class EmptyBox extends StatelessWidget {
@@ -340,7 +339,7 @@ class EmptyBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(R.lg),
           border: Border.all(color: C.ln),
         ),
-        child: Text(text, textAlign: TextAlign.center, style: const TextStyle(color: C.mut, height: 1.45)),
+        child: Text(text, textAlign: TextAlign.center, style: TextStyle(color: C.mut, height: 1.45)),
       );
 }
 
@@ -380,7 +379,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 Text(subtitle!,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+                    style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
             ]),
           ),
           for (final a in actions) ...[const SizedBox(width: 6), a],
@@ -437,7 +436,7 @@ class FillRow extends StatelessWidget {
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text(title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
                     if (subtitle != null)
-                      Text(subtitle!, style: const TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
+                      Text(subtitle!, style: TextStyle(color: C.mut, fontSize: 12, fontWeight: FontWeight.w600)),
                   ]),
                 ),
                 Text(trailing,
@@ -466,7 +465,7 @@ class SwitchRow extends StatelessWidget {
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15)),
-                if (subtitle != null) Text(subtitle!, style: const TextStyle(color: C.mut, fontSize: 12)),
+                if (subtitle != null) Text(subtitle!, style: TextStyle(color: C.mut, fontSize: 12)),
               ]),
             ),
             Switch(value: value, onChanged: (_) => onTap()),
@@ -529,7 +528,7 @@ class PremiumPromo extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(color: const Color(0xFF241200), borderRadius: BorderRadius.circular(14)),
                   child: Text("Premium · ${money(premiumPrice)} so'm/oy",
-                      style: const TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
+                      style: TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
                 ),
               ]),
             ),

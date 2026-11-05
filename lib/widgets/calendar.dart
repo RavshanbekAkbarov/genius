@@ -57,7 +57,7 @@ class _ActivityCalendarState extends State<ActivityCalendar> {
           height: 16,
           width: cell,
           child: Text(showM ? months[first.month - 1] : '',
-              softWrap: false, overflow: TextOverflow.visible, style: const TextStyle(fontSize: 11, color: C.mut)),
+              softWrap: false, overflow: TextOverflow.visible, style: TextStyle(fontSize: 11, color: C.mut)),
         ),
       ];
       for (var d = 0; d < 7; d++) {
@@ -111,7 +111,7 @@ class _ActivityCalendarState extends State<ActivityCalendar> {
                 margin: const EdgeInsets.only(top: gap),
                 padding: const EdgeInsets.only(right: 6),
                 alignment: Alignment.centerLeft,
-                child: Text(w, style: const TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
+                child: Text(w, style: TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
               ),
           ]),
           Expanded(
@@ -123,7 +123,7 @@ class _ActivityCalendarState extends State<ActivityCalendar> {
           ),
         ]),
         const SizedBox(height: 8),
-        const Text("Kunni bosing: o'sha kuni nima qilinganini ko'rasiz",
+        Text("Kunni bosing: o'sha kuni nima qilinganini ko'rasiz",
             style: TextStyle(fontSize: 12, color: C.mut)),
       ]),
     );
@@ -172,7 +172,7 @@ class _DaySheet extends StatelessWidget {
       Text(dayLabel(day), style: display(18)),
       const SizedBox(height: 4),
       Text(fut ? 'Rejadagi takrorlar' : (isToday ? 'Bugun' : "O'sha kuni nima qilingan"),
-          style: const TextStyle(color: C.mut, fontSize: 13)),
+          style: TextStyle(color: C.mut, fontSize: 13)),
       const SizedBox(height: 14),
     ];
     Widget line(IconData icon, Color c, String title, String? sub) => Padding(
@@ -186,7 +186,7 @@ class _DaySheet extends StatelessWidget {
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
-                  if (sub != null) Text(sub, style: const TextStyle(color: C.mut, fontSize: 12)),
+                  if (sub != null) Text(sub, style: TextStyle(color: C.mut, fontSize: 12)),
                 ]),
               ),
             ]),
@@ -200,7 +200,7 @@ class _DaySheet extends StatelessWidget {
           children.add(line(Icons.event_repeat_rounded, C.ac, unitName(ukey(g.book, g.unit)),
               "${intervals[g.stage]}-kun takrori · ${g.keys.length} so'z"));
         }
-        children.add(const Text("Oldingi kunlardan qolgan takrorlar ham shu kuni chiqadi.",
+        children.add(Text("Oldingi kunlardan qolgan takrorlar ham shu kuni chiqadi.",
             style: TextStyle(color: C.mut, fontSize: 12)));
       }
     } else {
@@ -258,7 +258,7 @@ class _DaySheet extends StatelessWidget {
         child: Column(children: [
           Text(v, style: display(17)),
           const SizedBox(height: 2),
-          Text(l, textAlign: TextAlign.center, style: const TextStyle(color: C.mut, fontSize: 11)),
+          Text(l, textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 11)),
         ]),
       );
 }

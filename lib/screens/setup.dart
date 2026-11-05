@@ -102,7 +102,7 @@ class _SetupScreenState extends State<SetupScreen> {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
               const Expanded(child: Text('Unitlarni tanlang', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15))),
-              Text("${selected.length} ta · $cnt so'z", style: const TextStyle(color: C.mut, fontSize: 12)),
+              Text("${selected.length} ta · $cnt so'z", style: TextStyle(color: C.mut, fontSize: 12)),
             ]),
             const SizedBox(height: 12),
             GridView.count(
@@ -116,7 +116,7 @@ class _SetupScreenState extends State<SetupScreen> {
               ],
             ),
             const SizedBox(height: 12),
-            const Wrap(spacing: 14, runSpacing: 6, children: [
+            Wrap(spacing: 14, runSpacing: 6, children: [
               _Legend(color: C.ac, text: 'tanlangan'),
               _Legend(color: C.good, text: 'yodlangan'),
               _Legend(color: C.sf2, text: 'yodlanmagan'),
@@ -160,7 +160,7 @@ class _SetupScreenState extends State<SetupScreen> {
               fontSize: 17, fontWeight: FontWeight.w800, color: s.sessionsLeft == 0 && !s.isPremium ? C.bad : C.fg),
         ),
         const SizedBox(height: 2),
-        const Text('Takrorlar doim bepul', textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12)),
+        Text('Takrorlar doim bepul', textAlign: TextAlign.center, style: TextStyle(color: C.mut, fontSize: 12)),
       ]),
     );
   }
@@ -196,7 +196,7 @@ class _SetupScreenState extends State<SetupScreen> {
             Expanded(
               child: Text.rich(TextSpan(children: [
                 TextSpan(text: title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
-                if (sub != null) TextSpan(text: '  $sub', style: const TextStyle(color: C.mut, fontSize: 11)),
+                if (sub != null) TextSpan(text: '  $sub', style: TextStyle(color: C.mut, fontSize: 11)),
               ])),
             ),
             Transform.scale(scale: .8, child: Switch(value: value, onChanged: (_) => onTap())),
@@ -253,6 +253,6 @@ class _Legend extends StatelessWidget {
   Widget build(BuildContext context) => Row(mainAxisSize: MainAxisSize.min, children: [
         Container(width: 11, height: 11, decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
         const SizedBox(width: 5),
-        Text(text, style: const TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
+        Text(text, style: TextStyle(fontSize: 11, color: C.mut, fontWeight: FontWeight.w700)),
       ]);
 }

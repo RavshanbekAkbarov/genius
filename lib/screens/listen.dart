@@ -144,7 +144,7 @@ class _ListenScreenState extends State<ListenScreen> {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
               const Expanded(child: Text('Unitlarni tanlang', style: TextStyle(fontWeight: FontWeight.w800))),
-              Text("${selected.length} ta · ${queue.length} so'z", style: const TextStyle(color: C.mut, fontSize: 12)),
+              Text("${selected.length} ta · ${queue.length} so'z", style: TextStyle(color: C.mut, fontSize: 12)),
             ]),
             const SizedBox(height: 10),
             GridView.count(
@@ -269,7 +269,7 @@ class _ListenScreenState extends State<ListenScreen> {
               child: ListTile(
                 dense: true,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                title: Text(c.word.en, style: const TextStyle(fontWeight: FontWeight.w800, color: C.ac)),
+                title: Text(c.word.en, style: TextStyle(fontWeight: FontWeight.w800, color: C.ac)),
                 trailing: SizedBox(
                   width: 160,
                   child: Text(c.word.uz,

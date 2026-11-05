@@ -75,7 +75,7 @@ class _StreakScreenState extends State<StreakScreen> {
             const SizedBox(height: 14),
             Text(title, textAlign: TextAlign.center, style: display(20)),
             const SizedBox(height: 10),
-            Text(text, textAlign: TextAlign.center, style: const TextStyle(color: C.mut)),
+            Text(text, textAlign: TextAlign.center, style: TextStyle(color: C.mut)),
             const SizedBox(height: 16),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               for (var i = 0; i < 3; i++)
@@ -110,7 +110,7 @@ class _StreakScreenState extends State<StreakScreen> {
               const SizedBox(height: 10),
               Btn('Premium: reklamasiz saqlash',
                   kind: BtnKind.ghost,
-                  icon: const Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
+                  icon: Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
                   onTap: premiumSave),
               if (!widget.todayMode) ...[
                 const SizedBox(height: 4),

@@ -115,7 +115,7 @@ class _NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: C.sf,
           border: Border(top: BorderSide(color: C.ln)),
         ),

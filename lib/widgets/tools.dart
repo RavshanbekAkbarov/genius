@@ -82,7 +82,7 @@ class _VoiceSheetState extends State<_VoiceSheet> {
         child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Text('Ovozni tanlang', style: display(18)),
           const SizedBox(height: 4),
-          const Text("Bosib eshiting. Tanlagan ovozingiz hamma joyda shu holicha qoladi.",
+          Text("Bosib eshiting. Tanlagan ovozingiz hamma joyda shu holicha qoladi.",
               style: TextStyle(color: C.mut, fontSize: 13)),
           const SizedBox(height: 12),
           if (list == null)
