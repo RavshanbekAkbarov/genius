@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/catalog.dart';
+import '../data/quotes.dart';
 import '../data/words.dart';
 
 /// Bitta so'zning yodlash holati.
@@ -161,6 +162,7 @@ class AppState extends ChangeNotifier {
       } catch (_) {}
     }
     _loadRemote();
+    _loadDaily();
   }
 
   void save() {
@@ -278,6 +280,34 @@ class AppState extends ChangeNotifier {
 
   // ---------- serverdan kelgan markaz kitoblari ----------
   static const _remoteKey = 'genius-remote';
+  static const _dailyKey = 'genius-daily';
+
+  /// Admin paneldan qo'yilgan kunning so'zlari (sana → so'z).
+  Map<String, Word> dailyWords = {};
+
+  void _loadDaily() {
+    final raw = _prefs?.getString(_dailyKey);
+    if (raw == null) return;
+    try {
+      final j = jsonDecode(raw) as Map<String, dynamic>;
+      remoteQuotes = ((j['quotes'] ?? []) as List).map((e) => Quote.fromJson(e as Map<String, dynamic>)).toList();
+      dailyWords = ((j['words'] ?? {}) as Map<String, dynamic>)
+          .map((k, v) => MapEntry(k, Word.fromJson(v as Map<String, dynamic>)));
+    } catch (_) {}
+  }
+
+  /// Serverdan kelgan iqtiboslar va kunning so'zlari (internetsiz ham ishlashi uchun saqlanadi).
+  void setDaily(List<Quote> qs, Map<String, Word> words) {
+    remoteQuotes = qs;
+    dailyWords = words;
+    _prefs?.setString(
+        _dailyKey,
+        jsonEncode({
+          'quotes': qs.map((q) => q.toJson()).toList(),
+          'words': words.map((k, v) => MapEntry(k, v.toJson())),
+        }));
+    notifyListeners();
+  }
 
   void _loadRemote() {
     final raw = _prefs?.getString(_remoteKey);

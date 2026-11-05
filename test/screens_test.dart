@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:genius/data/quotes.dart';
 import 'package:genius/data/words.dart';
+import 'package:genius/services/word_widget.dart';
 import 'package:genius/main.dart';
 import 'package:genius/screens/books.dart';
 import 'package:genius/screens/listen.dart';
@@ -84,5 +86,17 @@ void main() {
     await show(t, StudyScreen(session: Session([CardItem(wkey('e1', 4, 0), 'e1', 4, w[0])], review: false, typing: false, reverse: false)));
     await show(t, const SetupScreen(bookId: 'e1'));
     await show(t, const UnitScreen(bookId: 'e1', unit: 1));
+  });
+
+  test('admin paneldagi kun so\'zi va iqtiboslar ishlatiladi', () {
+    addTearDown(() => remoteQuotes = []);
+    final before = wordOfDay(s).en;
+    s.setDaily([const Quote('Keep going.', 'Davom eting.', 'Test')], {ds(s.today): const Word('zebra', 'zebra', '')});
+    expect(wordOfDay(s).en, 'zebra');
+    expect(wordOfDay(s, addDays(s.today, 1)).en, isNot('zebra'));
+    expect(quoteOfDay(s.today).author, 'Test');
+    s.setDaily([], {});
+    expect(wordOfDay(s).en, before);
+    expect(quotes.contains(quoteOfDay(s.today)), isTrue);
   });
 }

@@ -4,7 +4,13 @@ class Quote {
   final String uz;
   final String author;
   const Quote(this.en, this.uz, this.author);
+  factory Quote.fromJson(Map<String, dynamic> j) =>
+      Quote((j['en'] ?? '') as String, (j['uz'] ?? '') as String, (j['author'] ?? '') as String);
+  Map<String, dynamic> toJson() => {'en': en, 'uz': uz, 'author': author};
 }
+
+/// Admin paneldan qo'shilgan iqtiboslar. Bo'sh bo'lsa ilovadagi tayyor ro'yxat ishlatiladi.
+List<Quote> remoteQuotes = [];
 
 const quotes = <Quote>[
   // Nelson Mandela, Mindset Network nutqi, 2003
@@ -64,5 +70,6 @@ const quotes = <Quote>[
 /// Kunning gapi: har kuni boshqa, [slot] bilan kuniga ikkinchisini ham olish mumkin.
 Quote quoteOfDay(DateTime day, {int slot = 0}) {
   final n = DateTime(day.year, day.month, day.day).difference(DateTime(2026)).inDays;
-  return quotes[(n * 2 + slot) % quotes.length];
+  final list = remoteQuotes.isNotEmpty ? remoteQuotes : quotes;
+  return list[(n * 2 + slot) % list.length];
 }
