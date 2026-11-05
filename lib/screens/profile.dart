@@ -49,13 +49,14 @@ class _ProfileTabState extends State<ProfileTab> {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(gradient: C.grad, borderRadius: BorderRadius.circular(20)),
+            padding: const EdgeInsets.all(18),
+            decoration: BoxDecoration(
+                color: C.sf, borderRadius: BorderRadius.circular(R.xl), border: Border.all(color: C.ln)),
             child: Row(children: [
               Container(
-                width: 56,
-                height: 56,
-                decoration: BoxDecoration(color: Colors.black26, borderRadius: BorderRadius.circular(18)),
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(color: C.tint(C.ac, .3), shape: BoxShape.circle),
                 alignment: Alignment.center,
                 child: Text(s.avatar, style: const TextStyle(fontSize: 30)),
               ),
@@ -65,19 +66,19 @@ class _ProfileTabState extends State<ProfileTab> {
                   Row(children: [
                     Flexible(
                         child: Text(s.displayName,
-                            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: Colors.white))),
+                            style: display(20))),
                     if (prem) ...[
                       const SizedBox(width: 6),
                       const Icon(Icons.workspace_premium_rounded, color: C.gold, size: 20),
                     ],
                   ]),
                   Text("🔥 ${s.streak} kun · ${s.totalLearned} so'z yodlangan",
-                      style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                      style: const TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
                   Text(
                       Cloud.signedIn
                           ? (s.accountLabel ?? 'Hisobga kirilgan')
                           : 'Hisobga kirilmagan: yutuqlar faqat shu telefonda',
-                      style: const TextStyle(color: Colors.white60, fontSize: 11)),
+                      style: const TextStyle(color: C.dim, fontSize: 11.5)),
                 ]),
               ),
               IconButton.filledTonal(
@@ -218,9 +219,14 @@ class _ProfileTabState extends State<ProfileTab> {
   }
 
   Widget _stat(String v, String l) => AppCard(
+        padding: const EdgeInsets.fromLTRB(14, 14, 10, 14),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(v, style: display(19)),
-          Text(l, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: C.mut, fontSize: 12)),
+          Text(v, style: display(22)),
+          const SizedBox(height: 2),
+          Text(l,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: C.mut, fontSize: 12, height: 1.25, fontWeight: FontWeight.w600)),
         ]),
       );
 }

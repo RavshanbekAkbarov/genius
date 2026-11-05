@@ -21,40 +21,127 @@ class BooksTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = AppScope.of(context);
-    Widget row(Book b) => Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: FillRow(
-            leading: BookBadge(b, size: 28),
-            title: b.title,
-            subtitle: b.isMine
-                ? "${s.myWords.length} so'z · o'zingiz qo'shasiz"
-                : s.locked(b)
-                    ? "${b.fixedUnits} unit · ${money(b.price)} so'm"
-                    : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
-            trailing: s.locked(b) ? '🔒' : '${s.bookPct(b.id)}%',
-            fill: s.bookPct(b.id) / 100,
-            onTap: () => openBook(context, b),
-          ),
-        );
-    Widget h(String t) => Padding(padding: const EdgeInsets.fromLTRB(0, 14, 0, 10), child: Text(t, style: display(17)));
     final center = booksOf(BookGroup.center);
+    final ess = booksOf(BookGroup.essential);
+    final learned = ess.fold<int>(0, (a, b) => a + s.bookPct(b.id));
+    Widget h(String t, [String? note]) => Padding(
+        padding: const EdgeInsets.fromLTRB(0, 22, 0, 12), child: SectionTitle(t, note: note));
     return ListView(padding: EdgeInsets.zero, children: [
-      const TabHeader(title: 'Kitoblar', subtitle: 'Genius'),
+      TabHeader(
+        title: 'Kitoblar',
+        subtitle: "O'qiyotgan kitobingizni tanlang",
+        bottom: _CurrentBook(book: bookById(s.currentBook)),
+      ),
       Padding(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           h('Shaxsiy'),
-          row(bookById(myBookId)),
-          h('4000 Essential Words'),
-          ...booksOf(BookGroup.essential).map(row),
+          BookRow(book: bookById(myBookId)),
+          h('4000 Essential Words', 'umumiy ${(learned / ess.length).round()}%'),
+          for (final b in ess) Padding(padding: const EdgeInsets.only(bottom: 10), child: BookRow(book: b)),
           h('Markaz kitoblari'),
           if (center.isEmpty)
             const EmptyBox("Aura Academy kitoblari tez orada shu yerda chiqadi.")
           else
-            ...center.map(row),
+            for (final b in center) Padding(padding: const EdgeInsets.only(bottom: 10), child: BookRow(book: b)),
         ]),
       ),
     ]);
+  }
+}
+
+/// Sarlavhadagi "Hozir o'qiyapsiz" qatori.
+class _CurrentBook extends StatelessWidget {
+  final Book book;
+  const _CurrentBook({required this.book});
+  @override
+  Widget build(BuildContext context) {
+    final s = AppScope.of(context);
+    final pct = s.bookPct(book.id);
+    return Material(
+      color: Colors.black.withValues(alpha: .18),
+      borderRadius: BorderRadius.circular(R.md),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(R.md),
+        onTap: () => openBook(context, book),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 11, 12, 11),
+          child: Row(children: [
+            BookBadge(book, size: 30),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text("HOZIR O'QIYAPSIZ",
+                    style: TextStyle(
+                        fontSize: 10.5,
+                        letterSpacing: 1.1,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white.withValues(alpha: .7))),
+                Text('${book.title} · $pct%',
+                    style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: Colors.white)),
+              ]),
+            ),
+            const Icon(Icons.chevron_right_rounded, color: Colors.white),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+/// Kitob kartasi: muqova, nomi, hajmi va progress chizig'i.
+class BookRow extends StatelessWidget {
+  final Book book;
+  const BookRow({super.key, required this.book});
+  @override
+  Widget build(BuildContext context) {
+    final s = AppScope.of(context);
+    final b = book;
+    final pct = s.bookPct(b.id);
+    final locked = s.locked(b);
+    final current = s.currentBook == b.id;
+    return AppCard(
+      padding: const EdgeInsets.fromLTRB(12, 12, 14, 12),
+      border: current ? C.ac : null,
+      onTap: () => openBook(context, b),
+      child: Row(children: [
+        BookBadge(b, size: 40),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(children: [
+              Flexible(
+                child: Text(b.title,
+                    maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+              ),
+              if (current) ...[
+                const SizedBox(width: 8),
+                Pill('hozir', bg: C.ac.withValues(alpha: .18), fg: C.ac),
+              ],
+            ]),
+            const SizedBox(height: 2),
+            Text(
+                b.isMine
+                    ? "${s.myWords.length} so'z · o'zingiz qo'shasiz"
+                    : locked
+                        ? "${b.fixedUnits} unit · ${money(b.price)} so'm"
+                        : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
+                style: const TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
+            const SizedBox(height: 9),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: LinearProgressIndicator(value: pct / 100, minHeight: 6, color: C.good, backgroundColor: C.sf2),
+            ),
+          ]),
+        ),
+        const SizedBox(width: 14),
+        locked
+            ? const Icon(Icons.lock_rounded, color: C.gold, size: 22)
+            : SizedBox(
+                width: 40,
+                child: Text('$pct%', textAlign: TextAlign.right, style: display(15, color: pct > 0 ? C.good : C.mut))),
+      ]),
+    );
   }
 }
 
@@ -87,29 +174,86 @@ class UnitsScreen extends StatelessWidget {
       ),
       bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
-        Btn('Mashq qilish', onTap: empty ? null : () => openSetup(context, b.id)),
-        const SizedBox(height: 12),
+        AppCard(
+          padding: const EdgeInsets.all(16),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Row(children: [
+              Ring(s.bookPct(b.id) / 100,
+                  size: 64,
+                  stroke: 6,
+                  color: C.good,
+                  child: Text('${s.bookPct(b.id)}%', style: display(15))),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(b.title, style: display(19)),
+                  const SizedBox(height: 2),
+                  Text(
+                      "$units unit · ${[for (var u = 1; u <= units; u++) s.unitLearned(b.id, u)].fold<int>(0, (a, x) => a + x)} so'z yodlangan",
+                      style: const TextStyle(color: C.mut, fontSize: 13, fontWeight: FontWeight.w600)),
+                ]),
+              ),
+            ]),
+            const SizedBox(height: 14),
+            Btn('Mashq qilish', icon: const Icon(Icons.play_arrow_rounded), onTap: empty ? null : () => openSetup(context, b.id)),
+          ]),
+        ),
+        const SizedBox(height: 20),
         if (empty)
           const EmptyBox(
               "Tashqaridan topgan so'zlaringizni bosh sahifadagi «So'z qo'shish» tugmasi bilan qo'shing. Har 20 ta so'z bitta unit bo'ladi va ular ham kartalar, yozish va 1·3·7·15·30 takrorga tushadi.")
-        else
-          for (var u = 1; u <= units; u++)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Builder(builder: (_) {
-                final w = s.words(b.id, u).length;
-                final l = s.unitLearned(b.id, u);
-                return FillRow(
-                  title: 'Unit $u',
-                  subtitle: w == 0 ? "so'zlar hali qo'shilmagan" : null,
-                  trailing: '$l/${b.isMine ? w : (w == 0 ? 20 : w)}',
-                  fill: w == 0 ? 0 : l / w,
-                  done: w > 0 && l == w,
-                  onTap: () => push(context, UnitScreen(bookId: b.id, unit: u)),
-                );
-              }),
-            ),
+        else ...[
+          const SectionTitle('Unitlar'),
+          const SizedBox(height: 12),
+          GridView.count(
+            crossAxisCount: 3,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            childAspectRatio: .92,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
+              for (var u = 1; u <= units; u++) _UnitTile(book: b, unit: u),
+            ],
+          ),
+        ],
       ]),
+    );
+  }
+}
+
+class _UnitTile extends StatelessWidget {
+  final Book book;
+  final int unit;
+  const _UnitTile({required this.book, required this.unit});
+  @override
+  Widget build(BuildContext context) {
+    final s = AppScope.of(context);
+    final w = s.words(book.id, unit).length;
+    final l = s.unitLearned(book.id, unit);
+    final done = w > 0 && l == w;
+    final total = book.isMine ? w : (w == 0 ? 20 : w);
+    return Opacity(
+      opacity: w == 0 ? .45 : 1,
+      child: AppCard(
+        padding: const EdgeInsets.all(10),
+        color: done ? C.tint(C.good, .10) : null,
+        border: done ? C.good.withValues(alpha: .45) : null,
+        onTap: () => push(context, UnitScreen(bookId: book.id, unit: unit)),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Ring(total == 0 ? 0 : l / total,
+              size: 46,
+              stroke: 4,
+              color: C.good,
+              child: done
+                  ? const Icon(Icons.check_rounded, color: C.good, size: 22)
+                  : Text('$unit', style: display(15))),
+          const SizedBox(height: 8),
+          Text('Unit $unit', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13)),
+          Text(w == 0 ? 'tez orada' : '$l/$total',
+              style: const TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+        ]),
+      ),
     );
   }
 }
@@ -188,12 +332,13 @@ class WordBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final f = scale;
-    final edge = learned ? C.good : C.ln;
     return Material(
-      color: learned ? Color.alphaBlend(C.good.withValues(alpha: .12), C.sf) : C.sf,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: edge, width: 1.5)),
+      color: C.sf,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(R.md),
+          side: BorderSide(color: learned ? C.good.withValues(alpha: .35) : C.ln)),
       child: InkWell(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(R.md),
         onTap: () => Speech.speak(word.en),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 12, 8, 12),
@@ -201,24 +346,24 @@ class WordBlock extends StatelessWidget {
             Container(
               width: 28,
               height: 28,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: learned ? C.good : C.sf2),
+              decoration: BoxDecoration(shape: BoxShape.circle, color: learned ? C.good.withValues(alpha: .18) : C.sf2),
               alignment: Alignment.center,
               child: Text('$n',
                   style: TextStyle(
-                      fontWeight: FontWeight.w900, fontSize: 12, color: learned ? const Color(0xFF052611) : C.mut)),
+                      fontWeight: FontWeight.w900, fontSize: 12, color: learned ? C.good : C.mut)),
             ),
             const SizedBox(width: 10),
             Expanded(
               flex: 5,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(word.en, style: TextStyle(color: C.ac, fontWeight: FontWeight.w800, fontSize: 17 * f)),
-                if (word.ipa.isNotEmpty) Text(word.ipa, style: TextStyle(color: C.mut, fontSize: 12 * f)),
+                Text(word.en, style: TextStyle(color: C.fg, fontWeight: FontWeight.w800, fontSize: 17 * f)),
+                if (word.ipa.isNotEmpty) Text(word.ipa, style: TextStyle(color: C.ac, fontSize: 12 * f, fontWeight: FontWeight.w600)),
               ]),
             ),
             Container(width: 1, height: 30 * f, color: C.ln, margin: const EdgeInsets.symmetric(horizontal: 10)),
             Expanded(
               flex: 6,
-              child: Text(word.uz, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16 * f)),
+              child: Text(word.uz, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15 * f, color: C.fg)),
             ),
             if (onEdit != null)
               IconButton(

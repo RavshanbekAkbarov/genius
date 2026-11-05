@@ -162,7 +162,7 @@ class _ListenScreenState extends State<ListenScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: selected.contains(u) ? C.ac : (s.unitDone(b.id, u) ? C.good : C.sf2),
+                          color: selected.contains(u) ? C.ac : (s.unitDone(b.id, u) ? C.good.withValues(alpha: .18) : C.sf2),
                         ),
                         alignment: Alignment.center,
                         child: Text('$u',
@@ -170,7 +170,7 @@ class _ListenScreenState extends State<ListenScreen> {
                                 fontWeight: FontWeight.w900,
                                 color: selected.contains(u)
                                     ? C.onAc
-                                    : (s.unitDone(b.id, u) ? const Color(0xFF052611) : C.fg))),
+                                    : (s.unitDone(b.id, u) ? C.good : C.fg))),
                       ),
                     ),
                   ),
