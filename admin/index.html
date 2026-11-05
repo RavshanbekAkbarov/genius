@@ -4,32 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Genius — Admin panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #08101F;
-    --panel: #0F1A2E;
-    --panel2: #142240;
-    --line: #1F2E4D;
-    --text: #E8EEF9;
-    --muted: #8A9BB8;
-    --accent: #4C8DFF;
-    --accent2: #2F6FE0;
-    --ok: #34C77B;
-    --bad: #FF5C6C;
-    --warn: #FFB347;
+    /* Ilova bilan bir xil "Tungi osmon" ranglari */
+    --bg: #090E1C;
+    --panel: #111831;
+    --panel2: #19223F;
+    --line: #212B49;
+    --text: #F3F6FF;
+    --muted: #8E99B9;
+    --accent: #5B83FF;
+    --accent2: #3557E6;
+    --ok: #2FD38A;
+    --bad: #FF6672;
+    --warn: #FFB84D;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
-    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font: 500 15px/1.45 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
   a { color: var(--accent); }
-  h1, h2, h3 { margin: 0 0 12px; font-weight: 650; }
+  h1, h2, h3 { margin: 0 0 12px; font-weight: 800; letter-spacing: -.2px; }
   h2 { font-size: 20px; }
   h3 { font-size: 16px; color: var(--muted); margin-top: 24px; }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
   .hidden { display: none !important; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
   .muted { color: var(--muted); }
   .small { font-size: 13px; }
   .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -37,15 +40,15 @@
   label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
   input, select, textarea {
     width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line);
-    border-radius: 10px; padding: 9px 11px; font: inherit;
+    border-radius: 12px; padding: 11px 13px; font: inherit;
   }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
   input[type=checkbox] { width: auto; transform: scale(1.2); margin-right: 6px; }
   input[type=color] { padding: 2px; height: 40px; }
   textarea { min-height: 220px; font-family: ui-monospace, Consolas, monospace; font-size: 14px; }
   button {
-    background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 9px 16px;
-    font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--accent); color: #fff; border: 0; border-radius: 12px; padding: 10px 18px;
+    font: inherit; font-weight: 800; cursor: pointer;
   }
   button:hover { background: var(--accent2); }
   button:disabled { opacity: .5; cursor: default; }
@@ -56,16 +59,19 @@
   button.sm { padding: 5px 10px; font-size: 13px; }
   header.top {
     display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-    padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--panel);
+    padding: 16px 20px; border-bottom: 0; color: #fff;
+    background: linear-gradient(135deg, #5B83FF 0%, #3F52E3 55%, #2B2A9E 100%);
   }
   header.top .logo { font-weight: 800; font-size: 19px; }
-  header.top .logo span { color: var(--accent); }
+  header.top .logo span { color: rgba(255,255,255,.75); }
+  header.top button.ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+  header.top .muted { color: rgba(255,255,255,.8); }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 18px 0; }
-  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-  .stat .v { font-size: 24px; font-weight: 750; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+  .stat .v { font-size: 26px; font-weight: 800; }
   .stat .l { color: var(--muted); font-size: 13px; }
   nav.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
-  nav.tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); }
+  nav.tabs button { background: var(--panel); color: var(--muted); border: 1px solid var(--line); border-radius: 99px; }
   nav.tabs button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
   table { width: 100%; border-collapse: collapse; }
   th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
