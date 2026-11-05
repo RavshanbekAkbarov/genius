@@ -19,6 +19,13 @@ create table if not exists public.daily_words (
   ex text not null default ''
 );
 
+-- Aniq grantlar ("Automatically expose new tables" o'chiq bo'lsa ham ishlaydi).
+revoke all on table public.quotes, public.daily_words from anon, authenticated;
+grant all on table public.quotes, public.daily_words to service_role;
+grant usage, select on sequence public.quotes_id_seq to service_role, authenticated;
+grant select on public.quotes, public.daily_words to anon, authenticated;
+grant insert, update, delete on public.quotes, public.daily_words to authenticated;
+
 alter table public.quotes enable row level security;
 alter table public.daily_words enable row level security;
 
