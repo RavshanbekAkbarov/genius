@@ -210,6 +210,7 @@ class _StudyScreenState extends State<StudyScreen> {
     final s = AppScope.read(context);
     if (!s.isPremium) await Ads.showInterstitial(context, label: 'Mashq tugadi');
     if (!mounted) return;
+    s.nextQuote();
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => DoneScreen(session: ss)));
   }
 
@@ -606,7 +607,7 @@ class DoneScreen extends StatelessWidget {
     final hardN = ss.hard.length;
     final xp = ss.review ? ss.easy * 5 : ss.easy * 10;
     final fresh = ss.daily ? s.nextNewCards() : const <CardItem>[];
-    final q = quoteOfDay(s.today, slot: 1);
+    final q = s.quote;
     return Scaffold(
       body: SafeArea(
         child: ListView(padding: const EdgeInsets.fromLTRB(16, 16, 16, 24), children: [

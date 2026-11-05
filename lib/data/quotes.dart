@@ -68,8 +68,8 @@ const quotes = <Quote>[
 ];
 
 /// Kunning gapi: har kuni boshqa, [slot] bilan kuniga ikkinchisini ham olish mumkin.
-Quote quoteOfDay(DateTime day, {int slot = 0}) {
-  final n = DateTime(day.year, day.month, day.day).difference(DateTime(2026)).inDays;
+/// Navbatdagi iqtibos: [i] oshgan sari ro'yxat bo'ylab aylanadi.
+Quote quoteAt(int i) {
   final list = remoteQuotes.isNotEmpty ? remoteQuotes : quotes;
-  return list[(n * 2 + slot) % list.length];
+  return list[i % list.length];
 }

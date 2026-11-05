@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
-import '../data/quotes.dart';
 import '../data/words.dart';
 import '../services/speech.dart';
 import '../services/word_widget.dart';
@@ -84,7 +83,7 @@ class _HomeTabState extends State<HomeTab> {
           const SizedBox(height: 12),
           _wordOfDay(s),
           const SizedBox(height: 12),
-          QuoteCard(quote: quoteOfDay(s.today)),
+          QuoteCard(quote: s.quote),
           const SizedBox(height: 28),
           SectionTitle('4000 Essential Words', action: 'Hammasi', onAction: () => ShellScope.of(context).goTab(1)),
           const SizedBox(height: 12),

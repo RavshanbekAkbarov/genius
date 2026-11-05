@@ -157,10 +157,14 @@ void main() {
     expect(normalize(' Qo‘rqqan '), normalize("qo'rqqan"));
   });
 
-  test('kunning gapi har kuni boshqa', () {
-    final a = quoteOfDay(DateTime(2026, 10, 17));
-    final b = quoteOfDay(DateTime(2026, 10, 18));
-    expect(a.en, isNot(b.en));
-    expect(quoteOfDay(DateTime(2026, 10, 17), slot: 1).en, isNot(a.en));
+  test('iqtibos har mashqdan keyin almashadi', () {
+    final s = AppState();
+    s.nextQuote();
+    final seen = <String>{s.quote.en};
+    for (var i = 0; i < 5; i++) {
+      s.nextQuote();
+      expect(seen.add(s.quote.en), isTrue);
+    }
+    expect(quoteAt(quotes.length).en, quoteAt(0).en);
   });
 }

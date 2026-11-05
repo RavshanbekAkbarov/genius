@@ -134,6 +134,8 @@ class AppState extends ChangeNotifier {
   String avatar = '🦁';
   int dailyGoal = defaultDailyGoal;
   bool lightMode = false;
+  /// Iqtiboslar navbati: har mashqdan keyin va ilova har ochilganda keyingisiga o'tadi.
+  int quoteTurn = -1;
   List<Word> myWords = [];
 
   // Sozlamalar
@@ -163,6 +165,7 @@ class AppState extends ChangeNotifier {
     }
     _loadRemote();
     _loadDaily();
+    nextQuote(); // har ochilganda yangi iqtibos
   }
 
   void save() {
@@ -202,6 +205,7 @@ class AppState extends ChangeNotifier {
         'reverse': reverse,
         'font': fontScale,
         'light': lightMode,
+        'qt': quoteTurn,
         'voice': voiceName == null ? null : {'name': voiceName, 'locale': voiceLocale},
         'listen': {'r': listenRepeat, 's': listenSpeed, 'mix': listenShuffle, 'uz': listenUzFirst},
         'loginSeen': loginSeen,
@@ -237,6 +241,7 @@ class AppState extends ChangeNotifier {
     reverse = j['reverse'] == true;
     fontScale = ((j['font'] ?? 1.0) as num).toDouble();
     lightMode = j['light'] == true;
+    quoteTurn = (j['qt'] ?? -1) as int;
     final v = j['voice'] as Map<String, dynamic>?;
     voiceName = v?['name'] as String?;
     voiceLocale = v?['locale'] as String?;
@@ -254,7 +259,7 @@ class AppState extends ChangeNotifier {
   /// Serverga yuboriladigan nusxa: o'quv holati (hisob va qurilma sozlamalarisiz).
   Map<String, dynamic> progressJson() {
     final j = toJson();
-    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'voice', 'owned', 'light']) {
+    for (final k in ['offset', 'premiumUntil', 'loginSeen', 'account', 'accountLabel', 'voice', 'owned', 'light', 'qt']) {
       j.remove(k);
     }
     return j;
@@ -402,6 +407,16 @@ class AppState extends ChangeNotifier {
     fontScale = ((fontScale + dir * .1) * 10).round() / 10;
     fontScale = fontScale.clamp(fontMin, fontMax);
     changed();
+  }
+
+  /// Hozir ko'rsatiladigan iqtibos.
+  Quote get quote => quoteAt(quoteTurn < 0 ? 0 : quoteTurn);
+
+  /// Keyingi iqtibosga o'tish (mashq tugaganda va ilova ochilganda).
+  void nextQuote() {
+    // Birinchi marta sanaga qarab boshlanadi, shunda hammada bir xil iqtibosdan boshlanmaydi.
+    quoteTurn = quoteTurn < 0 ? today.difference(DateTime(2026)).inDays : quoteTurn + 1;
+    save();
   }
 
   /// Yorug' (kunduzgi) rejim.

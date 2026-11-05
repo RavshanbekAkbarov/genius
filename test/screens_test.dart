@@ -94,9 +94,9 @@ void main() {
     s.setDaily([const Quote('Keep going.', 'Davom eting.', 'Test')], {ds(s.today): const Word('zebra', 'zebra', '')});
     expect(wordOfDay(s).en, 'zebra');
     expect(wordOfDay(s, addDays(s.today, 1)).en, isNot('zebra'));
-    expect(quoteOfDay(s.today).author, 'Test');
+    expect(s.quote.author, 'Test');
     s.setDaily([], {});
     expect(wordOfDay(s).en, before);
-    expect(quotes.contains(quoteOfDay(s.today)), isTrue);
+    expect(quotes.contains(s.quote), isTrue);
   });
 }
