@@ -48,7 +48,7 @@ jobs:
 
       - uses: supabase/setup-cli@v1
         with:
-          version: latest
+          version: 3.0.0
 
       - name: Loyihaga ulanish
         run: |
@@ -56,10 +56,10 @@ jobs:
             echo "::error::SUPABASE_PROJECT_REF va SUPABASE_DB_PASSWORD secret'larini qo'shing."
             exit 1
           fi
-          supabase link --project-ref "$SUPABASE_PROJECT_REF" --password "$SUPABASE_DB_PASSWORD"
+          supabase link --project-ref "$SUPABASE_PROJECT_REF" --yes
 
       - name: Ma'lumotlar bazasi (migratsiyalar)
-        run: supabase db push --password "$SUPABASE_DB_PASSWORD"
+        run: supabase db push --remote --password "$SUPABASE_DB_PASSWORD" --yes
 
       - name: Funksiya secret'lari
         run: |
@@ -71,16 +71,16 @@ jobs:
             fi
           done
           if [ ${#args[@]} -gt 0 ]; then
-            supabase secrets set --project-ref "$SUPABASE_PROJECT_REF" "${args[@]}"
+            supabase secrets set --yes "${args[@]}"
           else
             echo "Secret'lar yo'q, o'tkazib yuborildi."
           fi
 
       - name: Edge funksiyalar
         run: |
-          supabase functions deploy bot --project-ref "$SUPABASE_PROJECT_REF" --no-verify-jwt
-          supabase functions deploy tg-login --project-ref "$SUPABASE_PROJECT_REF" --no-verify-jwt
-          supabase functions deploy admin --project-ref "$SUPABASE_PROJECT_REF"
+          supabase functions deploy bot --no-verify-jwt --yes
+          supabase functions deploy tg-login --no-verify-jwt --yes
+          supabase functions deploy admin --yes
 
       - name: Telegram webhook
         run: |
