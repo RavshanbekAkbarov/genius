@@ -1,0 +1,803 @@
+abbot|abbat (monastir boshlig'i)|head monk, prior
+absolutely|mutlaqo, albatta|completely, totally, definitely
+accidental|tasodifiy|chance, unplanned, unintended
+accidentally|tasodifan, bexosdan|by chance, by mistake, unintentionally
+accord|kelishuv; muvofiqlik|agreement, harmony
+acrobatic|akrobatik|agile, nimble
+act|harakat qilmoq; qilmish|do, behave, perform
+action|harakat, ish|act, deed, step
+activity|faoliyat, mashg'ulot|pastime, task, action
+actor|aktyor|performer, player
+actress|aktrisa|performer, actor
+addition|qo'shimcha; qo'shish|extra, extension, increase
+adult|kattalar, voyaga yetgan|grown-up, mature
+africa|Afrika|
+african|afrikalik, Afrika|
+age|yosh; davr|era, period, years
+agreement|kelishuv, rozilik|deal, contract, consent
+alex|Aleks (ism)|
+alexander|Aleksandr (ism)|
+alice|Elis (ayol ismi)|
+amazon|Amazonka (daryo)|
+ambition|orzu-intilish, maqsad|goal, aim, aspiration
+ambulance|tez yordam mashinasi|
+america|Amerika|
+american|amerikalik, Amerika|
+amongst|orasida|among, between
+ann|Enn (ayol ismi)|
+anne|Enn (ayol ismi)|
+anton|Anton (ism)|
+anyway|baribir, qanday bo'lmasin|anyhow, regardless
+apologize|kechirim so'ramoq|say sorry, regret
+appal|dahshatga solmoq|shock, horrify, dismay
+apparently|aftidan, ko'rinishidan|seemingly, evidently
+appearance|tashqi ko'rinish; paydo bo'lish|look, arrival, image
+appreciation|qadrlash, minnatdorlik|gratitude, thanks, recognition
+apt|mos, o'rinli|fitting, suitable, appropriate
+argument|bahs, janjal|quarrel, dispute, debate
+aristocratic|aristokratik, zodagon|noble, upper-class
+assignment|topshiriq|task, job, homework
+atahualpa|Ataualpa (Inka hukmdori)|
+athens|Afina|
+atlantic|Atlantika|
+audition|tinglov, sinov chiqishi|tryout, test
+august|avgust|
+australia|Avstraliya|
+australian|avstraliyalik|
+aviation|aviatsiya|flying, flight
+awareness|xabardorlik|knowledge, understanding
+aztec|atstek|
+babysitter|enaga, bola qarovchi|nanny, sitter
+backpack|ryukzak|rucksack, bag
+bacteria|bakteriyalar|germs, microbes
+baker|novvoy|
+ball|to'p; bal (raqs kechasi)|sphere, dance
+balloon|havo shari|
+banner|bayroq, banner|flag, sign
+battery|batareya|cell
+bce|miloddan avvalgi|BC
+becky|Bekki (ayol ismi)|
+bedroom|yotoqxona|
+bee|asalari|
+beef|mol go'shti|
+beethoven|Betxoven|
+ben|Ben (ism)|
+betrayal|xiyonat|treachery, disloyalty
+billy|Billi (ism)|
+bioco|Bioko (kompaniya nomi)|
+blanchard|Blanshar (familiya)|
+blindfold|ko'z bog'ich|
+bob|Bob (ism)|
+boil|qaynatmoq|heat, simmer, cook
+boomerang|bumerang|
+bound|bog'langan; albatta (bo'lmoq)|tied, sure, certain
+bravely|jasorat bilan|boldly, courageously
+bravery|jasorat|courage, boldness
+bremen|Bremen (shahar)|
+brightly|yorqin|vividly, brilliantly
+britain|Britaniya|
+british|britaniyalik, ingliz|
+broke|puli yo'q; sindi|penniless, poor
+brush|cho'tka; cho'tkalamoq|comb, sweep
+business|biznes, ish|company, trade, work
+butter|sariyog'|
+cabbage|karam|
+cacao|kakao|
+cafeteria|oshxona (maktab)|canteen, dining hall
+cake|tort, pirog|
+calmly|xotirjam|quietly, peacefully
+candy|konfet|sweets
+cannon|to'p (qurol)|gun
+card|karta, otkritka|
+careless|e'tiborsiz|reckless, sloppy, thoughtless
+carrot|sabzi|
+case|holat; quti|situation, instance, box
+category|toifa, tur|class, group, type
+centimeter|santimetr|
+central|markaziy|main, middle
+certainly|albatta|surely, definitely
+cheek|yonoq|
+chili|achchiq qalampir|hot pepper
+chilies|achchiq qalampirlar|hot peppers
+china|Xitoy|
+chinese|xitoylik, xitoycha|
+chip|chips; parcha|piece, crisp
+cholera|vabo|
+christmas|Rojdestvo|
+churchyard|cherkov hovlisi|graveyard
+cilium|kiprikcha (hujayradagi tuk)|hair
+clara|Klara (ayol ismi)|
+classical|klassik|traditional
+claw|tirnoq, changal|nail, talon
+clear|aniq; tiniq; tozalamoq|plain, obvious, clean
+clearly|aniq|plainly, obviously
+clinic|klinika|hospital
+clock|soat|
+clothe|kiyintirmoq|dress
+code|kod, shifr|cipher
+coffee|qahva|
+collar|yoqa; bo'yinbog'|
+collection|to'plam, kolleksiya|set, group
+column|ustun|pillar
+comfortable|qulay|cozy, relaxed
+competitive|raqobatbardosh|ambitious
+complete|to'liq; tugatmoq|whole, finish, full
+composer|bastakor|
+computer|kompyuter|
+cone|konus; muzqaymoq vafli|
+confusion|chalkashlik|disorder, puzzlement
+conqueror|bosqinchi, fotih|invader, victor
+conservative|konservativ|traditional, cautious
+constantly|doimo|always, continually
+construction|qurilish|building
+cookie|pechenye|biscuit
+copy|nusxa; ko'chirmoq|duplicate, imitate
+correctly|to'g'ri|properly, rightly
+cortes|Kortes (ispan bosqinchisi)|
+cory|Kori (ism)|
+cosmic|kosmik|celestial
+cosmo|Kosmo (ism)|
+count|sanamoq; graf|number, tally
+counter|peshtaxta|
+countless|son-sanoqsiz|many, numerous
+couple|juft, bir nechta|pair, few
+court|sud; saroy|
+coworkers|hamkasblar|colleagues
+creation|yaratish, ijod|making, invention
+crocodile|timsoh|
+croesus|Krez (Lidiya shohi)|
+cross|kesib o'tmoq; xoch|go across, pass
+cue|ishora|signal, sign
+curator|kurator, muzey xodimi|keeper
+curly|jingalak|wavy
+cursor|kursor|
+cushion|yostiqcha|pillow, pad
+cycle|sikl, aylanish|circle, period
+da|da (Leonardo da Vinchi)|
+dalton|Dalton (ism)|
+dan|Den (ism)|
+dancer|raqqos|
+dano|Dano (xudo nomi)|
+darius|Doro (fors shohi)|
+darkness|qorong'ilik|dark, gloom
+data|ma'lumotlar|information, facts
+daybreak|tong|dawn, sunrise
+daylight|kunduzgi yorug'lik|sunlight
+deadline|muddat|time limit
+deadly|o'limga olib keluvchi|lethal, fatal
+dean|Din (ism)|
+december|dekabr|
+decorate|bezamoq|adorn, ornament
+definitely|albatta, aniq|certainly, surely
+degree|daraja; gradus|level, extent
+demon|jin, shayton|devil
+develop|rivojlantirmoq; yaratmoq|grow, create, build
+difficulty|qiyinchilik|problem, trouble
+dipper|cho'mich; Katta Ayiq (yulduz turkumi)|ladle
+director|direktor; rejissyor|manager, head
+dislike|yoqtirmaslik|hate, dislike
+disobey|bo'ysunmaslik|defy, rebel
+disorganize|tartibsiz qilmoq|disorder
+disperse|tarqalmoq|scatter, spread
+doorway|eshik oldi|entrance
+downstairs|pastki qavatda|below
+dresser|tortmali shkaf|chest of drawers
+drug|dori; giyohvand modda|medicine
+drum|baraban|
+dutch|gollandiyalik|
+dynamite|dinamit|explosive
+eagle|burgut|
+ear|quloq|
+earlier|avvalroq|before, previously
+east|sharq|
+eastern|sharqiy|
+eater|yeyuvchi|
+editor|muharrir|
+education|ta'lim|schooling, learning
+elderly|keksa|old, aged
+elect|saylamoq|choose, vote
+election|saylov|vote
+electric|elektr|
+electrical|elektr|
+elephant|fil|
+elite|elita, tanlangan|best, top
+eliza|Eliza (ayol ismi)|
+elvis|Elvis (ism)|
+emit|chiqarmoq|release, give off
+emotional|hissiy|sensitive, moving
+employee|xodim|worker, staff
+employer|ish beruvchi|boss
+engine|dvigatel|motor
+enrol|ro'yxatdan o'tmoq|join, sign up
+entirely|butunlay|completely, totally
+environmental|atrof-muhit, ekologik|
+equipment|jihozlar|gear, tools
+erik|Erik (ism)|
+ernest|Ernest (ism)|
+especially|ayniqsa|particularly
+estes|Estes (joy nomi)|
+ethic|axloq, odob|morals, principle
+europe|Yevropa|
+european|yevropalik|
+eventually|oxir-oqibat|finally, in the end
+everybody|hamma|everyone
+excitedly|hayajon bilan|eagerly
+excuse|bahona; kechirmoq|reason, pardon
+expensive|qimmat|costly, pricey
+extinction|yo'qolib ketish|dying out
+fan|muxlis; yelpig'ich|supporter
+farther|uzoqroq|further
+fashion|moda|style, trend
+fat|semiz; yog'|
+female|urg'ochi, ayol|woman
+feud|adovat, janjal|quarrel, conflict
+fifth|beshinchi|
+fighter|jangchi|warrior
+figure|raqam; shakl; tushunmoq|number, shape, understand
+filter|filtrlamoq|clean, strain
+finger|barmoq|
+fireplace|kamin, o'choq|hearth
+firstly|birinchidan|first
+fission|bo'linish|division, splitting
+fleming|Fleming (olim)|
+floorboard|pol taxtasi|
+flute|nay, fleyta|
+foot|oyoq (panja); fut|
+forget|unutmoq|
+fortunately|baxtga|luckily
+france|Fransiya|
+francisco|Fransisko (ism)|
+franklin|Franklin|
+freely|erkin|openly
+french|fransuz|
+friday|juma|
+frighten|qo'rqitmoq|scare, terrify
+fulfil|bajarmoq|carry out, complete
+fungus|qo'ziqorin, zamburug'|mold
+fur|mo'yna, jun|hair
+furry|junli|hairy, fluffy
+furthermore|bundan tashqari|moreover, also
+galactic|galaktik|cosmic
+gallon|gallon|
+garden|bog'|yard
+garlic|sarimsoq|
+gas|gaz; benzin|fuel
+gasoline|benzin|fuel, petrol
+gear|jihoz; shesterna|equipment
+gene|gen|
+generally|odatda|usually, mostly
+german|nemis|
+gilbert|Gilbert (ism)|
+gland|bez|
+gleam|yaltiramoq|shine, glow
+gordon|Gordon (ism)|
+government|hukumat|state
+gradually|asta-sekin|slowly, steadily
+granddad|bobo|grandfather
+grandmother|buvi|grandma
+grandson|nabira|
+greater|kattaroq|bigger
+greatest|eng buyuk|best
+greatly|juda|very much
+greatness|buyuklik|grandeur
+greedy|ochko'z|selfish
+greek|yunon|
+greenland|Grenlandiya|
+greeter|kutib oluvchi|
+greta|Greta (ayol ismi)|
+grieve|qayg'urmoq|mourn
+guest|mehmon|visitor
+gwen|Gven (ayol ismi)|
+gym|sport zali|
+hairbrush|soch cho'tkasi|
+hairdresser|sartarosh|barber
+hairstyle|soch turmagi|haircut
+half|yarim|
+hampton|Xempton (qishloq)|
+hans|Hans (ism)|
+happiness|baxt|joy
+hardworking|mehnatkash|diligent
+harmful|zararli|damaging
+harry|Garri (ism)|
+hatter|shlyapachi|
+headache|bosh og'rig'i|
+headphone|quloqchin|
+healer|tabib|doctor
+health|sog'liq|
+heater|isitgich|
+heel|tovon; poshna|
+helpful|foydali, yordamchi|useful
+helpless|ojiz|weak, powerless
+herald|jarchi|messenger
+herb|o'simlik (dorivor)|plant
+herself|o'zi (ayol)|
+highly|juda|very
+hilltop|tepalik cho'qqisi|
+himalaya|Himolay|
+hip|son, bel|
+historian|tarixchi|
+historical|tarixiy|
+hitter|uruvchi (beysbol)|batter
+hive|uya (asalari)|
+hmm|hmm|
+hobby|qiziqish, mashg'ulot|pastime
+holiday|bayram; ta'til|vacation
+holland|Gollandiya|
+honey|asal|
+hopeful|umidvor|optimistic
+hopefully|umid qilamizki|
+housewife|uy bekasi|
+hug|quchoqlamoq|embrace
+human|inson|person
+hunter|ovchi|
+iceberg|aysberg|
+iceland|Islandiya|
+icicle|muz so'rg'ich|
+ii|II (ikkinchi)|
+illegal|noqonuniy|unlawful
+illness|kasallik|sickness, disease
+immediately|darhol|at once, instantly
+importantly|eng muhimi|
+impossible|imkonsiz|
+impressive|ta'sirli|amazing, striking
+inability|qobiliyatsizlik|failure
+inca|inka|
+industrial|sanoat|
+industry|sanoat|business
+infection|infeksiya|disease
+information|ma'lumot|facts, data
+innkeeper|mehmonxona egasi|
+insane|aqldan ozgan|crazy, mad
+insect|hasharot|bug
+insignificant|ahamiyatsiz|minor, trivial
+inspection|tekshiruv|check, examination
+instantly|bir zumda|immediately
+intelligent|aqlli|smart, clever
+interior|ichki|inside
+interview|intervyu, suhbat|
+invader|bosqinchi|attacker
+invention|ixtiro|creation
+inventor|ixtirochi|creator
+invitation|taklif|
+ireland|Irlandiya|
+irritation|qichishish; g'ashlik|itch, annoyance
+isaac|Isaak (ism)|
+iceberg|aysberg|
+jacket|kurtka|coat
+jane|Jeyn (ayol ismi)|
+janie|Jeyni (ayol ismi)|
+jaw|jag'|
+jazz|jaz|
+jean|Jan (ism)|
+jen|Jen (ayol ismi)|
+jerk|silkinish|jolt, twitch
+johnson|Jonson (familiya)|
+join|qo'shilmoq|connect, enter
+jones|Jons (familiya)|
+joseph|Jozef (ism)|
+josephine|Jozefina (ayol ismi)|
+jug|ko'za|jar, pitcher
+jungle|o'rmon, changalzor|forest
+kangaroo|kenguru|
+kara|Kara (ayol ismi)|
+katie|Keyti (ayol ismi)|
+keeper|qo'riqchi|guard
+kevin|Kevin (ism)|
+kidnapper|o'g'irlab ketuvchi|
+kidney|buyrak|
+kitten|mushukcha|kitty
+knee|tizza|
+komodo|komodo|
+lab|laboratoriya|laboratory
+lace|to'r, kashta|
+laika|Layka (it nomi)|
+lake|ko'l|
+larger|kattaroq|bigger
+larry|Larri (ism)|
+lately|yaqinda|recently
+latest|eng so'nggi|newest
+lazy|dangasa|idle
+leadership|rahbarlik|
+least|eng kam|
+leeuwenhoek|Levenguk (olim)|
+lenormand|Lenorman (olim)|
+lens|linza|glass
+leonardo|Leonardo|
+lester|Lester (ism)|
+letter|xat; harf|note, message
+liar|yolg'onchi|
+lifestyle|turmush tarzi|way of life
+linda|Linda (ayol ismi)|
+link|bog'lamoq|connect, tie
+lip|lab|
+lipstick|lab bo'yog'i|
+livelihood|tirikchilik|living, income
+lizard|kaltakesak|
+london|London|
+lonely|yolg'iz|alone, lonesome
+loser|yutqazuvchi|
+lottery|lotereya|
+lover|sevuvchi, ishqiboz|fan
+lucas|Lukas (ism)|
+luckily|baxtga|fortunately
+lydia|Lidiya|
+lydian|lidiyalik|
+magician|sehrgar|wizard
+maid|xizmatkor ayol|servant
+mailbox|pochta qutisi|
+main|asosiy|chief, primary
+mainly|asosan|mostly
+maker|yasovchi|creator
+male|erkak, erkak jinsli|man
+mama|oyi|mom
+mamushi|mamushi (ilon)|
+manual|qo'llanma; qo'lda|handbook, guide
+marcus|Markus (ism)|
+market|bozor|
+marriage|nikoh|
+martin|Martin (ism)|
+mary|Meri (ayol ismi)|
+mate|sherik, juft|partner
+matthew|Metyu (ism)|
+mayan|mayya|
+measurement|o'lchov|size
+memorial|yodgorlik|monument
+meow|miyov|
+merely|shunchaki|only, just
+messy|tartibsiz|untidy
+meter|metr|
+mexico|Meksika|
+meyers|Mayers (familiya)|
+michael|Maykl (ism)|
+microphone|mikrofon|
+midday|tush payti|noon
+migrant|ko'chmanchi|
+mike|Mayk (ism)|
+millimeter|millimetr|
+misfire|noto'g'ri ishlamoq|fail
+mitch|Mitch (ism)|
+mom|oyi|mother
+monkey|maymun|
+moscow|Moskva|
+mosquito|chivin|
+motto|shior|slogan
+mouse|sichqon|
+mouth|og'iz|
+mr|janob|
+ms|xonim|
+muggins|Maggins (familiya)|
+murray|Myurrey (ism)|
+museum|muzey|
+musician|musiqachi|
+mustache|mo'ylov|
+nail|mix; tirnoq|
+nate|Neyt (ism)|
+nation|millat, davlat|country
+national|milliy|
+natural|tabiiy|
+nature|tabiat|
+navigation|navigatsiya, yo'l topish|
+nearly|deyarli|almost
+neighborhood|mahalla|area
+netherton|Nezerton (joy nomi)|
+nicholas|Nikolay|
+niece|jiyan qiz|
+nitrogen|azot|
+nobody|hech kim|no one
+nonsense|bema'nilik|rubbish
+note|eslatma; nota|message
+notebook|daftar|
+november|noyabr|
+number|son, raqam|
+office|ofis|
+official|rasmiy; amaldor|officer
+officially|rasman|
+often|tez-tez|frequently
+oil|yog'; neft|
+olympic|olimpiya|
+omit|tushirib qoldirmoq|leave out
+onion|piyoz|
+openly|ochiq|frankly
+order|buyruq; tartib; buyurtma|command
+organ|a'zo; organ (cholg'u)|
+organization|tashkilot|
+originally|dastlab|at first
+outbreak|tarqalish (kasallik)|epidemic
+outdoor|ochiq havoda|
+outer|tashqi|external
+owner|egasi|
+owww|voy|ouch
+ox|ho'kiz|
+pacific|Tinch okeani|
+pack|qadoqlamoq|bundle
+package|posilka|parcel
+packet|paket|
+page|sahifa|
+painful|og'riqli|sore
+pan|tova|
+panel|panel|board
+pant|shim|trousers
+papyrus|papirus|
+paris|Parij|
+patsy|Patsi (ayol ismi)|
+paul|Pol (ism)|
+peacefully|tinch|calmly
+pear|nok|
+peeves|Pivz (familiya)|
+pepper|qalampir|
+percent|foiz|
+perfectly|mukammal|completely
+performance|chiqish, tomosha|show
+performer|ijrochi|artist
+persevere|qat'iyat ko'rsatmoq|persist
+persia|Fors|
+persistent|qat'iyatli|determined
+personal|shaxsiy|private
+peru|Peru|
+petal|gulbarg|
+photo|surat|picture
+photocopy|nusxa|copy
+photograph|fotosurat|photo
+piano|pianino|
+pierre|Per (ism)|
+pilot|uchuvchi|
+pinch|chimdimoq|squeeze
+pink|pushti|
+pipe|quvur|tube
+pizarro|Pisarro (ispan bosqinchisi)|
+pizza|pitsa|
+plus|ortiqcha; plyus|
+point|nuqta; ko'rsatmoq|
+poisonous|zaharli|toxic
+polaris|Qutb yulduzi|North Star
+politic|siyosat|
+political|siyosiy|
+politician|siyosatchi|
+pollution|ifloslanish|
+population|aholi|people
+possibility|imkoniyat|chance
+potion|sehrli ichimlik|
+powder|kukun|
+powerful|kuchli|strong
+powerless|kuchsiz|weak
+present|sovg'a; hozirgi|gift
+prisoner|mahbus|
+probably|ehtimol|likely
+procedure|jarayon|process
+properly|to'g'ri|correctly
+protist|protist (bir hujayrali jonzot)|
+purple|binafsha|
+quietly|jimgina|silently
+rachel|Reychel (ayol ismi)|
+raincoat|yomg'irpo'sh|
+rainfall|yog'ingarchilik|rain
+randy|Rendi (ism)|
+reaction|reaksiya|response
+reality|haqiqat|truth
+reappear|yana paydo bo'lmoq|
+reasonably|ancha|fairly
+rebuild|qayta qurmoq|restore
+recently|yaqinda|lately
+record|rekord; yozib olmoq|
+relationship|munosabat|
+reliable|ishonchli|trustworthy
+remake|qayta yasamoq|
+rename|qayta nomlamoq|
+repeat|takrorlamoq|
+reproduction|ko'payish|breeding
+resident|aholi, yashovchi|
+resistance|qarshilik|
+rib|qovurg'a|
+rice|guruch|
+richard|Richard (ism)|
+risky|xavfli|dangerous
+robber|qaroqchi|thief
+robby|Robbi (ism)|
+robert|Robert (ism)|
+rocket|raketa|
+rooster|xo'roz|
+root|ildiz|
+round|aylana; raund|
+rouse|uyg'otmoq|wake
+runner|yuguruvchi|
+russell|Rassel (ism)|
+russia|Rossiya|
+sack|qop|bag
+safely|xavfsiz|
+saint|avliyo|
+salad|salat|
+salt|tuz|
+sandwich|sendvich|
+sauce|sous|
+sauna|sauna|
+scientific|ilmiy|
+screen|ekran|
+sculpt|haykal yasamoq|carve
+sculptor|haykaltarosh|
+sea|dengiz|
+seat|o'rindiq|
+sebastian|Sebastyan (ism)|
+security|xavfsizlik|safety
+self|o'zi|
+service|xizmat|
+seventy|yetmish|
+sheep|qo'y|
+shelf|javon|
+sherman|Sherman (shahar)|
+shiny|yaltiroq|bright
+shirt|ko'ylak|
+shoe|poyabzal|
+shop|do'kon|store
+short|qisqa; past|
+shoulder|yelka|
+shove|itarmoq|push
+sidewalk|piyodalar yo'lagi|pavement
+similar|o'xshash|alike
+similarly|xuddi shunday|likewise
+simmer|sekin qaynatmoq|
+simply|shunchaki|just
+singer|qo'shiqchi|
+situation|vaziyat|
+skilled|mohir|skillful
+sleepy|uyqusiragan|tired
+smaller|kichikroq|
+smog|tutun-tuman|
+snake|ilon|
+soda|gazli ichimlik|
+softly|ohista|gently
+somebody|kimdir|someone
+sooner|tezroq|earlier
+south|janub|
+spaghetti|spagetti|
+spain|Ispaniya|
+spaniard|ispaniyalik|
+speaker|notiq|
+spell|sehr, afsun|charm
+split|bo'linmoq|divide
+sputnik|Sputnik|
+spy|ayg'oqchi|
+squad|otryad|team
+st|Avliyo|
+station|stansiya|
+stationery|kanselyariya|
+stella|Stella (ayol ismi)|
+stephanie|Stefani (ayol ismi)|
+stomach|oshqozon|belly
+straight|to'g'ri|
+stress|stress|tension
+sturdy|mustahkam|strong
+successfully|muvaffaqiyatli|
+such|bunday|
+sugar|shakar|
+sunlight|quyosh nuri|
+supervisor|nazoratchi|boss
+surely|albatta|certainly
+surgical|jarrohlik|
+surprisingly|ajablanarlisi|
+survival|omon qolish|
+susie|Syuzi (ayol ismi)|
+swallow|yutmoq|
+sweden|Shvetsiya|
+sweet|shirin|
+swimmer|suzuvchi|
+syndrome|sindrom|
+system|tizim|
+tape|lenta|
+target|nishon|goal
+tasty|mazali|delicious
+tax|soliq|
+tea|choy|
+teammate|jamoadosh|
+technical|texnik|
+teenager|o'smir|teen
+telephone|telefon|phone
+television|televizor|TV
+temperature|harorat|
+text|matn|
+thankful|minnatdor|grateful
+themselves|o'zlari|
+thief|o'g'ri|robber
+thirsty|chanqagan|
+thirty|o'ttiz|
+threaten|tahdid qilmoq|
+throughout|davomida|
+thucydides|Fukidid (tarixchi)|
+thumb|bosh barmoq|
+tick|chiqillamoq|
+tiger|yo'lbars|
+tighten|tortmoq, mahkamlamoq|
+tightly|mahkam|firmly
+tina|Tina (ayol ismi)|
+title|sarlavha|name
+ton|tonna|
+tongue|til|
+tonight|bugun kechqurun|
+total|jami|
+totally|butunlay|completely
+track|iz; trek|
+tracy|Treysi (ayol ismi)|
+trailer|tirkama|
+train|poyezd; mashq qilmoq|
+traveler|sayohatchi|
+treatment|davolash|
+truly|chinakam|really
+turkey|kurka; Turkiya|
+tut|Tut (fir'avn)|
+twenty|yigirma|
+typically|odatda|usually
+unable|qodir emas|
+unattractive|xunuk|ugly
+uncomfortable|noqulay|
+uncover|ochmoq|reveal
+unfair|adolatsiz|
+unhappy|baxtsiz|sad
+university|universitet|
+unkind|qo'pol|mean
+unlike|farqli o'laroq|
+unsure|ishonchsiz|uncertain
+useful|foydali|helpful
+usual|odatiy|normal
+vaccine|vaksina|
+valuable|qimmatli|precious
+veranda|ayvon|porch
+versa|aksincha (vice versa)|
+versus|qarshi|against
+verse|she'r, band|
+vice|o'rinbosar; (vice versa) aksincha|
+victory|g'alaba|win
+videotape|videotasma|
+viking|viking|
+vinci|Vinchi|
+virus|virus|
+visitor|tashrif buyuruvchi|guest
+volleyball|voleybol|
+waist|bel|
+warmly|iliq|
+warmth|iliqlik|
+wart|so'gal|
+wasteful|isrofgar|
+weak|zaif|
+weaken|zaiflashtirmoq|
+wealthy|boy|rich
+wearer|kiyuvchi|
+webb|Uebb (familiya)|
+weekend|dam olish kunlari|
+western|g'arbiy|
+whatever|nima bo'lsa ham|
+whenever|qachon bo'lsa ham|
+whoever|kim bo'lsa ham|
+widely|keng|
+wig|parik|
+wiggle|qimirlatmoq|
+wilbur|Uilbur (ism)|
+wildly|vahshiyona|
+wilma|Vilma (ayol ismi)|
+wilton|Uilton (joy nomi)|
+window|deraza|
+wine|vino|
+winter|qish|
+wintertime|qish fasli|
+wonderful|ajoyib|
+wow|voy|
+yearly|har yillik|
+yellow|sariq|
+yesterday|kecha|
+york|York|
+younger|yoshroq|
+zero|nol|
+zimbabwe|Zimbabve|
+zimbabwean|zimbabvelik|
+zoo|hayvonot bog'i|
+hasn't|-gan emas (has not)|
+he's|u ... (he is / he has)|
+i'd|men ... edim (I would / I had)|
+it'll|u ... bo'ladi (it will)|
+itself|o'zi|
+must've|...gan bo'lsa kerak (must have)|
+oceantown|Oushentaun (shahar nomi)|
+she'd|u ... edi (she would / she had)|
+they'd|ular ... edi (they would / they had)|
+thinness|ingichkalik|slimness
+treater|davolovchi|healer
+you'd|siz ... edingiz (you would / you had)|
+you've|siz ...gansiz (you have)|

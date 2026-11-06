@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'config.dart';
+import 'data/stories.dart';
 import 'data/words.dart';
 import 'screens/login.dart';
 import 'screens/shell.dart';
@@ -18,6 +19,7 @@ import 'theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await WordBank.load();
+  await StoryBank.load();
   final state = AppState();
   await state.load();
   Net.start();

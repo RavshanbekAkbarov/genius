@@ -1,0 +1,660 @@
+Mars|Mars (sayyora)|
+a|bir (artikl, birlik)|one
+able|qila oladigan, qodir|capable, fit
+about|haqida; taxminan|regarding, around, nearly
+adams|Adams (nom, familiya)|
+adjective|sifat (so'z turkumi)|
+after|-dan keyin|later, following, behind
+afternoon|tushdan keyin|
+again|yana, qaytadan|once more, anew
+ago|oldin, avval|before, earlier, back
+air|havo|sky, atmosphere
+airport|aeroport|airfield
+alaska|Alyaska (AQSH shtati)|
+all|hamma, barcha|every, whole, entire
+almost|deyarli|nearly, about, practically
+also|ham, shuningdek|too, as well, besides
+always|doim, har doim|forever, constantly, ever
+and|va|plus, also
+angrily|jahl bilan|furiously, crossly, madly
+animal|hayvon|creature, beast
+another|boshqa, yana bitta|other, one more, different
+answer|javob; javob bermoq|reply, response, respond
+any|har qanday, biror|some, every, whichever
+anyone|har kim, biror kishi|anybody, someone
+anything|har narsa, biror narsa|something, whatever
+anywhere|har qayerda, biror joyda|wherever, everywhere
+archie|Archi (erkak ismi)|
+area|hudud, joy|place, region, zone
+aren't|emas (are not)|
+argos|Argos (afsonaviy qahramon)|
+arm|qo'l (yelkadan bilakkacha)|limb
+around|atrofida; taxminan|about, near, nearly
+art|san'at|painting, craft
+arthur|Artur (erkak ismi)|
+as|kabi; -dek; chunki|like, while, because
+ask|so'ramoq|question, request, inquire
+at|-da, -ga (joy, vaqt)|
+away|uzoqqa, nari|off, far, gone
+baby|chaqaloq|infant, newborn, child
+back|orqa; orqaga|behind, rear, return
+bad|yomon|poor, evil, wrong, awful
+bag|sumka, xalta|sack, pouch, purse
+basketball|basketbol|
+bathroom|hammom, hojatxona|restroom, toilet
+be|bo'lmoq|exist, live, remain
+bear|chidamoq; ayiq|stand, carry, tolerate
+beautiful|chiroyli, go'zal|pretty, lovely, attractive
+beauty|go'zallik|loveliness, charm, attractiveness
+because|chunki|since, as, for
+become|bo'lib qolmoq, aylanmoq|turn into, grow, get
+bed|karavot, to'shak|bunk, cot
+before|oldin, -dan avval|earlier, prior, ahead
+begin|boshlamoq|start, open, launch
+bell|qo'ng'iroq|chime, buzzer
+best|eng yaxshi|finest, greatest, top
+beth|Bet (ayol ismi)|
+better|yaxshiroq|finer, superior, improved
+between|orasida|among, amid
+big|katta|large, huge, great
+bird|qush|
+birthday|tug'ilgan kun|
+black|qora|dark
+blue|ko'k|
+boat|qayiq|ship, canoe
+book|kitob|novel, volume
+both|ikkalasi ham|the two, each
+box|quti|case, carton, container
+boy|o'g'il bola|lad, kid, youngster
+brad|Bred (erkak ismi)|
+bread|non|loaf
+break|sindirmoq; tanaffus|smash, crack, rest
+brother|aka, uka|sibling
+brown|jigarrang|
+bug|hasharot, qo'ng'iz|insect, beetle
+build|qurmoq|make, construct, create
+bus|avtobus|
+but|lekin, ammo|however, yet, though
+buy|sotib olmoq|purchase, get, pay for
+by|yonida; orqali; tomonidan|near, beside, through
+call|chaqirmoq; qo'ng'iroq qilmoq|phone, name, shout
+camp|lager|campsite
+can|qila olmoq|be able, may
+can't|qila olmaydi (cannot)|
+cannot|qila olmaydi|
+car|mashina, avtomobil|auto, vehicle
+care|g'amxo'rlik; qayg'urmoq|worry, mind, attention
+carry|ko'tarib bormoq|take, bring, hold
+cat|mushuk|kitten
+catch|tutmoq, ushlamoq|grab, trap, seize
+chair|stul|seat
+change|o'zgarmoq; o'zgarish|turn, become, shift
+check|tekshirmoq|look at, test, examine
+chicken|tovuq|hen
+child|bola|kid, youngster
+chocolate|shokolad|
+choose|tanlamoq|pick, select, decide
+city|shahar|town
+claire|Kler (ayol ismi)|
+class|dars; sinf|lesson, course
+clean|toza; tozalamoq|neat, wash, tidy
+close|yopmoq; yaqin|shut, near, lock
+clothes|kiyim-kechak|clothing, outfit, dress
+cody|Kodi (erkak ismi)|
+coin|tanga|penny
+color|rang|shade, tone
+come|kelmoq|arrive, approach, reach
+corn|makkajo'xori|maize
+corner|burchak, muyulish|turn, angle, edge
+coronado|Koronado (ispan zobiti)|
+could|qila olardi; mumkin edi|might
+couldn't|qila olmadi (could not)|
+country|mamlakat, davlat|nation, land, state
+cover|muqova; yopmoq|lid, hide, wrap
+cow|sigir|cattle
+crazy|aqldan ozgan, g'alati|mad, wild, silly
+cream|qaymoq, krem|
+cry|yig'lamoq|weep, sob, shout
+cup|piyola, chashka|mug, glass
+cute|yoqimli, shirin|sweet, lovely, pretty
+dad|dada, ota|father
+dance|raqsga tushmoq|move, jump
+dangerous|xavfli|risky, unsafe
+dark|qorong'i|black, dim, gloomy
+darkland|Darklend (Qorong'i yurt)|
+daughter|qiz (farzand)|girl, child
+day|kun|
+decide|qaror qilmoq|choose, determine, settle
+deep|chuqur|low
+delicious|mazali|tasty, yummy, delightful
+desk|stol, parta|table
+didn't|qilmadi (did not)|
+die|o'lmoq|pass away, perish
+diet|ovqatlanish, parhez|food, meals
+differently|boshqacha|otherwise
+difficult|qiyin|hard, tough
+dinner|kechki ovqat|supper, meal
+direction|yo'nalish|way, route, course
+dirt|tuproq, kir|soil, mud, earth
+dirty|iflos, kir|muddy, unclean
+do|qilmoq|make, act, perform
+doctor|shifokor|physician
+doesn't|qilmaydi (does not)|
+dog|it|puppy, hound
+doll|qo'g'irchoq|toy
+don't|qilmang, qilmaydi (do not)|
+donkey|eshak|
+door|eshik|gate, entrance
+down|pastga|below, lower
+draw|chizmoq|sketch, paint
+dream|tush; orzu|wish, hope, vision
+dress|ko'ylak; kiyinmoq|gown, wear
+drink|ichmoq; ichimlik|sip, beverage
+drive|haydamoq|ride, steer
+dry|quruq|
+duck|o'rdak|
+during|davomida|throughout, while
+each|har bir|every
+earth|Yer; tuproq|world, ground, soil
+easily|oson|simply, readily
+easy|oson|simple, light
+eat|yemoq|consume, dine
+eight|sakkiz|
+end|oxir; tugamoq|finish, stop, close
+energy|kuch, quvvat|power, strength
+england|Angliya|Britain
+english|ingliz; ingliz tili|
+enjoy|zavqlanmoq, yoqtirmoq|like, love, relish
+even|hatto|still, yet
+every|har bir|each, all
+everyone|hamma|everybody, all
+everything|hamma narsa|all
+everywhere|hamma joyda|all over
+extremely|nihoyatda|very, highly, really
+eye|ko'z|
+fact|fakt, haqiqat|truth, reality
+fall|yiqilmoq; kuz|drop, collapse, autumn
+family|oila|relatives
+farm|ferma, dala|ranch
+farmer|dehqon, fermer|grower
+father|ota|dad
+favorite|eng yoqtirgan|preferred, best-loved
+feel|his qilmoq|sense, notice
+few|bir nechta, oz|some, several
+fight|urushmoq, jang|battle, struggle, argue
+fill|to'ldirmoq|pack, load
+find|topmoq|discover, locate
+fine|yaxshi; jarima|well, okay, good
+finish|tugatmoq|end, complete, stop
+fire|olov, yong'in|flame, blaze
+first|birinchi|initial, earliest
+fish|baliq|
+five|besh|
+flash|chaqnash, yaltirash|flare, gleam, spark
+flower|gul|bloom, blossom
+fly|uchmoq; pashsha|soar
+food|ovqat, oziq-ovqat|meal, meals
+for|uchun|
+form|hosil bo'lmoq; shakl|shape, create, make
+four|to'rt|
+frenhofer|Frenxofer (rassom ismi)|
+friend|do'st|pal, buddy, mate
+from|-dan|
+front|old tomon|face, head
+full|to'la|filled, packed, complete
+fun|qiziqarli; xursandchilik|enjoyment, joy, play
+funny|kulgili|amusing, silly, comic
+game|o'yin|match, contest
+get|olmoq; bo'lib qolmoq|receive, obtain, become
+girl|qiz bola|lass
+give|bermoq|hand, offer, present
+go|bormoq|move, travel, leave
+god|xudo|deity
+goddess|ma'buda|
+gold|oltin|
+golden|oltin rang, oltindan|gold, shiny
+good|yaxshi|nice, fine, great
+goodbye|xayr|farewell, bye
+grandfather|bobo|grandpa
+grandpa|bobo|grandfather
+grandparent|buvi yoki bobo|
+great|ajoyib; buyuk|wonderful, excellent, huge
+greece|Gretsiya|
+green|yashil|
+group|guruh|team, band, crowd
+grow|o'smoq|increase, rise, develop
+gun|qurol, to'pponcha|
+hadn't|qilmagan edi (had not)|
+hair|soch|
+hairy|tukli|
+hall|dahliz, zal|corridor, room
+hand|qo'l|
+happily|xursand holda|gladly, cheerfully
+happy|xursand, baxtli|glad, pleased, joyful
+hard|qattiq; qiyin|difficult, tough
+hate|yomon ko'rmoq|dislike, despise
+have|ega bo'lmoq|own, hold, possess
+haven't|qilmagan (have not)|
+hawaii|Gavayi (orollar)|
+he|u (erkak)|
+he'll|u qiladi (he will)|
+head|bosh|
+hear|eshitmoq|listen
+heart|yurak; ko'ngil|
+heat|issiqlik|warmth
+heavy|og'ir|weighty, large
+hello|salom|hi, hey
+help|yordam bermoq|aid, assist, support
+henry|Genri (erkak ismi)|
+her|uni, uning (ayol)|
+hera|Gera (yunon ma'budasi)|
+here|bu yerda|
+here's|mana (here is)|
+hey|hoy, hey|hello, hi
+hi|salom|hello, hey
+high|baland|tall, lofty
+higher|balandroq|
+him|uni (erkak)|
+himself|o'zi, o'zini|
+his|uning (erkak)|
+hit|urmoq|strike, beat, knock
+hold|ushlamoq|grip, keep, carry
+home|uy|house
+honest|halol, rostgo'y|truthful, sincere, fair
+hope|umid qilmoq; umid|wish, expect
+horse|ot|pony
+hospital|kasalxona|clinic
+hot|issiq|warm, burning
+hotel|mehmonxona|inn
+hour|soat|
+house|uy|home
+how|qanday|
+hundred|yuz (100)|
+hungry|och|starving
+husband|er, eri|
+i|men|
+i'll|men qilaman (I will)|
+i'm|men (I am)|
+ice|muz|
+idea|g'oya, fikr|thought, plan
+if|agar|
+ill|kasal|sick, unwell
+important|muhim|essential, major, key
+in|ichida|inside, within
+into|ichiga|
+inuit|inuitlar (shimoliy xalq)|
+invite|taklif qilmoq|ask
+isn't|emas (is not)|
+it|u (narsa, hayvon)|
+it's|bu (it is)|
+jack|Jek (erkak ismi)|
+jackal|chiyabo'ri|
+jason|Jeyson (erkak ismi)|
+jeff|Jeff (erkak ismi)|
+jenny|Jenni (ayol ismi)|
+jim|Jim (erkak ismi)|
+job|ish|work, task, duty
+joe|Jo (erkak ismi)|
+john|Jon (erkak ismi)|
+joke|hazil|jest, gag, prank
+juice|sharbat|
+jump|sakramoq|leap, hop, bounce
+just|faqat; hozirgina|only, simply, barely
+katy|Keyti (ayol ismi)|
+keep|saqlamoq; davom etmoq|hold, save, continue
+kick|tepmoq|
+kilometer|kilometr|
+kind|mehribon; tur|nice, gentle, type
+kindness|mehribonlik|goodness, care
+king|qirol, podshoh|ruler
+kingdom|qirollik, podshohlik|realm, land
+kiss|o'pmoq|
+know|bilmoq|understand, realize
+lady|xonim, ayol|woman
+large|katta|big, huge
+late|kech|delayed, slow
+lead|boshlab bormoq|guide, direct, take
+learn|o'rganmoq|study, discover
+lee|Li (erkak ismi)|
+let|ruxsat bermoq|allow, permit
+let's|keling, qilaylik (let us)|
+life|hayot|living, existence
+light|yorug'lik; yengil|bright, lamp
+like|yoqtirmoq; kabi|love, enjoy, similar
+line|qator; chiziq|row, mark
+lion|sher|
+listen|tinglamoq|hear
+little|kichkina; oz|small, tiny, few
+live|yashamoq|stay, dwell, reside
+liz|Liz (ayol ismi)|
+lock|qulflamoq; qulf|shut, close
+long|uzun; uzoq|lengthy, tall
+look|qaramoq|see, watch, view
+lose|yo'qotmoq; yutqazmoq|fail, miss
+loudly|baland ovozda|noisily
+love|sevmoq|like, adore, enjoy
+lunch|tushlik|meal
+make|qilmoq, yasamoq|build, create, form
+man|erkak, odam|person, guy
+many|ko'p|lots, plenty, numerous
+map|xarita|chart, plan
+maria|Mariya (ayol ismi)|
+mark|iz, belgi|sign, spot, stain
+math|matematika|maths
+matter|ahamiyatga ega bo'lmoq|count, be important
+may|mumkin; balki|might, can
+me|meni, menga|
+meet|uchrashmoq|see, greet
+mia|Miya (ayol ismi)|
+might|balki, mumkin|may, could
+mile|mil (1,6 km)|
+milk|sut|
+mine|meniki|
+minos|Minos (qirol ismi)|
+minute|daqiqa|moment
+miss|sog'inmoq; o'tkazib yubormoq|long for, lose
+model|maket, model|copy, sample
+money|pul|cash, coins
+month|oy (vaqt)|
+moon|Oy (osmondagi)|
+more|ko'proq|extra, further
+morning|ertalab|dawn
+most|eng ko'p, eng|
+mother|ona|mom
+mountain|tog'|hill, peak
+move|harakat qilmoq; ko'chmoq|go, shift, walk
+movie|kino|film
+mrs|xonim (turmush qurgan ayol)|
+much|ko'p|a lot, plenty
+music|musiqa|song
+must|kerak, shart|have to, need to
+my|mening|
+myself|o'zim|
+name|ism; nomlamoq|title, call
+near|yaqin|close, beside
+neck|bo'yin|
+need|kerak bo'lmoq|require, want
+never|hech qachon|not ever
+new|yangi|fresh, modern
+news|yangilik|report, information
+newspaper|gazeta|paper
+next|keyingi|following
+nice|yaxshi, yoqimli|kind, pleasant, good
+night|tun, kecha|evening
+no|yo'q|none
+north|shimol|
+nose|burun|
+not|emas|
+novelist|yozuvchi (roman)|writer, author
+now|hozir|currently
+of|-ning|
+off|-dan (ajralib)|away
+oh|oh, voy|
+ok|mayli, xo'p|okay, fine, all right
+old|eski; qari|aged, ancient, elderly
+older|kattaroq, qariroq|elder
+on|ustida|upon, over
+once|bir marta; bir zamonlar|one time
+one|bir|single
+only|faqat|just, simply, alone
+onto|ustiga|
+open|ochmoq; ochiq|unlock
+or|yoki|
+other|boshqa|another, different
+our|bizning|
+out|tashqariga|outside
+outside|tashqarida|outdoors
+over|ustida; tugadi|above, finished
+paint|bo'yamoq, rasm chizmoq|draw, color
+paper|qog'oz|sheet
+parent|ota-ona|mother, father
+park|bog', park|garden
+part|qism|piece, section, portion
+party|bazm, ziyofat|celebration, event
+pass|o'tmoq|go by, cross
+past|o'tmish; yonidan|before, by
+pay|to'lamoq|give money
+peacock|tovus|
+pelias|Pelias (shahzoda ismi)|
+people|odamlar|persons, folks, humans
+person|odam, shaxs|individual, human
+phrase|ibora|expression, saying
+pick|tanlamoq; termoq|choose, select, gather
+picture|rasm|image, photo, painting
+piece|bo'lak|part, bit
+pig|cho'chqa|hog
+place|joy|spot, site, area
+plan|reja|idea, scheme
+plane|samolyot|aircraft, jet
+plant|o'simlik; ekmoq|grow, sow
+plastic|plastik|
+play|o'ynamoq; chalmoq|perform, act
+player|o'yinchi; ijrochi|musician
+please|iltimos; xursand qilmoq|satisfy
+pocket|cho'ntak|
+police|politsiya|
+poor|kambag'al|needy, broke
+popular|mashhur|famous, well-liked, loved
+power|kuch, qudrat|strength, force, energy
+pretty|chiroyli|beautiful, lovely, cute
+princess|malika, shahzoda qiz|
+problem|muammo|issue, trouble, difficulty
+pull|tortmoq|drag, draw
+puppy|kuchukcha|pup
+push|itarmoq|press, shove
+put|qo'ymoq|place, set, lay
+queen|qirolicha, malika|
+question|savol|query
+quickly|tez|fast, rapidly, swiftly
+quiet|jim, tinch|silent, calm, still
+rabbit|quyon|bunny, hare
+rain|yomg'ir|shower
+rainwater|yomg'ir suvi|
+rainy|yomg'irli|wet
+rarely|kamdan-kam|seldom, hardly ever
+raven|qarg'a (Raven, qahramon)|crow
+read|o'qimoq|
+ready|tayyor|prepared, set
+really|haqiqatan|truly, very
+reason|sabab|cause, purpose
+red|qizil|
+remember|eslamoq|recall
+restaurant|restoran|cafe
+right|to'g'ri; o'ng|correct, true
+rise|ko'tarilmoq|go up, climb, grow
+river|daryo|stream
+road|yo'l|street, path
+room|xona|
+run|yugurmoq|race, dash, rush
+sad|g'amgin|unhappy, upset, sorry
+sadly|g'amgin holda|unhappily
+sadness|qayg'u|sorrow, grief
+sale|sotuv|selling
+same|bir xil|equal, identical
+sand|qum|
+sarah|Sara (ayol ismi)|
+saturday|shanba|
+say|aytmoq|tell, speak, state
+scary|qo'rqinchli|frightening, spooky
+school|maktab|
+second|ikkinchi; soniya|moment
+see|ko'rmoq|look, watch, notice
+sell|sotmoq|
+send|yubormoq|mail, post
+seven|yetti|
+shall|-adi (kelasi zamon, rasmiy)|will
+she|u (ayol)|
+she's|u (she is)|
+ship|kema|boat, vessel
+shipwreck|kema halokati|wreck
+should|kerak|ought to
+shouldn't|kerak emas (should not)|
+show|ko'rsatmoq|display, present
+sick|kasal|ill, unwell
+simon|Saymon (erkak ismi)|
+simple|oddiy, oson|easy, plain, basic
+sir|janob|mister
+sit|o'tirmoq|
+six|olti|
+sky|osmon|heavens
+sleep|uxlamoq|rest, nap
+slow|sekin|
+slowly|sekin|gradually
+small|kichik|little, tiny
+smart|aqlli|clever, bright, wise
+smile|jilmaymoq|grin, beam
+smoke|tutun|
+snow|qor|
+so|shuning uchun; juda|therefore, very
+soccer|futbol|football
+soft|yumshoq|gentle, smooth
+some|ba'zi, bir oz|a few, several
+someone|kimdir|somebody
+something|nimadir|
+sometimes|ba'zan|occasionally, at times
+somewhere|qayerdadir|
+son|o'g'il|
+song|qo'shiq|tune, melody
+soon|tez orada|shortly, quickly
+sorry|kechirasiz; afsuslangan|sad, regretful
+spanish|ispan|
+special|alohida, maxsus|unique, unusual, rare
+speed|tezlik|pace, rate
+spider|o'rgimchak|
+spiderwebs|o'rgimchak to'ri|webs
+sport|sport|game
+spring|bahor|
+stacie|Steysi (ayol ismi)|
+stand|turmoq|rise
+star|yulduz|
+starfish|dengiz yulduzi|
+start|boshlamoq|begin
+stay|qolmoq|remain, wait
+stick|tayoq|stick, rod, pole
+stone|tosh|rock
+stop|to'xtatmoq|end, quit, halt
+story|hikoya|tale
+street|ko'cha|road
+strong|kuchli|powerful
+style|uslub|way, manner
+successful|muvaffaqiyatli|lucky, winning
+summer|yoz|
+sun|quyosh|
+sundae|qaymoqli muzqaymoq|
+surprise|hayratlantirmoq|amaze, shock
+table|stol|desk
+take|olmoq|grab, bring, carry
+talk|gaplashmoq|speak, chat, say
+tall|baland bo'yli|high, big
+teach|o'rgatmoq|instruct, train
+team|jamoa|group, squad
+teenage|o'smir|young
+tell|aytmoq|say, inform
+ten|o'n|
+than|-dan (qiyoslash)|
+thank|rahmat aytmoq|
+that|o'sha; -ki|
+that's|bu (that is)|
+the|aniq artikl|
+their|ularning|
+them|ularni|
+then|keyin; o'shanda|next, later
+there|u yerda|
+there'll|bo'ladi (there will)|
+there's|bor (there is)|
+these|bular|
+theseus|Tesey (shahzoda ismi)|
+they|ular|
+they'll|ular qiladi (they will)|
+they're|ular (they are)|
+thing|narsa|object, item
+think|o'ylamoq|believe, suppose
+this|bu|
+those|ular, o'shalar|
+three|uch|
+through|orqali|across
+ticket|chipta|pass
+tim|Tim (erkak ismi)|
+time|vaqt; marta|moment, period
+tire|charchamoq|exhaust, weary
+to|-ga|toward
+today|bugun|
+together|birga|jointly
+tom|Tom (erkak ismi)|
+tommy|Tommi (erkak ismi)|
+tomorrow|ertaga|
+too|ham; juda|also, very
+top|tepa, cho'qqi|peak, summit
+town|shaharcha|city, village
+toy|o'yinchoq|plaything
+tree|daraxt|
+try|harakat qilmoq|attempt
+turn|burilmoq; navbat|rotate, change
+turtle|toshbaqa|tortoise
+two|ikki|
+type|tur|kind, sort
+ugly|xunuk|unattractive
+uh|ee (ikkilanish)|
+under|ostida|below, beneath
+understand|tushunmoq|comprehend, get, realize
+until|-gacha|till
+unusual|g'ayrioddiy|strange, rare, odd
+up|yuqoriga|
+upon|ustida|on
+us|bizni, bizga|
+use|ishlatmoq|apply, employ
+usually|odatda|normally, often
+vacation|ta'til|holiday
+very|juda|really, extremely
+video|video|film
+visit|tashrif buyurmoq|go to, see
+wait|kutmoq|stay
+walk|yurmoq|step, stroll
+wall|devor|
+want|xohlamoq|wish, desire
+warm|iliq|hot
+wasn't|emas edi (was not)|
+watch|tomosha qilmoq|look at, observe
+water|suv|
+way|yo'l; usul|path, route, method
+we|biz|
+we'll|biz qilamiz (we will)|
+we're|biz (we are)|
+wear|kiymoq|dress in, put on
+wed|turmush qurmoq|marry
+week|hafta|
+weren't|emas edi (were not)|
+west|g'arb|
+what|nima|
+when|qachon|while
+where|qayerda|
+which|qaysi|
+while|-ganda, davomida|when, during
+whip|ko'pirtirmoq|beat
+white|oq|
+who|kim|
+why|nega|
+wife|xotin, rafiqa|
+will|-adi (kelasi zamon)|
+win|yutmoq|beat, succeed
+winner|g'olib|champion, victor
+wish|xohlamoq; orzu|want, hope
+with|bilan|
+without|-siz|
+woman|ayol|lady
+won't|qilmaydi (will not)|
+woods|o'rmon|forest
+work|ishlamoq; ish|job, labor
+world|dunyo|earth, globe
+would|-ardi|
+write|yozmoq|
+wrong|noto'g'ri|incorrect, false
+yates|Yeyts (familiya)|
+year|yil|
+yes|ha|
+you|sen, siz|
+you'll|siz qilasiz (you will)|
+you're|siz (you are)|
+young|yosh|little, youthful
+your|sizning|
+zeus|Zevs (yunon xudosi)|

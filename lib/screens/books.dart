@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/catalog.dart';
+import '../data/stories.dart';
 import '../data/words.dart';
 import '../services/ads.dart';
 import '../services/speech.dart';
@@ -14,6 +15,7 @@ import 'home.dart';
 import 'profile.dart';
 import 'shell.dart';
 import 'shop.dart';
+import 'story.dart';
 import 'study.dart';
 
 class BooksTab extends StatelessWidget {
@@ -288,6 +290,8 @@ class UnitScreen extends StatelessWidget {
       ),
       bottomNavigationBar: s.isPremium ? null : const SafeArea(top: false, child: AdBanner()),
       body: ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 24), children: [
+        StoryCard(bookId: bookId, unit: unit),
+        if (StoryBank.of(bookId, unit) != null) const SizedBox(height: 14),
         if (w.isEmpty)
           const EmptyBox("Bu unit so'zlari kitoblaringiz kelgach qo'shiladi.")
         else ...[

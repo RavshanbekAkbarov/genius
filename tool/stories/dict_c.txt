@@ -1,0 +1,811 @@
+ability||skill, talent, capacity
+abroad||overseas, away
+absorb||soak up, take in
+abstract||theoretical, conceptual
+abuse||mistreatment, cruelty, harm
+accident||crash, mishap
+accompany||go with, escort, join
+accomplish||achieve, complete, finish
+accuse||blame, charge
+add|qo'shmoq, qo'shimcha qilmoq|include, attach, put in
+adjust||change, adapt, set
+admire||respect, look up to, praise
+admission||entry, entrance, admittance
+admit||confess, accept, let in
+adopt||take in, foster
+affect||influence, change, impact
+afford||pay for, manage
+agriculture||farming
+aid||help, assist, support
+aim||goal, purpose, target
+alarm||alert, siren, warning
+albert|Albert (ism)|
+alike||similar, the same
+amuse||entertain, delight
+ancestor||forefather, forebear
+angel|farishta|spirit
+anger||annoy, upset, enrage
+angle||viewpoint, corner
+anna|Anna (ism)|
+annoy||bother, irritate, upset
+annual||yearly
+anxiety||worry, fear, stress
+anxious||worried, nervous, eager
+anybody|har kim, kimdir|anyone, everyone
+apart||separately, away
+apology||excuse, regret
+apparent||clear, obvious, evident
+appeal||attract, interest, request
+apple|olma|
+approve||accept, agree, like
+approximate||rough, close, about
+architecture||building design
+arrest||catch, detain, seize
+arrow||dart
+artificial||fake, man-made, false
+assume||suppose, believe, think
+astronaut||spaceman, cosmonaut
+astronomy||star science
+atom||particle
+attach||fasten, join, connect
+attempt||try, effort
+authority||power, control, command
+auto|avtomobil|car
+award||prize, reward
+awful||terrible, horrible, bad
+bake||cook, roast
+bank|bank|
+bare||empty, plain, naked
+barn|ombor, molxona|stable, shed
+barrier||obstacle, wall, block
+bartelby|Bartelbi (ism)|
+baseball|beysbol|
+basis||base, foundation
+basket|savat|
+bath||bathe, wash
+battle||fight, war, combat
+bean||
+beg||plead, ask
+believe|ishonmoq|trust, think, accept
+below|pastda, ostida|under, beneath
+belt|kamar, belbog'|strap
+bend||curve, fold, bow
+bertram|Bertram (ism)|
+bet||gamble, wager
+beyond||past, further
+billion||
+bin||box, container
+biology||life science
+blackbeard|Qorasoqol (qaroqchi laqabi)|
+blame||accuse, fault
+blind||sightless
+blow||puff, blast
+blur|xira bo'lmoq|fade, cloud
+body|tana, gavda|
+bold||brave, daring, fearless
+boot||
+border||edge, boundary, limit
+bore|zeriktirmoq; zerikkan (bored)|tire, weary
+borrow||take, loan
+boss||chief, manager, leader
+bottle|shisha, butilka|flask
+bow||
+branch||limb, bough
+brave||bold, fearless, daring
+breath||breathing, air
+breed||kind, type, sort
+breeze||wind, gust
+bride||wife
+bridge||
+brief||short, quick
+broad||wide, large
+bucket||pail
+builder|quruvchi|maker, constructor
+bush||shrub
+busy|band|occupied, active
+cabin||hut, cottage, lodge
+cage||pen, box
+calculate||count, figure, compute
+camera|kamera, fotoapparat|
+candle||
+capable||able, skilled, competent
+capital||main city
+capture||catch, seize, take
+cardinal||main, chief, key
+careful|ehtiyotkor|cautious, alert, watchful
+carl|Karl (ism)|
+carriage||coach, cart
+cart|arava|wagon, trolley
+cartoon||drawing, comic
+carve||cut, shape
+cash||money
+cast||throw, toss
+castle||fortress, palace
+ceiling||roof
+ceremony||event, ritual
+chain||
+chamber||room, hall
+chat||talk, speak
+cheap|arzon|low-priced, inexpensive
+cheat||trick, fool
+chef||cook
+chemistry||
+chest||breast
+chew||bite, eat
+chief||leader, head, boss
+chill||cool, freeze
+circle|doira, aylana|ring, round
+citizen||resident, native
+classic||traditional, standard
+classmate|sinfdosh|
+clay||mud
+client||customer, buyer
+closely|yaqindan, juda o'xshash|nearly, carefully
+cloth||fabric, material
+coat|palto|jacket
+cold|sovuq|chilly, cool, icy
+colleague||coworker, partner
+college|kollej, oliygoh|university, school
+colony||settlement
+colorful|rang-barang|bright, vivid
+command||order, tell
+commit||devote, dedicate
+committee||council, board
+commute||travel
+company|kompaniya; hamroh|firm, business
+completely|butunlay, to'liq|fully, totally, entirely
+compose||write, create
+concentrate||focus
+conclude||decide, finish
+confidence||belief, trust
+confident||sure, certain, bold
+confirm||prove, verify
+congratulate||praise, cheer
+consequence||result, outcome, effect
+considerable||large, great, much
+consist||be made of, contain
+consult||ask, advise
+contest||competition, race
+contract||agreement, deal
+convert||change, turn
+convey||show, express, tell
+convict||find guilty
+convince||persuade
+cook|oshpaz; pishirmoq|chef
+cooperate||work together, help
+coral||
+costume||outfit, clothes
+cotton||
+council||board, committee
+counsel||advise, guide
+courage||bravery, boldness
+crash||hit, smash
+crew||team, group
+criminal||thief, crook
+criticize||blame, judge
+cure||remedy, treatment, heal
+curious||interested, nosy
+curse||spell, jinx
+curtain||drape
+cut|kesmoq|chop, slice
+daily|har kungi|everyday
+danger|xavf|risk, threat
+dare||challenge
+death|o'lim|end, loss
+debate||argue, discuss
+debt||loan, owing
+deck||floor
+declare||announce, state
+decrease||reduce, lower
+deer|kiyik, bug'u|
+defend||protect, guard
+definite||clear, certain, sure
+delay||wait, put off
+delight||joy, pleasure
+deny||refuse, reject
+depart||leave, go
+depress||sadden, upset
+deserve||earn, merit
+design|dizayn, tuzilish|plan, shape, style
+desire||want, wish
+despite||in spite of
+destination||goal, target
+destruction||damage, ruin
+detect||find, notice, discover
+detroit|Detroyt (shahar)|
+devote||dedicate, commit
+dial||knob
+diary||journal
+dictate||say, tell
+differ||vary
+dine||eat
+dinosaur||
+disabled||
+disadvantage||weakness, drawback
+disappoint||let down, upset
+disaster||catastrophe, tragedy
+discovery|kashfiyot|finding, invention
+disorder||chaos, mess
+distinct||clear, different
+distinguish||tell apart, separate
+disturb||bother, wake
+dive||plunge, jump
+division||split, separation
+document||paper, file
+dollar|dollar|
+donate||give
+dormitory||dorm, hostel
+double||twice
+downtown||city center
+dozen||twelve
+dr|doktor (Dr.)|doctor
+dragon|ajdaho|
+driver|haydovchi|
+duke||lord
+dull||boring
+dust||dirt, powder
+duty||job, task
+eager||keen, anxious
+early|erta|
+edge||side, border
+egg|tuxum|
+egypt|Misr|
+egyptian|misrlik, Misrga oid|
+einstein|Eynshteyn (familiya)|
+elder||senior
+electronic||digital
+element||part, piece
+elementary||primary, basic
+elevate||raise, lift
+embarrass||shame
+emergency||crisis
+emphasize||stress
+enable||allow, let
+enemy||foe, opponent
+engage||take part, involve
+enormous||huge, giant, vast
+enough|yetarli|sufficient, adequate
+ensure||make sure, guarantee
+entire||whole, complete, full
+entrance||entry, door, gate
+estimate||guess, judge
+everest|Everest (tog')|
+exactly|aynan, xuddi|precisely, just
+except||but
+exchange||trade, swap
+excitement||thrill, joy
+exclaim||shout, cry out
+exhaust||tire, wear out
+exhibit||show, display
+expense||cost, price
+explain|tushuntirmoq|describe, clarify
+explorer|tadqiqotchi, sayyoh|traveler, adventurer
+explosion||blast, burst, bang
+expose||reveal, show
+expression|ifoda; yuz ifodasi|look, face
+extend||stretch, reach out
+extraordinary||amazing, unusual, special
+facial||
+factual||real, true
+failure||loser, defeat
+faith||belief, trust
+fame||glory, renown, celebrity
+fantastic||great, wonderful, amazing
+fare||fee, price
+fascinate||interest, charm
+fault||mistake, blame
+favor||kindness, help
+feather||plume
+february|fevral|
+fee||charge, payment, cost
+fence||wall, barrier
+fertile||rich, fruitful
+festival|bayram, festival|celebration, fair
+fever||temperature
+fewer|kamroq|less
+fiction||story, tale
+fifteen|o'n besh|
+file|hujjat, papka|document, record
+firm||hard, solid, strong
+fisherman|baliqchi|
+flavor||taste
+float||drift, swim
+flood||overflow
+floor|pol, qavat|ground
+flu||cold
+fog||mist, haze
+fool||trick; idiot
+forbid||ban, stop
+ford|Ford (familiya)|
+forecast||prediction
+formal||official
+former||previous, past, old
+formula||rule, equation
+fortune||luck, wealth
+forty|qirq|
+found||start, establish, set up
+foundation||organization, base
+fourth|to'rtinchi|
+fox|tulki|
+frame||border
+free|bepul; erkin|
+freeze||chill, ice
+frog|qurbaqa|
+fruit|meva|
+frustrate||annoy, upset
+fry|Fray (familiya)|
+fuel||gas, petrol
+fund||money, cash
+funeral||burial
+furniture||
+future|kelajak|tomorrow
+generation||age, era
+generous||kind, giving
+genius||expert, mastermind
+gentle||kind, soft, careful
+geography||
+george|Jorj (ism)|
+germany|Germaniya|
+gesture||sign, movement
+giant||huge, enormous, vast
+gilliam|Gilliam (ism)|
+glass|stakan; shisha|
+govern||rule, control, lead
+gradual||slow, steady
+grain||seed, cereal
+grand||great, big, splendid
+grant||give, allow
+grave||tomb
+gravity||
+greenhouse||hothouse
+greet||welcome
+guarantee||promise, ensure
+guess|taxmin qilmoq|suppose, think
+guilty||at fault
+guy||man, fellow
+handle||grip
+handsome|kelishgan, chiroyli|good-looking, attractive
+hardly||barely, scarcely
+he'd|u ... edi (he would / he had)|
+heal||cure, recover
+healthy|sog'lom|well, fit
+heaven||paradise, sky
+height||tallness
+hike||walk, climb
+hire||employ
+history|tarix|past
+homework|uy vazifasi|
+honor||respect, value
+hoof|tuyoq|
+hook||
+household||family, home
+hurricane||storm
+i've|men ... qilganman (I have)|
+ideal||perfect
+ignore||neglect, disregard
+illustrate||show, draw
+immigrant||newcomer
+impress||amaze, wow
+impression||opinion, feeling
+income||earnings, pay
+incredible||amazing, unbelievable
+indeed||really, truly
+ingredient||part, element
+inherit||receive, get
+initial||first
+injury|jarohat, shikast|wound, harm
+inn||hotel
+innocent||blameless, not guilty
+insert||put in, add
+insist||demand
+inspect||check, examine
+inspire||encourage, move
+instant||moment
+instruction|ko'rsatma, yo'riqnoma|order, direction
+intelligence||intellect, wisdom
+intend||plan, mean
+intense||strong, extreme
+intent||plan, aim, purpose
+interest|qiziqish; qiziqtirmoq|concern, attract
+interfere||disturb, get in the way
+interpret||understand, translate
+interrupt||cut in, disturb
+invent||create, make
+invest||put money into
+investigate||examine, explore
+isis|Isida (ma'buda)|
+italy|Italiya|
+jai|Jay (ism)|
+jam|murabbo, jem|
+january|yanvar|
+jar|banka|pot
+jeremy|Jeremi (ism)|
+jewelry||jewels
+journal||magazine
+journalist||reporter
+joy||happiness, delight
+junior||young, lower
+kindly||nicely, warmly
+kitchen|oshxona|
+knife|pichoq|blade
+knock|urib yubormoq, taqillatmoq|hit, push
+knot||
+label||tag
+labor||work
+lamp|chiroq, lampa|light
+landscape||land, scenery, view
+language|til|tongue
+laughter||laughing
+layer||level
+leader|rahbar, boshliq|chief, head, boss
+leg|oyoq|
+legend||myth, tale, story
+lend||give
+less|kamroq|fewer
+lesson|dars, saboq|class
+lift||raise, pick up
+lightly||gently, softly
+likeness||similarity
+liquid||fluid
+load||fill, pack
+loan||lend
+location|joy, manzil|place, spot
+log|g'o'la, yog'och|wood
+loss||defeat
+lovely||beautiful, pretty
+low|past|cheap
+luck|omad, baxt|fortune
+lucky|omadli|fortunate
+lung||
+machine|mashina, apparat|device
+manner||way, style
+marathon||long race
+march|mart (oy); marsh qilmoq|
+marvel||wonder
+mathematical|matematik|
+mechanic||
+medical|tibbiy|health
+mere||small, only
+mess||disorder, chaos
+metal||iron, steel
+meteor||shooting star
+military||army
+million|million|
+mind|aql, xayol|head, brain
+miner||digger
+mineral||
+minister||official
+mission||task, goal
+modern|zamonaviy|new, current
+monitor||watch, check
+monk||
+mood||feeling, temper
+moreover||also, besides
+motion||movement, gesture
+motive||reason, purpose
+motor|motor, dvigatel|engine
+mount||rise, grow, increase
+mountaintop|tog' cho'qqisi|peak, summit
+movement|harakat|motion
+mt|tog' (Mt. = Mount)|
+mud||dirt
+narrow||thin, slim
+navy|dengiz floti|fleet
+nearby|yaqinda|close
+neat||tidy, clean
+nest||
+net||
+nevertheless||however, still
+nile|Nil (daryo)|
+northern||
+norton|Norton (familiya)|
+nothing|hech narsa|
+nowadays||today, now
+nutrient||
+o'boyle|O'Boyl (familiya)|
+obey||follow
+obtain||get, gain
+obvious||clear, plain
+occasion||moment, event
+occupation||job, profession
+odd||strange, unusual, weird
+oppose||resist, fight
+ordinary||normal, usual, common
+origin||source, beginning
+osiris|Osiris (xudo)|
+ought||should
+oven|pech, duxovka|
+overcome||beat, defeat
+overseas||abroad
+pace||speed, rate
+palace||castle
+pale||light
+participate||take part, join
+passive||inactive
+path||way, road, trail
+pause||stop, wait
+peaceful|tinch, osoyishta|calm, quiet
+peak||top, summit
+penalty||punishment
+permanent||lasting, forever
+permission||consent
+permit||allow, let
+persian|forslar, Fors (Eron)ga oid|
+perspective||view, opinion
+persuade||convince
+peter|Piter (ism)|
+philosophy||belief, view
+physics||
+pillow||cushion
+pirate||
+plain||simple
+plenty||a lot, many
+policeman|politsiyachi|officer
+polite||kind, nice
+pool|hovuz|pond
+portion||part, piece
+possess||have, own
+possible|mumkin|
+pot||pan
+potential||possible
+pour||flow, rush
+poverty||being poor
+practical||realistic
+practice|mashg'ulot|training
+praise||compliment, cheer
+presence||being, existence
+preserve||save, keep, protect
+pretend||act, play
+pride||dignity
+priest||
+prime||main, chief
+principal||director
+proceed||go on, continue
+profession||job, career
+pronounce||say, speak
+proof||evidence
+protest||object, complain
+pup|kuchukcha|puppy
+pure||clean, clear
+pyramid|piramida|
+qualify||be able to, fit
+quantity||amount, number
+quarter||25 cents
+quick|tez|fast, rapid
+quit||stop
+radio|radio|
+rank||level
+rapidly||quickly
+rational||logical, sensible
+raw||natural, crude
+recall||remember
+reception||party
+recognition||respect, fame
+recover||get better
+reef||rocks
+refrigerate||cool
+regret||feel sorry
+reject||refuse
+relative||family member
+relieve||ease
+religious||sacred, holy
+rely||depend
+remark||say, comment
+remote||far, distant
+rent||
+repair||fix, mend
+reputation||name, fame
+rescue||save, help
+resemble||look like
+resist||fight, oppose
+resort||turn to
+resume||continue, restart
+retire||stop working
+reveal||show, uncover
+riches|boylik, xazina|wealth, money
+ricky|Riki (ism)|
+rid||free
+rob||steal
+rod||stick, pole
+romantic||loving
+rope|arqon|cord, line
+rough||hard
+route||way, path
+row||line
+royal||kingly
+rude||impolite
+ruins||remains
+rule|qoida|law
+sailor|dengizchi|seaman
+salary||pay, wage
+sam|Sem (ism)|
+satellite||
+satisfy||please
+scale||size, extent
+scholar||scientist
+scholarship||grant
+science|fan, ilm|
+scientist|olim|researcher
+scream||cry, yell, shout
+sculpture||statue
+search||look for, hunt
+secretary||
+secure||protect, guard
+seed||
+seek||look for, search
+seem|tuyulmoq, ko'rinmoq|appear, look
+senior||older, elder
+sensitive||delicate
+servant|xizmatkor|helper
+settle|hal qilmoq|resolve, fix
+severe||serious, harsh
+shade||shadow
+shadow||shade
+shelf||rack
+shell||
+shield||
+shift||change, move
+shine||glow, gleam
+shock||surprise, amaze
+shore||coast, beach
+shortage||lack
+shovel||spade
+shut||close
+shy||timid
+sickness|kasallik|illness
+side|tomon, chet|edge
+signal||sign
+significant||important, big
+silence||quiet
+silent||quiet
+sincere||honest, real
+sing|qo'shiq aytmoq|
+sink||sink down
+sister|opa-singil|
+size|o'lcham|
+skin|teri|
+skip||miss
+slave||servant
+slip||slide
+smooth||even, flat
+soil||ground, earth
+soldier|askar|warrior
+solid||hard, firm
+someday|bir kun, qachondir|sometime
+somewhat||rather, a little
+sort|tur, xil|kind, type
+soul||spirit
+soup|sho'rva|
+southern||
+spaceship|kosmik kema|rocket
+spartan|spartalik|
+speak|gapirmoq|talk, say
+spear||lance
+spill||drop, pour
+spin||turn, whirl
+spit||
+spite||malice
+stable||steady, firm
+stare||look, gaze
+statistic||
+statue||sculpture
+steady||firm, stable
+steam||
+stepdaughter|o'gay qiz|
+stepmother|o'gay ona|
+stepsister|o'gay opa-singil|
+steve|Stiv (ism)|
+stock||supply, store
+stream||brook, creek
+stretch||reach, extend
+strict||tough, firm
+struggle||fight, battle
+student|talaba, o'quvchi|pupil
+study|o'qimoq, o'rganmoq|learn
+stupid||dumb, foolish
+submit||give in, yield
+substance||material
+subtract||take away
+succeed||win
+sue|sudga bermoq; Sue (ism)|
+sufficient||enough
+super||great, excellent
+superior||boss
+supplement||add to
+sure|ishonchli, aniq|certain
+surf||
+surgery||operation
+surround||circle
+suspect||doubt
+switzerland|Shveytsariya|
+symptom||sign
+t|T (harf; Model T)|
+tale||story
+talent||skill, ability
+tank|bak|container
+taxi|taksi|cab
+teacher|o'qituvchi|
+telescope||
+temple||shrine
+temporary||short-term
+tent|chodir|
+tera|Tera (ism)|
+terror||fear, horror
+test|test, imtihon|exam
+thermopylae|Fermopil (joy nomi)|
+thesis||argument, idea
+thick||dense
+third|uchinchi|
+thomas|Tomas (ism)|
+thousand|ming|
+threat||danger
+thus||so
+tie|bog'lamoq|bind
+tight||firm
+tiny||small, little
+tissue||napkin
+tobacco||
+tomb||grave
+tone||voice
+touch|tegmoq|
+tough||hard, difficult
+trade|almashmoq|swap, exchange
+trap||catch
+travel|sayohat qilmoq|journey, go
+treasure||riches
+trial||court case
+tribe||clan, group
+tricky|ayyor, hiylakor|clever, sly
+troops||soldiers, army
+truck|yuk mashinasi|lorry
+true|haqiqiy, rost|real
+trust||believe in
+tube||pipe
+tutor||teacher
+twelve|o'n ikki|
+twin||
+twist||turn, wind
+umbrella|soyabon|
+uncle|amaki, tog'a|
+underworld|yer osti dunyosi|
+uniform||
+unique||special, rare
+unless||except if
+upper||top, higher
+urge||push, press
+valley||
+vehicle||car
+victim||
+violent||cruel, brutal
+virtual||digital
+vision||sight
+volcano||
+waiter|ofitsiant|
+wallet||purse
+wash|yuvmoq|clean
+weed||
+weigh||measure
+weight|og'irlik|
+welcome|kutib olmoq|greet
+wet||damp
+what's|nima (what is)|
+wheel||
+whisper||murmur
+william|Uilyam (ism)|
+wind|shamol|breeze
+wing||
+wipe||clean, dry
+witch||
+wolf|bo'ri|
+wooden|yog'och|
+word|so'z|
+worker|ishchi|employee
+worry|tashvishlanmoq|fear, care
+worst|eng yomon|
+wouldn't|qilmasdi (would not)|
+wound||hurt, injure
+wrap||cover
+yard||
+yourself|o'zing, o'zingiz|
+youth||
+zone||area
