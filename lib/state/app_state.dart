@@ -136,6 +136,8 @@ class AppState extends ChangeNotifier {
   bool lightMode = false;
   /// Iqtiboslar navbati: har mashqdan keyin va ilova har ochilganda keyingisiga o'tadi.
   int quoteTurn = -1;
+  /// O'qilgan unit hikoyalari ("e1|1").
+  Set<String> storiesRead = {};
   List<Word> myWords = [];
 
   // Sozlamalar
@@ -206,6 +208,7 @@ class AppState extends ChangeNotifier {
         'font': fontScale,
         'light': lightMode,
         'qt': quoteTurn,
+        'stories': storiesRead.toList(),
         'voice': voiceName == null ? null : {'name': voiceName, 'locale': voiceLocale},
         'listen': {'r': listenRepeat, 's': listenSpeed, 'mix': listenShuffle, 'uz': listenUzFirst},
         'loginSeen': loginSeen,
@@ -242,6 +245,7 @@ class AppState extends ChangeNotifier {
     fontScale = ((j['font'] ?? 1.0) as num).toDouble();
     lightMode = j['light'] == true;
     quoteTurn = (j['qt'] ?? -1) as int;
+    storiesRead = ((j['stories'] ?? []) as List).cast<String>().toSet();
     final v = j['voice'] as Map<String, dynamic>?;
     voiceName = v?['name'] as String?;
     voiceLocale = v?['locale'] as String?;
@@ -376,6 +380,7 @@ class AppState extends ChangeNotifier {
     askedSave = '';
     evening = '';
     myWords = [];
+    storiesRead = {};
     changed();
   }
 
@@ -417,6 +422,11 @@ class AppState extends ChangeNotifier {
     // Birinchi marta sanaga qarab boshlanadi, shunda hammada bir xil iqtibosdan boshlanmaydi.
     quoteTurn = quoteTurn < 0 ? today.difference(DateTime(2026)).inDays : quoteTurn + 1;
     save();
+  }
+
+  /// Hikoya oxirigacha o'qildi.
+  void markStoryRead(String id) {
+    if (storiesRead.add(id)) changed();
   }
 
   /// Yorug' (kunduzgi) rejim.

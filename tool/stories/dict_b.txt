@@ -1,0 +1,630 @@
+above||over, on top of, higher than
+academy||school, college
+accept||agree to, take, receive
+achieve||reach, gain, complete
+across||over, through
+actual||real, true, genuine
+actually||really, in fact, truly
+advance||move forward, go ahead, progress
+advantage||benefit, plus, gain
+adventure||journey, quest, experience
+advertise||promote, announce, publicize
+advice||tip, suggestion, guidance
+advise||suggest, recommend, counsel
+afraid||scared, frightened, fearful
+against||opposite, versus
+agree||accept, consent, say yes
+ahead||in front, forward, before
+alien||creature, outsider, stranger
+alive||living, breathing
+allow||let, permit, accept
+alone||lonely, by oneself, solo
+along||beside, by, through
+already||before, by now, earlier
+amaze||surprise, astonish, shock
+among||between, amid, with
+amount||quantity, sum, number
+ancient||very old, antique, aged
+angry||mad, upset, furious
+announce||declare, state, tell
+anymore||any longer, now
+apartment||flat, rooms
+appear|ko'rinmoq, paydo bo'lmoq|seem, look, show up
+appreciate||value, be thankful for, respect
+approach||come near, go toward, reach
+appropriate||suitable, proper, right
+argue||fight, quarrel, disagree
+army||troops, soldiers, forces
+arrange||organize, order, set up
+arrive||come, reach, get to
+article||story, report, piece
+artist||painter, creator
+asleep||sleeping, napping
+assign||give, appoint, allocate
+associate||connect, link, relate
+athlete||sportsman, player
+attack||assault, strike, hit
+attend|qatnashmoq, bormoq|go to, visit, be at
+attention||notice, focus, interest
+attitude||feeling, view, manner
+attract||draw, pull, catch
+audience||viewers, listeners, crowd
+available||free, ready, at hand
+average||normal, usual, typical
+avoid||stay away from, escape, dodge
+awake||up, alert
+aware||knowing, informed, conscious
+awesome||amazing, great, wonderful
+badly||poorly, terribly, seriously
+balance||steady, hold, level
+band|guruh (musiqa)|group, orchestra
+barely||hardly, just, scarcely
+base||bottom, foundation, root
+basic||simple, plain, main
+beach||shore, coast, sand
+beat||defeat, win, hit
+behave||act, be good
+behavior||conduct, manners, actions
+behind||after, at the back
+belief||trust, faith, opinion
+belong||be part of, be owned by
+benefit||advantage, profit, help
+berry|rezavor meva (malina, qulupnay)|fruit
+beside||next to, near, by
+bite||nip, chew, snap
+block|bo'lak, g'o'la|piece, chunk, brick
+blood||
+board||plank, wood, panel
+bone||
+boring||dull, tiring, uninteresting
+bother||trouble, worry, care
+bottom||base, foot, floor
+bowl||dish, plate
+brain|miya|mind, head
+breakfast||morning meal
+breathe||inhale, puff
+bright||shiny, light, clever
+bring||carry, take, fetch
+burn||fire, blaze, flame
+calm||quiet, peaceful, relaxed
+cancel||stop, call off, end
+captain||leader, chief, commander
+career||job, work, profession
+carefully||cautiously, slowly
+cause||make, create, lead to
+celebrate||party, enjoy, cheer
+cell||room, cage
+center||middle, core, heart
+century||hundred years
+certain||sure, positive, confident
+challenge||test, trial, difficulty
+chance||opportunity, luck, possibility
+characteristic||feature, quality, trait
+charge|narx, to'lov|price, cost, fee
+chart||table, graph, diagram
+chase||run after, follow, hunt
+cheer||shout, applaud, celebrate
+chemical||substance
+choice||option, choosing, decision
+claim||say, state, declare
+clerk||worker, assistant
+clever||smart, bright, wise
+climb||go up, rise, scale
+cloud||mist, fog
+clue||hint, sign, key
+coach||trainer, teacher
+coast||shore, beach, seaside
+collect||gather, pick up, save
+comfort||calm, soothe, help
+common||usual, normal, ordinary
+communicate||talk, speak, contact
+community||people, society, town
+compare||contrast, match, measure
+compete||race, fight, play against
+competition||contest, game, race
+complex||difficult, hard, complicated
+comprehend||understand, grasp, get
+concern||worry, care, trouble
+concert||show, performance
+conclusion||end, ending, finish
+condition||state, health, situation
+consider||think about, study, regard
+consume||eat, use, drink
+contact||call, reach, connect with
+contain||hold, include, have
+content||happy, pleased, satisfied
+continue||go on, keep, last
+contrast||difference, opposite
+contribute||give, add, help
+control||manage, rule, direct
+conversation||talk, chat, discussion
+cool||cold, chilly, fresh
+correct||right, true, exact
+cost||price, charge, value
+county||area, region, district
+course||class, lesson, path
+create||make, build, invent
+creature||animal, being, monster
+critic||reviewer, judge
+crop||harvest, plants, yield
+crowd||group, people, mass
+cruel||mean, unkind, heartless
+customer||buyer, client
+damage||harm, hurt, break
+dead||lifeless, gone
+deal||agreement, bargain, promise
+decision||choice, judgment
+defense||protection, guard, safety
+deliver||bring, carry, send
+demand||ask for, require, insist
+demonstrate||show, prove, explain
+depend||rely, count on, trust
+describe||explain, tell, report
+description||explanation, account, picture
+desert||wasteland, sand
+destroy||ruin, break, wreck
+determine||decide, find out, settle
+dictionary||word book
+difference||change, contrast
+different||other, unlike, new
+dig||scoop
+direct||straight, immediate, nonstop
+disappear||vanish, go away, fade
+discover||find, learn, notice
+dish||plate, bowl
+distance||space, length, gap
+divide||split, separate, share
+doubt||question, uncertainty
+driveway|uy oldidagi mashina yo'li|drive, path
+drop|tushirib yubormoq, tushmoq|fall, let go
+earn||get, gain, receive
+earthquake||tremor, quake
+effect||result, outcome, impact
+effective||useful, successful, powerful
+effort||try, attempt, work
+either||one or the other, each
+else||other, different, more
+emotion||feeling, mood, passion
+empty||clear, bare, blank
+encourage||support, cheer, urge
+enter||go in, come in
+entertain|ko'ngil ochmoq, mehmon qilmoq|amuse, host, please
+environment||nature, surroundings
+equal||same, even, alike
+error||mistake, fault
+escape||run away, get away, flee
+essential||necessary, important, key
+event||happening, occasion, incident
+ever||at any time, always
+evidence||proof, sign, fact
+evil||bad, wicked, cruel
+exact||precise, correct, right
+exam||test, quiz
+examine||check, inspect, study
+example||sample, instance, model
+excellent||great, perfect, superb
+excite||thrill, delight, stir
+exercise||train, work out, practice
+exist||be, live, be real
+expect||think, hope, wait for
+experience||event, adventure, practice
+experiment||test, trial
+expert||master, specialist, professional
+explore||travel, discover, search
+extra||more, additional, spare
+extreme||very great, intense, severe
+face|yuz; duch kelmoq|meet, confront
+factory||plant, works, mill
+fail||lose, not pass, miss
+fair||just, honest, right
+false||wrong, untrue, incorrect
+familiar||known, well-known, common
+famous||well-known, popular, famed
+far||distant, a long way
+fast|tez|quick, rapid, speedy
+fear||fright, terror, worry
+feature||quality, part, trait
+feed||give food, nourish
+field||meadow, land, ground
+final||last, closing, end
+finally||at last, in the end, eventually
+fit||suit, match, go into
+fix||repair, mend, solve
+flag||banner, sign
+flat||level, smooth, even
+flow||run, stream, pour
+focus||concentrate, pay attention, aim
+follow||go after, chase, track
+force||power, strength, pressure
+foreign||strange, overseas, alien
+forest||woods, jungle
+forever||always, eternally
+forward||ahead, on, onward
+frank||honest, open, direct
+frequently||often, regularly, repeatedly
+fresh||new, clean, cool
+friendly||kind, nice, warm
+friendship||bond, closeness
+fright||fear, shock, terror
+function||job, role, purpose
+further||farther, more
+gain||get, earn, win
+garage||carport, shed
+garbage||trash, rubbish, waste
+gate||door, entrance
+gather||collect, pick, bring together
+gentleman||man, sir
+ghost||spirit, phantom
+gift||present
+glad||happy, pleased, delighted
+goal||aim, purpose, target
+grab|ushlab olmoq, tutib olmoq|take, seize, catch
+grade||mark, score
+grass||lawn
+ground||earth, land, floor
+guard||protect, watch, defend
+guide||leader, helper, show
+habit||custom, routine, way
+hang||hold, swing, dangle
+happen|sodir bo'lmoq|occur, take place, come about
+harm||hurt, damage, injury
+hero||champion, star, saint
+hide||conceal, cover, keep secret
+hill||mound, slope
+hole||gap, opening, pit
+honesty||truth, honor, fairness
+horn|shox (hayvonning)|
+however||but, yet, still
+huge||big, giant, enormous
+hunger||hungriness, appetite
+hunt||chase, track, search
+hurry||rush, run, speed
+hurt||harm, injure, pain
+identify||recognize, name, know
+idiom||saying, expression, phrase
+image||picture, likeness, figure
+imagine||picture, think, dream
+immediate||instant, quick, sudden
+imply||suggest, hint, mean
+importance||value, significance, weight
+include||contain, have, cover
+increase||raise, grow, add
+independent||free, separate, fair
+indicate||show, point to, mark
+individual||person, human, someone
+inform||tell, notify, report
+injustice||unfairness, wrong
+inside||indoors, within
+instance||example, case
+instead||rather, in place
+instruct||teach, train, order
+instrument||tool, device
+international||worldwide, global
+introduce||present, meet
+involve||include, need, mean
+island||isle
+issue||problem, matter, question
+item||thing, object, article
+jail||prison, cell
+jewel||gem, stone, diamond
+journey||trip, travel, tour
+judge|sudya; baho bermoq|decide, rate, assess
+judgment||decision, opinion, sense
+kid|bola; hazillashmoq|child, boy, girl
+kill||murder, destroy
+knowledge||learning, wisdom, information
+laboratory||lab
+lack||need, absence, shortage
+land|yer; qo'nmoq|ground, earth, country
+last|oxirgi; davom etmoq|final, end, continue
+later||afterward, next, then
+laugh|kulmoq; kulgi|giggle, smile, chuckle
+lawyer||attorney
+lay||put, place, set
+leave||go, depart, exit
+length||size, distance
+level||height, stage, grade
+library||book room
+lie|yotmoq; yolg'on gapirmoq|rest, lie down, fib
+likely||probably, maybe
+limit||end, border, control
+list||record, line
+local||nearby, neighborhood
+locate||find, discover, place
+lone||alone, single, solo
+lord|lord, xo'jayin|master, ruler, owner
+lot||many, plenty, a great deal
+loud||noisy, booming
+lower||drop, bring down, reduce
+mad||angry, crazy, upset
+magazine||journal
+magic||spell, wizardry
+magical||magic, enchanted, amazing
+mail||post, letters
+maintain||keep, continue, hold
+major||big, main, important
+manage||run, control, lead
+marry||wed
+master||expert, boss, owner
+match||fit, suit, go with
+material||stuff, substance
+maybe||perhaps, possibly
+meal||food, dinner, lunch
+mean|yovuz, jahldor; anglatmoq|cruel, unkind; signify
+meat||flesh
+medicine||drug, medication, cure
+member||part, fellow
+memory||remembering, recollection
+mental||mind, thinking, intellectual
+mention||say, refer to, note
+message||note, word, letter
+method||way, means, technique
+middle||center, heart
+mistake||error, fault, slip
+mix||blend, combination
+moment||second, instant, minute
+monster||beast, creature
+mystery||puzzle, secret, riddle
+necessary||needed, essential, required
+necklace||chain, beads
+neighbor||
+neither||not either
+nervous||worried, anxious, uneasy
+noise||sound, shout
+none||not any, nobody
+nor||and not
+normal||usual, ordinary, common
+notice||see, spot, observe
+novel||book, story
+nurse||caregiver
+observe||watch, see, notice
+occur||happen, take place
+ocean||sea
+offer||give, provide, suggest
+officer||soldier, policeman
+operation||surgery
+opinion||view, belief, idea
+opportunity||chance, opening
+opposite||reverse, other side
+organize||plan, arrange, set up
+original||first, early, real
+outline||plan, summary, draft
+owe||have to pay
+own|o'z; egalik qilmoq|have, possess
+pain||ache, hurt
+passage||way, path, tunnel
+passenger||rider, traveler
+patient||calm, tolerant
+pattern||design, way, plan
+peace||calm, quiet
+perfect||ideal, excellent, flawless
+perform||act, play, do
+perhaps||maybe, possibly
+period||time, stage
+personality||character, nature
+pet||animal, companion
+physical||bodily
+planet||world
+plate||dish
+pleasant||nice, lovely, enjoyable
+pleased||happy, glad, satisfied
+poem||verse, poetry
+poet||writer
+pole||post, stick, rod
+policy||rule, plan, practice
+pond||pool, lake
+populate||live in, settle
+position||place, location, spot
+positive||good, sure, hopeful
+pound|urmoq, tuymoq|beat, hit, crush
+predict||guess, foresee
+prefer||like better, choose
+prepare||get ready, plan, make
+president||leader, chief, head
+pressure||stress, force, weight
+prevent||stop, block, avoid
+price||cost, charge, value
+primary||main, chief, first
+prince||
+print||publish, press
+prize||reward, award, trophy
+probable||likely, possible
+process||procedure, steps
+produce||make, create, grow
+product||goods, item
+professional||expert, skilled
+professor||teacher, lecturer
+profit||gain, earnings
+progress||growth, advance
+project||task, job, work
+promise||swear, pledge, vow
+proper||right, correct, suitable
+property||land, belongings
+propose||suggest, offer
+protect||guard, defend, save
+proud||pleased, arrogant
+prove||show, demonstrate
+public||open, common
+publish||print, release
+puddle||pool
+punish||penalize, discipline
+purchase||buy, get
+purpose||aim, goal, reason
+puzzle||riddle, mystery, problem
+quality||value, standard, worth
+quite||very, fairly, really
+race||contest, competition, run
+raise||lift, increase, put up
+range||variety, set, scope
+rare||unusual, uncommon, special
+rather||instead, somewhat
+reach||arrive at, get to, touch
+react||respond, answer, behave
+real||true, actual, genuine
+realize||understand, see, notice
+receive||get, accept, obtain
+recognize||know, identify, remember
+recommend||suggest, advise, propose
+reflect||mirror, show, return
+refuse||say no, decline, reject
+regard||consider, see, view
+regular||usual, normal, common
+relax||rest, calm down
+release||free, let go
+remain||stay, continue, last
+remind||prompt, help remember
+remove||take away, take off
+reply||answer, respond
+report||story, account
+represent||speak for, act for, stand for
+request||ask, demand
+require||need, demand
+reside||live, stay, dwell
+respect||honor, admire, regard
+respond||answer, reply, react
+response||answer, reply, reaction
+responsible||reliable, careful, mature
+rest|dam olmoq; qolgan qism|relax, sleep, remainder
+result||outcome, effect, end
+return||go back, come back
+reward||prize, award, bonus
+rich||wealthy, well-off
+ride||travel, drive
+risk||danger, chance, hazard
+rock||stone
+roll||turn, spin, tumble
+roof||top, cover
+rush||hurry, run, speed
+safe||secure, protected, unhurt
+safety||security, protection
+sail||boat, cruise, travel
+save||rescue, help, keep
+scan||look over, check, examine
+scare||frighten, alarm, terrify
+scene||view, part, setting
+schedule||plan, timetable, program
+season||period, time
+secret||mystery, hidden
+section||part, piece, area
+select||choose, pick
+sense||feel, notice
+sentence|gap (jumla); hukm|statement, phrase
+separate||divided, apart, alone
+serious||grave, bad, important
+serve||give, provide, help
+set||put, place, lay
+several||some, a few, various
+shake||tremble, wave, move
+shape||form, figure
+share||divide, split
+sharp||pointed, keen
+sheet||page, piece, layer
+shoot||fire, hit
+shout||yell, cry, scream
+sight||view, scene
+sign||mark, signal, notice
+silly||foolish, funny, stupid
+since||from, after, because
+single||one, only, alone
+site||place, spot, location
+situated||placed, located, set
+skill||ability, talent, gift
+smell||scent, sniff
+social||public, friendly
+society||community, people, public
+solution||answer, key, result
+solve||answer, fix, work out
+somehow||in some way
+sound||noise, tone, voice
+space||room, area, universe
+specific||exact, particular, certain
+speech||talk, address
+spend||pass, use
+spot||place, site, point
+spread||move, extend
+staff|xodimlar|workers, team, employees
+stage||platform, scene
+stair||step
+standard||rule, level, model
+steal||rob, take, snatch
+step||walk, move, pace
+still||yet, quiet, calm
+store||shop, market
+storm||tempest, bad weather
+strange||odd, weird, unusual
+strength||power, force, energy
+strike||hit, beat, knock
+stroll||walk, wander
+structure||building, construction
+success||win, victory, achievement
+sudden||quick, unexpected
+suddenly||quickly, unexpectedly
+suffer||hurt, endure, feel pain
+suggest||propose, advise, recommend
+support||help, back, aid
+suppose||think, believe, guess
+surface||outside, top, face
+survive||live, last, endure
+swim||bathe, float
+sword||blade
+symbol||sign, mark, image
+tail||end, back
+task||job, duty, work
+taste||flavor, savor
+tear||rip, break, cut
+technology||machines, computers
+term||word, expression
+terrible||awful, horrible, dreadful
+theater||cinema, hall
+theory||idea, belief, guess
+therefore||so, thus
+thief||robber, burglar
+thin||slim, lean, skinny
+though||although, but
+throw||toss, hurl, fling
+tip||point, end, top
+tool||instrument, device
+tour||trip, journey, visit
+toward||to, in the direction of
+tradition||custom, habit
+trash||garbage, rubbish
+treat||act toward, deal with
+trick||joke, trap, prank
+trip||journey, travel, tour
+trouble||problem, difficulty
+truth||fact, reality
+underground||below ground
+unite||join, combine
+universe||space, cosmos
+upset||sad, unhappy, angry
+value||worth, price
+various||different, many
+vegetable||
+view||look at, see, watch
+village||town
+visible||seen, clear, obvious
+voice||sound, tone
+vote||choose, elect
+wake||get up, rise
+war||fighting, battle
+waste||misuse, squander
+wave||swell, roll
+wealth||riches, money, fortune
+weapon||arms, gun
+weather||climate
+web||net, mesh
+well|quduq; yaxshi|good, fine
+wheat||grain
+whether||if
+whole||entire, all, complete
+wide||broad, large
+wild||untamed, savage
+wise||clever, smart, sensible
+within||inside, in
+wonder||ask, think, question
+wood||timber, lumber
+worse||poorer, inferior
+worth||value, price
+yell||shout, scream, cry
+yet||still, already
+fortunate||lucky, blessed

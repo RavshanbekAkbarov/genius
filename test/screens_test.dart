@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:genius/data/quotes.dart';
+import 'package:genius/data/stories.dart';
 import 'package:genius/data/words.dart';
 import 'package:genius/services/word_widget.dart';
 import 'package:genius/main.dart';
@@ -10,6 +11,7 @@ import 'package:genius/screens/offline.dart';
 import 'package:genius/screens/profile.dart';
 import 'package:genius/screens/schedule.dart';
 import 'package:genius/screens/setup.dart';
+import 'package:genius/screens/story.dart';
 import 'package:genius/screens/study.dart';
 import 'package:genius/state/app_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -22,6 +24,7 @@ void main() {
   setUp(() async {
     SharedPreferences.setMockInitialValues({});
     await WordBank.load();
+    await StoryBank.load();
     s = AppState();
     await s.load();
     s.seedDemo();
@@ -98,5 +101,60 @@ void main() {
     s.setDaily([], {});
     expect(wordOfDay(s).en, before);
     expect(quotes.contains(s.quote), isTrue);
+  });
+
+  test('hikoya lug\'ati: istalgan so\'z shakli topiladi', () {
+    expect(StoryBank.of('e1', 1)!.title, 'The Lion and the Rabbit');
+    expect(StoryBank.of('e1', 30), isNotNull);
+    expect(StoryBank.lookup('jumped')!.lemma, 'jump');
+    expect(StoryBank.lookup('rabbit’s')!.lemma, 'rabbit');
+    expect(StoryBank.lookup('Clever')!.syn, contains('smart'));
+    expect(StoryBank.lookup('arrived')!.uz, isNotEmpty);
+    // Har bir hikoyadagi har bir so'z lug'atda bor.
+    final re = RegExp(r"[A-Za-z]+(?:['’][A-Za-z]+)?");
+    for (var u = 1; u <= 30; u++) {
+      final st = StoryBank.of('e1', u)!;
+      expect(st.qs.length, 4);
+      for (final p in st.paras) {
+        for (final m in re.allMatches(p)) {
+          expect(StoryBank.lookup(m.group(0)!), isNotNull, reason: 'e1|$u: ${m.group(0)}');
+        }
+      }
+    }
+  });
+
+  testWidgets('hikoya: o\'qish, so\'z oynasi va savollar', (t) async {
+    await show(t, const UnitScreen(bookId: 'e1', unit: 1));
+    expect(find.text('The Lion and the Rabbit'), findsOneWidget);
+    await show(t, const StoryScreen(bookId: 'e1', unit: 1));
+    expect(find.text('The Lion and the Rabbit'), findsOneWidget);
+    await t.dragUntilVisible(find.textContaining('Tugatdim'), find.byType(ListView).last, const Offset(0, -600));
+    await t.pump();
+    await t.tap(find.textContaining('Tugatdim'));
+    await t.pump(const Duration(milliseconds: 600));
+    await t.pump(const Duration(milliseconds: 600));
+    expect(find.text('Tushundingizmi?'), findsOneWidget);
+    expect(s.storiesRead, contains('e1|1'));
+    await t.tap(find.text('How a clever rabbit tricked a cruel lion'));
+    await t.pump();
+    expect(find.byIcon(Icons.check_circle_rounded), findsOneWidget);
+  });
+
+  testWidgets('so\'z oynasi', (t) async {
+    await show(t, const SizedBox());
+    showModalBottomSheet(
+        context: t.element(find.byType(Scaffold).first),
+        isScrollControlled: true,
+        builder: (_) => WordSheet(
+            token: 'clever', entry: StoryBank.lookup('clever'), sentence: 'He is not clever.', unitLabel: "Unit 1 so'zi"));
+    await t.pump();
+    await t.pump(const Duration(milliseconds: 500));
+    await t.pump(const Duration(milliseconds: 500));
+    expect(find.text('SINONIMLAR'), findsOneWidget);
+    await t.ensureVisible(find.textContaining("Mening so'zlarimga"));
+    await t.pump();
+    await t.tap(find.textContaining("Mening so'zlarimga"));
+    await t.pump();
+    expect(s.hasMyWord('clever'), isTrue);
   });
 }
