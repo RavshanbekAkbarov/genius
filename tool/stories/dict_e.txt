@@ -1,0 +1,2336 @@
+abandon||leave, desert, quit
+abbey||monastery, priory
+abide||obey, follow, accept
+abnormal||unusual, strange, odd
+aboard||on board, onto
+abolish||end, cancel, remove
+aborigine||native
+absence||lack, nonattendance
+absolute||complete, total
+absurd||silly, ridiculous, foolish
+abundant||plentiful, rich, ample
+accelerate||speed up, hurry
+accent||pronunciation, tone
+access||entry, admission, approach
+accessory||extra, addition
+accommodate||house, hold, fit
+accordingly||therefore, so
+account||record, report, bill
+accountant||bookkeeper
+accumulate||gather, collect, pile up
+accurate||correct, exact, precise
+accustomed||used to, familiar
+ache||hurt, pain
+acid|kislota|sour
+acknowledge||admit, accept, recognize
+acquaint||introduce, familiarize
+acquire||get, gain, obtain
+acquisition||purchase, gain
+acrobat||gymnast, tumbler
+acute||sharp, severe, keen
+adapt||adjust, change, fit
+addict||fan, enthusiast
+adept||skilled, expert, able
+adequate||enough, sufficient
+adhere||stick, follow, obey
+adhesive||glue, paste
+adjoin||border, touch
+adjoining||neighboring, next
+administer||manage, run, give
+administration||management, government
+administrative||managerial
+administrator||manager, director
+admiral||commander
+admonish||warn, scold
+adolescent||teenager, youth
+adorn||decorate, ornament
+advent||arrival, coming
+adverse||harmful, negative
+advocacy||support, backing
+advocate||support, promote, champion
+aerial||air, airborne
+aesthetic||artistic, beautiful
+affair||matter, event
+affection||love, fondness
+affirm||confirm, state
+afflicted||suffering, troubled
+affluent||rich, wealthy
+agency||office, bureau
+aggregate||total, sum
+aggression||hostility, attack
+aggressive||hostile, violent
+ail||trouble, hurt
+aircraft||plane, airplane
+airway||windpipe
+aisle||passage, corridor
+alas||sadly
+alert||warn, notify
+allege||claim, assert
+alleviate||ease, relieve, lessen
+alley||lane, passage
+alliance||union, league
+allocate||assign, give, distribute
+allot||give, assign
+ally||partner, friend
+almighty||God
+alongside||beside, next to
+aloud||out loud
+altar||shrine
+alter||change, modify
+alternate||switch, rotate
+alternative||option, choice
+although||though, even if
+altitude||height, elevation
+altogether||completely, entirely
+ambassador||envoy, diplomat
+amber||resin
+ambitious||determined, eager
+amend||change, fix, improve
+amid||among, during
+amnesty||pardon
+ample||plenty, enough
+analogous||similar, alike
+analogy||comparison, likeness
+analytic||logical
+analyze||examine, study
+ancestry||heritage, lineage
+anchor||hold, secure
+anemia||
+anew||again, afresh
+animate||lively, living
+anniversary||jubilee
+anthropology||
+antibiotic||medicine
+anticipate||expect, predict
+antique||old, ancient
+apologetic||sorry, regretful
+apparatus||device, machine
+appetite||hunger, desire
+appetizing||tasty, delicious
+applaud||clap, praise
+applause||clapping, praise
+appliance||device, machine
+applicant||candidate
+apply||use, put on
+appoint||assign, name
+apprentice||trainee, learner
+aptitude||talent, ability
+aquarium||fish tank
+aquatic||water, marine
+arbitrary||random, unreasonable
+arc||curve, arch
+arch||curve, vault
+archaic||ancient, old-fashioned
+archeological||
+archeology||
+archer||bowman
+architect||designer, planner
+arctic||polar, freezing
+arduous||hard, difficult, tough
+arena||stadium, field
+arid||dry, barren
+arise||appear, happen, emerge
+aristocracy||nobility, elite
+aristocrat||noble, lord
+arithmetic||math, calculation
+armed||armored
+armor||protection, shield
+aroma||smell, scent
+arrogant||proud, conceited
+artery||blood vessel
+arthritis||
+artifact||object, relic
+ash||cinders, dust
+ashamed||embarrassed, sorry
+ashore||on land
+aside||apart, away
+aspect||feature, side, part
+aspire||aim, hope, want
+assemble||gather, build
+assembly||meeting, gathering
+assert||claim, state
+assess||judge, evaluate
+asset||resource, benefit
+assist||help, aid
+assumption||belief, guess
+assure||promise, guarantee
+asteroid||space rock
+astonished||amazed, surprised
+astounded||amazed, shocked
+astrology||
+astronomical||huge, enormous
+atmosphere||air, mood
+attain||reach, achieve, get
+attentive||alert, careful
+attic||loft
+attire||clothes, dress
+attorney||lawyer
+attribute||quality, feature
+audible||hearable, clear
+audit||check, inspect
+auditorium||hall, theater
+authentic||real, genuine
+author||writer
+authoritative||reliable, commanding
+authorize||allow, permit
+autobiography||memoir
+autograph||signature
+automate||mechanize
+automobile||car, vehicle
+autumn||fall
+avail||use, benefit
+avalanche||snowslide
+avenue||street, road
+await||wait for, expect
+awhile||for a time
+awkward||clumsy, uncomfortable
+ax||hatchet
+bachelor||single man
+background||history, setting
+backstage||behind the scenes
+baggage||luggage, bags
+bait||lure
+bald||hairless
+bamboo||
+ban||forbid, prohibit
+bandage||dressing
+bang||knock, slam
+bankrupt||broke, ruined
+banquet||feast, dinner
+barber||hairdresser
+bark||woof; skin of a tree
+barley||grain
+barrel||cask, drum
+barren||empty, bare, dry
+basement||cellar
+basin||bowl, sink
+bay||cove, gulf
+bead||ball, drop
+beak||bill
+beam||ray, shine
+beast||animal, creature
+beforehand||earlier, in advance
+behalf||sake, interest
+belly||stomach
+beloved||dear, loved
+bench||seat
+beneath||under, below
+benefactor||supporter, patron
+beneficial||helpful, useful
+benevolent||kind, generous
+benign||harmless, gentle
+betray||deceive, cheat
+beverage||drink
+beware||watch out
+bias||prejudice, unfairness
+bid||offer; say
+bilingual||
+bill||invoice; beak
+billionaire||tycoon
+binoculars||field glasses
+biography||life story
+biological||
+biosphere||
+biotechnology||
+birthplace||hometown
+bitter||sour; resentful
+bizarre||strange, weird
+blacksmith||smith
+blank||empty
+blanket||cover
+blast||explosion
+blaze||fire, flame
+bleed||lose blood
+blend||mix, combine
+bless||praise
+blink||wink
+bliss||joy, happiness
+blizzard||snowstorm
+blonde||fair-haired
+bloom||flower, blossom
+blossom||bloom, flower
+boast||brag, show off
+bomb||explosive
+bond||tie, link
+boom||bang, rise
+boost||increase, raise
+botany||
+bounce||jump, rebound
+boundary||border, limit
+bracelet||bangle
+brag||boast, show off
+braille||
+brainstorm||think up
+brass||
+breadth||width
+breakdown||failure
+brew||make, boil
+bribe||payoff
+brick||block
+brilliant||bright, clever
+broadcast||transmit, air
+brook||stream, creek
+broom||brush
+bruise||bump
+brute||beast, thug
+bud||sprout
+budget||funds, plan
+bulb||lamp; root
+bulk||mass, most
+bullet||shot
+bulletin||notice, report
+bully||tormentor
+bump||hit, knock
+bunch||group, bundle
+bundle||pack, bunch
+buoy||float
+burden||load, weight
+burst||explode, break
+bury||hide, cover
+butler||servant
+cache||store, hoard
+calculus||
+camouflage||disguise
+canal||channel
+candidate||applicant, nominee
+canyon||gorge, valley
+capacity||ability, volume
+cape||cloak
+capitalism||
+capitalist||businessman
+captive||prisoner
+carbohydrate||
+cardboard||
+caretaker||keeper, guardian
+cargo||load, freight
+carpenter||woodworker
+casual||relaxed, informal
+casualty||victim
+catastrophe||disaster
+cater||serve, provide
+caterpillar||larva
+cathedral||church
+cattle||cows
+caution||care, warning
+cautious||careful
+cavity||hole, hollow
+cease||stop, end
+celebrity||star, famous person
+celestial||heavenly
+cellular||
+celsius||
+cemetery||graveyard
+censor||ban, cut
+centigrade||celsius
+ceramic||clay
+cereal||grain
+certificate||document
+certify||confirm, approve
+chaos||disorder, mess
+chaotic||disorderly, wild
+chapter||section, part
+char||burn, scorch
+character||personality, role
+charcoal||
+charitable||generous, kind
+charity||help, aid
+charm||attract, delight
+charter||document, constitution
+chatter||talk, babble
+cheerful||happy, merry
+chemist||scientist
+cherish||treasure, love
+chimney||
+chin||
+choir||chorus
+choke||suffocate, gag
+cholesterol||
+chop||cut, slice
+chore||task, job
+chronic||lasting, constant
+chronicle||record, history
+chronology||timeline
+chunk||piece, lump
+circuit||loop
+circulate||spread, flow
+circumference||perimeter
+circumstance||situation, condition
+circus||show
+cite||quote, mention
+civic||city, public
+civil||polite; public
+civilian||citizen
+civilization||society, culture
+clan||family, tribe
+clap||applaud
+clarify||explain
+classify||sort, group
+cliff||rock face
+climate||weather
+clockwise||
+clone||copy
+closet||cupboard
+clumsy||awkward
+cluster||group, bunch
+coal||
+coalition||alliance, union
+coarse||rough
+coastline||shore
+coexist||live together
+coffin||casket
+cognitive||mental
+coincide||match, agree
+collaborate||cooperate, work together
+collapse||fall, break down
+collide||crash, hit
+collision||crash, impact
+colloquial||informal
+colonel||officer
+columnist||writer, journalist
+combat||fight, battle
+combine||join, mix
+comet||
+comic||funny
+commence||begin, start
+comment||remark, note
+commerce||trade, business
+commission||order, committee
+commodity||product, goods
+commonplace||ordinary, usual
+communal||shared, public
+compact||small, dense
+companion||friend, partner
+comparative||relative
+compass||
+compassion||sympathy, kindness
+compassionate||kind, caring
+compatible||suitable, matching
+compel||force, make
+compensate||pay, make up for
+competence||skill, ability
+competent||able, skilled
+compile||collect, gather
+complain||grumble, protest
+complaint||protest, grievance
+complement||complete, match
+complicate||confuse
+compliment||praise
+component||part, piece
+compound||mixture
+comprehensive||complete, full
+compress||squeeze, press
+comprise||consist of, include
+compromise||deal, agreement
+conceal||hide
+concede||admit, yield
+conceive||imagine, think of
+concentric||
+concept||idea, notion
+concerto||
+concrete||real; cement
+condemn||blame, sentence
+condensed||compressed, short
+conduct||behavior; lead
+confer||discuss; give
+confess||admit
+confidential||secret, private
+confine||limit, restrict
+conflict||fight, clash
+conform||obey, comply
+confront||face, challenge
+confuse||puzzle, mix up
+congested||crowded, packed
+congress||parliament
+connect||join, link
+conquer||defeat, beat
+conquest||victory, invasion
+conscience||morals
+conscious||aware, awake
+consecutive||successive
+consent||agree, approve
+consequent||resulting
+conserve||save, protect
+considerate||kind, thoughtful
+consistency||steadiness
+consistent||steady, regular
+console||comfort
+conspiracy||plot, scheme
+constant||steady, continuous
+constellation||star group
+constitution||charter
+constrain||limit, restrict
+construct||build, make
+consumption||use, eating
+contagious||infectious, catching
+contaminate||pollute, dirty
+contemplate||think about, consider
+contemporary||modern, current
+contempt||scorn, disrespect
+contend||compete, struggle
+context||setting, situation
+continent||mainland
+contradict||deny, oppose
+contrary||opposite
+controversy||dispute, argument
+convection||
+convenience||ease, comfort
+convenient||handy, easy
+convention||custom; meeting
+conversion||change
+coordinate||organize, arrange
+cope||manage, handle
+copper||
+core||center, heart
+corporate||business
+corps||unit, group
+corpse||body
+correspond||match; write
+corrupt||dishonest
+cosmetics||makeup
+cosmopolitan||worldly, international
+cot||bed
+cottage||cabin, small house
+couch||sofa
+counteract||fight, offset
+counterpart||equal, match
+courier||messenger
+courteous||polite
+courtesy||politeness
+courtyard||yard
+cove||bay
+coward||chicken
+cozy||comfortable, warm
+crack||break, split
+craft||skill, art
+cram||stuff, pack
+cramp||pain, spasm
+crater||hole, pit
+crawl||creep
+craze||fad, trend
+credentials||documents, qualifications
+credible||believable
+creek||stream, brook
+creep||sneak, crawl
+crescent||
+crickets||
+crime||offense
+crisis||emergency
+crisp||crunchy, fresh
+criteria||standards
+criticism||blame
+crook||criminal
+crown||
+crucial||vital, key
+crude||rough, raw
+crumble||break up, fall apart
+crush||squash, press
+crust||shell, skin
+cub||baby animal
+cube||block
+culinary||cooking
+culprit||offender
+cultivate||grow, farm
+culture||customs, civilization
+cumulative||total
+cunning||clever, sly
+cupboard||cabinet
+curb||limit, control
+curl||twist, coil
+currency||money
+current||present; flow
+curve||bend
+custom||habit, tradition
+cyberspace||internet
+cyclone||storm
+dairy||milk
+daisy||
+damp||wet, moist
+dash||rush, run
+database||records
+dawn||sunrise, daybreak
+daytime||day
+deaf||
+dearth||lack, shortage
+debris||rubble, wreckage
+decade||ten years
+decay||rot, decline
+deceased||dead
+deceive||trick, fool
+decent||good, proper
+deception||trick, lie
+deceptive||misleading
+decipher||decode, figure out
+decisive||firm, determined
+decline||refuse; decrease
+dedicate||devote, commit
+deed||act, action
+defeat||beat, conquer
+defect||flaw, fault
+defer||delay, postpone
+deficiency||lack, shortage
+define||explain, describe
+definitive||final, certain
+deformed||twisted, warped
+defy||resist, oppose
+degrade||lower, insult
+delete||remove, erase
+deliberate||intentional
+delicate||fragile, fine
+delta||
+den||lair
+dense||thick
+dent||dip, hollow
+departure||leaving, exit
+dependence||reliance
+dependency||reliance, need
+depict||show, portray
+deplete||use up
+deposit||place, put
+depot||station
+deprive||deny, take away
+deputy||assistant
+derive||get, obtain
+descend||go down
+descent||fall, drop
+designate||name, assign
+despair||hopelessness
+desperate||hopeless
+dessert||sweet
+destiny||fate
+detail||feature, point
+deter||discourage, prevent
+detergent||soap, cleaner
+deteriorate||worsen, decline
+deterioration||decline, decay
+devastate||destroy, ruin
+device||tool, machine, gadget
+devil||demon
+devise||invent, plan
+devoid||lacking, free of
+dew||moisture
+diabetes||
+diagnose||identify, detect
+diagram||chart, drawing
+dialect||language, speech
+diameter||width
+differentiate||distinguish, tell apart
+digest||absorb, process
+dignity||pride, honor
+dilapidated||ruined, run-down
+dilemma||problem, difficulty
+diligent||hardworking, careful
+dim||dark, faint
+diminish||decrease, reduce
+din||noise, racket
+dip||dunk, drop
+diploma||certificate
+diplomat||ambassador
+dire||terrible, serious
+disagree||differ, argue
+disapprove||object, dislike
+discharge||release, dismiss
+discipline||control, training
+disclose||reveal, tell
+discord||conflict, disagreement
+discourage||deter, dishearten
+discriminate||distinguish
+disease||illness, sickness
+disgrace||shame
+disguise||costume, mask
+disgust||revulsion
+disgusting||gross, nasty
+dishonest||lying, false
+dismiss||send away, reject
+disobedient||naughty
+display||show, exhibit
+dispose||throw away, discard
+disprove||refute
+dispute||argument, quarrel
+disrespect||rudeness
+disrupt||disturb, interrupt
+dissatisfied||unhappy, displeased
+disseminate||spread, circulate
+dissolve||melt
+distant||far, remote
+distort||twist, change
+distract||divert
+distress||pain, suffering
+distribute||give out, share
+district||area, region
+distrust||doubt, suspicion
+ditch||trench, channel
+diverge||separate, split
+diverse||varied, different
+divine||holy, heavenly
+divorce||separation
+dizzy||giddy
+dock||pier, wharf
+dogged||determined, stubborn
+dominance||control, power
+dominant||main, ruling
+dominate||control, rule
+donor||giver
+doomed||condemned, hopeless
+dose||amount
+dough||paste, mixture
+drag||pull, haul
+drain||empty, flow out
+drastic||extreme, severe
+drawback||disadvantage
+drawer||
+dread||fear, terror
+dreary||dull, gloomy
+drift||float, wander
+drill||bore, practice
+drip||drop, trickle
+drought||dry spell
+drown||sink
+dual||double, twofold
+dubious||doubtful, suspicious
+due||expected, owed
+dumb||stupid
+dump||throw away
+dung||manure
+duplicate||copy, repeat
+duration||length, period
+dusk||twilight, evening
+dwarf||small person
+dye||color, tint
+dynamic||energetic, active
+dynamics||forces, workings
+dynasty||royal family
+earl||lord, noble
+earnest||serious, sincere
+ease||relieve, comfort
+echo||repeat
+eclipse||
+ecology||environment
+economy||finances
+ecosystem||environment
+edible||eatable
+edit||correct, revise
+efficient||effective, productive
+ego||self-esteem, pride
+elaborate||detailed, complex
+elapse||pass
+elastic||stretchy, flexible
+elbow||
+electromagnetic||
+electron||
+elegant||graceful, stylish
+eligible||qualified
+eliminate||remove, get rid of
+elude||escape, avoid
+elusive||hard to find
+embassy||consulate
+embed||implant, fix
+embrace||hug, accept
+embryo||
+emerge||appear, come out
+empathy||understanding
+emperor||ruler, king
+emphasis||stress, importance
+empire||kingdom
+employ||hire, use
+emulate||copy, imitate
+enact||pass, establish
+enchant||charm
+enclose||surround
+encounter||meet, face
+endeavor||attempt, effort
+endure||bear, tolerate
+enforce||apply, impose
+engrave||carve, etch
+enhance||improve
+enigma||mystery, puzzle
+enlarge||expand, increase
+enlist||join, enroll
+ensue||follow, result
+enterprise||company, business
+enthusiasm||eagerness
+enthusiastic||eager, keen
+entitle||allow
+envious||jealous
+envision||imagine, foresee
+envy||jealousy
+epic||heroic, grand
+epidemic||outbreak, plague
+equate||compare, match
+equation||formula
+equator||
+equilibrium||balance
+equip||supply, provide
+equivalent||equal
+era||age, period
+erect||build, raise
+erosion||wearing away
+err||make a mistake
+errand||task, job
+erroneous||wrong, incorrect
+erupt||explode, burst
+escort||accompany, guide
+essay||composition
+essence||core, heart
+establish||set up, found
+estate||property, land
+esteemed||respected
+etc||and so on
+eternal||everlasting, endless
+ethical||moral, right
+ethics||morals
+ethnic||cultural
+etiquette||manners
+euphemism||polite expression
+euphoria||joy, happiness
+evacuate||leave, empty
+evaluate||assess, judge
+evenly||equally
+eventual||final
+evident||clear, obvious
+evoke||arouse, bring up
+evolve||develop
+exaggerate||overstate
+excavate||dig
+exceed||surpass
+excel||be excellent
+exception||exclusion
+excerpt||extract
+excess||surplus, extra
+exclude||leave out
+exclusive||private, select
+execute||carry out; put to death
+executive||manager, director
+exit||leave, way out
+exotic||foreign, unusual
+expand||grow, enlarge
+expedition||journey, trip
+expel||throw out
+expertise||skill, knowledge
+expire||run out, end
+explicit||clear
+explode||blow up, burst
+exploit||use, abuse
+export||sell abroad
+express||state, show
+exquisite||beautiful, fine
+extension||extra time, addition
+extent||degree, range
+exterior||outside
+external||outer
+extinct||died out
+extinguish||put out
+extract||remove, take out
+fable||tale, story
+fabric||cloth, material
+fabulous||wonderful
+facilitate||help, ease
+facility||building, center
+factor||element, cause
+faculty||staff
+fad||trend, craze
+fade||disappear
+fahrenheit||
+faint||weak; pass out
+fairy||sprite
+fake||false, fraud
+famine||hunger
+fanciful||imaginary
+fancy||elaborate, fine
+fantasy||dream, imagination
+farewell||goodbye
+fasten||tie, attach
+fatal||deadly
+fate||destiny
+fatigue||tiredness
+faucet||tap
+feast||banquet
+feat||achievement
+federal||national
+federation||union, league
+feeble||weak
+feedback||response, comment
+fellow||companion; man
+feminine||girlish
+fend||defend, ward off
+ferry||boat
+festive||joyful
+fiber||thread
+fictitious||made-up, false
+fierce||savage, violent
+fiery||burning, passionate
+filth||dirt, grime
+finance||money, fund
+fireworks||
+firsthand||direct, personal
+fist||
+flame||fire
+flammable||burnable
+flap||flutter, wave
+flashlight||torch
+flatter||praise
+flaw||defect
+flee||run away, escape
+fleet||navy
+flesh||meat
+flexible||bendable
+flight||flying; escape
+flint||stone
+flip||turn, toss
+flock||herd, group
+flour||
+fluctuate||vary, change
+fluent||smooth, articulate
+fluid||liquid; smooth
+fluorescent||bright
+flush||blush; wash out
+foe||enemy
+fold||bend, crease
+folk||people
+folklore||legends
+forage||search, hunt
+fore||front
+forefinger||index finger
+foresee||predict
+forge||make, shape
+forgive||pardon, excuse
+formation||shape, creation
+fort||fortress
+forthcoming||upcoming
+fossil||
+foster||encourage; raise
+foul||dirty, bad
+fountain||spring
+fraction||part, piece
+fracture||break, crack
+fragile||delicate, breakable
+fragment||piece, bit
+fragrant||sweet-smelling
+framework||frame, structure
+frantic||panicked, wild
+fraud||trick, scam
+freeway||highway
+freight||cargo
+frequency||rate
+frequent||regular, common
+frigid||freezing, icy
+fro||back
+frontier||border
+frost||ice
+frown||scowl
+fume||smoke, gas
+fundamental||basic, essential
+funnel||
+furious||angry, mad
+furnace||oven, stove
+furnish||equip, supply
+fuse||join, merge
+fuss||bother, commotion
+galaxy||
+gamble||bet, risk
+garment||clothing
+gasp||pant
+gaze||stare, look
+gazette||newspaper
+gender||sex
+generate||produce, create
+genetic||hereditary
+genome||
+genre||type, kind
+genuine||real, true
+geology||
+germ||bacteria
+gigantic||huge, enormous
+ginger||
+glacial||icy
+glacier||ice field
+glance||glimpse, look
+glide||slide, float
+glimpse||glance
+global||worldwide
+globe||world, sphere
+gloom||darkness, sadness
+glove||
+glow||shine
+goods||products
+gorgeous||beautiful
+gossip||rumor, chatter
+gourmet||fancy, fine
+grace||elegance
+gracious||kind, polite
+graduate||finish school
+graffiti||
+granite||stone
+grapefruit||
+grasp||grip, understand
+grateful||thankful
+gratify||please, satisfy
+gratitude||thanks
+gravel||stones
+graze||feed
+grease||oil, fat
+greed||selfishness
+grid||network
+grief||sorrow
+grin||smile
+grind||crush, mill
+grip||hold, grasp
+gripe||complain
+grocer||
+groom||bridegroom; clean
+gross||disgusting
+grove||woods
+growl||snarl
+grueling||exhausting, hard
+grumble||complain
+guardian||protector
+guideline||rule
+gulf||bay
+guts||stomach; courage
+gymnasium||gym
+habitat||home, environment
+habitual||usual, regular
+hack||chop, cut
+hail||ice
+hallmark||mark, sign
+halt||stop
+handbook||manual, guide
+handicap||disability
+handy||useful
+harass||bother, pester
+harbor||port
+hardy||tough, strong
+harmonize||blend, match
+harness||use; strap
+harsh||severe, cruel
+harvest||crop
+haste||hurry, speed
+hatred||hate
+haunt||disturb, trouble
+hay||
+hazard||danger, risk
+headline||title
+headquarters||main office
+heap||pile
+hearty||warm, cheerful
+hectare||
+heed||listen, obey
+heighten||increase
+heir||successor
+hemisphere||half
+hence||therefore
+herd||flock, group
+hereditary||inherited
+heredity||inheritance
+heritage||tradition
+hermit||loner
+hesitant||unsure
+hesitate||pause, wait
+highlands||hills
+highlight||emphasize
+hinder||block, hamper
+hint||clue
+hitchhike||
+hollow||empty
+homogeneous||uniform, same
+hone||sharpen, improve
+hood||cover
+hoop||ring
+hop||jump
+horizon||skyline
+horizontal||flat, level
+horrible||terrible, awful
+horrified||shocked
+horrifying||frightening
+horror||fear, terror
+hospitable||welcoming, friendly
+hospitality||friendliness
+hostile||unfriendly
+hound||dog
+housekeeping||cleaning
+howl||cry
+hull||frame
+hum||buzz
+humane||kind
+humanitarian||charitable
+humanities||arts
+humble||modest
+humid||damp, moist
+humiliate||embarrass, shame
+hut||cabin, shack
+hybrid||mix
+hydrogen||
+hygiene||cleanliness
+hygienic||clean, sanitary
+hymn||song
+hypothesis||theory
+identical||same, alike
+idiot||fool
+idle||inactive, lazy
+ignorance||unawareness
+ignorant||uninformed
+illusion||delusion
+imitate||copy
+immense||huge, vast
+immoral||wrong, wicked
+immune||resistant
+impact||effect
+impair||damage, weaken
+impatient||restless
+impede||hinder, block
+impending||upcoming
+imperative||essential, necessary
+imperial||royal
+impersonal||cold
+implement||carry out
+implicate||involve
+impolite||rude
+import||bring in
+impose||force
+imprint||mark, print
+improve||better, enhance
+improvise||make up
+impulse||urge
+inadvertent||accidental
+incentive||motivation, reward
+incident||event
+incline||slope; tend
+inclusion||membership
+inclusive||open, welcoming
+incorporate||include
+incredulous||disbelieving
+independence||freedom
+index||list
+indifferent||uncaring
+indigenous||native
+indirect||roundabout
+induce||cause
+industrious||hardworking
+inevitable||certain, unavoidable
+infamous||notorious
+infant||baby
+infect||contaminate
+infer||conclude
+inferior||lower, worse
+infinite||endless
+inflate||swell, expand
+influence||affect
+informal||casual
+informative||educational
+infrastructure||structure
+ingenious||clever
+inhabit||live in
+inhabitant||resident
+inhale||breathe in
+inherent||natural, built-in
+initiate||begin, start
+injure||hurt, harm
+inland||interior
+innate||natural, inborn
+innocence||purity
+innovation||invention, novelty
+innovative||creative, new
+input||contribution
+inquire||ask
+inseparable||close
+insight||understanding
+insomnia||sleeplessness
+instinct||intuition
+institute||organization
+institution||organization
+insulate||protect
+insult||offend
+intact||whole, unbroken
+intake||consumption
+integrate||combine
+integrity||honesty
+intellect||intelligence
+intellectual||scholarly
+interact||communicate
+interchange||exchange
+intermediate||middle
+intermittent||irregular
+internal||inner
+interval||gap, pause
+intervene||step in
+intestines||guts
+intimate||close
+intimidate||frighten
+intolerable||unbearable
+intricate||complex
+intrigue||interest
+intrinsic||natural
+intuitive||instinctive
+invade||attack
+invalid||wrong, false
+invasion||attack
+inventive||creative
+inventory||stock
+invert||turn over
+invoke||call on
+inward||inner
+iron||
+irrigate||water
+irritable||cranky
+irritate||annoy
+isolate||separate
+itch||tingle
+ivory||
+ivy||
+jagged||rough, sharp
+janitor||cleaner
+jealous||envious
+jealousy||envy
+jog||run
+joint||shared
+jolly||cheerful
+journalism||reporting
+judicial||legal
+jury||
+justice||fairness
+justify||defend, explain
+justly||fairly
+keen||eager, sharp
+kerosene||
+kettle||pot
+kidnap||abduct
+kin||relatives
+kit||set
+kneel||bend
+knight||
+knit||weave
+ladder||steps
+lag||fall behind
+lame||limping
+landlord||owner
+landmark||sign, marker
+lane||path, road
+latitude||
+latter||second, last
+launch||start; send off
+laundry||washing
+lava||magma
+law||rule
+lawn||grass
+leak||drip, escape
+lean||rest; thin
+leap||jump
+lease||rent
+leash||lead
+leather||hide
+lecture||talk, lesson
+legacy||heritage
+legal||lawful
+legislate||make laws
+legislature||parliament
+legitimate||lawful, valid
+leisure||free time
+lentil||bean
+liable||likely; responsible
+liberal||open-minded
+liberty||freedom
+license||permit
+lid||cover, cap
+lieutenant||officer
+lightning||
+likewise||similarly
+limb||arm, leg
+limp||hobble
+linger||stay, remain
+linguist||
+linguistic||language
+lining||inner layer
+literary||
+literature||writing, books
+lively||energetic
+loaf||bread
+locale||place, location
+locker||cabinet
+lodge||cabin, inn
+longevity||long life
+longing||desire
+loom||appear, threaten
+loop||circle
+loose||free, slack
+loyal||faithful
+lump||chunk, bump
+lunar||
+lure||attract, tempt
+lush||green, thick
+luxury||comfort, extravagance
+lyric||words
+magnet||
+magnificent||splendid
+magnify||enlarge
+mainstream||common, popular
+majestic||grand
+majesty||grandeur
+majority||most
+malnutrition||hunger
+mammal||
+managerial||
+mandarin||
+mandatory||required
+manifest||appear, show
+manipulate||control, handle
+mankind||humanity
+manor||estate
+mansion||big house
+manufacture||make, produce
+manuscript||document
+marble||
+marine||sea, ocean
+mariner||sailor
+marrow||
+marsh||swamp
+marshal||organize, gather
+martial||military
+masculine||manly
+mash||crush
+mass||lump; amount
+massive||huge
+mast||pole
+masterpiece||
+mature||grown-up
+maximize||increase
+mayor||
+maze||labyrinth
+meantime||meanwhile
+meanwhile||at the same time
+measure||amount; step
+mechanism||device
+medication||medicine
+medieval||
+meditate||think, reflect
+melt||thaw
+memorable||unforgettable
+mend||repair, fix
+mentor||teacher, guide
+merchandise||goods
+merchant||trader
+mercy||pity, kindness
+merge||combine
+merit||worth, value
+merry||cheerful
+messenger||courier
+metabolic||
+metabolism||
+meteorological||
+meteorology||
+metropolitan||urban, city
+microbe||germ
+microchip||chip
+microscope||
+midst||middle
+mighty||strong, powerful
+migraine||headache
+migrate||move
+mill||factory
+millennium||
+millionaire||rich person
+mimic||copy, imitate
+miniature||small, tiny
+minimal||smallest
+minimize||reduce
+ministry||department
+mischief||trouble
+misconception||error
+miserable||unhappy
+misery||suffering
+misfortune||bad luck
+misguided||mistaken
+misplace||lose
+mist||fog
+mixture||blend, mix
+moan||groan
+mob||crowd
+mobile||movable
+mock||tease
+mode||way, method
+moderate||average, medium
+moderation||restraint
+modest||humble
+modify||change
+moist||damp, wet
+moisture||dampness
+mold||shape; fungus
+molecule||
+monarch||king, queen
+monastery||abbey
+monetary||financial
+monolingual||
+monument||memorial
+moral||lesson; ethical
+morale||spirit, confidence
+mortal||human
+mortgage||loan
+moss||
+mound||pile, heap
+mow||cut
+multicultural||diverse
+multiple||many
+multiply||increase
+multitude||crowd, many
+mundane||ordinary, dull
+muscle||
+muscular||strong
+mushroom||
+mutual||shared
+myth||legend
+mythology||legends
+nap||sleep
+narrate||tell
+nasty||unpleasant
+nationality||citizenship
+native||local
+naughty||bad
+nausea||sickness
+naval||sea
+navigate||steer
+necessity||need
+nectar||
+needle||pin
+needy||poor
+negative||bad
+neglect||ignore
+negligible||tiny, minor
+negotiate||bargain
+nerve||courage
+neutral||impartial
+newcomer||
+nick||cut
+nightmare||bad dream
+noble||aristocrat; honorable
+nod||
+nonetheless||still, however
+nope||no
+norm||standard
+notify||inform
+notion||idea
+notorious||infamous
+nourish||feed
+novelty||newness
+nowhere||
+nuclear||atomic
+nucleus||core
+nuisance||annoyance
+numb||frozen
+numerous||many
+nursery||
+nurture||care for
+nut||
+nutrition||nourishment
+nutritious||healthy
+oath||promise
+object||thing; oppose
+objective||goal
+oblige||require
+oblivious||unaware
+obscure||unclear, unknown
+obsess||preoccupy
+obsolete||outdated
+obstacle||barrier
+obstruct||block
+occupy||fill
+odor||smell
+offend||insult
+offense||crime; insult
+offset||balance
+offspring||children
+omen||sign
+omission||absence
+ongoing||continuing
+onset||start
+operate||work, run
+opponent||rival
+oppress||persecute
+opt||choose
+optic||visual
+optimism||hope
+optimist||
+option||choice
+oracle||prophet
+orangutan||ape
+orbit||circle
+ordeal||trial, hardship
+ore||mineral
+organic||natural
+organism||creature
+originate||begin
+ornament||decoration
+ornate||decorated
+orphan||
+otherwise||or else
+outback||wilderness
+outburst||explosion
+outcome||result
+outdated||old-fashioned
+outfit||clothes
+outlaw||criminal
+outlook||view
+outmoded||outdated
+outnumber||
+output||production
+outrage||anger
+outraged||angry
+outright||complete
+outspoken||frank
+outstretched||extended
+outweigh||exceed
+overall||general
+overboard||
+overcast||cloudy
+overcrowded||packed
+overdose||
+overhead||above
+overjoyed||delighted
+overlap||cover
+overload||overburden
+overlook||miss; view
+overnight||
+overpopulation||
+oversee||supervise
+overview||summary
+overweight||fat
+overwhelm||overpower
+overwork||exhaust
+oxygen||
+pad||cushion
+paddle||oar
+palate||taste
+paltry||small, meager
+panic||fear
+parachute||
+parade||procession
+paradise||heaven
+paradox||contradiction
+parallel||similar
+paralysis||
+paramount||supreme
+paraphrase||reword
+parasite||
+parcel||package
+pardon||forgive
+partiality||bias
+participant||
+particle||bit
+particular||specific
+passion||love, enthusiasm
+paste||glue
+pastime||hobby
+pasture||field, meadow
+pat||tap
+patch||piece
+patent||
+pathological||compulsive
+patience||tolerance
+patriot||
+pave||cover
+paw||foot
+pea||
+pebble||stone
+peck||bite
+peculiar||strange
+pedestrian||walker
+peel||skin
+peer||equal; look
+penalize||punish
+penetrate||pierce
+peninsula||
+penny||cent
+per||each
+perceive||notice
+perception||view
+perfume||scent
+periphery||edge, outskirts
+perish||die
+permanence||stability
+persecute||oppress
+persist||continue
+personalize||customize
+personnel||staff
+perspire||sweat
+persuasion||convincing
+pertain||relate
+pessimistic||gloomy
+pest||nuisance
+pesticide||
+petition||request
+petroleum||oil
+phantom||ghost
+pharaoh||king
+pharmaceutical||medicinal
+pharmacy||drugstore
+phase||stage
+phenomenal||amazing
+phenomenon||event
+philanthropy||charity
+phoenix||
+photosynthesis||
+physician||doctor
+physiology||
+pier||dock
+pierce||stab
+pile||heap
+pill||tablet
+pine||
+pinpoint||locate
+pioneer||explorer
+pit||hole
+pity||sympathy
+plague||disease
+plantation||farm
+plaster||
+plausible||believable
+plea||request
+plead||beg
+pleasure||joy
+pledge||promise
+plot||plan, scheme
+plumbing||pipes
+plunge||dive
+pneumonia||
+poignant||touching
+poison||
+poke||prod
+polar||arctic
+polish||shine
+poll||survey
+pollen||
+pollute||contaminate
+ponder||think about
+pop||burst
+port||harbor
+portable||movable
+portrait||picture
+portray||depict
+pose||present
+poster||sign
+postpone||delay
+posture||stance
+pouch||bag
+poultry||chickens
+practitioner||doctor
+prairie||grassland
+pray||
+preach||lecture
+precaution||safety measure
+precede||come before
+precious||valuable
+precipitate||cause
+precise||exact
+predator||hunter
+predominant||main
+pregnant||
+prehistoric||ancient
+prejudice||bias
+preliminary||first, initial
+premature||early, hasty
+premise||basis
+premium||extra charge
+prescribe||order
+prescription||
+presently||soon; now
+prestige||status
+prevail||win
+prevalent||common
+preview||trailer
+previous||earlier
+prey||victim
+primal||basic, primitive
+primate||
+primitive||basic
+principle||rule
+prior||earlier
+priority||importance
+privacy||
+private||personal
+privilege||right
+probe||explore
+procession||parade
+proclaim||announce
+prod||poke
+proficient||skilled
+profile||outline
+profound||deep
+prohibit||ban
+prolong||extend
+prominent||important
+promote||advance
+promptly||quickly
+prone||likely
+propel||push
+prophecy||prediction
+prophet||seer
+proponent||supporter
+proportion||part, ratio
+propulsion||force
+prosecute||charge
+prospect||chance
+prosper||thrive
+protein||
+prototype||model
+proverb||saying
+provide||supply
+province||region
+provision||supply
+provoke||cause
+proximity||nearness
+psychiatric||
+psychiatry||
+psychic||
+psychotic||insane
+publication||
+publicity||attention
+publicize||announce
+pudding||
+puff||blow
+pulse||beat
+punctual||on time
+pungent||sharp, strong
+punishment||penalty
+purse||bag
+pursue||chase
+pursuit||chase
+quantum||
+quarrel||argue
+quest||search
+quiver||shake
+racial||ethnic
+rack||shelf
+radiate||emit
+radical||extreme
+radioactive||
+raft||
+rag||cloth
+rage||anger
+ragged||torn
+rail||bar
+rainforest||jungle
+raisin||
+rally||gather
+ranch||farm
+random||chance
+ranger||
+ransom||payment
+rapid||fast
+rash||spots; hasty
+rate||speed
+ratio||proportion
+ray||beam
+realm||kingdom
+rear||back; raise
+rebel||revolt
+receipt||
+recent||new
+recipe||
+recipient||receiver
+recite||say
+reckless||careless
+reconcile||settle
+recruit||enlist
+rectify||correct
+recur||repeat
+reduce||lessen
+reed||
+referee||judge
+refine||improve
+reflex||reaction
+refrain||avoid
+refresh||renew
+refuge||shelter
+refund||repay
+refute||disprove
+regain||recover
+register||enroll
+regulate||control
+rehearse||practice
+reign||rule
+reinforce||strengthen
+relate||connect
+relativity||
+relay||race; pass on
+relevant||related
+relief||comfort
+religion||faith
+reluctance||unwillingness
+reluctant||unwilling
+remainder||rest
+remedy||cure
+remorse||regret
+renaissance||revival
+render||make
+renovate||restore
+renown||fame
+repay||pay back
+repetitive||repeated
+replace||substitute
+replenish||refill
+replicate||copy
+reproduce||copy; breed
+reproductive||
+reptile||
+reputable||respected
+research||study
+resent||dislike
+reserve||save
+reservoir||lake
+resign||quit
+resolution||decision
+resolve||solve
+resource||supply
+resourceful||clever
+respective||own
+respiration||breathing
+respirator||
+restate||repeat
+restore||repair
+restrain||hold back
+restrict||limit
+retail||sales
+retain||keep
+retreat||withdraw
+retrieve||get back
+reunion||meeting
+revenge||vengeance
+revenue||income
+revere||respect
+reverse||back
+review||examine
+revise||change
+revive||restore
+revolution||revolt, rebellion
+revolve||rotate, spin
+rhyme||verse
+riddle||puzzle
+ridge||crest
+ridicule||mock
+ridiculous||absurd
+rife||widespread
+rig||equipment
+rigid||stiff
+rim||edge
+riot||disorder
+rip||tear
+ripe||ready
+rite||ceremony
+ritual||ceremony
+rival||competitor
+roam||wander
+roast||cook
+robe||gown
+role||part
+roost||perch
+rot||decay
+rotate||turn
+rouge||blush
+routine||habit
+rub||rub
+rubbish||trash
+rubble||debris
+rugged||rough
+ruin||destroy
+rumor||gossip
+rupture||burst
+rural||country
+rust||
+sacred||holy
+sacrifice||give up
+sage||wise man
+sake||benefit
+saliva||spit
+sanctuary||refuge
+sane||sensible
+sarcastic||mocking
+satire||parody
+satisfaction||pleasure
+satisfactory||acceptable
+saturate||soak
+saturated||soaked
+saucer||plate
+savage||wild
+scar||mark
+scarce||rare
+scatter||spread
+scent||smell
+scheme||plan
+scold||reprimand
+scope||range
+scorn||contempt
+scramble||hurry
+scrap||piece
+scrape||scratch
+scratch||scrape
+scribble||scrawl
+scribe||writer
+script||text
+scrutiny||examination
+seasoning||spice
+secluded||isolated
+secondhand||used
+secrecy||privacy
+sector||section
+segregate||separate
+seize||grab
+seizure||fit
+seldom||rarely
+semester||term
+senate||council
+senator||
+sensation||feeling
+senses||
+sensible||reasonable
+sensory||
+sentiment||feeling
+sequence||order
+sergeant||
+sesame||
+session||meeting
+sever||cut
+sew||stitch
+shaft||pole
+shallow||not deep
+shame||disgrace
+shatter||break
+shave||
+shed||hut; drop
+sheer||pure
+shelter||refuge
+shepherd||herder
+sheriff||
+shiver||tremble
+shortcut||
+shortly||soon
+shrine||temple
+shrink||reduce
+shutter||
+sibling||brother, sister
+sideways||
+sift||sort
+sigh||
+signature||
+significance||importance
+signify||mean
+simplicity||ease
+simulate||imitate
+simultaneous||concurrent
+sin||wrong
+sinister||evil
+sip||drink
+skeletal||
+skeleton||bones
+skeptic||doubter
+skinny||thin
+skull||
+slab||block
+slam||bang
+slap||hit
+slate||stone
+sled||sleigh
+sleeve||
+slice||piece
+slight||small
+slim||thin
+slippery||slick
+slope||hill
+slot||opening
+sly||cunning
+smallpox||
+smash||break
+snap||break
+snatch||grab
+sneak||creep
+sneeze||
+snore||
+soak||wet
+soar||fly
+sob||cry
+sober||serious
+sociable||friendly
+socialize||mix
+sociology||
+sodium||salt
+solar||sun
+sole||only
+solemn||serious
+solidarity||unity
+solitary||lonely
+solitude||loneliness
+soothe||calm
+soothing||calming
+sophisticated||advanced
+sore||painful
+sorrow||sadness
+soundly||deeply
+sour||acidic
+source||origin
+souvenir||memento
+sow||plant
+soy||
+spade||shovel
+span||length
+spare||extra
+spark||flash
+sparkle||glitter
+sparse||scarce
+spatial||
+species||kind
+specify||state
+speck||dot
+spectacle||show
+spectacular||amazing
+spectator||viewer
+spectrum||range
+speculate||guess
+sphere||ball
+spice||seasoning
+spine||backbone
+spiral||coil
+spirit||soul
+splash||spray
+splendid||magnificent
+spoil||ruin
+spontaneous||sudden
+spouse||partner
+sprinkle||scatter
+sprint||dash
+spur||urge
+squeeze||press
+stab||pierce
+stack||pile
+stagger||stumble
+stain||spot
+staircase||stairs
+stake||post
+stale||old
+stall||stand
+stance||position
+staple||basic
+stark||plain
+startle||surprise
+starve||go hungry
+state||condition; say
+status||position
+statute||law
+steel||
+steep||sharp
+steer||guide
+stem||stalk
+stereotype||
+sterile||clean
+stern||strict
+steward||manager
+sticky||gluey
+stiff||rigid
+stimulate||excite
+stimulus||incentive
+sting||bite
+stir||mix
+stitch||sew
+stool||seat
+stormy||windy
+stove||oven
+straightforward||simple
+strain||stress
+stranded||stuck
+strap||belt
+strategy||plan
+straw||
+stray||wander
+streak||stripe
+stricken||affected
+strife||conflict
+string||cord
+strip||band
+stripe||band
+strive||try
+stroke||blow
+stubborn||obstinate
+stuff||things
+stumble||trip
+stun||shock
+stunt||trick
+subconscious||
+subject||topic
+submarine||
+submerge||sink
+subscribe||agree
+subsequent||later
+subsidy||grant
+subsist||survive
+substantial||large
+substitute||replace
+subtle||delicate
+suburb||outskirts
+succession||series
+suck||draw
+suicide||
+suit||match
+sum||total
+summit||peak
+summon||call
+superintendent||supervisor
+supernatural||magical
+superstition||
+supervise||oversee
+supper||dinner
+supply||provide
+suppress||restrain
+supreme||highest
+surgeon||doctor
+surplus||excess
+surrender||give up
+susceptible||vulnerable
+suspend||stop
+suspicion||doubt
+suspicious||doubtful
+sustain||maintain
+sustenance||food
+swamp||marsh
+swarm||crowd
+sway||swing
+swear||promise
+sweat||perspire
+sweep||clean
+swell||expand
+swift||fast
+swing||sway
+switch||change
+symmetry||balance
+sympathy||compassion
+symphony||
+synthesis||combination
+synthetic||artificial
+tackle||deal with
+tact||diplomacy
+tactic||method
+talkative||chatty
+tame||gentle
+tangle||knot
+tap||knock
+tariff||tax
+tattoo||
+tease||mock
+technician||
+tedious||boring
+telegraph||
+teller||cashier
+temper||mood
+temperate||mild
+tempt||lure
+tenacious||persistent
+tenant||renter
+tend||care for
+tender||soft
+tense||nervous
+terminal||station; fatal
+terminate||end
+termite||
+terrace||patio
+terrain||land
+terrestrial||land
+terrific||great
+terrified||scared
+territory||area
+testament||proof
+testify||swear
+textile||fabric
+texture||feel
+theft||stealing
+theme||topic
+theoretical||abstract
+theorize||suppose
+therapeutic||healing
+therapy||treatment
+thereby||thus
+thermometer||
+thorn||spike
+thorough||complete
+thread||string
+thrill||excitement
+thrive||flourish
+throne||
+thrust||push
+thump||thud
+thunder||
+tickle||
+tide||
+tidy||neat
+tilt||tip
+timber||wood
+timid||shy
+tin||
+tolerance||acceptance
+tolerant||accepting
+tolerate||endure
+torch||flashlight
+torment||torture
+tornado||twister
+torture||torment
+toss||throw
+tournament||competition
+tow||pull
+toxic||poisonous
+trace||trail
+tract||area
+tragedy||disaster
+tragic||sad
+trail||path
+trait||quality
+tram||streetcar
+tramp||vagrant
+trance||daze
+transaction||deal
+transfer||move
+transition||change
+transmit||send
+transplant||transfer
+transportation||transport
+traverse||cross
+tray||platter
+treachery||betrayal
+tremble||shake
+tremendous||huge
+trendy||fashionable
+trigger||cause
+trim||cut
+triumph||victory
+trivial||minor
+tropics||
+trustworthy||reliable
+tuck||insert
+tuition||fees
+tumble||fall
+tumult||uproar
+tune||melody
+turf||grass
+tusk||
+twig||branch
+typewritten||
+typhoon||hurricane
+typical||normal
+tyranny||oppression
+tyrant||dictator
+ultimate||final
+underestimate||undervalue
+undergo||experience
+undergraduate||student
+underlying||basic
+undermine||weaken
+underneath||below
+unfortunate||unlucky
+unify||unite
+unity||union
+unrest||disorder
+unsettle||disturb
+upbringing||raising
+upcoming||future
+update||renew
+upgrade||improve
+upright||erect
+uproar||commotion
+upwards||up
+urban||city
+urgent||pressing
+utensil||tool
+utility||use
+utilize||use
+utter||say
+utterly||completely
+vague||unclear
+vain||proud
+valentine||
+valid||sound
+valve||tap
+vampire||
+van||
+vanish||disappear
+vanity||pride
+variety||range
+vary||differ
+vase||
+vast||huge
+vegetarian||
+vehement||intense
+vein||vessel
+venom||poison
+venture||risk
+verge||edge
+verify||confirm
+version||form
+vessel||ship; container
+veteran||expert
+veterinarian||vet
+via||through
+viable||workable
+vibrant||bright
+vibrate||shake
+vicious||cruel
+victor||winner
+vie||compete
+vigil||watch
+vigorous||energetic
+villain||bad guy
+vine||
+vinegar||
+violate||break
+violence||force
+viral||
+virtue||goodness
+vital||essential
+vivacious||lively
+vivid||bright
+volatile||unstable
+voluntary||optional
+volunteer||offer
+vomit||throw up
+vow||promise
+voyage||journey
+vulgar||rude
+vulnerable||weak
+wade||walk through
+wage||pay
+wagon||cart
+wail||cry
+wander||roam
+wardrobe||closet
+warn||alert
+warp||bend
+warrior||fighter
+wary||cautious
+waver||hesitate
+wavy||curly
+wax||
+weary||tired
+weave||knit
+weep||cry
+weird||strange
+welfare||well-being
+whatsoever||at all
+whereabouts||location
+whereas||while
+whereby||by which
+whistle||
+wicked||evil
+widow||
+wilderness||wild
+winding||twisting
+wire||cable
+withdraw||remove
+withhold||keep back
+witness||see
+wizard||magician
+wooded||forested
+wool||
+workout||exercise
+worm||
+worsen||get worse
+worship||adore
+worthwhile||useful
+wreck||destroy
+wrestle||struggle
+wrinkle||crease
+yawn||
+yield||produce; give up
+zip||fasten
+zoology||
+zoom||rush

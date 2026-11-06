@@ -34,7 +34,8 @@ def ipa(w):
         else: out.append(C[x])
     return '/'+''.join(out)+'/'
 D={}
-for f in ['dict_a.txt','dict_b.txt']:
+import glob
+for f in sorted(glob.glob('dict_*.txt')):
   for line in open(f):
     line=line.rstrip('\n')
     if not line: continue
@@ -42,15 +43,20 @@ for f in ['dict_a.txt','dict_b.txt']:
     e=ess.get(k.lower())
     u=uz or (e['uz'] if e else '')
     assert u,k
-    D[k]=[u,[s.strip() for s in syn.split(',') if s.strip()][:4],(e['ipa'] if e else ipa(k.lower().replace("'",'')))]
-S=json.load(open('stories_e1.json'))
-forms={}
+    D[k]=[u,[s.strip() for s in syn.split(',') if s.strip() and s.strip().lower()!=k.lower()][:4],(e['ipa'] if e else ipa(k.lower().replace("'",'')))]
+S=[]
+for f in sorted(glob.glob('stories_e*.json')): S+=json.load(open(f))
+forms={};MISS={}
 for s in S:
     for p in s['paras']+[s['title']]:
         for w in re.findall(r"[A-Za-z]+(?:[’'][A-Za-z]+)?",p):
-            k=w.lower().replace('’',"'"); lm=lemma(w)
-            assert lm in D,(w,lm)
+            k=w.lower().replace('’',"'")
+            if len(k)==1 and k not in 'ai': continue
+            lm=lemma(w)
+            if lm not in D: MISS.setdefault(lm,set()).add(s['id']); continue
             if lm!=k: forms[k]=lm
+if MISS:
+    print('MISSING',len(MISS)); open('missing.txt','w').write('\n'.join(f'{k}|{sorted(v)[0]}' for k,v in sorted(MISS.items()))); raise SystemExit(1)
 out={'stories':{s['id']:{'title':s['title'],'paras':s['paras'],'qs':s['qs']} for s in S},'dict':D,'forms':forms}
 json.dump(out,open('/home/claude/genius/assets/data/stories.json','w'),ensure_ascii=False,separators=(',',':'))
 print(len(D),len(forms))

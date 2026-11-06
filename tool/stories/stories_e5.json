@@ -1,0 +1,1539 @@
+[
+ {
+  "id": "e5|1",
+  "title": "The Little Mice",
+  "paras": [
+   "Beth was a very resourceful and conservative mouse. She knew that winter was coming and that there would soon be a dearth of food. So she decided to make gathering food for winter her primary job. Gathering food was a grueling and mundane activity, but Beth made a deliberate effort because she knew that it was important. She allotted herself a few hours every day to collect beans. By winter, she had collected a massive pile and hid them in a cache.",
+   "Beth had a sister named Mary. Mary lacked ambition. She had fanciful ideas about how she would survive winter. She thought that food would just come to her and that she could work at her own convenience. She opted to spend the days playing and dancing, instead of gathering beans. When the final hours of autumn elapsed, Mary had only a paltry amount of food stored away.",
+   "Mary realized that her food supply was too small to last through winter. She visited her sister. Mary said, “Beth, I am in a dire situation. I didn’t gather enough food for winter. Will you let me share your beans? Please have some empathy for your sister!”",
+   "Beth thought for a moment. Then she replied, “Mary, I am truly sorry for you. But I will not give you any of my beans. Instead, I will let you have my empty bag. You can still work hard and gather enough food for the winter. It will be tedious, but you will learn the value of hard work.”",
+   "Beth’s words appalled Mary. Mary cried with outrage, “There is too much work! I won’t have any time to dance or play!”",
+   "Beth said, “It is crucial that you gather enough food. You must have sustenance before you have fun. Go now, and rectify your situation.”",
+   "Mary griped some more, but she knew that her sister was right. She took the bag and went to work gathering her own beans for the winter."
+  ],
+  "qs": [
+   {
+    "q": "Beth was resourceful and conservative, so she gathered a paltry pile of beans for her cache.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Beth did grueling and mundane work to overcome the dearth of food in the winter.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Beth’s reply appalled Mary and made her reply in outrage.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "When the hours of autumn elapsed, Mary had a massive amount of food.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|2",
+  "title": "The Helpful Abbey",
+  "paras": [
+   "It had not rained on the prairie for several months. Because of the drought, the climate had become very arid. There was no moisture left in the soil. No crops could grow in the dry ground. By wintertime, the people had nothing to eat.",
+   "The hungry families heard about an abbey near the mountains where food and water was still abundant. So they traveled inland, across the prairie, to the abbey.",
+   "At first only a few families arrived, seeking food and shelter. Then there was ample food. The monks fed them and let them sleep in the small cathedral.",
+   "Soon, however, more families were arriving every day. These people had to travel farther, so they were in worse condition. The rugged journey had made their clothes ragged. They were cold and tired. The tiny cathedral was soon full.",
+   "Food became scarce. The monks began to grumble. They began to speculate that there would be no food. “If more families come, we won’t make it through the winter,” said a young monk. “We must ask some of them to leave.”",
+   "The abbot heard this. “We can not do that,” he said. “It would be wrong to deprive them of food and shelter. We took an oath to help those that need help. All here are in need, so all are eligible to receive our food and shelter.”",
+   "“But we won’t have enough,” the monk said.",
+   "“That might be true, but we must help them nonetheless. We will fast,” the abbot replied. “Also, we will give our rooms in the abbey to those sleeping outside, and we will sleep in the churchyard that adjoins the cathedral.”",
+   "The monks were reluctant at first, but they did what the oldest monk said. By the end of winter, there was still enough food and shelter for everyone. They learned that sometimes helping others means you must give more help than you first expected."
+  ],
+  "qs": [
+   {
+    "q": "The moisture in the soil was gone because a drought made the prairie become arid.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The hungry families traveled inland to an abbey that still had abundant food.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Food was scarce, but the monks had to deprive the families nonetheless.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The rugged journey to the abbey had left many people’s clothing looking ragged.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|3",
+  "title": "The Bachelor’s Lesson",
+  "paras": [
+   "A keen young bachelor had finished his studies at the university. As soon as he had received his diploma, he asserted to everyone he met that he was the smartest person in town.",
+   "“I excel at everything I study,” he said, bragging about his knowledge. “I’ve mastered calculus and physiology. I even understand the great theoretical teachings of science, such as relativity. There is nothing that I don’t know. Whether it’s the movements of celestial objects, like planets and stars, or how to harness the power of radioactive substances, I know everything.”",
+   "But actually, there was something the bachelor did not know. Though his analytic abilities were great, he failed to notice he was missing something very important in his life. One day while walking through town, the bachelor witnessed a collision between two cars. Both drivers appeared to be injured, but the scholar only stood and watched. He thought to himself, “Those idiots should have been more alert. They really must not be very competent.” He never thought the drivers needed help.",
+   "“Please help me,” said the female driver in a weak voice. “Help me, too,” said the male driver. “I’m hurt and can’t move.”",
+   "Suddenly the bachelor realized he was the only person near the accident. He quit thinking and ran to help the drivers. He carefully helped them out of their vehicles and then called an ambulance.",
+   "The drivers were saved, and the bachelor felt the best he had in his entire life. Studying mythology, sociology, and geology didn’t give him this wonderful feeling. It was the act of helping others, not his cognitive skills, that gave him this great feeling.",
+   "He had learned an important lesson. He learned that intellect isn’t everything; being helpful is just as important. “Having only a brain is not enough,” he thought. “You must also have a heart.”"
+  ],
+  "qs": [
+   {
+    "q": "The bachelor excelled at calculus, physiology, and theoretical science, such as relativity.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "He knew the movements of radioactive materials and how to harness the power of celestial objects.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The bachelor thought the drivers in the collision were not competent.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Studying mythology, sociology, and geology gave the bachelor a wonderful feeling.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The bachelor’s intellect and not his cognitive talents had made him feel this great.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|4",
+  "title": "The Corrupt Administrator",
+  "paras": [
+   "Mr. Pig was an administrator at a big factory that made different kinds of merchandise. During a meeting at the company’s headquarters, his bosses said they wanted the factory to make more money.",
+   "“If the factory makes more money, then you will too,” his boss, Mr. Horse, told him. It was a great incentive. Pig had always wanted to be as affluent as his bosses.",
+   "Mr. Pig returned to the factory and started making changes. However, most were not very nice, and some were not legitimate.",
+   "First, he fired all his employees. Then he automated the entire factory. Machines now made everything, and the other animals, Mr. Rabbit, Mr. Sheep, and Mr. Dog had no jobs. Next, he bribed some corrupt senators into legislating special subsidies for the factory. Finally, instead of paying a company to dispose of the factory’s rubbish properly, he violated the law by throwing it into the river to save money.",
+   "At first, all the changes to the factory’s infrastructure created more revenue. But soon many stores could no longer sell the factory’s goods at retail. It seemed that the machines couldn’t make products as well as the workers. The customers were disappointed with the factory’s merchandise.",
+   "There were other problems, too. The animals had told their friends and family to stop buying the factory’s goods. Officials discovered the factory’s rubbish in the river, and when they audited the company, they discovered that Pig had manipulated the law in order to get more money.",
+   "All transactions with Pig’s factory stopped. The factory lost money, and Pig lost his job. He realized his mistakes too late. He had tried to become rich by saving money any way possible, but the cheapest way was not always the best."
+  ],
+  "qs": [
+   {
+    "q": "Mr. Pig bribed some corrupt senators into legislating special subsidies for his factory.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Mr. Pig violated the law by disposing of the factory’s rubbish in the ocean.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "At first, changes to the factory’s infrastructure created less revenue.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|5",
+  "title": "A Famous Accident",
+  "paras": [
+   "One of the greatest pharmaceutical discoveries happened by accident. In his haste to go on vacation, Alexander Fleming had left his laboratory in a mess. The essence of his ongoing work involved a type of bacteria. An infection caused by the bacteria was often terminal, and he was looking for a remedy. He had left the bacteria out while he was away. When he returned from vacation, he found that his lab was covered in fungus. He started cleaning up the mess. While he was cleaning, he had an impulse to examine the fungus. He saw that whenever the fungus was in close proximity to the bacteria, the bacteria died. Though he was a messy scientist, his experiments were precise. He thought that there might be some significance to the fungus. He immediately commenced an experiment to assess what had happened to the bacteria. It had either died by accident or the fungus had killed it. The subsequent tests proved it was the latter reason.",
+   "What he found astonished him. The fungus actually killed the bad bacteria. All this time, he had been looking for a synthetic material to kill the bacteria. Instead, a common fungus did the job.",
+   "He knew that something in the fungus had killed the bacteria. His next step was to find those molecules that had done it. When he found them, he extracted them and put them into a pill. The drug proved to be very effective. It also worked against other types of harmful bacteria.",
+   "The discovery received a lot of publicity. Soon after, the new drug was being used all over the world. Because of the success, the scientist was able to develop even more fabulous drugs to help people. His accidental discovery changed the world and helped save many people’s lives."
+  ],
+  "qs": [
+   {
+    "q": "One of the most fabulous pharmaceutical discoveries was an accident.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The essence of the scientist’s ongoing work was to find a remedy for a terminal infection.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The infection caused by the bacteria he was working on was not terminal.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Fleming examined the fungus on an impulse.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Whenever the synthetic material was far from the bacteria, the bacteria died.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|6",
+  "title": "The Island",
+  "paras": [
+   "“Where am I?” Bob thought to himself when he woke up on a peculiar beach. “I can’t remember what happened.” There had been a bad storm, and Bob’s fishing boat sunk. He washed ashore on a small island, but he had gotten hurt during the storm. He had a terrible migraine, and he had a fracture in his shoulder. He felt awful. But he had a strong desire to make it home to his spouse and children. He had to tolerate all the pain and devise a plan. Bob stood up and looked around. “I’ll walk to a higher altitude, so I can see everything around me,” thought Bob. “Maybe I’ll gain some insight about this island and find something to help me escape.” As he walked along a mountain ridge, he noticed that the tall indigenous trees looked sturdy and thick. Bob got a brilliant idea. He could build a raft! He cut down some leaves and tree limbs. Even though his shoulder injury impaired his ability to carry the materials, he slowly dragged them down the mountain until he reached the coastline. Bob was a proficient builder. He used his building expertise to line up the limbs and tie them together with long vines. When the raft was finished, Bob was happy with his work. “This will bring me home to my family,” he said with a smile.",
+   "At last, Bob was ready to implement his escape plan. With all his might, he thrust the raft into the water. He climbed on and began the quest to find his way home. Bob smiled again, and thought, “I’m glad I kept a good attitude. It prevented the pain from deterring me from my plan. Optimism and ambition make anything possible.”",
+   "Slowly, he floated out to sea. In a few days, he made it to shore and ran home to see his happy family."
+  ],
+  "qs": [
+   {
+    "q": "Bob had a migraine and a shoulder fracture when he awoke on the peculiar beach.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Bob implemented a plan to bring his spouse and children to the island.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The indigenous tree limbs impaired Bob’s ability to carry the materials.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Bob was proficient in building, and he used his expertise to build the raft.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Bob thrust the raft into the water to begin his quest.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|7",
+  "title": "Small World",
+  "paras": [
+   "Even though people can’t see me, I’m an important part of Earth’s biosphere. Scientists who study ecology know that I was the first life form on Earth. There is more of my kind than any other plant or animal in the world. Without me, other plants and animals would not even exist. I am a protist, and my tiny body is made up of one single cell.",
+   "In my small world, things can be absolutely bizarre. Unlike most aquatic plants and animals, I don’t need a temperate climate. I have a very high tolerance for extreme conditions. Right now, I’m swimming around in a bucket of boiling water! The temperature is 150 degrees Celsius, but I feel comfortable. I have coarse hairs called cilia that help me swim around in here. I move my cilia in a repetitive motion for the duration of my swim. I can not go very fast, though. It takes me about five minutes to swim a distance of just one millimeter!",
+   "When I get hungry, I look for tiny, vulnerable parasites. I swim up to one and swallow it whole. I digest things much like people do. I have an organ that works just like a human stomach. After I eat, I release nitrogen gas. Nitrogen is a prominent gas in the earth’s atmosphere. Other plants and animals need my nitrogen to survive.",
+   "My reproductive ability is my most unique trait. I don’t need a companion to mate with. Instead, I undergo a process called fission, where my own nucleus splits in half. An exact copy of my nucleus is made, which forms into another protist. It really is an impressive feat. I can create an infinite number of new protists all by myself!"
+  ],
+  "qs": [
+   {
+    "q": "Protists have a high tolerance for temperate conditions.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Things in an aquatic protist’s world can be absolutely bizarre.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "A protist splits its companion’s nucleus in fission.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Coarse cilia move in a repetitive motion for the duration of a protist’s swim.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "An infinite number of new protists can be created by the impressive feat of fission.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|8",
+  "title": "Becoming a Healer",
+  "paras": [
+   "Years ago, I worked at a small health clinic in a remote country. I had gone there to treat an obscure syndrome. It attacked people’s lungs, causing them to need a respirator to breathe. I was trying out a new medication to treat these people instead of using a respirator. If I was successful, I would become famous.",
+   "Everything was going fine until war broke out in a nearby country. Many people from that country fled the hostile invading army. The army wanted to dominate the people, but the people didn’t want to be oppressed. So they walked hundreds of miles across barren land to get away.",
+   "Some of these people came to our clinic for treatment. I talked with them and learned of their difficulties. They did not beg or complain. I was impressed by their dignity. There was one woman I will never forget. Her son suffered from malnutrition and stomach pain, and she didn’t know what to do. Neither did I. I was not adept at treating malnutrition. Nonetheless, when I saw her sadness, I knew I had to help her son.",
+   "The woman had been feeding her son bread and water. She had a misconception that it would be enough for him. However, I knew that he needed to eat vegetables, too. So I took her outside and showed her a dense patch of edible plants. I taught her how to dig up the roots, peel them, and cook them for her son. I explained that she should increase her son’s intake of these vegetables. Likewise, she should strive to get him some meat once a week to help him regain his strength.",
+   "I sent her off with a prescription for some pain medicine, but she also left my office with some new culinary skills. A few weeks later, she returned to tell me her son was healthy again. As thanks, she gave me a beautiful ceramic bowl."
+  ],
+  "qs": [
+   {
+    "q": "The hostile doctor wanted to dominate and oppress the people.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The doctor was not adept at treating malnutrition before meeting the mother and her son.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The doctor showed the woman a dense patch of barren land.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The woman gave the doctor a ceramic bowl to show off her pottery skills.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|9",
+  "title": "The Weaving Machine",
+  "paras": [
+   "Mr. Joseph Franklin invented a machine that could weave cloth. It wove faster and straighter than anyone could weave by hand. He decided to take it to two cities on a peninsula, Netherton and Wilton. In these cities, a large proportion of the people worked in weaving. Joseph felt sure he could sell his machine there.",
+   "Joseph first took his machine to the mayor of Netherton. “Think of the money you will earn from this machine!” Joseph said to him.",
+   "But the mayor was a benevolent man. He knew about the people’s dependence on weaving for their livelihood. If he bought the machine, the people would lose their jobs. So he refused to buy it.",
+   "Joseph said, “We are no longer in the medieval age! Soon everything will be made by machines. Cloth made by hand will soon be obsolete. If you don’t change your archaic ways, your town’s income will diminish!”",
+   "But the mayor said, “I don’t like capitalism. Don’t impose your radical ideas on my town. Go away!”",
+   "So Joseph took his machine to the mayor at Wilton. This mayor thought Joseph’s machine was spectacular and spent a long time looking at its different components made of brass. The mayor couldn’t refute the fact that the machine had drawbacks that would affect the people’s jobs. But he realized the machine could bring money and prestige. So he ordered Joseph to build twenty of them.",
+   "Within a year, Wilton was a wealthy city, famous for its wonderful cloth. People no longer wove but worked in managerial jobs at cloth factories instead. Nobody bought the cloth from Netherton anymore. The people of Netherton became poor and hungry.",
+   "Finally, the mayor of Netherton called Joseph and said, “Now I realize that your machine is not just a passing fad. To succeed in business, we must be willing to change.” He then ordered twenty weaving machines.",
+   "After that, both Netherton and Wilton became rich cities, famous throughout the land for their wonderful cloth."
+  ],
+  "qs": [
+   {
+    "q": "Joseph thought the mayor of Netherton’s ideas were medieval and archaic.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The mayor of Wilton refuted the fact that the machine had drawbacks.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "In Wilton, the people who used to weave got managerial positions at the factories.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "In the end, capitalism brought prestige to both cities.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|10",
+  "title": "Life on the Farm",
+  "paras": [
+   "Bill was an excellent capitalist. He financed a large aviation enterprise that made a lot of money. He knew how to maximize monetary gains in every business deal he made. Bill had one big problem, though. He was unhappy all the time. Bill knew that he had to do something about it, or he would be depressed for the rest of his life. One day, Bill was in his office when he heard a knock at the door. “Come in!” Bill said loudly.",
+   "His accountant, Jane, walked in. Jane said, “Sir, I haven’t seen you smile in a year. What are you so sad about? Your company is doing very well.” Bill told her, “I’m indifferent about my company’s success. I have contempt toward my job. I just want to do something I enjoy. I’ve always loved growing plants as a hobby. I’m going to quit my job and become a farmer!” “You’re crazy!” Jane said.",
+   "“I don’t think so,” Bill replied. “I want the simplicity of a life on a farm. I’m tired of all this stress. Farming will make me happy.” The very next day, Bill carried out the preliminary task of buying land and tools. Then he got to work. He sowed many types of seeds. He planted soy, cabbage, carrots, and onions.",
+   "“The upcoming summer is going to be very dry,” thought Bill. “I need to irrigate my crops as a precaution in case it doesn’t rain enough.” He took his spade and dug a ditch down the middle of his farm. “Water from the stream will flow down the ditch and saturate the soil around every plant,” Bill thought.",
+   "Bill dedicated himself to farming. After a year, his farm looked exquisite. Most importantly, Bill was happy. He finally had the life he always wanted."
+  ],
+  "qs": [
+   {
+    "q": "Bill could maximize monetary gains in the aviation enterprise that he financed.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Bill was indifferent about the farm’s success.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Bill irrigated his crops as a precaution for the upcoming rain in summer.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Bill dug a ditch with a spade.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|11",
+  "title": "Beethoven’s Gift",
+  "paras": [
+   "Beethoven was a great composer of classical music in the 1800s. Many biographies have been written that narrate his dominance in the music world. But do you know what really makes him special? Even though millions of people got to hear his multiple masterpieces, he never did. Beethoven wrote his best pieces after he went completely deaf!",
+   "His partiality toward classical music developed when he was very young. He wasn’t interested in anything else as a child. When he was five, he learned how to play the piano. From then, nothing could stop his passion for writing and playing music.",
+   "When Beethoven was twenty, he began to lose his hearing. He got acute, spontaneous pains in his ears. His hearing kept getting worse over time. It was inevitable that he would eventually lose it altogether. It was very hard for him to keep writing music. He lost the virtue of patience, and he became notorious for his aggression. Still, he never stopped trying. His passion for music compelled him to keep performing even after he went deaf. He couldn’t hear himself play, but he knew that his creations sounded gorgeous.",
+   "His final concert was held at a huge banquet. He gave the musicians a cue, and they began to play. He directed the concert with all his heart. He couldn’t hear the music, but he said that he could feel it. Overall, the performance was one of the finest in history. When it was over, he turned to the crowd. They clapped and cheered wildly. In that beautiful moment, the applause boosted his emotions, and he began to cry.",
+   "In 1827, he suffered from lead poisoning. He didn’t survive the sickness, but his music did because great music never becomes outdated. Even though Beethoven is gone, his legacy will live on forever."
+  ],
+  "qs": [
+   {
+    "q": "People have narrated biographies about Beethoven’s dominance.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Beethoven created multiple masterpieces that sounded gorgeous.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "It was inevitable that Beethoven would lose his virtue altogether.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Beethoven became notorious for his aggression.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Beethoven’s legacy lives on because great music is outdated.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|12",
+  "title": "Brothers",
+  "paras": [
+   "John and Mark were brothers, but they were quite different people. Mark looked very masculine. He had a mustache and was very muscular. He was a sculptor. He made things out of stone. Mark was a good artist, but he was not very intelligent.",
+   "John looked nothing like his brother. He was small and weak, but he was very smart. John was an undergraduate in college, and he studied anthropology and history. He knew a lot about ancient cultures. The brothers loved each other very much, but they thought they had nothing in common.",
+   "One day, the mayor appointed Mark to build a monument: a statue of Egyptian Pharaoh, Tut. Mark agreed to do the job, but he had a problem. He had no idea who Pharaoh Tut was! However, he thought he had the competence to build a good statue anyway. He made some crude measurements and sculpted a statue of a very old man with a tattoo on his chest. Mark was proud of his work, but when John saw the statue, he laughed aloud. “What’s so funny?” Mark asked.",
+   "John replied, “Your ignorance makes me laugh. Don’t you know that Tut was only a teenager when he was pharaoh? Let me help you. I’ll supervise your work. I’ll give you feedback, and we’ll make this a great monument.”",
+   "Mark got another cube of stone. John told him what Tut looked like. “Make him tall with good posture,” John said. “And make sure there is symmetry in his body.”",
+   "Mark conferred with John about every detail. For ten consecutive hours, the brothers worked. At last, the finished statue was situated in front of the museum. Everyone applauded the brothers’ good work.",
+   "“We worked together very well. I guess we are compatible after all,” Mark said. John replied, “I agree! When we combine our talents, we are capable of greatness.”"
+  ],
+  "qs": [
+   {
+    "q": "Mark’s masculine features included a mustache and a muscular body.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "John laughed at Pharaoh Tut’s ignorance.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "John appointed himself to supervise Mark’s work and give him feedback about posture and symmetry.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Mark made crude measurements and situated a tattoo on his original monument’s chest.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "John was an undergraduate who studied sculpture and anthropology.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|13",
+  "title": "The Old Hound",
+  "paras": [
+   "Elvis was a dog that loved to run. He possessed all the criteria to be a great racing dog. He had long legs, lean muscles, and a strong heart. He was so good that he never lost a race in the northern hemisphere. Spectators who bet on dog races always picked Elvis to win.",
+   "After ten years of racing, however, Elvis was getting old. His faculties were not as strong as they used to be. His owner got upset when Elvis started losing. Elvis’s owner wasn’t a considerate person. He degraded the dog all the time. Finally, his owner decided to get rid of him. He threw Elvis in his car and took him to the middle of the forest. He tossed him out and drove away. Elvis was cold and scared. He decided to follow a brook into the city. Elvis soon found out that the city was a big and impersonal place. Everywhere he went, he saw signs that said, “No Dogs Allowed.” Pedestrians yelled at him. He was sad and hungry and was ready to give up when he heard a soft voice say, “What a beautiful hound!” Elvis looked up and saw an old woman. She said, “You’re entitled to a better life than this. I can take you to a sanctuary for old dogs like you. I’ll cater to all your needs. Would you like to come with me?”",
+   "The woman escorted Elvis to a beautiful facility. There was a sign on the external door that said, “Dogs Welcome!” The interior of the building was painted blue, and shiny ornaments hung from the ceiling. There was a heap of tasty bones and bread crusts for consumption. Elvis learned there were kind people in the world after all."
+  ],
+  "qs": [
+   {
+    "q": "Elvis possessed the criteria to be a spectator.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Elvis’s owner was not considerate, and he degraded the dog.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Elvis followed the brook to the big, impersonal city where pedestrians yelled at him.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "In the interior of the facility, there was a heap of ornaments and bread crusts for consumption.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The old woman wanted to cater to Elvis’s needs at the sanctuary for old hounds.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|14",
+  "title": "Day Without Sight",
+  "paras": [
+   "On Friday afternoon, Sam’s teacher had a special assignment.",
+   "“Next week, we’ll be studying humanitarian efforts around the world since the time of the Renaissance, including those to help the blind,” she said. “Over the weekend, I want each of you to wear a blindfold for an entire day. The premise of this experiment is that it will help you understand what it’s like to be blind,” she said.",
+   "Sam was a skeptic. He really didn’t think the assignment would be too challenging. On Saturday morning, Sam took a piece of cloth and tied it around his head to cover his eyes. Then he went into the kitchen for breakfast. He heard the voices of his parents and brothers but couldn’t specify where each voice was coming from. He thought about how important hearing is for blind people.",
+   "“Could you pass me the newspaper, please?” he asked. Just then, he remembered he couldn’t see the words on the page. He wondered if Braille newspapers were ever made. After finishing breakfast, his brothers asked him to play soccer. As he followed them, he accidentally walked into the baker’s rack. He also found that he couldn’t play soccer. He wouldn’t be able to coordinate his actions without being able to see. Without his optic senses, he had no spatial awareness. Furthermore, he couldn’t do simultaneous activities because he had to make sure he was safe first.",
+   "He sat on the lawn. Suddenly, he realized that though he couldn’t see, his other senses worked perfectly fine. In fact, he began to realize new and different aspects of common objects. For example, he took a flower bud and felt it with his finger. He realized for the first time that it seemed to be covered with wax.",
+   "His hypothesis about being blind was disproved. The informative experiment had an imprint on him. It showed him sight was an asset that should be appreciated and taught him to revere the talents of blind people."
+  ],
+  "qs": [
+   {
+    "q": "Sam’s teacher asked the students to wear a blindfold for a whole day.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Sam thought the assignment would be very hard.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Sam walked into the baker’s rack.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Sam played soccer with his brothers.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The experiment taught Sam to respect blind people.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|15",
+  "title": "The Big Ship",
+  "paras": [
+   "Ernest looked at his fleet of ships. Usually, he used them for his firm, which imported marble statues from other countries. But today he was going fishing. And the ship he chose was his favorite. It had an elaborate painting on the side that showed a naval battle. It also had some new updates to its computer system. His favorite ship’s latest acquisition was a device with a small grid to show the ship’s exact location. This new accessory kept Ernest from getting lost.",
+   "At daybreak, Ernest happily sailed the temperate waters until he was far from land. Then he saw a small boat in the distance. There was an old man standing next to its mast. He was waving his arms in the air. There was also a boy with his head hanging over the boat’s edge. Ernest inferred that the boy was suffering from nausea. Both of their clothes were saturated with sea water. Ernest assumed that they were in trouble. Most people never realized, but Ernest had an innate desire to help people. He began sailing toward them, eager to facilitate their rescue and thus solve their dilemma.",
+   "As he got closer to the boat, he was shocked by its simplicity. The boat’s wood looked no stronger than cardboard, and the equipment was old. Still, there were several large fish in a pouch in the boat.",
+   "Ernest threw a large package onto the boat. He yelled, “Here! You can inflate this boat to get you back to land.”",
+   "“Get out of here!” screamed the old man.",
+   "Ernest was confused. “Don’t you need help?” he asked. “Your ship doesn’t seem adequate enough to sail so far away from land.”",
+   "“You’ve just scared away a huge fish,” the boy said. “We waved to let you know you were too close to us.”",
+   "Ernest turned around and headed home. He learned that it’s better not to help unless asked to. Otherwise, you might not help anyone at all."
+  ],
+  "qs": [
+   {
+    "q": "Ernest usually used his fleet for his firm that imported marble statues from other countries.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "His favorite ship had updated accessories like a new grid.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "When Ernest saw the old man standing next to the mast, he decided to go home.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Ernest offered the man and the boy a boat that inflates to facilitate their rescue.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Ernest had the innate desire to make a lot of money.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|16",
+  "title": "The History of Parachutes",
+  "paras": [
+   "Scientists who study archeology say that there may be some evidence of prehistoric parachutes. But the first written history of the device comes from China about 2,100 years ago. Scientists cite an ancient book that describes parachutes. However, there is no archeological evidence that proves that an actual parachute was ever made. Later, people from northern Africa and Italy also had ideas about a similar invention. In fact, a Leonardo Da Vinci’s drawing corresponds closely with the modern parachute design!",
+   "In 1783, French scientist Sebastian Lenormand invented the first modern parachute. Sebastian brainstormed with other scientists to come up with a way to help people jump safely out of burning buildings. He thought the solution was to give people an object to restrict their speed while they traveled toward the ground. Many people thought that he was up to some kind of fraud, but Sebastian had a lot of integrity.",
+   "His budget was limited, so he first tested his theory by using two umbrellas. He jumped out of a tree and found that the umbrellas worked. Next, he refined his invention. Rather than using umbrellas, he knit a large parachute. Finally, he jumped off a tall building on a French estate and landed safely in the courtyard.",
+   "Sebastian’s work gave another man an idea. Jean-Pierre Blanchard had a different outlook than Sebastian. He was a hot air balloon addict. He was one of the first people to ride in a hot air balloon powered by hydrogen gas. He was a proponent of using parachutes to exit from hot air balloons. Starting in 1785, he used his dog to show that animals could land safely from hot air balloons by using parachutes.",
+   "Then, in 1793, he was faced with a chaotic experience. The hot air balloon he was riding in burst and started to fall. He was forced to use a parachute himself. And much to his relief, it saved his life."
+  ],
+  "qs": [
+   {
+    "q": "Archeological evidence shows there were prehistoric parachutes in China.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Archeology experts cite an old Chinese book that describes a parachute that corresponds with modern parachutes.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Sebastian brainstormed with scientists to invent a device that would allow people to jump from buildings safely.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "On Sebastian’s first jump, he used a large blanket to restrict his speed as he traveled to the ground.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jean-Pierre was a hot air balloon addict.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|17",
+  "title": "“I Didn’t Do It!”",
+  "paras": [
+   "Billy was in big trouble. The day before, a donor gave the school a painting with a sports theme. It showed a referee congratulating two athletes. The principal hung the painting in front of the office, hoping that it would be a stimulus for students to play sports. The next morning, however, the painting was destroyed. There was graffiti on it, and it had many holes in it. The worst part was that one of Billy’s fellow students said she thought she saw Billy do it!",
+   "But Billy didn’t do it. The principal called Billy’s parents and said, “Billy won’t tell us the truth. He’s a chronic liar, and he ruined the painting. If you don’t pay for it, we’ll terminate his education here.”",
+   "Billy’s parents didn’t have enough money to pay for the painting and for his tuition. But Billy’s parents had an idea. That afternoon, they went to see Mr. Meyers, an attorney. “Mr. Meyers, my son has been implicated in a crime he says he didn’t do,” Billy’s father said. “Everybody believes the gossip. Even some of our own kin think he did it!” “I believe you. My suspicion is that the tape from the security cameras will show who really did it,” said Mr. Meyers.",
+   "The next day, Mr. Meyers received a packet with the videotape from the school. It showed another student who resembled Billy walking up to the painting and writing on it. Then the student took a knife by the shaft and started to stab large holes in it. Finally, he severed the rope that held up the painting, and it fell to the floor.",
+   "Mr. Meyers showed the tape to the principal. “Clearly, that’s not Billy,” he said. “This boy is actually responsible and needs some discipline.”",
+   "Billy was happy that someone believed him. He said to Mr. Meyers, “When I graduate and go to university, I will major in law, so I can be a guardian of justice like you!”"
+  ],
+  "qs": [
+   {
+    "q": "A donor gave the school a painting with a sports theme as a stimulus for students to play sports.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The painting showed a referee congratulating two athletes.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Billy was implicated in the crime because a fellow student received a packet with a videotape showing him doing it.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The principal threatened to terminate Billy’s education if his parents didn’t pay his tuition.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|18",
+  "title": "The Soldier’s Decision",
+  "paras": [
+   "A soldier was captured while fighting in an enemy king’s land. It was well known that this king would make captives fight one another. This was commonplace during his reign. For these fights, the king had built several large arenas. He often awarded the winners by setting them free or even having them join his elite army corps.",
+   "The soldier, however, decided he had seen too much violence. He now felt that all life was sacred. The night before his first match, he made a risky decision. He decided that he would not engage in combat. He knew he may never be set free, but it was a decision that he was willing to accept.",
+   "In the morning, he was led from the prisoners’ compound to one of the king’s arenas. A gate coated in rust stood between him and the auditorium’s floor. He was worried, but he knew what he had to do.",
+   "When the gate opened, he calmly walked to the center of the arena and sat. He started to meditate. His foe Darius, who was skilled in the realm of sword fighting and was typically not very aggressive, would not fight the quiet soldier until he attacked Darius first. Darius tried to provoke him by hacking at the air close to his head with his sword. But the soldier was not distracted. He sat quietly, as if he were dumb, and looked calmly up at the sky. Even when Darius nicked him on the cheek with the edge of his sword, the soldier did not move.",
+   "At last he threw down his sword and shield and gave up.",
+   "“I can’t fight someone who refuses to fight me!” Darius shouted to the king.",
+   "The king was very impressed with the soldier.",
+   "Never in any battle had he seen someone so brave. As a result, he gave the peaceful soldier amnesty. The soldier’s actions proved to the king and everyone in the arena that peace was more powerful than fighting."
+  ],
+  "qs": [
+   {
+    "q": "The prisoner was led from the arena to the compound.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "While he meditated, the soldier was distracted by his opponent.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The king gave the brave soldier amnesty and made him join his elite army corps.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The quiet soldier felt that all life was sacred.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|19",
+  "title": "Jane’s Pride",
+  "paras": [
+   "Jane and her father, Mike, owned a secondhand boat. They called it “High Hopes.” The two loved to spend time together on the ocean and would often go on long fishing trips. Mike taught Jane how to perform important tasks. Jane learned how to steer the boat and adjust the sails. She learned how to put grease on the intricate gears of the motor. She learned how to submerge the anchor and secure it by putting a rope in a slot. Jane liked helping her father, but she thought that she wasn’t very good at it. Sometimes, she omitted important steps and made frequent mistakes. Jane thought she wasn’t capable of manual labor.",
+   "Mike wanted to prove to her that she was indeed capable and important. He thought of a tactic to test Jane’s skills in the context of a catastrophe. He hid under the deck and pretended to be trapped. He shouted, “Jane, I can’t get out! You have to get back to the dock and find help!”",
+   "Jane began to panic. She thought she might make her usual mistakes, which would precipitate a disaster. However, she had to listen to her dad and act accordingly. She pulled up the anchor with all of her might. She remembered to overlap the sails to offset the wind. She steered the boat around buoys where the water was shallow.",
+   "When they got to shore, Mike came out from under the deck.",
+   "Jane said, “I thought you were trapped!”",
+   "Mike laughed. He said, “It wasn’t a genuine emergency. I distorted the truth to test your abilities. Look at what a great job you did getting the boat home safely! I knew you could do it.”",
+   "To honor his daughter, Mike decided to rename his boat.",
+   "He designated it “Jane’s Pride” and painted the name on the fore of the ship. Jane finally had something to be proud of."
+  ],
+  "qs": [
+   {
+    "q": "Jane and her father owned a new boat called “High Hopes.”",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jane thought she wasn’t very good at helping her father.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Mike was really trapped under the deck.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jane steered the boat around buoys where the water was shallow.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Mike renamed the boat “Jane’s Pride.”",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|20",
+  "title": "Microchips",
+  "paras": [
+   "The bond between humans and computers is becoming more intimate than ever before. Scientists are now putting microchips inside people’s bodies. They are made up of compressed electrical circuits that can detect and record data about the body. They are tiny, but they hold the equivalent amount of data as most computers.",
+   "A microchip is put to use inside a person with a simple procedure. First, a doctor must put data about the patient onto a chip. Input about the person’s age, race, gender, and medical history is stored on the chip. The second phase of the process involves putting it in the person’s skin. The doctor pinches a piece of skin and cuts a tiny hole with a tool shaped like a spiral. The chip is inserted, and the skin is allowed to heal. At last, it begins the task of putting data into its database.",
+   "Microchips scan the patient’s body to record what is happening on the quantum level. They can find problems with the person’s metabolism and organs. They can also detect viral infections. They can find the aggregate number of immune and infected cells and present the results in a ratio. They can even tell doctors what type of antibiotic to give to the patient!",
+   "To recover the chip’s data, the doctor uses a special magnet that copies it. This way, the doctor can put the information from the chip onto a computer. Then they can find out exactly what is wrong with the person.",
+   "The idea of putting chips in humans is still very new. However, it is now becoming more prevalent. Scientists and doctors are hopeful about the future uses of microchips. Someday, all new babies might get a microchip soon after they are born. Doctors will be able to know about any problems from the very beginning. It is obvious that medicine and computers complement each other well."
+  ],
+  "qs": [
+   {
+    "q": "Microchips are made up of compressed electrical circuits.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Chips express the aggregate number of immune and intimate cells in a ratio.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Chips detect viral infections and problems with people’s metabolism.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "A doctor pinches the skin and cuts a hole with a tool shaped like a spiral.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Putting antibiotics in humans is becoming more prevalent.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|21",
+  "title": "The Twins",
+  "paras": [
+   "Katie and Alice were twins. They were so alike that few people could tell the siblings apart. They were almost like clones. They even used the same colloquial language as each other. They were best friends.",
+   "But the twins’ attributes were not all identical. Alice liked humanities, and Katie was a good linguist. One summer, Katie decided to be a participant at a summer camp in France. Alice wasn’t interested in the French language, so she didn’t go. But she felt angry that Katie wanted to spend the summer away from her.",
+   "Two months later, Katie returned. Alice dashed to the airport to greet her sister. But when Alice saw Katie, she was astounded. Katie was now bilingual, and she looked completely different! She was wearing nice clothes, cosmetics and looked skinnier. Alice felt very messy next to her. She was just wearing a fluorescent t-shirt, and her hair had knots in it. When Alice asked Katie about France, Katie was vague and didn’t say much. It made Alice furious and filled her with disgust because in the past they’d always told each other everything. Now there was a huge gulf between them. Over the weeks, the sisters spoke even less.",
+   "Two months later, it was the twins’ birthday. All their lives, they’d had a ritual. Before their birthday, they’d talk all night long. That night, Alice came into Katie’s bedroom. “I’m sorry I haven’t spoken much lately,” Katie said.",
+   "“I understand. You have new friends now,” said Alice, angrily.",
+   "Katie said, “My French friends don’t write much nowadays. For a while, I thought they were more exciting than my friends at home. But I was wrong. You’re my sister, and you’ll always be my best friend.”",
+   "Alice said, “I’m sorry, too. I wanted our relationship to stay the same forever. But it’s totally plausible for twins to have different interests. We can still be best friends without being together all the time.”"
+  ],
+  "qs": [
+   {
+    "q": "The girls looked like clones, but they used different colloquial language.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The twins’ attributes were different in that Katie was bilingual and Alice liked humanities.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Alice’s hair was in knots when she dashed to the airport to meet her sister.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Alice was astounded when she saw Katie wearing a fluorescent t-shirt.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|22",
+  "title": "The New Bioco",
+  "paras": [
+   "Jack got a new job at a biotechnology company called Bioco. Bioco manufactured drugs to treat diabetes and high cholesterol. Jack’s job was to use a tiny mechanism to get nectar from flowers. The nectar was a main ingredient in the drugs. Jack liked his job, and he thought that Bioco was a caring company. However, Jack soon learned that the company wasn’t as kind as he first thought.",
+   "Bioco’s motto was “Make the Earth a Better Place.” However, this motto was deceptive. The company actually did a number of really bad things to the environment. The company produced a lot of smog and harmful acid. Bioco poured the acid in a nearby river, which caused erosion and made fish prone to illness.",
+   "After a few weeks at the new job, Jack saw all the bad things Bioco was doing. He had always had strong ethics, and he knew he had to do something. One day, while the Bioco workers were eating in the cafeteria, Jack stood up and gave a speech. He said, “My fellow coworkers, I know you have all seen the evil things our company is doing. I have a notion that we can fix them if we form a coalition. We can go to the administration and tell them we’ll quit if they don’t eliminate the problems. They’ll have no choice but to listen to us.” Jack explained what they were to do. His coworkers liked his explicit plan. They went to the administrative offices and demanded that Bioco stop damaging the environment, or they all would quit. One supervisor said to them, “Thank you for being straightforward about this issue. Since I can’t afford to lose all of you workers, I guess we’ll just have to fix things.”",
+   "Jack, his supervisor, and his coworkers spent the next month designing a new framework for the company. They cleaned up the acid from the river and minimized the amount of air pollution the company released. At last, the company motto became apt."
+  ],
+  "qs": [
+   {
+    "q": "Bioco was a biotechnology company that manufactured diabetes and high cholesterol.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jack used a mechanism to get nectar from flowers.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The waste acid caused erosion and made fish prone to illness.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "After the company minimized Jack’s ethics, the motto became apt.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|23",
+  "title": "How Comet Got His Tail",
+  "paras": [
+   "A solitary rock roamed through the cold gloom of outer space. It slowly drifted through the debris of broken asteroids with a feeling of sadness. In the vast and beautiful galaxy, it was only a tiny rock. It felt like an insignificant atom. In its journeys it encountered many amazing objects. It flew by beautiful crescent moons that were covered with craters and moon dust. “Why can’t I be as beautiful as them?” it thought. The rock passed a gigantic planet. The sphere had a circumference hundreds of times larger than the breadth of the small rock. “Why can’t I be as large as that?” it wondered. The rock was filled with despair. It was surrounded by beauty and greatness, yet it was just a small and ugly fragment of rock.",
+   "One day, it approached the area of an astronomical star.",
+   "“What’s wrong?” the star asked.",
+   "“Oh, I wish I had a higher status in the galaxy. All the other objects are so beautiful and large,” the rock replied. “But I’m just an ugly rock.”",
+   "The star considered the problem.",
+   "At last it said, “You don’t have to worry anymore. I think I can help.” The star radiated its light brighter and hotter than it had ever done before. “Come a little closer,” the star said to the rock.",
+   "The rock drifted closer to the star.",
+   "Suddenly, the ice that was embedded in the rock’s tiny cracks melted and became steam. Then the steam extended behind the comet to form a brilliant tail. The tail shined with all the colors of the spectrum.",
+   "The little rock had become a beautiful comet. It looked so amazing. It realized that the star helped it change its appearance. “Thank you,” the comet said and then flew away with its new beautiful tail following behind it like a galactic cape."
+  ],
+  "qs": [
+   {
+    "q": "The little rock drifted through the debris of broken atoms.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The gigantic planet was in the shape of a sphere.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The ice embedded in the little rock bubbled with all the colors of the spectrum.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The star radiated its light hotter and brighter than ever before.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The little rock wished it had a higher status in the galaxy.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|24",
+  "title": "The Resourceful Landlord",
+  "paras": [
+   "A kind landlord was afraid that he would lose his apartment building. He needed to make some mandatory repairs to the old building, or his tenants would have to leave by the end of the month. Without tenants to lease the rooms, the landlord would be unable to pay his mortgage. He’d be bankrupt, and the bank would take his building. But he didn’t have the money whereby he could employ the personnel he needed to make the repairs. It would seem like he did not want to conform to the city’s codes before the forthcoming inspection. He had requested an extension, but it was denied by the city.",
+   "He held a meeting with his tenants and explained the unfortunate situation. “If the building does not meet the appropriate standards for safety and hygiene,” he said, “the city will expel everyone.”",
+   "The tenants were all sad for the kind old man. “Maybe we can help,” the hairdresser who lived on the first floor stated. The other tenants agreed.",
+   "One tenant had worked for the city’s utilities. He knew a lot about plumbing, so that’s how he helped. Another tenant was a carpenter; he mended the holes in the floor and walls. Others cleaned the building from top to bottom so that it was more hygienic. They even furnished some of the apartments with new beds, dressers, and chairs. When they were done, all of the people dispersed, and the landlord went home to rest. When the deadline of the inspection arrived, the apartment building was hygienic and safe. The landlord couldn’t believe it. His old building now looked like one of the trendiest buildings in town.",
+   "The building passed its inspection, and the landlord and the tenants had a big party.",
+   "“Thank you all so much,” the landlord said during the party. “I could never have done it by myself. But by working together, we now all have a beautiful place to live.”"
+  ],
+  "qs": [
+   {
+    "q": "If the tenants didn’t pay the mortgage, the landlord could not pay his lease and would be bankrupt.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The landlord did not have money whereby he could employ personnel.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The city would expel everyone if the building did not pass the inspection for safety and hygiene.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The hairdresser mended the holes in the floors and walls.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "After everyone helped to fix it, the building looked like one of the trendiest buildings in town.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|25",
+  "title": "The Man and the Monkey",
+  "paras": [
+   "While flying over a jungle, a wealthy executive’s private plane crashed. Some of the crew were hurt, so the pilot decided to stay with them and wait for help. The arrogant executive, though, didn’t care about the welfare of the pilot and crew. Rather, he thought he could walk out of the jungle and find a town to stay in.",
+   "He followed a trail through a canyon and along a creek. The jungle was actually very stunning. If the arrogant executive had stopped to look around, he might have perceived the jungle’s beauty. But he was in a nasty mood and had no care for the aesthetic value of the jungle. He continued to walk up the steep incline of the jungle’s hills. Soon, he was lost. Several days passed, and fatigue and hunger weakened him. He was very tired and afraid.",
+   "Just then, a monkey came out of the trees. It was carrying a twig covered in honey. It walked up to a mound where termites lived. He then used the twig like a drill to make a hole in the mound. Then very carefully, it removed the twig from the hole. The sticky twig was covered with termites.",
+   "Instead of eating the bugs, the monkey offered them to the executive, but he didn’t want what the monkey offered. He shouted at the monkey, “Get away from me, you stupid primate!”",
+   "The executive’s stereotype of the monkey was wrong. The monkey was not stupid. It knew how to find food, whereas the executive did not. He refused the help of the monkey, thereby leaving himself to starve.",
+   "When the executive was finally found, he was very skinny and sick. He had not eaten for a very long time. Because he held a bias against the primitive ways of the monkey, he had gone hungry and almost died. The executive didn’t understand that it was his arrogant attitude that had caused all of his problems."
+  ],
+  "qs": [
+   {
+    "q": "The executive only cared about the welfare of his pilot and crew.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The executive followed a trail through a canyon and along a creek.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The executive was in a nasty mood, so he did not see the aesthetic value of the jungle.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The executive walked up the small incline of the jungle’s hills.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The executive’s stereotype of the primate was correct.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|26",
+  "title": "Cosmo’s Flight",
+  "paras": [
+   "When Cosmo woke up, he was crying. He had a dream that he was falling. This dream had recurred for the previous five nights. Cosmo was scared that his dreams were a preview of what was going to happen on his flight the next day.",
+   "Cosmo was a supernatural being who was about to turn 15 years old. In his culture, boys of his age were required to participate in an important rite. They were given wings and instructed to orbit the Earth. After successful flights, the boys officially became men. Cosmo certainly wanted to be a man, but he was scared. He went to the oracle of a god named Dano. Cosmo said, “I’m not sure I can make such a long trip. What if I get tired? What if my strength stalls, and I can’t stay in the air. I’ll crash and die!”",
+   "Dano replied, “Don’t be afraid. You have all the relevant skills in your personal inventory that have been building up over the years. To ease your worry, let me tell you a little about what will happen tomorrow. You’ll begin over Africa. You’ll keep flying north until you come to the Himalayas. The mountain tops will look like small loaves of bread at such a high distance. The rivers of the world will look like pieces of blue string that cross the globe. Keep your body horizontal when flying against the winds of the Pacific Ocean. Keep your eyes open and enjoy the beauty of the Earth. You will be fine, you’ll see.”",
+   "Cosmo replied, “Thanks for the overview of my journey, I’ll do my best.”",
+   "The next morning, Cosmo was provided with a divine set of wings and sent on his way. He flapped his wings and went high above the Earth. He flew over mountains, oceans, and glaciers. After a while, his inward thoughts were no longer about falling. He was actually having fun! He began to hum a song as he enjoyed the view. When he reached home, his tribe was there to greet him.",
+   "The chief said, “On behalf of the tribe, I declare you a man. We’re proud of you, Cosmo!” Cosmo was proud of himself, too."
+  ],
+  "qs": [
+   {
+    "q": "Cosmo was scared that his recurring dreams of the previous nights were a preview of what would happen.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Supernatural boys of Cosmo’s age participated in an important rite.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "In Dano’s summary, he told Cosmo to keep his body horizontal against the winds of the Indian Ocean.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Dano flapped the wings he was provided with and orbited the globe.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Cosmo sang a tune while he flew and enjoyed the view.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|27",
+  "title": "The First Organ Transplant",
+  "paras": [
+   "In 1954, a man named Richard was dying of kidney disease. He wouldn’t survive for long unless he got a new kidney right away. Richard’s twin brother, Robert, was willing to donate one of his kidneys to his dying brother. At the time, however, no doctor had ever performed a successful internal organ transplant. The idea of taking an organ out of one person and putting it into another was just a fantasy. But the brothers decided to be brave and found a doctor who could make organ transplants a reality.",
+   "Since Richard and Robert were twins, their heredity was identical. They had the exact same biological traits. Even their kidneys were identical on the cellular level. Therefore, Robert’s working kidney could be substituted for Richard’s bad one. Richard’s body could adapt to the new organ if the operation was done correctly.",
+   "The twins went to Dr. Murray, who was a pioneer of new surgical methods. His dynamic team of surgeons performed the transplant. Dr. Murray made sure his surgeons followed a rigid sequence of directions so that no mistakes were made. First, they made a minimal cut in Richard’s side and removed the bad kidney. Then, they made another small cut in Robert’s side, removed his kidney, and transferred it into Richard’s body. Finally, they sewed up the respective cuts. The entire operation only took about one hour. After the surgery, it was clear that both brothers were going to be OK. The operation was confirmed a success. Richard’s new kidney worked great! Doctors prescribed medicine for the pain caused by the surgery. Since Richard was still weak, he used physical therapy to revive his strength. At last, Richard’s transition into a healthy, happy person was complete.",
+   "Dr. Murray became a hero in the medical world. His success gave other doctors confidence to try organ transplants themselves.",
+   "Now, doctors perform life-saving transplants and surgeries every day."
+  ],
+  "qs": [
+   {
+    "q": "Internal organ transplants were a fantasy after 1954.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Robert was a pioneer of new surgical procedures.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The twins’ kidneys were identical on the cellular level because of their heredity.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The dynamic surgeons followed a rigid sequence of directions to avoid mistakes.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Richard’s body adapted to the kidney that was transferred from his brother.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|28",
+  "title": "The Lottery",
+  "paras": [
+   "Joe was watching television when he heard a knock at the door. He thought, “Who could that be? It’s probably one of the naughty neighborhood children.” Joe stood up and walked to the door. When he opened it, he saw a beautiful woman.",
+   "She said, “Good morning, Joe! I have great news. You’re the recipient of this check for one million dollars! You won the lottery!”",
+   "Joe couldn’t believe it. His mind was overloaded with emotions. Joe said, “Thank you! Thank you!”",
+   "After he calmed down, Joe made a photocopy of the check in case he misplaced the original one. He sat and thought about what he wanted to do with the money. He didn’t want to spend it in an arbitrary way. Joe thought, “I know there are others who need this money more than I do. I’ve always loved animals, so I think I’ll buy things for the zoo!” Joe knew that the zoo was in bad shape. The cages were too small, and they weren’t insulated from the cold. Animals couldn’t thrive in such conditions.",
+   "He took out some stationery and wrote a letter to the zoo. He offered to help the zoo buy huge cages for the large mammals and reptiles. He offered to buy healthy food for the orangutans to increase their longevity. He even said that he would buy new glass walls for the aquarium because the old ones were cracked.",
+   "Joe’s act of philanthropy intrigued the zoo keeper. He probed Joe to learn why he spent his money to improve the zoo. It wasn’t a social convention for a person to be so gracious. Joe told the zoo keeper, “I know it’s not the norm, but my ultimate decision to help these animals is better than anything I could have done for myself. If I ever write an autobiography, I will write that this was the happiest day of my life.”"
+  ],
+  "qs": [
+   {
+    "q": "Joe was the recipient of a check because he won the lottery.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "He wanted to buy new glass walls for the aquarium because the old ones were cracked.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "If Joe wrote an autobiography, he would write about the norms of the overloaded aquarium.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Joe made a photocopy of the check in case he misplaced the original one.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "When Joe opened the door, he saw one of the naughty neighborhood children.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ },
+ {
+  "id": "e5|29",
+  "title": "Jen’s New Job",
+  "paras": [
+   "The history museum needed to recruit a new tour guide. The director interviewed dozens of applicants before he decided to hire Jen. She was chosen because she was friendly, punctual and had a great attitude.",
+   "On her first day, Jen got to work and prepared to give her first tour. She looked at the names on the register. She saw that the Queen of England and a diplomat were visiting the museum. She thought, “It’s my very first day, and I have to impress a monarch! I hope I don’t humiliate myself in front of a person of such renown!”",
+   "Jen was nervous. She took a deep breath and said, “Hello, everyone! I’m going to talk to you about the chronology of ancient Egypt.” As she turned around to show the group some artifacts, she bumped into a fossil of an authentic elephant tusk. It fell to the ground and broke into a million pieces! “Oh no!” said Jen in a subtle voice. “I sure hope the rest of the tour goes better than this!”",
+   "The rest of the tour did not go any better. She tripped over an antique vase and broke a piece off of it. As she was reading an excerpt from a lyric poem, she sneezed and tore a page of the epic.",
+   "After the tour, Jen approached the queen to apologize. She said, “I’m sorry, Your Majesty. I was a terrible tour guide. Let me give you a refund for the money you spent.” The queen laughed. She said, “I don’t want my money back, Jen. I loved the tour. You just have to be a little more careful and work hard to become the best at your job. Hard work precedes success.”",
+   "Jen smiled and thanked the queen. She decided to be extra careful from then on. She was persistent and worked hard. In time, Jen became the best tour guide at the museum."
+  ],
+  "qs": [
+   {
+    "q": "The museum director interviewed dozens of applicants when he recruited a new tour guide.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "Jen did not want to humiliate herself in front of the diplomat and the monarch.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The queen bumped into the fossil of an authentic elephant tusk.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jen was chosen for the job because she was friendly, punctual, and had a register.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "Jen broke artifacts, including an antique vase.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   }
+  ]
+ },
+ {
+  "id": "e5|30",
+  "title": "The Demon’s Bridge",
+  "paras": [
+   "A young woman’s cow had crossed the river in the morning when the water level was moderate. But when the woman returned with her dog to get the cow, she was overwhelmed by how high the water had risen. Even if she crossed, she still couldn’t tow her cow back through the river.",
+   "“What am I going to do?” she wondered.",
+   "Suddenly, a man appeared across the river. “A fragile young lady like you shouldn’t have to struggle across a river,” he said. “I’ll build you a bridge.”",
+   "The man was an enigma. The young woman’s perception of him was that he was a sociable person. He was talkative, yet something was strange about him.",
+   "“I don’t want to be a burden to you, sir,” the woman replied.",
+   "“Don’t worry,” he told her as he began crafting a bridge. He merged the pieces of the bridge together with amazing speed. Soon, it was finished.",
+   "“Oh, but how can I pay you for your work? Let’s compromise. I am sure that we can find a fair solution. What do you think?” The woman asked.",
+   "“The only currency I need is the first living thing that crosses the bridge,” the man replied. She thought, “This deal sounds weird. Maybe he’s actually a river demon.” She shivered because she realized that he had taken advantage of her innocence and rigged the deal somehow. But she had a plan of her own. She pulled a piece of bread from her pocket and threw it across the bridge. Her dog ran after it.",
+   "“The dog is the first living thing across the bridge,” she said to the man. The man was angry. He suddenly changed into a hybrid of a human and a fish. “You crook!” he shouted. “You tricked me. I have no use for your dog!” He screamed and dove into the river. The woman tramped across the bridge to the other side and had a happy reunion with her dog and cow."
+  ],
+  "qs": [
+   {
+    "q": "The woman’s perception was that though the man was talkative and sociable, he was also an enigma.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "When the young woman returned, she was overwhelmed by the moderate water level.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   },
+   {
+    "q": "The fragile young woman thought she might be a burden to the man.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "While crafting the bridge, the man merged the pieces with amazing speed.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 0
+   },
+   {
+    "q": "The woman tramped across the bridge and had a happy reunion with the man.",
+    "o": [
+     "True",
+     "False"
+    ],
+    "a": 1
+   }
+  ]
+ }
+]
