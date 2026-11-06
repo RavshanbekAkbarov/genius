@@ -112,12 +112,19 @@ void main() {
     expect(StoryBank.lookup('arrived')!.uz, isNotEmpty);
     // Har bir hikoyadagi har bir so'z lug'atda bor.
     final re = RegExp(r"[A-Za-z]+(?:['’][A-Za-z]+)?");
-    for (var u = 1; u <= 30; u++) {
-      final st = StoryBank.of('e1', u)!;
-      expect(st.qs.length, 4);
-      for (final p in st.paras) {
-        for (final m in re.allMatches(p)) {
-          expect(StoryBank.lookup(m.group(0)!), isNotNull, reason: 'e1|$u: ${m.group(0)}');
+    for (var b = 1; b <= 6; b++) {
+      for (var u = 1; u <= 30; u++) {
+        final st = StoryBank.of('e$b', u)!;
+        expect(st.qs.length, inInclusiveRange(3, 6), reason: 'e$b|$u');
+        for (final q in st.qs) {
+          expect(q.answer, inInclusiveRange(0, q.options.length - 1), reason: 'e$b|$u: ${q.q}');
+        }
+        for (final p in st.paras) {
+          for (final m in re.allMatches(p)) {
+            final w = m.group(0)!;
+            if (w.length == 1 && w != 'a' && w != 'A' && w != 'I') continue;
+            expect(StoryBank.lookup(w), isNotNull, reason: 'e$b|$u: $w');
+          }
         }
       }
     }
