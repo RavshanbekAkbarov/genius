@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -54,6 +55,7 @@ class Cloud {
     });
     s.addListener(_schedulePush);
     unawaited(sync());
+    unawaited(resumeTelegram());
   }
 
   // ---------- kirish ----------
@@ -70,21 +72,61 @@ class Cloud {
 
   /// Telegram orqali kirish: bot ochiladi, foydalanuvchi "Ha, kiraman" ni bosadi,
   /// ilova esa server orqali kirish kalitini oladi. [cancelled] true bo'lsa to'xtaydi.
+  /// Kod telefonda saqlanadi: Android ilovani yopib qo'ysa ham, qayta ochilganda kirish yakunlanadi.
   static Future<String?> signInTelegram(ValueListenable<bool> cancelled) async {
     if (!enabled) return "Server hali ulanmagan";
     final code = _randomCode(24);
+    final p = await SharedPreferences.getInstance();
+    await p.setString(_tgKey, '$code|${DateTime.now().millisecondsSinceEpoch}');
     final ok = await launchUrl(Uri.parse('https://t.me/$botUsername?start=login_$code'),
         mode: LaunchMode.externalApplication);
     if (!ok) return "Telegram ochilmadi";
-    final end = DateTime.now().add(const Duration(minutes: 5));
+    return _pollTelegram(code, const Duration(minutes: 5), cancelled);
+  }
+
+  static const _tgKey = 'tg_login_pending';
+  static Completer<void>? _wake;
+
+  /// Ilovaga qaytilganda kutmasdan darhol tekshirish uchun.
+  static void pokeTelegram() {
+    final w = _wake;
+    if (w != null && !w.isCompleted) w.complete();
+  }
+
+  /// Ilova qayta ochilganda: yarim qolgan Telegram kirishini yakunlash.
+  static Future<void> resumeTelegram() async {
+    if (!enabled || signedIn) return;
+    final p = await SharedPreferences.getInstance();
+    final v = p.getString(_tgKey)?.split('|');
+    if (v == null || v.length != 2) return;
+    final age = DateTime.now().millisecondsSinceEpoch - (int.tryParse(v[1]) ?? 0);
+    if (age > const Duration(minutes: 10).inMilliseconds) {
+      await p.remove(_tgKey);
+      return;
+    }
+    await _pollTelegram(v[0], const Duration(minutes: 1), ValueNotifier(false));
+  }
+
+  static Future<String?> _pollTelegram(String code, Duration limit, ValueListenable<bool> cancelled) async {
+    final end = DateTime.now().add(limit);
+    var fails = 0;
+    String? lastErr;
+    var first = true;
     while (DateTime.now().isBefore(end) && !cancelled.value) {
-      await Future<void>.delayed(const Duration(seconds: 2));
+      if (!first) {
+        _wake = Completer<void>();
+        await Future.any([_wake!.future, Future<void>.delayed(const Duration(seconds: 2))]);
+        if (cancelled.value) break;
+      }
+      first = false;
       try {
         final r = await _db.functions.invoke('tg-login', body: {'code': code});
         final data = r.data as Map<String, dynamic>?;
         final status = data?['status'];
+        fails = 0;
         if (status == 'ok') {
           await _db.auth.verifyOTP(type: OtpType.magiclink, tokenHash: data!['token_hash'] as String);
+          await _clearTelegram();
           final s = _s!;
           s.account = 'telegram';
           s.accountLabel = data['username'] == null ? 'Telegram' : '@${data['username']}';
@@ -92,12 +134,30 @@ class Cloud {
           s.refresh();
           return null;
         }
-        if (status == 'expired') return "Vaqt tugadi, qaytadan urinib ko'ring";
-      } catch (_) {
+        if (status == 'expired') {
+          await _clearTelegram();
+          return "Vaqt tugadi, qaytadan urinib ko'ring";
+        }
+      } on FunctionException catch (e) {
+        // Server xato qaytardi: bir necha marta takrorlansa foydalanuvchiga ko'rsatamiz.
+        final d = e.details;
+        lastErr = d is Map && d['error'] != null ? '${d['error']}' : 'kod ${e.status}';
+        if (++fails >= 3) return "Server xatosi: $lastErr";
+      } on AuthException catch (e) {
+        return "Kirib bo'lmadi: ${e.message}";
+      } catch (e) {
         // Internet uzilib qolgan bo'lishi mumkin: yana urinamiz.
+        lastErr = '$e';
+        fails++;
       }
     }
-    return cancelled.value ? '' : "Vaqt tugadi, qaytadan urinib ko'ring";
+    if (cancelled.value) return '';
+    return lastErr == null ? "Vaqt tugadi, qaytadan urinib ko'ring" : "Kirib bo'lmadi: $lastErr";
+  }
+
+  static Future<void> _clearTelegram() async {
+    final p = await SharedPreferences.getInstance();
+    await p.remove(_tgKey);
   }
 
   static Future<void> signOut() async {

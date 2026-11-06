@@ -15,26 +15,38 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with WidgetsBindingObserver {
   bool busy = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     Cloud.signedInNotifier.addListener(_onAuth);
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     Cloud.signedInNotifier.removeListener(_onAuth);
     super.dispose();
   }
 
-  void _onAuth() {
-    if (Cloud.signedInNotifier.value && mounted) _done();
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Telegram'dan qaytildi: kirishni kutmasdan darhol tekshiramiz.
+    if (state == AppLifecycleState.resumed) Cloud.pokeTelegram();
   }
 
+  void _onAuth() {
+    // Telegram oqimi o'zi yakunlaydi (dialogni yopib); bu yerda Google va qayta ochilgandagi kirish.
+    if (Cloud.signedInNotifier.value && mounted && !busy) _done();
+  }
+
+  bool _finished = false;
   void _done() {
+    if (_finished) return;
+    _finished = true;
     final s = AppScope.read(context);
     s.loginSeen = true;
     s.refresh();

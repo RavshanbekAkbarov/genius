@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../data/catalog.dart';
 import '../data/stories.dart';
 import '../data/words.dart';
+import '../data/uzform.dart';
 import '../services/ads.dart';
 import '../services/speech.dart';
 import '../state/app_state.dart';
@@ -168,7 +169,6 @@ class _StoryScreenState extends State<StoryScreen> {
       selected = '$para:$start';
       tapped.add(e?.lemma ?? token.toLowerCase());
     });
-    Speech.speak(e?.lemma ?? token);
     final sentence = _sentenceAt(st.paras[para], start);
     final s = AppScope.read(context);
     final isUnit = unitWords(s).contains(e?.lemma) || unitWords(s).contains(token.toLowerCase());
@@ -179,6 +179,13 @@ class _StoryScreenState extends State<StoryScreen> {
         token: token,
         entry: e,
         sentence: sentence,
+        prev: RegExp(r"[A-Za-z]+(?:['’][A-Za-z]+)?")
+            .allMatches(st.paras[para].substring(0, start))
+            .map((m) => StoryBank.norm(m.group(0)!))
+            .toList()
+            .reversed
+            .take(3)
+            .toList(),
         unitLabel: isUnit ? 'Unit ${widget.unit} so\'zi' : null,
         onSaved: () => saved++,
       ),
@@ -358,8 +365,17 @@ class WordSheet extends StatefulWidget {
   final String sentence;
   final String? unitLabel;
   final VoidCallback? onSaved;
+
+  /// So'zdan oldingi so'zlar (yaqinidan boshlab): shaklni aniqlash uchun.
+  final List<String> prev;
   const WordSheet(
-      {super.key, required this.token, required this.entry, required this.sentence, this.unitLabel, this.onSaved});
+      {super.key,
+      required this.token,
+      required this.entry,
+      required this.sentence,
+      this.unitLabel,
+      this.onSaved,
+      this.prev = const []});
   @override
   State<WordSheet> createState() => _WordSheetState();
 }
@@ -372,6 +388,7 @@ class _WordSheetState extends State<WordSheet> {
     final word = e?.lemma ?? widget.token.toLowerCase();
     final form = StoryBank.norm(widget.token);
     final has = s.hasMyWord(word);
+    final cf = e == null ? null : contextForm(widget.token, word, e.uz, widget.prev);
     final k = TextStyle(color: C.dim, fontSize: 11.5, fontWeight: FontWeight.w800, letterSpacing: 1);
     return SafeArea(
       child: SingleChildScrollView(
@@ -406,7 +423,13 @@ class _WordSheetState extends State<WordSheet> {
           const SizedBox(height: 16),
           Text('TARJIMA', style: k),
           const SizedBox(height: 6),
-          Text(e?.uz ?? "Bu so'z lug'atda yo'q", style: display(19, weight: FontWeight.w800)),
+          if (cf != null) ...[
+            Text(cf.uz, style: display(19, weight: FontWeight.w800)),
+            const SizedBox(height: 4),
+            Text('${cf.note} · lug\'atda: $word - ${e!.uz}',
+                style: TextStyle(color: C.mut, fontSize: 13, fontWeight: FontWeight.w600)),
+          ] else
+            Text(e?.uz ?? "Bu so'z lug'atda yo'q", style: display(19, weight: FontWeight.w800)),
           if (e != null && e.syn.isNotEmpty) ...[
             const SizedBox(height: 16),
             Text('SINONIMLAR', style: k),
