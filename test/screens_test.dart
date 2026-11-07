@@ -106,6 +106,11 @@ void main() {
   test('hikoya lug\'ati: istalgan so\'z shakli topiladi', () {
     expect(StoryBank.of('e1', 1)!.title, 'The Lion and the Rabbit');
     expect(StoryBank.of('e1', 30), isNotNull);
+    final s1 = StoryBank.of('e1', 1)!;
+    final pi = s1.paras.indexWhere((p) => p.contains('Why are you late'));
+    final at = s1.paras[pi].indexOf('late');
+    expect(s1.sentenceAt(pi, at), 'The lion angrily asked the rabbit, “Why are you late?”');
+    expect(s1.trAt(pi, at), contains('Nega kechikding'));
     expect(StoryBank.lookup('jumped')!.lemma, 'jump');
     expect(StoryBank.lookup('rabbit’s')!.lemma, 'rabbit');
     expect(StoryBank.lookup('Clever')!.syn, contains('smart'));
@@ -116,6 +121,10 @@ void main() {
       for (var u = 1; u <= 30; u++) {
         final st = StoryBank.of('e$b', u)!;
         expect(st.qs.length, inInclusiveRange(3, 6), reason: 'e$b|$u');
+        if (st.tr.isNotEmpty) {
+          final n = st.paras.fold<int>(0, (a, p) => a + Story.spans(p).length);
+          expect(st.tr.length, n, reason: '$b|$u: gaplar tarjimasi soni');
+        }
         for (final q in st.qs) {
           expect(q.answer, inInclusiveRange(0, q.options.length - 1), reason: 'e$b|$u: ${q.q}');
         }

@@ -18,12 +18,61 @@ class Story {
   final String title;
   final List<String> paras;
   final List<StoryQ> qs;
-  const Story(this.id, this.title, this.paras, this.qs);
+
+  /// Har bir gapning o'zbekcha tarjimasi, matndagi tartibda (bo'lmasa bo'sh).
+  final List<String> tr;
+  const Story(this.id, this.title, this.paras, this.qs, [this.tr = const []]);
   factory Story.fromJson(String id, Map<String, dynamic> j) => Story(
       id,
       j['title'] as String,
       (j['paras'] as List).cast<String>(),
-      ((j['qs'] ?? []) as List).map((e) => StoryQ.fromJson(e as Map<String, dynamic>)).toList());
+      ((j['qs'] ?? []) as List).map((e) => StoryQ.fromJson(e as Map<String, dynamic>)).toList(),
+      ((j['tr'] ?? []) as List).cast<String>());
+
+  /// Gap oxiri: . ! ? (qo'shtirnoq bilan ham), keyin bosh harf yoki qo'shtirnoq.
+  /// tool/stories/merge_tr.py ham aynan shu qoida bilan ajratadi.
+  static final _ends = RegExp(r'[.!?]["”’]?\s+(?=[“"‘A-Z0-9])');
+
+  /// “Why?” Liz asked. - qo'shtirnoqdan keyin "kim dedi" kelsa, bu bitta gap.
+  static final _speech = RegExp(r"^(?:[\w’']+\s+){0,2}(?:said|asked|replied|answered|thought|shouted|cried|yelled|screamed|whispered|told|explained|added|exclaimed|called|laughed|continued|agreed|wondered|says|asks)\b");
+
+  /// Paragrafni gaplarga bo'lish: (boshi, oxiri) juftlari.
+  static List<(int, int)> spans(String p) {
+    final out = <(int, int)>[];
+    var a = 0;
+    for (final m in _ends.allMatches(p)) {
+      if (m.group(0)!.contains('”') && _speech.hasMatch(p.substring(m.end))) continue;
+      out.add((a, m.end));
+      a = m.end;
+    }
+    if (p.substring(a).trim().isNotEmpty) out.add((a, p.length));
+    return out;
+  }
+
+  /// [para] paragrafdagi [at] o'rinni o'z ichiga olgan gap.
+  String sentenceAt(int para, int at) {
+    final p = paras[para];
+    for (final (a, b) in spans(p)) {
+      if (b > at) return p.substring(a, b).trim();
+    }
+    return p.trim();
+  }
+
+  /// O'sha gapning o'zbekcha tarjimasi.
+  String? trAt(int para, int at) {
+    var i = 0;
+    for (var k = 0; k < para; k++) {
+      i += spans(paras[k]).length;
+    }
+    final sp = spans(paras[para]);
+    for (var j = 0; j < sp.length; j++) {
+      if (sp[j].$2 > at || j == sp.length - 1) {
+        i += j;
+        break;
+      }
+    }
+    return i < tr.length ? tr[i] : null;
+  }
 
   int get words => paras.fold(0, (a, p) => a + p.split(RegExp(r'\s+')).length);
 

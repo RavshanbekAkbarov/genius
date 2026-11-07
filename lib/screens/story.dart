@@ -169,7 +169,7 @@ class _StoryScreenState extends State<StoryScreen> {
       selected = '$para:$start';
       tapped.add(e?.lemma ?? token.toLowerCase());
     });
-    final sentence = _sentenceAt(st.paras[para], start);
+    final sentence = st.sentenceAt(para, start);
     final s = AppScope.read(context);
     final isUnit = unitWords(s).contains(e?.lemma) || unitWords(s).contains(token.toLowerCase());
     showModalBottomSheet(
@@ -179,6 +179,7 @@ class _StoryScreenState extends State<StoryScreen> {
         token: token,
         entry: e,
         sentence: sentence,
+        sentenceUz: st.trAt(para, start),
         prev: RegExp(r"[A-Za-z]+(?:['’][A-Za-z]+)?")
             .allMatches(st.paras[para].substring(0, start))
             .map((m) => StoryBank.norm(m.group(0)!))
@@ -192,16 +193,6 @@ class _StoryScreenState extends State<StoryScreen> {
     ).whenComplete(() {
       if (mounted) setState(() => selected = null);
     });
-  }
-
-  static String _sentenceAt(String p, int at) {
-    final ends = RegExp(r'[.!?]["”’]?\s+');
-    var a = 0;
-    for (final m in ends.allMatches(p)) {
-      if (m.end > at) return p.substring(a, m.end).trim();
-      a = m.end;
-    }
-    return p.substring(a).trim();
   }
 
   TextSpan _para(AppState s, int pi, TextStyle base) {
@@ -363,6 +354,7 @@ class WordSheet extends StatefulWidget {
   final String token;
   final DictEntry? entry;
   final String sentence;
+  final String? sentenceUz;
   final String? unitLabel;
   final VoidCallback? onSaved;
 
@@ -373,6 +365,7 @@ class WordSheet extends StatefulWidget {
       required this.token,
       required this.entry,
       required this.sentence,
+      this.sentenceUz,
       this.unitLabel,
       this.onSaved,
       this.prev = const []});
@@ -471,7 +464,13 @@ class _WordSheetState extends State<WordSheet> {
               borderRadius: BorderRadius.circular(R.md),
               border: Border(left: BorderSide(color: C.ac, width: 3)),
             ),
-            child: Text(widget.sentence, style: const TextStyle(fontSize: 14, height: 1.5)),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(widget.sentence, style: const TextStyle(fontSize: 14, height: 1.5)),
+              if (widget.sentenceUz != null) ...[
+                const SizedBox(height: 6),
+                Text(widget.sentenceUz!, style: TextStyle(fontSize: 13.5, height: 1.45, color: C.mut, fontWeight: FontWeight.w600)),
+              ],
+            ]),
           ),
           const SizedBox(height: 16),
           Btn(has ? "Mening so'zlarimda bor ✓" : "★ Mening so'zlarimga qo'shish",
