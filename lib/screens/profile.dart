@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../config.dart';
 import '../data/catalog.dart';
 import '../services/cloud.dart';
 import '../state/app_state.dart';
@@ -497,6 +498,11 @@ class PremiumScreen extends StatelessWidget {
               Text('Premium faol', style: TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
               Text('${dmy(s.premiumUntil!)} gacha', style: TextStyle(color: C.mut, fontSize: 13)),
             ]),
+          )
+        else if (!inAppPurchase)
+          AppCard(
+            child: Text("Premium'ni yoqish uchun $askTeacherTail",
+                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
           )
         else ...[
           Container(

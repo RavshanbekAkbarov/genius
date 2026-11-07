@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../config.dart';
 import '../data/catalog.dart';
 import '../data/quotes.dart';
 import '../services/ads.dart';
@@ -109,7 +110,7 @@ void showLimitSheet(BuildContext context) {
             "Bepulda kuniga $freeSessions ta mashq qilish mumkin. Ertaga soat 00:00 da yana $freeSessions ta ochiladi. 1·3·7·15·30 kunlik takrorlar doim bepul.",
             style: TextStyle(color: C.mut, fontSize: 13)),
         const SizedBox(height: 14),
-        Btn("Premium · ${money(premiumPrice)} so'm/oy",
+        Btn(inAppPurchase ? "Premium · ${money(premiumPrice)} so'm/oy" : 'Premium haqida',
             icon: const Icon(Icons.workspace_premium_rounded, color: C.onAc, size: 20), onTap: () {
           Navigator.pop(ctx);
           push(context, const PremiumScreen());

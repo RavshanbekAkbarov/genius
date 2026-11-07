@@ -638,24 +638,40 @@ $('wSendBtn').onclick = async () => {
 };
 
 // ---------- foydalanuvchilar ----------
+let usersOwned = {};
+function bookTitle(id) {
+  const b = books.find((x) => x.id === id);
+  return b ? b.title : id;
+}
 async function loadUsers() {
+  if (!books.length) await loadBooks().catch(() => {});
   const q = $('uSearch').value.trim().replace(/[,()%*\\]/g, '');
   let req = sb.from('profiles').select('id, nickname, avatar, premium_until, tg_username, created_at', { count: 'exact' })
     .order('created_at', { ascending: false }).limit(300);
   if (q) req = req.or('nickname.ilike.%' + q + '%,tg_username.ilike.%' + q + '%');
   const { data, error, count } = await req;
   if (error) throw error;
+  // Kimda qaysi markaz kitobi ochiq (sotib olingan yoki admin ochgan).
+  const owned = {};
+  if (data.length) {
+    const pr = await sb.from('purchases').select('user_id, book_id').in('user_id', data.map((u) => u.id));
+    if (pr.error) throw pr.error;
+    for (const r of pr.data) (owned[r.user_id] = owned[r.user_id] || []).push(r.book_id);
+  }
+  usersOwned = owned;
   const today = tashkentToday();
   $('uInfo').textContent = (q ? 'Topildi: ' : 'Jami: ') + count + ' ta' + (count > data.length ? ' (oxirgi ' + data.length + ' tasi ko\'rsatilgan)' : '');
   $('usersBox').innerHTML = data.length
-    ? '<table><tr><th></th><th>Taxallus</th><th>Telegram</th><th>Premium</th><th>Ro\'yxatdan o\'tgan</th><th></th></tr>' +
+    ? '<table><tr><th></th><th>Taxallus</th><th>Telegram</th><th>Premium</th><th>Kitoblar</th><th>Ro\'yxatdan o\'tgan</th><th></th></tr>' +
       data.map((u) => {
         const prem = u.premium_until && u.premium_until >= today;
         return '<tr><td>' + esc(u.avatar) + '</td><td>' + esc(u.nickname) + '</td><td>' +
           (u.tg_username ? '@' + esc(u.tg_username) : '<span class="muted">—</span>') + '</td><td>' +
           (prem ? '<span class="badge b-approved">' + dmy(u.premium_until) + ' gacha</span>' : '<span class="muted">yo\'q</span>') +
+          '</td><td>' + ((owned[u.id] || []).map((id) => '<span class="badge b-approved">' + esc(bookTitle(id)) + '</span>').join(' ') || '<span class="muted">—</span>') +
           '</td><td class="small muted">' + dt(u.created_at) + '</td><td style="white-space:nowrap">' +
-          '<button class="sm" data-prem="' + u.id + '" data-nick="' + esc(u.nickname) + '">+ Premium</button>' +
+          '<button class="sm" data-prem="' + u.id + '" data-nick="' + esc(u.nickname) + '">+ Premium</button> ' +
+          '<button class="ghost sm" data-book="' + u.id + '" data-nick="' + esc(u.nickname) + '">📚 Kitob ochish</button>' +
           (prem ? ' <button class="ghost sm" data-unprem="' + u.id + '" data-nick="' + esc(u.nickname) + '">Olib tashlash</button>' : '') +
           '</td></tr>';
       }).join('') + '</table>'
@@ -675,6 +691,26 @@ $('usersBox').addEventListener('click', async (ev) => {
       const { data, error } = await sb.rpc('admin_grant_premium', { p_user: t.dataset.prem, p_days: days });
       if (error) throw error;
       toast('✅ Premium ' + dmy(data) + ' gacha yoqildi.');
+    } else if (t.dataset.book) {
+      if (!books.length) await loadBooks();
+      const paid = books.filter((b) => b.price > 0);
+      if (!paid.length) return toast("Pullik kitob yo'q.", true);
+      const have = usersOwned[t.dataset.book] || [];
+      const list = paid.map((b, i) => (i + 1) + ') ' + b.title + (have.includes(b.id) ? '  ✅ ochiq' : '')).join('\n');
+      const v = prompt(t.dataset.nick + ' uchun qaysi kitob? Raqamini yozing.\nOchiq kitob raqamini yozsangiz, u yopiladi.\n\n' + list, '1');
+      if (v === null) return;
+      const b = paid[parseInt(v, 10) - 1];
+      if (!b) return toast("Bunday raqamli kitob yo'q.", true);
+      if (have.includes(b.id)) {
+        if (!confirm(t.dataset.nick + ' dan «' + b.title + '» yopilsinmi?')) return;
+        const { error } = await sb.from('purchases').delete().eq('user_id', t.dataset.book).eq('book_id', b.id);
+        if (error) throw error;
+        toast('«' + b.title + '» yopildi.');
+      } else {
+        const { error } = await sb.from('purchases').upsert({ user_id: t.dataset.book, book_id: b.id }, { onConflict: 'user_id,book_id' });
+        if (error) throw error;
+        toast('✅ «' + b.title + '» ochildi. O\'quvchi ilovani qayta ochsa, kitob paydo bo\'ladi.');
+      }
     } else if (t.dataset.unprem) {
       if (!confirm(t.dataset.nick + ' dan Premium olib tashlansinmi?')) return;
       const { error } = await sb.rpc('admin_grant_premium', { p_user: t.dataset.unprem, p_days: 0 });
