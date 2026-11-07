@@ -592,7 +592,7 @@ try|harakat qilmoq|attempt
 turn|burilmoq; navbat|rotate, change
 turtle|toshbaqa|tortoise
 two|ikki|
-type|tur|kind, sort
+type|terib yozmoq, tur|kind, sort
 ugly|xunuk|unattractive
 uh|ee (ikkilanish)|
 under|ostida|below, beneath
