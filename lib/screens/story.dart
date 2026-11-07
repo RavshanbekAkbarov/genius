@@ -397,10 +397,14 @@ class _WordSheetState extends State<WordSheet> {
           Row(children: [
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(word, style: display(30)),
-                if (e != null && e.ipa.isNotEmpty || form != word)
-                  Text([if (e != null && e.ipa.isNotEmpty) e.ipa, if (form != word) 'matnda: $form'].join(' · '),
-                      style: TextStyle(color: C.mut, fontSize: 15, fontFamily: 'Ipa', fontFamilyFallback: const [fontFamily])),
+                // Katta harflarda: so'z matndagi shaklida; pastida asosiy (lug'at) shakli.
+                Text(form, style: display(30)),
+                Text(
+                    [
+                      if (form != word) 'asosiy shakli: $word',
+                      if (e != null && e.ipa.isNotEmpty) e.ipa,
+                    ].join(' · '),
+                    style: TextStyle(color: C.mut, fontSize: 15, fontFamily: 'Ipa', fontFamilyFallback: const [fontFamily])),
               ]),
             ),
             Material(
@@ -408,7 +412,7 @@ class _WordSheetState extends State<WordSheet> {
               shape: const CircleBorder(),
               child: InkWell(
                 customBorder: const CircleBorder(),
-                onTap: () => Speech.speak(word),
+                onTap: () => Speech.speak(form),
                 child: SizedBox(
                     width: 48,
                     height: 48,
@@ -426,7 +430,7 @@ class _WordSheetState extends State<WordSheet> {
           if (cf != null) ...[
             Text(cf.uz, style: display(19, weight: FontWeight.w800)),
             const SizedBox(height: 4),
-            Text('${cf.note} · lug\'atda: $word - ${e!.uz}',
+            Text('${cf.note} · $word - ${e!.uz}',
                 style: TextStyle(color: C.mut, fontSize: 13, fontWeight: FontWeight.w600)),
           ] else
             Text(e?.uz ?? "Bu so'z lug'atda yo'q", style: display(19, weight: FontWeight.w800)),
