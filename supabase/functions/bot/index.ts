@@ -1,4 +1,6 @@
-// Genius Telegram boti (webhook). Kirish (login) va to'lov cheklarini qabul qiladi.
+// Genius Telegram boti (webhook).
+// Oqim: avval "Ismni ulashish" (Telegram profilidan ism olinadi) -> "To'lov qilasizmi?" (karta raqami avtomatik)
+// -> "Ilova haqida ma'lumot kerakmi?". Shuningdek ilovaga kirish (login) va to'lov cheklarini qabul qiladi.
 // Bitta mustaqil fayl: Supabase dashboard'dagi web muharririga ham to'g'ridan-to'g'ri qo'yish mumkin.
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -7,6 +9,13 @@ const TG_WEBHOOK_SECRET = Deno.env.get("TG_WEBHOOK_SECRET") ?? "";
 const ADMIN_CHAT_ID = (Deno.env.get("ADMIN_CHAT_ID") ?? "").trim();
 const CLICK_QR_URL = (Deno.env.get("CLICK_QR_URL") ?? "").trim();
 const PAY_TEXT = (Deno.env.get("PAY_TEXT") ?? "").trim();
+// To'lov uchun karta raqami va egasining ismi (bot to'lovda avtomatik yuboradi).
+// To'lovchilarga baribir ko'rsatiladi, shuning uchun koddagi qiymat; CARD_NUMBER / CARD_OWNER secret'i bo'lsa o'shani oladi.
+const CARD_NUMBER = (Deno.env.get("CARD_NUMBER") || "9860040118741160").trim();
+const CARD_OWNER = (Deno.env.get("CARD_OWNER") || "Ravshanbek Akbarov").trim();
+// Ilovani yuklab olish havolasi (Play Market yoki boshqa) va ixtiyoriy qo'shimcha ma'lumot matni
+const APP_URL = (Deno.env.get("APP_URL") ?? "").trim();
+const APP_INFO = (Deno.env.get("APP_INFO") ?? "").trim();
 
 const db = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -32,6 +41,16 @@ async function tg(method: string, body: Record<string, unknown>): Promise<Any> {
 
 function send(chatId: number | string, text: string, extra: Record<string, unknown> = {}) {
   return tg("sendMessage", { chat_id: chatId, text, ...extra });
+}
+
+function esc(t: string): string {
+  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// "8600 1234 5678 9012" ko'rinishida
+function cardFmt(c: string): string {
+  const d = c.replace(/\D/g, "");
+  return d.length === 16 ? d.replace(/(\d{4})(?=\d)/g, "$1 ") : c;
 }
 
 function money(n: number): string {
@@ -60,12 +79,236 @@ function isAdminChat(cq: Any): boolean {
   return String(cq.from?.id) === ADMIN_CHAT_ID || String(cq.message?.chat?.id) === ADMIN_CHAT_ID;
 }
 
-const WELCOME = "Assalomu alaykum! 👋\n\n" +
-  "Bu — Genius ilovasining rasmiy boti.\n" +
-  "U ikki narsa uchun kerak:\n" +
-  "• Genius ilovasiga Telegram orqali kirish\n" +
-  "• Premium yoki kitob uchun to'lov chekini yuborish\n\n" +
-  "Buning uchun Genius ilovasini oching va kerakli tugmani bosing — ilova sizni shu yerga o'zi olib keladi.";
+const APP_ABOUT = "📱 Genius — Aura Academy o'quv markazining inglizcha so'z yodlash ilovasi.\n\n" +
+  "• 4000 Essential English Words (1–6) — bepul\n" +
+  "• Markaz kitoblari (Beginner, Foundation, Pre-IELTS va boshqalar) — pullik\n" +
+  "• Kartalar va yozish mashqlari, takrorlash jadvali (1, 3, 7, 15, 30 kun)\n" +
+  "• Unit hikoyalari: istalgan so'zni bosib tarjimasini ko'rish, tinglash\n" +
+  "• O'zingizning so'zlaringiz, kunlik eslatmalar, kunning so'zi\n" +
+  "• Premium (10 000 so'm/oy): reklamasiz va cheklovsiz\n\n" +
+  "Ilovaga «Telegram bilan kirish» tugmasi orqali kiriladi — xaridlaringiz shu Telegram hisobingizga bog'lanadi.";
+
+// ---------- Telegram foydalanuvchisi (ism ulashish) ----------
+
+type TgUser = { tg_id: number; first_name: string | null; shared_at: string | null; pending_start: string | null };
+
+async function getTgUser(id: number): Promise<TgUser | null> {
+  const { data, error } = await db.from("tg_users").select("tg_id, first_name, shared_at, pending_start").eq("tg_id", id)
+    .maybeSingle();
+  if (error) console.error("tg_users o'qish:", error);
+  return data ?? null;
+}
+
+async function askShare(msg: Any, pending: string | null) {
+  const from = msg.from;
+  const { error } = await db.from("tg_users").upsert(
+    { tg_id: from.id, tg_username: from.username ?? null, pending_start: pending, updated_at: new Date().toISOString() },
+    { onConflict: "tg_id" },
+  );
+  if (error) console.error("tg_users yozish:", error);
+  await send(
+    msg.chat.id,
+    "Assalomu alaykum! 👋\n\nBu — Genius ilovasining rasmiy boti (Aura Academy).\n\n" +
+      "Davom etish uchun pastdagi «📱 Ismni ulashish» tugmasini bosing — ismingizni Telegram profilingizdan olamiz.",
+    {
+      reply_markup: {
+        keyboard: [[{ text: "📱 Ismni ulashish", request_contact: true }]],
+        resize_keyboard: true,
+        one_time_keyboard: true,
+      },
+    },
+  );
+}
+
+async function onContact(msg: Any) {
+  const from = msg.from;
+  const c = msg.contact;
+  if (!c || Number(c.user_id) !== Number(from.id)) {
+    await send(msg.chat.id, "Iltimos, o'zingizning profilingizni ulashing: pastdagi «📱 Ismni ulashish» tugmasini bosing.");
+    return;
+  }
+  const pending = (await getTgUser(from.id))?.pending_start ?? "";
+  const first = String(c.first_name ?? from.first_name ?? "").trim();
+  const { error } = await db.from("tg_users").upsert(
+    {
+      tg_id: from.id,
+      first_name: first || null,
+      last_name: c.last_name ?? from.last_name ?? null,
+      phone: c.phone_number ?? null,
+      tg_username: from.username ?? null,
+      shared_at: new Date().toISOString(),
+      pending_start: null,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "tg_id" },
+  );
+  if (error) {
+    console.error("tg_users yozish:", error);
+    await send(msg.chat.id, "Xatolik yuz berdi, iltimos, yana bir bor urinib ko'ring.");
+    return;
+  }
+  await send(msg.chat.id, `Rahmat${first ? ", " + first : ""}! 😊`, { reply_markup: { remove_keyboard: true } });
+
+  if (pending.startsWith("login_")) return startLogin(msg.chat.id, pending.slice(6));
+  if (pending.startsWith("pay_")) return startPay(msg, pending.slice(4));
+  await askPay(msg.chat.id);
+}
+
+// Telegram foydalanuvchisiga ilova hisobi: bor bo'lsa topamiz, bo'lmasa yaratamiz (ilovaga Telegram bilan
+// kirganda ham xuddi shu hisob ochiladi, chunki u ham tg_id bo'yicha qidiradi).
+async function ensureAccount(from: Any): Promise<string> {
+  const { data: prof, error: pErr } = await db.from("profiles").select("id").eq("tg_id", from.id).maybeSingle();
+  if (pErr) throw pErr;
+  if (prof) return prof.id;
+
+  const email = `tg${from.id}@telegram.genius.local`;
+  let uid: string | null = null;
+  const { data: created, error: cErr } = await db.auth.admin.createUser({
+    email,
+    email_confirm: true,
+    user_metadata: { tg_id: from.id, tg_username: from.username ?? null },
+  });
+  if (cErr) {
+    if (!/already|exists|registered/i.test(cErr.message)) throw cErr;
+    const { data: link, error: lErr } = await db.auth.admin.generateLink({ type: "magiclink", email });
+    if (lErr) throw lErr;
+    uid = link.user?.id ?? null;
+  } else {
+    uid = created.user?.id ?? null;
+  }
+  if (!uid) throw new Error("foydalanuvchi yaratilmadi");
+
+  const tu = await getTgUser(from.id);
+  const patch: Record<string, unknown> = { tg_id: from.id, tg_username: from.username ?? null };
+  const nick = [...String(tu?.first_name ?? from.username ?? "").trim()].slice(0, 20).join("");
+  if ([...nick].length >= 2) patch.nickname = nick;
+  const { error: uErr } = await db.from("profiles").update(patch).eq("id", uid);
+  if (uErr) console.error("profilga tg_id yozilmadi:", uErr);
+  return uid;
+}
+
+// ---------- To'lov qilasizmi? -> karta raqami ----------
+
+async function askPay(chatId: number) {
+  await send(chatId, "💳 Pullik kitoblar yoki Premium uchun to'lov qilasizmi?", {
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "✅ Ha, to'lov qilaman", callback_data: "pay:yes" },
+        { text: "Yo'q", callback_data: "pay:no" },
+      ]],
+    },
+  });
+}
+
+async function askInfo(chatId: number) {
+  await send(chatId, "📱 Genius ilovasi haqida ma'lumot kerakmi?", {
+    reply_markup: {
+      inline_keyboard: [[
+        { text: "Ha, kerak", callback_data: "info:yes" },
+        { text: "Yo'q, rahmat", callback_data: "info:no" },
+      ]],
+    },
+  });
+}
+
+// Bosilgan savol ostidagi tugmalarni olib, tanlovni yozib qo'yamiz
+async function closeQuestion(cq: Any, answer: string) {
+  await tg("answerCallbackQuery", { callback_query_id: cq.id });
+  if (!cq.message) return;
+  await tg("editMessageText", {
+    chat_id: cq.message.chat.id,
+    message_id: cq.message.message_id,
+    text: `${cq.message.text ?? ""}\n\n» ${answer}`,
+    reply_markup: { inline_keyboard: [] },
+  });
+}
+
+async function payYes(cq: Any) {
+  const chatId = cq.message?.chat?.id ?? cq.from.id;
+  await closeQuestion(cq, "Ha, to'lov qilaman");
+  let uid: string;
+  try {
+    uid = await ensureAccount(cq.from);
+  } catch (e) {
+    console.error("hisob ochilmadi:", e);
+    await send(chatId, "Xatolik yuz berdi, birozdan keyin /start ni bosib qaytadan urinib ko'ring.");
+    return;
+  }
+  const [{ data: books }, { data: owned }] = await Promise.all([
+    db.from("books").select("id, title, price").eq("published", true).gt("price", 0).order("sort"),
+    db.from("purchases").select("book_id").eq("user_id", uid),
+  ]);
+  const have = new Set((owned ?? []).map((r: Any) => r.book_id));
+  const rows: Any[] = [[{ text: `⭐ Premium (30 kun) — ${money(10000)}`, callback_data: "buy:premium" }]];
+  for (const b of books ?? []) {
+    if (have.has(b.id)) continue;
+    const cb = `buy:book:${b.id}`;
+    if (new TextEncoder().encode(cb).length > 64) continue;
+    rows.push([{ text: `📘 ${b.title} — ${money(b.price)}`, callback_data: cb }]);
+  }
+  rows.push([{ text: "Bekor qilish", callback_data: "buy:cancel" }]);
+  await send(chatId, "Nima uchun to'lov qilasiz?", { reply_markup: { inline_keyboard: rows } });
+}
+
+async function buy(cq: Any, kind: string) {
+  const chatId = cq.message?.chat?.id ?? cq.from.id;
+  if (kind === "cancel") {
+    await closeQuestion(cq, "Bekor qilindi");
+    await askInfo(chatId);
+    return;
+  }
+  let code: string;
+  let uid: string;
+  try {
+    uid = await ensureAccount(cq.from);
+    const { data, error } = await db.rpc("create_pay_code_for", { p_uid: uid, p_kind: kind });
+    if (error) throw error;
+    code = data as string;
+  } catch (e) {
+    const m = e instanceof Error ? e.message : String((e as Any)?.message ?? e);
+    console.error("to'lov kodi:", m);
+    await tg("answerCallbackQuery", {
+      callback_query_id: cq.id,
+      text: /already_purchased/.test(m) ? "Bu kitob allaqachon sotib olingan ✅" : "Xatolik yuz berdi, qaytadan urinib ko'ring.",
+      show_alert: true,
+    });
+    return;
+  }
+  const what = await kindLabel(kind);
+  await closeQuestion(cq, what);
+  const { data: pay } = await db.from("payments").update({ tg_id: cq.from.id }).eq("code", code)
+    .select("amount").maybeSingle();
+  await payInstructions(chatId, kind, pay?.amount ?? 0);
+  await askInfo(chatId);
+}
+
+// Karta raqami, summa va chek yuborish haqida ko'rsatma
+async function payInstructions(chatId: number, kind: string, amount: number) {
+  const what = await kindLabel(kind);
+  let t = `🧾 Xarid: ${esc(what)}\n💰 Summa: <b>${money(amount)}</b>\n\n`;
+  if (CARD_NUMBER) {
+    t += `💳 Karta raqami (bosib nusxa oling):\n<code>${esc(cardFmt(CARD_NUMBER))}</code>\n`;
+    if (CARD_OWNER) t += `👤 ${esc(CARD_OWNER)}\n`;
+    t += "\n";
+  }
+  if (PAY_TEXT) t += `${esc(PAY_TEXT)}\n\n`;
+  t += "To'lagach, chek rasmini (skrinshot) shu yerga yuboring — tekshirib, tez orada ochib beramiz.";
+  if (!CARD_NUMBER && CLICK_QR_URL) {
+    const r = await tg("sendPhoto", { chat_id: chatId, photo: CLICK_QR_URL, caption: t.slice(0, 1024), parse_mode: "HTML" });
+    if (r.ok) return;
+  }
+  await send(chatId, t, { parse_mode: "HTML" });
+}
+
+async function infoYes(cq: Any) {
+  const chatId = cq.message?.chat?.id ?? cq.from.id;
+  await closeQuestion(cq, "Ha, kerak");
+  const text = APP_ABOUT + (APP_INFO ? `\n\n${APP_INFO}` : "");
+  const extra = APP_URL
+    ? { reply_markup: { inline_keyboard: [[{ text: "📲 Ilovani yuklab olish", url: APP_URL }]] } }
+    : {};
+  await send(chatId, text, extra);
+}
 
 // ---------- /start login_<code> ----------
 
@@ -152,17 +395,7 @@ async function startPay(msg: Any, code: string) {
     .is("tg_id", null);
   if (linkErr) console.log("profil tg_id bog'lanmadi:", linkErr.message);
 
-  const what = await kindLabel(pay.kind);
-  let caption = `🧾 Xarid: ${what}\n💰 Summa: ${money(pay.amount)}\n\n`;
-  caption += CLICK_QR_URL ? "Yuqoridagi QR kodni Click ilovasida skanerlab to'lang.\n" : "";
-  if (PAY_TEXT) caption += `${PAY_TEXT}\n`;
-  caption += "\nTo'lagach, chek rasmini (skrinshot) shu yerga yuboring.";
-
-  if (CLICK_QR_URL) {
-    const r = await tg("sendPhoto", { chat_id: chatId, photo: CLICK_QR_URL, caption: caption.slice(0, 1024) });
-    if (r.ok) return;
-  }
-  await send(chatId, caption);
+  await payInstructions(chatId, pay.kind, pay.amount);
 }
 
 // ---------- Chek (rasm yoki fayl) ----------
@@ -315,6 +548,17 @@ async function handle(update: Any) {
     const cq = update.callback_query;
     const data: string = cq.data ?? "";
     if (data.startsWith("login:")) return confirmLogin(cq, data.slice(6));
+    if (data === "pay:yes") return payYes(cq);
+    if (data === "pay:no") {
+      await closeQuestion(cq, "Yo'q");
+      return askInfo(cq.message?.chat?.id ?? cq.from.id);
+    }
+    if (data.startsWith("buy:")) return buy(cq, data.slice(4));
+    if (data === "info:yes") return infoYes(cq);
+    if (data === "info:no") {
+      await closeQuestion(cq, "Yo'q, rahmat");
+      return send(cq.message?.chat?.id ?? cq.from.id, "Yaxshi! Savolingiz bo'lsa, shu yerga yozing yoki /start ni bosing. 🙂");
+    }
     const m = data.match(/^(ok|no):(\d+)$/);
     if (m) return decide(cq, Number(m[2]), m[1] === "ok");
     await tg("answerCallbackQuery", { callback_query_id: cq.id });
@@ -324,18 +568,27 @@ async function handle(update: Any) {
   const msg = update.message;
   if (!msg || !msg.from || msg.chat?.type !== "private") return;
 
+  if (msg.contact) return onContact(msg);
+
   const text: string = msg.text ?? "";
-  if (text.startsWith("/start")) {
-    const arg = text.split(/\s+/)[1] ?? "";
-    if (arg.startsWith("login_")) return startLogin(msg.chat.id, arg.slice(6));
-    if (arg.startsWith("pay_")) return startPay(msg, arg.slice(4));
-    await send(msg.chat.id, WELCOME);
-    return;
+  const arg = text.startsWith("/start") ? (text.split(/\s+/)[1] ?? "") : "";
+
+  // Avval ism ulashilishi kerak (bosilgan havola eslab qolinadi va ulashgandan keyin davom etadi)
+  const tu = await getTgUser(msg.from.id);
+  if (!tu?.shared_at) {
+    const keep = /^(login|pay)_/.test(arg) ? arg : (tu?.pending_start ?? null);
+    return askShare(msg, keep);
   }
+
+  if (arg.startsWith("login_")) return startLogin(msg.chat.id, arg.slice(6));
+  if (arg.startsWith("pay_")) return startPay(msg, arg.slice(4));
 
   if ((Array.isArray(msg.photo) && msg.photo.length) || msg.document) return receipt(msg);
 
-  await send(msg.chat.id, WELCOME);
+  if (text.startsWith("/start")) {
+    await send(msg.chat.id, `Assalomu alaykum${tu.first_name ? ", " + tu.first_name : ""}! 👋`);
+  }
+  await askPay(msg.chat.id);
 }
 
 Deno.serve(async (req) => {

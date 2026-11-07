@@ -43,6 +43,10 @@ jobs:
       ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
       CLICK_QR_URL: ${{ secrets.CLICK_QR_URL }}
       PAY_TEXT: ${{ secrets.PAY_TEXT }}
+      CARD_NUMBER: ${{ secrets.CARD_NUMBER }}
+      CARD_OWNER: ${{ secrets.CARD_OWNER }}
+      APP_URL: ${{ secrets.APP_URL }}
+      APP_INFO: ${{ secrets.APP_INFO }}
     steps:
       - uses: actions/checkout@v4
 
@@ -64,7 +68,7 @@ jobs:
       - name: Funksiya secret'lari
         run: |
           args=()
-          for name in TG_BOT_TOKEN TG_WEBHOOK_SECRET ADMIN_CHAT_ID CLICK_QR_URL PAY_TEXT; do
+          for name in TG_BOT_TOKEN TG_WEBHOOK_SECRET ADMIN_CHAT_ID CLICK_QR_URL PAY_TEXT CARD_NUMBER CARD_OWNER APP_URL APP_INFO; do
             value="${!name}"
             if [ -n "$value" ]; then
               args+=("$name=$value")
