@@ -11,6 +11,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, '..', '..', 'assets', 'data', 'stories.json')
 ENDS = re.compile(r'[.!?]["”’]?\s+(?=[“"‘A-Z0-9])')
 # “Why?” Liz asked. - qo'shtirnoqdan keyin "kim dedi" kelsa, bu bitta gap.
+ABBR = re.compile(r'\b(?:Mr|Mrs|Ms|Dr|Mt|St|Jr|Sr)\.$')
 SPEECH = re.compile(r"^(?:[\w’']+\s+){0,2}(?:said|asked|replied|answered|thought|shouted|cried|yelled|screamed|whispered|told|explained|added|exclaimed|called|laughed|continued|agreed|wondered|says|asks)\b")
 
 
@@ -18,6 +19,7 @@ def split(p):
     out, a = [], 0
     for m in ENDS.finditer(p):
         if '”' in m.group() and SPEECH.match(p[m.end():]): continue
+        if ABBR.search(p[:m.start() + 1]): continue
         out.append(p[a:m.end()].strip()); a = m.end()
     if p[a:].strip(): out.append(p[a:].strip())
     return out

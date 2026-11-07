@@ -34,6 +34,8 @@ class Story {
   static final _ends = RegExp(r'[.!?]["”’]?\s+(?=[“"‘A-Z0-9])');
 
   /// “Why?” Liz asked. - qo'shtirnoqdan keyin "kim dedi" kelsa, bu bitta gap.
+  /// Mr. Jones, Mt. Everest: qisqartmadan keyin gap tugamaydi.
+  static final _abbr = RegExp(r'\b(?:Mr|Mrs|Ms|Dr|Mt|St|Jr|Sr)\.$');
   static final _speech = RegExp(r"^(?:[\w’']+\s+){0,2}(?:said|asked|replied|answered|thought|shouted|cried|yelled|screamed|whispered|told|explained|added|exclaimed|called|laughed|continued|agreed|wondered|says|asks)\b");
 
   /// Paragrafni gaplarga bo'lish: (boshi, oxiri) juftlari.
@@ -42,6 +44,7 @@ class Story {
     var a = 0;
     for (final m in _ends.allMatches(p)) {
       if (m.group(0)!.contains('”') && _speech.hasMatch(p.substring(m.end))) continue;
+      if (_abbr.hasMatch(p.substring(0, m.start + 1))) continue;
       out.add((a, m.end));
       a = m.end;
     }
