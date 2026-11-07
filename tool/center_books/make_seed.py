@@ -1,7 +1,7 @@
 """Markaz kitoblari (Beginner, Foundation, Pre-IELTS 1A/2A) so'zlarini Supabase migratsiyasiga aylantiradi.
 
 Ishlatish:  python3 tool/center_books/make_seed.py
-Natija:     supabase/migrations/20261107000000_center_books.sql
+Natija:     supabase/migrations/20261107100000_center_books.sql
 
 Kitoblar yashirin (published=false), 15 000 so'm narx bilan qo'shiladi: "Ilovada" belgisini
 admin paneldan yoqasiz. Qayta ishga tushirilsa admin o'zgartirgan narsalar ustidan yozilmaydi.
@@ -11,7 +11,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', '..', 'supabase', 'migrations', '20261107000000_center_books.sql')
+OUT = os.path.join(HERE, '..', '..', 'supabase', 'migrations', '20261107100000_center_books.sql')
 
 # (fayl, kitob id, badge, nom, rang1, rang2, tartib)
 BOOKS = [
