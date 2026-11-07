@@ -3,7 +3,7 @@
 Ishlatish:  python3 tool/center_books/make_seed.py
 Natija:     supabase/migrations/20261107000000_center_books.sql
 
-Kitoblar yashirin (published=false) va narxsiz qo'shiladi: narxni qo'yib, "Ilovada" belgisini
+Kitoblar yashirin (published=false), 15 000 so'm narx bilan qo'shiladi: "Ilovada" belgisini
 admin paneldan yoqasiz. Qayta ishga tushirilsa admin o'zgartirgan narsalar ustidan yozilmaydi.
 """
 import json
@@ -38,7 +38,7 @@ def main():
         units = sorted(int(re.search(r'\|(\d+)$', k).group(1)) for k in data)
         lines.append(
             'insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values '
-            f'({q(bid)}, {q(title)}, {q(badge)}, {q(c1)}, {q(c2)}, {max(units)}, 0, false, {sort}) '
+            f'({q(bid)}, {q(title)}, {q(badge)}, {q(c1)}, {q(c2)}, {max(units)}, 15000, false, {sort}) '
             'on conflict (id) do nothing;')
         rows = []
         for key, items in data.items():

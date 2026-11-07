@@ -2,7 +2,7 @@
 -- tool/center_books/make_seed.py yaratgan; qo'lda tahrirlamang.
 -- Kitoblar yashirin qo'shiladi: narx va "Ilovada" belgisi admin paneldan qo'yiladi.
 
-insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-beginner', 'Beginner', 'B', '#FFB347', '#F07B1D', 27, 0, false, 10) on conflict (id) do nothing;
+insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-beginner', 'Beginner', 'B', '#FFB347', '#F07B1D', 27, 15000, false, 10) on conflict (id) do nothing;
 insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-beginner', 1, 0, 'noun', 'ot (so''z turkumi)', '/naʊn/', ''),
 ('aura-beginner', 1, 1, 'plural', 'ko''plik', '/ˈplʊərəl/', ''),
@@ -872,7 +872,7 @@ insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-beginner', 27, 32, 'school uniform', 'maktab formasi', '/skuːl ˈjuːnɪfɔːm/', '')
 on conflict (book_id, unit, idx) do nothing;
 
-insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-foundation', 'Foundation', 'F', '#FF7A7A', '#D9363E', 10, 0, false, 11) on conflict (id) do nothing;
+insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-foundation', 'Foundation', 'F', '#FF7A7A', '#D9363E', 10, 15000, false, 11) on conflict (id) do nothing;
 insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-foundation', 1, 0, 'daily routine', 'kundalik tartib', '/ˈdeɪli ruːˈtiːn/', ''),
 ('aura-foundation', 1, 1, 'get up', 'o''rnidan turmoq', '/ɡet ʌp/', ''),
@@ -1225,7 +1225,7 @@ insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-foundation', 10, 31, 'as long as', '...sharti bilan, ...ekan', '/əz lɒŋ əz/', '')
 on conflict (book_id, unit, idx) do nothing;
 
-insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-pi1a', 'Pre-IELTS 1A', '1A', '#5CC8FF', '#1E7FC9', 8, 0, false, 12) on conflict (id) do nothing;
+insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-pi1a', 'Pre-IELTS 1A', '1A', '#5CC8FF', '#1E7FC9', 8, 15000, false, 12) on conflict (id) do nothing;
 insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-pi1a', 1, 0, 'extended family', 'katta oila (bobo-buvi, amaki-xolalar bilan)', '/ɪkˈstendɪd ˈfæməli/', ''),
 ('aura-pi1a', 1, 1, 'relative', 'qarindosh', '/ˈrelətɪv/', ''),
@@ -1559,7 +1559,7 @@ insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-pi1a', 8, 37, 'be about to do something', 'endi ... qilmoqchi bo''lib turmoq', '/biː əˈbaʊt tə/', '')
 on conflict (book_id, unit, idx) do nothing;
 
-insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-pi2a', 'Pre-IELTS 2A', '2A', '#8C7CFF', '#4B3BC4', 8, 0, false, 13) on conflict (id) do nothing;
+insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-pi2a', 'Pre-IELTS 2A', '2A', '#8C7CFF', '#4B3BC4', 8, 15000, false, 13) on conflict (id) do nothing;
 insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values
 ('aura-pi2a', 1, 0, 'man-made', 'inson qo''li bilan yaratilgan', '/ˌmæn ˈmeɪd/', ''),
 ('aura-pi2a', 1, 1, 'bungalow', 'bir qavatli uy', '/ˈbʌŋɡələʊ/', ''),
