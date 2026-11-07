@@ -531,14 +531,16 @@ class PremiumScreen extends StatelessWidget {
 
 /// To'lov qadamlari (Premium va kitoblar uchun bir xil).
 class PayStepsText extends StatelessWidget {
-  const PayStepsText({super.key});
+  /// Nima yoqiladi: "Premium" yoki kitob nomi.
+  final String? what;
+  const PayStepsText({super.key, this.what});
   @override
   Widget build(BuildContext context) {
-    const steps = [
+    final steps = [
       'Telegram botimiz ochiladi',
       "Bot ko'rsatgan QR kod orqali Click bilan to'laysiz",
       'Chek rasmini (skrinshot) botga yuborasiz',
-      "Administrator tasdiqlagach, Premium o'zi yoqiladi",
+      what == null ? "Administrator tasdiqlagach, Premium o'zi yoqiladi" : "Administrator tasdiqlagach, $what o'zi ochiladi",
     ];
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       for (final (i, t) in steps.indexed)

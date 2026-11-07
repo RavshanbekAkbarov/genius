@@ -1,0 +1,2465 @@
+{
+ "foundation|1": [
+  {
+   "en": "daily routine",
+   "uz": "kundalik tartib",
+   "ipa": "/ˈdeɪli ruːˈtiːn/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "get up",
+   "uz": "o'rnidan turmoq",
+   "ipa": "/ɡet ʌp/",
+   "daraja": "A1",
+   "tur": "birikma"
+  },
+  {
+   "en": "catch the bus",
+   "uz": "avtobusga ulgurmoq, avtobusda ketmoq",
+   "ipa": "/kætʃ ðə bʌs/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "go online",
+   "uz": "internetga kirmoq",
+   "ipa": "/ɡəʊ ˌɒnˈlaɪn/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "chat",
+   "uz": "suhbatlashmoq, gaplashmoq",
+   "ipa": "/tʃæt/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "do some sightseeing",
+   "uz": "diqqatga sazovor joylarni ko'rmoq",
+   "ipa": "/duː səm ˈsaɪtsiːɪŋ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "host family",
+   "uz": "mezbon oila",
+   "ipa": "/həʊst ˈfæməli/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "athletics",
+   "uz": "yengil atletika",
+   "ipa": "/æθˈletɪks/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "coast",
+   "uz": "qirg'oq, sohil",
+   "ipa": "/kəʊst/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "cattle",
+   "uz": "qoramol",
+   "ipa": "/ˈkætl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "get a lift",
+   "uz": "kimningdir mashinasida ketmoq",
+   "ipa": "/ɡet ə lɪft/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "switch off",
+   "uz": "o'chirmoq",
+   "ipa": "/swɪtʃ ɒf/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "fall asleep",
+   "uz": "uxlab qolmoq",
+   "ipa": "/fɔːl əˈsliːp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "lecture",
+   "uz": "ma'ruza",
+   "ipa": "/ˈlektʃə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "flatmate",
+   "uz": "uy sherigi",
+   "ipa": "/ˈflætmeɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "do the laundry",
+   "uz": "kir yuvmoq",
+   "ipa": "/duː ðə ˈlɔːndri/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "tidy up",
+   "uz": "yig'ishtirmoq, tartibga keltirmoq",
+   "ipa": "/ˈtaɪdi ʌp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "put things away",
+   "uz": "narsalarni joyiga qo'ymoq",
+   "ipa": "/pʊt θɪŋz əˈweɪ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "wash up",
+   "uz": "idish yuvmoq",
+   "ipa": "/wɒʃ ʌp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take out the bins",
+   "uz": "axlatni chiqarib tashlamoq",
+   "ipa": "/teɪk aʊt ðə bɪnz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "do the housework",
+   "uz": "uy ishlarini qilmoq",
+   "ipa": "/duː ðə ˈhaʊswɜːk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "do the cleaning",
+   "uz": "tozalash ishlarini qilmoq",
+   "ipa": "/duː ðə ˈkliːnɪŋ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "make the beds",
+   "uz": "o'rin-ko'rpani yig'ishtirmoq",
+   "ipa": "/meɪk ðə bedz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "make a mess",
+   "uz": "tartibsizlik qilmoq, iflos qilmoq",
+   "ipa": "/meɪk ə mes/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make a noise",
+   "uz": "shovqin qilmoq",
+   "ipa": "/meɪk ə nɔɪz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "lazy",
+   "uz": "dangasa",
+   "ipa": "/ˈleɪzi/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "pile",
+   "uz": "uyum",
+   "ipa": "/paɪl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "break down",
+   "uz": "buzilib qolmoq",
+   "ipa": "/breɪk daʊn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "dishwasher",
+   "uz": "idish yuvish mashinasi",
+   "ipa": "/ˈdɪʃwɒʃə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "volunteer",
+   "uz": "ko'ngilli",
+   "ipa": "/ˌvɒlənˈtɪə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "exchange programme",
+   "uz": "almashinuv dasturi",
+   "ipa": "/ɪksˈtʃeɪndʒ ˌprəʊɡræm/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "pocket money",
+   "uz": "cho'ntak puli",
+   "ipa": "/ˈpɒkɪt ˌmʌni/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "join in (with something)",
+   "uz": "qo'shilmoq, ishtirok etmoq",
+   "ipa": "/dʒɔɪn ɪn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "take care of something",
+   "uz": "biror narsaga qaramoq",
+   "ipa": "/teɪk keər ɒv/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "repair",
+   "uz": "ta'mirlamoq",
+   "ipa": "/rɪˈpeə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "hesitate",
+   "uz": "ikkilanmoq, to'xtalib qolmoq",
+   "ipa": "/ˈhezɪteɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "feedback",
+   "uz": "fikr-mulohaza",
+   "ipa": "/ˈfiːdbæk/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "swap roles",
+   "uz": "rollarni almashtirmoq",
+   "ipa": "/swɒp rəʊlz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "brush your teeth",
+   "uz": "tish yuvmoq",
+   "ipa": "/brʌʃ jə tiːθ/",
+   "daraja": "A1",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|2": [
+  {
+   "en": "hallway",
+   "uz": "yo'lak, dahliz",
+   "ipa": "/ˈhɔːlweɪ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "basement",
+   "uz": "yerto'la",
+   "ipa": "/ˈbeɪsmənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "attic",
+   "uz": "chordoq",
+   "ipa": "/ˈætɪk/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "garage",
+   "uz": "garaj",
+   "ipa": "/ˈɡærɑːʒ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "curtains",
+   "uz": "pardalar",
+   "ipa": "/ˈkɜːtnz/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "blinds",
+   "uz": "jalyuzi",
+   "ipa": "/blaɪndz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "freezer",
+   "uz": "muzlatkich (muzlatish bo'limi)",
+   "ipa": "/ˈfriːzə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "sink",
+   "uz": "chanoq, rakovina",
+   "ipa": "/sɪŋk/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "wardrobe",
+   "uz": "kiyim javoni",
+   "ipa": "/ˈwɔːdrəʊb/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "cupboard",
+   "uz": "shkaf, javon",
+   "ipa": "/ˈkʌbəd/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "drawer",
+   "uz": "tortma",
+   "ipa": "/drɔː/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "pillow",
+   "uz": "yostiq",
+   "ipa": "/ˈpɪləʊ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "sheet",
+   "uz": "choyshab",
+   "ipa": "/ʃiːt/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "accommodation",
+   "uz": "turar joy",
+   "ipa": "/əˌkɒməˈdeɪʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "agent",
+   "uz": "agent, vakil",
+   "ipa": "/ˈeɪdʒənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "advert",
+   "uz": "e'lon, reklama",
+   "ipa": "/ˈædvɜːt/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "on campus",
+   "uz": "universitet hududida",
+   "ipa": "/ɒn ˈkæmpəs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "private accommodation",
+   "uz": "xususiy turar joy",
+   "ipa": "/ˈpraɪvət əˌkɒməˈdeɪʃn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "housemate",
+   "uz": "uy sherigi",
+   "ipa": "/ˈhaʊsmeɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "roommate",
+   "uz": "xona sherigi",
+   "ipa": "/ˈruːmmeɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sociable",
+   "uz": "kirishimli, odamoxun",
+   "ipa": "/ˈsəʊʃəbl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "preference",
+   "uz": "afzal ko'rish, tanlov",
+   "ipa": "/ˈprefrəns/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "catered accommodation",
+   "uz": "ovqat bilan ta'minlangan turar joy",
+   "ipa": "/ˈkeɪtəd əˌkɒməˈdeɪʃn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "broadband",
+   "uz": "tezkor internet",
+   "ipa": "/ˈbrɔːdbænd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "alarm goes off",
+   "uz": "budilnik jiringlaydi",
+   "ipa": "/əˈlɑːm ɡəʊz ɒf/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "have a lie-in",
+   "uz": "ertalab uzoq uxlamoq",
+   "ipa": "/hæv ə ˈlaɪ ɪn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "get ready",
+   "uz": "tayyorlanmoq",
+   "ipa": "/ɡet ˈredi/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "head back",
+   "uz": "qaytib bormoq",
+   "ipa": "/hed bæk/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "messy",
+   "uz": "iflos, tartibsiz",
+   "ipa": "/ˈmesi/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "detached house",
+   "uz": "alohida turgan hovli uy",
+   "ipa": "/dɪˌtætʃt ˈhaʊs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "semi-detached house",
+   "uz": "ikki xonadonli qo'shni uy",
+   "ipa": "/ˌsemi dɪˌtætʃt ˈhaʊs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "terraced house",
+   "uz": "qator joylashgan uy",
+   "ipa": "/ˌterəst ˈhaʊs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "homeowner",
+   "uz": "uy egasi",
+   "ipa": "/ˈhəʊməʊnə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "ground floor",
+   "uz": "birinchi qavat",
+   "ipa": "/ˌɡraʊnd ˈflɔː/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "provided",
+   "uz": "beriladi, ta'minlanadi",
+   "ipa": "/prəˈvaɪdɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "shared",
+   "uz": "umumiy (birgalikda foydalaniladigan)",
+   "ipa": "/ʃeəd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "punctuation",
+   "uz": "tinish belgilari",
+   "ipa": "/ˌpʌŋktʃuˈeɪʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "it doesn't matter",
+   "uz": "farqi yo'q, muhim emas",
+   "ipa": "/ɪt ˈdʌznt ˈmætə/",
+   "daraja": "A2",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|3": [
+  {
+   "en": "leisure activity",
+   "uz": "bo'sh vaqtdagi mashg'ulot",
+   "ipa": "/ˈleʒə ækˈtɪvəti/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "white water rafting",
+   "uz": "tez oqimda qayiqda suzish",
+   "ipa": "/ˌwaɪt wɔːtə ˈrɑːftɪŋ/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "sailing",
+   "uz": "yelkanli qayiqda suzish",
+   "ipa": "/ˈseɪlɪŋ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "hiking",
+   "uz": "piyoda sayohat",
+   "ipa": "/ˈhaɪkɪŋ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "canoeing",
+   "uz": "kanoeda suzish",
+   "ipa": "/kəˈnuːɪŋ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "scary",
+   "uz": "qo'rqinchli",
+   "ipa": "/ˈskeəri/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "adventure",
+   "uz": "sarguzasht",
+   "ipa": "/ədˈventʃə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "guesthouse",
+   "uz": "mehmonxona (kichik)",
+   "ipa": "/ˈɡesthaʊs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "exhausted",
+   "uz": "juda charchagan",
+   "ipa": "/ɪɡˈzɔːstɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "look after someone",
+   "uz": "kimgadir qaramoq",
+   "ipa": "/lʊk ˈɑːftə/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "make someone laugh",
+   "uz": "kimnidir kuldirmoq",
+   "ipa": "/meɪk ˈsʌmwʌn lɑːf/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "have a rest",
+   "uz": "dam olmoq",
+   "ipa": "/hæv ə rest/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "professional",
+   "uz": "professional, kasbiy",
+   "ipa": "/prəˈfeʃənl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "hometown",
+   "uz": "ona shahar",
+   "ipa": "/ˈhəʊmtaʊn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "hardly ever",
+   "uz": "deyarli hech qachon",
+   "ipa": "/ˈhɑːdli ˈevə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "sponsor",
+   "uz": "homiy",
+   "ipa": "/ˈspɒnsə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "coach",
+   "uz": "murabbiy",
+   "ipa": "/kəʊtʃ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "successful",
+   "uz": "muvaffaqiyatli",
+   "ipa": "/səkˈsesfl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "keep fit",
+   "uz": "sog'lom va baquvvat bo'lmoq",
+   "ipa": "/kiːp fɪt/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "trick",
+   "uz": "nayrang, mohirona harakat",
+   "ipa": "/trɪk/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "score a goal",
+   "uz": "gol urmoq",
+   "ipa": "/skɔːr ə ɡəʊl/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "win a match",
+   "uz": "o'yinda yutmoq",
+   "ipa": "/wɪn ə mætʃ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "throw",
+   "uz": "otmoq",
+   "ipa": "/θrəʊ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "kick",
+   "uz": "tepmoq",
+   "ipa": "/kɪk/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "beat",
+   "uz": "yengmoq (raqibni)",
+   "ipa": "/biːt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "tournament",
+   "uz": "turnir",
+   "ipa": "/ˈtʊənəmənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "equipment",
+   "uz": "jihoz, anjom",
+   "ipa": "/ɪˈkwɪpmənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "take turns",
+   "uz": "navbatma-navbat qilmoq",
+   "ipa": "/teɪk tɜːnz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "entrance",
+   "uz": "kirish joyi",
+   "ipa": "/ˈentrəns/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "can't wait to do something",
+   "uz": "... qilishni intiqlik bilan kutmoq",
+   "ipa": "/kɑːnt weɪt/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "belong to someone",
+   "uz": "kimgadir tegishli bo'lmoq",
+   "ipa": "/bɪˈlɒŋ tuː/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "borrow",
+   "uz": "qarzga olmoq",
+   "ipa": "/ˈbɒrəʊ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "halls of residence",
+   "uz": "talabalar yotoqxonasi",
+   "ipa": "/ˌhɔːlz əv ˈrezɪdəns/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "earn money",
+   "uz": "pul ishlab topmoq",
+   "ipa": "/ɜːn ˈmʌni/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "go on holiday",
+   "uz": "ta'tilga chiqmoq",
+   "ipa": "/ɡəʊ ɒn ˈhɒlədeɪ/",
+   "daraja": "A1",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|4": [
+  {
+   "en": "city break",
+   "uz": "shaharga qisqa sayohat",
+   "ipa": "/ˈsɪti breɪk/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "beach holiday",
+   "uz": "dengiz bo'yida dam olish",
+   "ipa": "/biːtʃ ˈhɒlədeɪ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "language exchange",
+   "uz": "til almashinuvi",
+   "ipa": "/ˈlæŋɡwɪdʒ ɪksˈtʃeɪndʒ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "go on a day trip",
+   "uz": "bir kunlik sayohatga chiqmoq",
+   "ipa": "/ɡəʊ ɒn ə deɪ trɪp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "go on a cultural visit",
+   "uz": "madaniy joylarni ko'rishga bormoq",
+   "ipa": "/ɡəʊ ɒn ə ˈkʌltʃərəl ˈvɪzɪt/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "beach resort",
+   "uz": "dengiz bo'yidagi kurort",
+   "ipa": "/biːtʃ rɪˈzɔːt/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "local attractions",
+   "uz": "mahalliy diqqatga sazovor joylar",
+   "ipa": "/ˈləʊkl əˈtrækʃnz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "wildlife",
+   "uz": "yovvoyi tabiat",
+   "ipa": "/ˈwaɪldlaɪf/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "luxury",
+   "uz": "hashamatli",
+   "ipa": "/ˈlʌkʃəri/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sunset",
+   "uz": "quyosh botishi",
+   "ipa": "/ˈsʌnset/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "snorkelling",
+   "uz": "niqob bilan suv ostida suzish",
+   "ipa": "/ˈsnɔːkəlɪŋ/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "available",
+   "uz": "mavjud, bor",
+   "ipa": "/əˈveɪləbl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "explore",
+   "uz": "kashf qilmoq, o'rganmoq",
+   "ipa": "/ɪkˈsplɔː/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "demonstration",
+   "uz": "namoyish, ko'rsatish",
+   "ipa": "/ˌdemənˈstreɪʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "beginner",
+   "uz": "boshlovchi",
+   "ipa": "/bɪˈɡɪnə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "experienced",
+   "uz": "tajribali",
+   "ipa": "/ɪkˈspɪəriənst/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "advanced",
+   "uz": "ilg'or, yuqori darajadagi",
+   "ipa": "/ədˈvɑːnst/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "qualified",
+   "uz": "malakali",
+   "ipa": "/ˈkwɒlɪfaɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "instructor",
+   "uz": "o'qituvchi, murabbiy",
+   "ipa": "/ɪnˈstrʌktə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "the great outdoors",
+   "uz": "ochiq tabiat",
+   "ipa": "/ðə ɡreɪt ˌaʊtˈdɔːz/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "previous",
+   "uz": "oldingi",
+   "ipa": "/ˈpriːviəs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "required",
+   "uz": "talab qilinadi",
+   "ipa": "/rɪˈkwaɪəd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "energy",
+   "uz": "kuch-quvvat, g'ayrat",
+   "ipa": "/ˈenədʒi/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "allow",
+   "uz": "ruxsat bermoq",
+   "ipa": "/əˈlaʊ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "improve",
+   "uz": "yaxshilamoq",
+   "ipa": "/ɪmˈpruːv/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "orchestra",
+   "uz": "orkestr",
+   "ipa": "/ˈɔːkɪstrə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "book a holiday",
+   "uz": "ta'tilni oldindan band qilmoq",
+   "ipa": "/bʊk ə ˈhɒlədeɪ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "be good at something",
+   "uz": "biror narsani yaxshi bilmoq, ...ga usta bo'lmoq",
+   "ipa": "/biː ɡʊd æt/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take part in something",
+   "uz": "biror narsada qatnashmoq",
+   "ipa": "/teɪk pɑːt ɪn/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "sights",
+   "uz": "diqqatga sazovor joylar",
+   "ipa": "/saɪts/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "palace",
+   "uz": "saroy",
+   "ipa": "/ˈpæləs/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "souvenir",
+   "uz": "esdalik sovg'a",
+   "ipa": "/ˌsuːvəˈnɪə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "journey",
+   "uz": "yo'l, safar",
+   "ipa": "/ˈdʒɜːni/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "monument",
+   "uz": "yodgorlik",
+   "ipa": "/ˈmɒnjumənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "cool down",
+   "uz": "salqinlashmoq",
+   "ipa": "/kuːl daʊn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|5": [
+  {
+   "en": "ingredient",
+   "uz": "masalliq",
+   "ipa": "/ɪnˈɡriːdiənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "dish",
+   "uz": "taom",
+   "ipa": "/dɪʃ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "flour",
+   "uz": "un",
+   "ipa": "/ˈflaʊə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "prawn",
+   "uz": "krevetka",
+   "ipa": "/prɔːn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "noodles",
+   "uz": "lag'mon, ugra",
+   "ipa": "/ˈnuːdlz/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "garlic",
+   "uz": "sarimsoq",
+   "ipa": "/ˈɡɑːlɪk/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "food festival",
+   "uz": "ovqat festivali",
+   "ipa": "/fuːd ˈfestɪvl/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "taste",
+   "uz": "tatib ko'rmoq; ta'm",
+   "ipa": "/teɪst/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "tasty",
+   "uz": "mazali",
+   "ipa": "/ˈteɪsti/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "performance",
+   "uz": "chiqish, tomosha",
+   "ipa": "/pəˈfɔːməns/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "arts and crafts",
+   "uz": "hunarmandchilik",
+   "ipa": "/ˌɑːts ən ˈkrɑːfts/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "download",
+   "uz": "yuklab olmoq",
+   "ipa": "/ˌdaʊnˈləʊd/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "can't afford something",
+   "uz": "biror narsaga puli yetmaslik",
+   "ipa": "/kɑːnt əˈfɔːd/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "salmon",
+   "uz": "losos baliq",
+   "ipa": "/ˈsæmən/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "spring onion",
+   "uz": "ko'k piyoz",
+   "ipa": "/ˌsprɪŋ ˈʌnjən/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "carbohydrates",
+   "uz": "uglevodlar",
+   "ipa": "/ˌkɑːbəʊˈhaɪdreɪts/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "seafood",
+   "uz": "dengiz mahsulotlari",
+   "ipa": "/ˈsiːfuːd/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "chop",
+   "uz": "maydalab to'g'ramoq",
+   "ipa": "/tʃɒp/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "fold",
+   "uz": "buklamoq",
+   "ipa": "/fəʊld/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "roll",
+   "uz": "yoymoq, o'ramoq",
+   "ipa": "/rəʊl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "dough",
+   "uz": "xamir",
+   "ipa": "/dəʊ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "cabbage",
+   "uz": "karam",
+   "ipa": "/ˈkæbɪdʒ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "filling",
+   "uz": "ichiga solinadigan narsa (qiyma)",
+   "ipa": "/ˈfɪlɪŋ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "dumplings",
+   "uz": "chuchvara, manti",
+   "ipa": "/ˈdʌmplɪŋz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "equal",
+   "uz": "teng",
+   "ipa": "/ˈiːkwəl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "eating habits",
+   "uz": "ovqatlanish odatlari",
+   "ipa": "/ˈiːtɪŋ ˈhæbɪts/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "soy sauce",
+   "uz": "soya sousi",
+   "ipa": "/ˌsɔɪ ˈsɔːs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "slice",
+   "uz": "bo'lak; bo'laklab kesmoq",
+   "ipa": "/slaɪs/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "serve",
+   "uz": "tortmoq (ovqatni)",
+   "ipa": "/sɜːv/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "minced beef",
+   "uz": "mol go'shti qiymasi",
+   "ipa": "/mɪnst biːf/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "lettuce",
+   "uz": "salat bargi",
+   "ipa": "/ˈletɪs/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "cauliflower",
+   "uz": "gulkaram",
+   "ipa": "/ˈkɒliflaʊə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lobster",
+   "uz": "omar (dengiz qisqichbaqasi)",
+   "ipa": "/ˈlɒbstə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "mixture",
+   "uz": "aralashma",
+   "ipa": "/ˈmɪkstʃə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "paste",
+   "uz": "pasta, quyuq aralashma",
+   "ipa": "/peɪst/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "feel like doing something",
+   "uz": "biror narsa qilgisi kelmoq",
+   "ipa": "/fiːl laɪk/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "have a snack",
+   "uz": "yengil tamaddi qilmoq",
+   "ipa": "/hæv ə snæk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|6": [
+  {
+   "en": "statue",
+   "uz": "haykal",
+   "ipa": "/ˈstætʃuː/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "castle",
+   "uz": "qal'a",
+   "ipa": "/ˈkɑːsl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "stadium",
+   "uz": "stadion",
+   "ipa": "/ˈsteɪdiəm/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "tower",
+   "uz": "minora",
+   "ipa": "/ˈtaʊə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "square",
+   "uz": "maydon",
+   "ipa": "/skweə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "motorway",
+   "uz": "avtomagistral",
+   "ipa": "/ˈməʊtəweɪ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "platform",
+   "uz": "platforma (vokzalda)",
+   "ipa": "/ˈplætfɔːm/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "car park",
+   "uz": "avtoturargoh",
+   "ipa": "/ˈkɑː pɑːk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "department store",
+   "uz": "univermag",
+   "ipa": "/dɪˈpɑːtmənt stɔː/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "the underground",
+   "uz": "metro",
+   "ipa": "/ði ˈʌndəɡraʊnd/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "notice",
+   "uz": "e'lon",
+   "ipa": "/ˈnəʊtɪs/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "customer",
+   "uz": "xaridor, mijoz",
+   "ipa": "/ˈkʌstəmə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "delayed",
+   "uz": "kechiktirilgan",
+   "ipa": "/dɪˈleɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "heavy snow",
+   "uz": "kuchli qor",
+   "ipa": "/ˈhevi snəʊ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "boat trip",
+   "uz": "qayiqda sayr",
+   "ipa": "/ˈbəʊt trɪp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "member of staff",
+   "uz": "xodim",
+   "ipa": "/ˈmembər əv stɑːf/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "passenger",
+   "uz": "yo'lovchi",
+   "ipa": "/ˈpæsɪndʒə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "architect",
+   "uz": "me'mor",
+   "ipa": "/ˈɑːkɪtekt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "postcode",
+   "uz": "pochta indeksi",
+   "ipa": "/ˈpəʊstkəʊd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "opening hours",
+   "uz": "ish vaqti",
+   "ipa": "/ˈəʊpnɪŋ aʊəz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "pharmacy",
+   "uz": "dorixona",
+   "ipa": "/ˈfɑːməsi/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "opposite",
+   "uz": "qarshisida",
+   "ipa": "/ˈɒpəzɪt/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "between",
+   "uz": "o'rtasida",
+   "ipa": "/bɪˈtwiːn/",
+   "daraja": "A1",
+   "tur": "so'z"
+  },
+  {
+   "en": "traffic",
+   "uz": "tirbandlik, transport oqimi",
+   "ipa": "/ˈtræfɪk/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "pen-friend",
+   "uz": "xat orqali do'st",
+   "ipa": "/ˈpen frend/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "parcel",
+   "uz": "posilka",
+   "ipa": "/ˈpɑːsl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "neighbour",
+   "uz": "qo'shni",
+   "ipa": "/ˈneɪbə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "crowded",
+   "uz": "odam gavjum",
+   "ipa": "/ˈkraʊdɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "jewellery",
+   "uz": "zargarlik buyumlari",
+   "ipa": "/ˈdʒuːəlri/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "petrol station",
+   "uz": "yoqilg'i quyish shoxobchasi",
+   "ipa": "/ˈpetrəl ˌsteɪʃn/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "get on the bus",
+   "uz": "avtobusga chiqmoq",
+   "ipa": "/ɡet ɒn ðə bʌs/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "go sightseeing",
+   "uz": "diqqatga sazovor joylarni aylanmoq",
+   "ipa": "/ɡəʊ ˈsaɪtsiːɪŋ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "let someone know",
+   "uz": "kimgadir xabar bermoq",
+   "ipa": "/let ˈsʌmwʌn nəʊ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "on your left / on your right",
+   "uz": "chap / o'ng tomoningizda",
+   "ipa": "/ɒn jə left/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "in front of",
+   "uz": "oldida",
+   "ipa": "/ɪn frʌnt ɒv/",
+   "daraja": "A1",
+   "tur": "birikma"
+  },
+  {
+   "en": "next to",
+   "uz": "yonida",
+   "ipa": "/nekst tuː/",
+   "daraja": "A1",
+   "tur": "birikma"
+  },
+  {
+   "en": "lose weight",
+   "uz": "ozmoq",
+   "ipa": "/luːz weɪt/",
+   "daraja": "A2",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|7": [
+  {
+   "en": "the elderly",
+   "uz": "keksalar",
+   "ipa": "/ði ˈeldəli/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "uniform",
+   "uz": "forma (kiyim)",
+   "ipa": "/ˈjuːnɪfɔːm/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "skills and abilities",
+   "uz": "ko'nikma va qobiliyatlar",
+   "ipa": "/skɪlz ənd əˈbɪlətiz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "read a map",
+   "uz": "xarita o'qimoq",
+   "ipa": "/riːd ə mæp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "work long hours",
+   "uz": "uzoq soat ishlamoq",
+   "ipa": "/wɜːk lɒŋ ˈaʊəz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "do well in exams",
+   "uz": "imtihonlarda yaxshi natija ko'rsatmoq",
+   "ipa": "/duː wel ɪn ɪɡˈzæmz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "memory",
+   "uz": "xotira",
+   "ipa": "/ˈmeməri/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "shy",
+   "uz": "uyatchan",
+   "ipa": "/ʃaɪ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "challenge",
+   "uz": "qiyin vazifa, sinov",
+   "ipa": "/ˈtʃælɪndʒ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "bestselling",
+   "uz": "eng ko'p sotilgan",
+   "ipa": "/ˌbestˈselɪŋ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "present (a show)",
+   "uz": "olib bormoq (ko'rsatuvni)",
+   "ipa": "/prɪˈzent/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lifeguard",
+   "uz": "qutqaruvchi (cho'milish joyida)",
+   "ipa": "/ˈlaɪfɡɑːd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sales assistant",
+   "uz": "sotuvchi",
+   "ipa": "/ˈseɪlz əˌsɪstənt/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "careers advisor",
+   "uz": "kasb tanlash maslahatchisi",
+   "ipa": "/kəˈrɪəz ədˌvaɪzə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "work experience",
+   "uz": "ish tajribasi",
+   "ipa": "/wɜːk ɪkˈspɪəriəns/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "community",
+   "uz": "jamiyat, mahalla",
+   "ipa": "/kəˈmjuːnəti/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "keep someone company",
+   "uz": "kimgadir hamroh bo'lmoq",
+   "ipa": "/kiːp ˈkʌmpəni/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "care home",
+   "uz": "qariyalar uyi",
+   "ipa": "/ˈkeə həʊm/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "outfit",
+   "uz": "kiyim to'plami",
+   "ipa": "/ˈaʊtfɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "confident",
+   "uz": "o'ziga ishongan",
+   "ipa": "/ˈkɒnfɪdənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "decision-making",
+   "uz": "qaror qabul qilish",
+   "ipa": "/dɪˈsɪʒn ˌmeɪkɪŋ/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "certificate",
+   "uz": "sertifikat, guvohnoma",
+   "ipa": "/səˈtɪfɪkət/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "a wide range of",
+   "uz": "turli-tuman, keng doiradagi",
+   "ipa": "/ə waɪd reɪndʒ ɒv/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "employer",
+   "uz": "ish beruvchi",
+   "ipa": "/ɪmˈplɔɪə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "application form",
+   "uz": "ariza shakli",
+   "ipa": "/ˌæplɪˈkeɪʃn fɔːm/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "apply for",
+   "uz": "ariza topshirmoq",
+   "ipa": "/əˈplaɪ fɔː/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "receptionist",
+   "uz": "qabulxona xodimi",
+   "ipa": "/rɪˈsepʃənɪst/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "impressive",
+   "uz": "ta'sirli, hayratlanarli",
+   "ipa": "/ɪmˈpresɪv/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "pass a test",
+   "uz": "imtihondan o'tmoq",
+   "ipa": "/pɑːs ə test/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "fail an exam",
+   "uz": "imtihondan yiqilmoq",
+   "ipa": "/feɪl ən ɪɡˈzæm/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "lawyer",
+   "uz": "advokat, huquqshunos",
+   "ipa": "/ˈlɔːjə/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "hard-working",
+   "uz": "mehnatkash",
+   "ipa": "/ˌhɑːd ˈwɜːkɪŋ/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "day off",
+   "uz": "dam olish kuni",
+   "ipa": "/deɪ ɒf/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "get paid",
+   "uz": "maosh olmoq",
+   "ipa": "/ɡet peɪd/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|8": [
+  {
+   "en": "keep healthy",
+   "uz": "sog'lom bo'lmoq",
+   "ipa": "/kiːp ˈhelθi/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "join a gym",
+   "uz": "sport zaliga a'zo bo'lmoq",
+   "ipa": "/dʒɔɪn ə dʒɪm/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "personal trainer",
+   "uz": "shaxsiy murabbiy",
+   "ipa": "/ˌpɜːsənl ˈtreɪnə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "healthy diet",
+   "uz": "sog'lom ovqatlanish",
+   "ipa": "/ˈhelθi ˈdaɪət/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "get enough sleep",
+   "uz": "yetarlicha uxlamoq",
+   "ipa": "/ɡet ɪˈnʌf sliːp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "stressed",
+   "uz": "asabiy, stress holatidagi",
+   "ipa": "/strest/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "essay",
+   "uz": "insho",
+   "ipa": "/ˈeseɪ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "focus on something",
+   "uz": "biror narsaga e'tibor qaratmoq",
+   "ipa": "/ˈfəʊkəs ɒn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "term",
+   "uz": "chorak, semestr",
+   "ipa": "/tɜːm/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "encourage",
+   "uz": "rag'batlantirmoq",
+   "ipa": "/ɪnˈkʌrɪdʒ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lifestyle",
+   "uz": "turmush tarzi",
+   "ipa": "/ˈlaɪfstaɪl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "regular exercise",
+   "uz": "muntazam jismoniy mashq",
+   "ipa": "/ˈreɡjələr ˈeksəsaɪz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "indoors",
+   "uz": "bino ichida",
+   "ipa": "/ˌɪnˈdɔːz/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "overweight",
+   "uz": "ortiqcha vaznli",
+   "ipa": "/ˌəʊvəˈweɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "concentrate",
+   "uz": "diqqatni jamlamoq",
+   "ipa": "/ˈkɒnsntreɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "take a break",
+   "uz": "tanaffus qilmoq",
+   "ipa": "/teɪk ə breɪk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "in conclusion",
+   "uz": "xulosa qilib aytganda",
+   "ipa": "/ɪn kənˈkluːʒn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "revise",
+   "uz": "takrorlamoq (imtihonga)",
+   "ipa": "/rɪˈvaɪz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "mind",
+   "uz": "aql, ong",
+   "ipa": "/maɪnd/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "it looks like",
+   "uz": "... ga o'xshaydi, shekilli",
+   "ipa": "/ɪt lʊks laɪk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "do yoga",
+   "uz": "yoga bilan shug'ullanmoq",
+   "ipa": "/duː ˈjəʊɡə/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "go for a walk",
+   "uz": "sayrga chiqmoq",
+   "ipa": "/ɡəʊ fər ə wɔːk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "relax",
+   "uz": "dam olmoq, bo'shashmoq",
+   "ipa": "/rɪˈlæks/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "obligation",
+   "uz": "majburiyat",
+   "ipa": "/ˌɒblɪˈɡeɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "deadline",
+   "uz": "oxirgi muddat",
+   "ipa": "/ˈdedlaɪn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "recommend",
+   "uz": "tavsiya qilmoq",
+   "ipa": "/ˌrekəˈmend/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "get some fresh air",
+   "uz": "toza havoga chiqmoq",
+   "ipa": "/ɡet səm freʃ eə/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "plenty of",
+   "uz": "ko'p, yetarlicha",
+   "ipa": "/ˈplenti ɒv/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "suggestion",
+   "uz": "taklif",
+   "ipa": "/səˈdʒestʃən/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "warn against something",
+   "uz": "biror narsadan ogohlantirmoq",
+   "ipa": "/wɔːn əˈɡenst/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "energy",
+   "uz": "kuch-quvvat",
+   "ipa": "/ˈenədʒi/",
+   "daraja": "A2",
+   "tur": "so'z"
+  }
+ ],
+ "foundation|9": [
+  {
+   "en": "keep a vocabulary notebook",
+   "uz": "lug'at daftari yuritmoq",
+   "ipa": "/kiːp ə vəˈkæbjələri ˈnəʊtbʊk/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "first language",
+   "uz": "ona tili",
+   "ipa": "/ˌfɜːst ˈlæŋɡwɪdʒ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "communicate",
+   "uz": "muloqot qilmoq",
+   "ipa": "/kəˈmjuːnɪkeɪt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "hold a conversation",
+   "uz": "suhbat qura olmoq",
+   "ipa": "/həʊld ə ˌkɒnvəˈseɪʃn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "video call",
+   "uz": "videoqo'ng'iroq qilmoq",
+   "ipa": "/ˈvɪdiəʊ kɔːl/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "phrase",
+   "uz": "ibora",
+   "ipa": "/freɪz/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "follow-up question",
+   "uz": "qo'shimcha savol",
+   "ipa": "/ˈfɒləʊ ʌp ˌkwestʃən/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "collocation",
+   "uz": "so'z birikmasi",
+   "ipa": "/ˌkɒləˈkeɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "have an advantage",
+   "uz": "ustunlikka ega bo'lmoq",
+   "ipa": "/hæv ən ədˈvɑːntɪdʒ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "practise your skills",
+   "uz": "ko'nikmalarni mashq qilmoq",
+   "ipa": "/ˈpræktɪs jə skɪlz/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take someone's advice",
+   "uz": "kimningdir maslahatiga amal qilmoq",
+   "ipa": "/teɪk əˈdvaɪs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "have fun",
+   "uz": "maza qilmoq, xursand vaqt o'tkazmoq",
+   "ipa": "/hæv fʌn/",
+   "daraja": "A1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make progress",
+   "uz": "rivojlanmoq, oldinga siljimoq",
+   "ipa": "/meɪk ˈprəʊɡres/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make an effort",
+   "uz": "harakat qilmoq, kuch sarflamoq",
+   "ipa": "/meɪk ən ˈefət/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make a mistake",
+   "uz": "xato qilmoq",
+   "ipa": "/meɪk ə mɪˈsteɪk/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "population",
+   "uz": "aholi",
+   "ipa": "/ˌpɒpjuˈleɪʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "unlikely",
+   "uz": "ehtimoli kam",
+   "ipa": "/ʌnˈlaɪkli/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "disadvantage",
+   "uz": "kamchilik",
+   "ipa": "/ˌdɪsədˈvɑːntɪdʒ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "continuously",
+   "uz": "to'xtovsiz",
+   "ipa": "/kənˈtɪnjuəsli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "brain",
+   "uz": "miya",
+   "ipa": "/breɪn/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "take your time",
+   "uz": "shoshilmang, vaqtingizni oling",
+   "ipa": "/teɪk jə taɪm/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "summarise",
+   "uz": "qisqacha bayon qilmoq",
+   "ipa": "/ˈsʌməraɪz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "look up a word",
+   "uz": "so'zni lug'atdan qidirmoq",
+   "ipa": "/lʊk ʌp ə wɜːd/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "introduction",
+   "uz": "kirish",
+   "ipa": "/ˌɪntrəˈdʌkʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "conclusion",
+   "uz": "xulosa",
+   "ipa": "/kənˈkluːʒn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "furthermore",
+   "uz": "bundan tashqari",
+   "ipa": "/ˌfɜːðəˈmɔː/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "additionally",
+   "uz": "qo'shimcha ravishda",
+   "ipa": "/əˈdɪʃənəli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "to sum up",
+   "uz": "xulosa qilib aytganda",
+   "ipa": "/tə sʌm ʌp/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "motivated",
+   "uz": "g'ayratli, intiluvchan",
+   "ipa": "/ˈməʊtɪveɪtɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "try your hardest",
+   "uz": "bor kuchini sarflamoq",
+   "ipa": "/traɪ jə ˈhɑːdɪst/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "move up",
+   "uz": "yuqori sinfga o'tmoq",
+   "ipa": "/muːv ʌp/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "foundation|10": [
+  {
+   "en": "desktop computer",
+   "uz": "stol kompyuteri",
+   "ipa": "/ˈdesktɒp kəmˈpjuːtə/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "laptop",
+   "uz": "noutbuk",
+   "ipa": "/ˈlæptɒp/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "landline",
+   "uz": "statsionar telefon",
+   "ipa": "/ˈlændlaɪn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "crash",
+   "uz": "qotib qolmoq (kompyuter)",
+   "ipa": "/kræʃ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "shut down",
+   "uz": "o'chirmoq (kompyuterni)",
+   "ipa": "/ʃʌt daʊn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "device",
+   "uz": "qurilma",
+   "ipa": "/dɪˈvaɪs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "network",
+   "uz": "tarmoq",
+   "ipa": "/ˈnetwɜːk/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "attachment",
+   "uz": "ilova fayl",
+   "ipa": "/əˈtætʃmənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "backup",
+   "uz": "zaxira nusxa",
+   "ipa": "/ˈbækʌp/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "stream",
+   "uz": "onlayn ko'rmoq/tinglamoq",
+   "ipa": "/striːm/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "store",
+   "uz": "saqlamoq",
+   "ipa": "/stɔː/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "development",
+   "uz": "rivojlanish, yangilik",
+   "ipa": "/dɪˈveləpmənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "server",
+   "uz": "server",
+   "ipa": "/ˈsɜːvə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "deliver",
+   "uz": "yetkazib bermoq",
+   "ipa": "/dɪˈlɪvə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "exchange information",
+   "uz": "ma'lumot almashmoq",
+   "ipa": "/ɪksˈtʃeɪndʒ ˌɪnfəˈmeɪʃn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "display",
+   "uz": "ko'rsatmoq (ekranda)",
+   "ipa": "/dɪˈspleɪ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "touch screen",
+   "uz": "sensorli ekran",
+   "ipa": "/ˈtʌtʃ skriːn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "increase",
+   "uz": "oshmoq; o'sish",
+   "ipa": "/ɪnˈkriːs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "decrease",
+   "uz": "kamaymoq; kamayish",
+   "ipa": "/dɪˈkriːs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "rise",
+   "uz": "ko'tarilmoq",
+   "ipa": "/raɪz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "fall",
+   "uz": "tushmoq, kamaymoq",
+   "ipa": "/fɔːl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "go up / go down",
+   "uz": "oshmoq / kamaymoq",
+   "ipa": "/ɡəʊ ʌp/",
+   "daraja": "A2",
+   "tur": "birikma"
+  },
+  {
+   "en": "grade",
+   "uz": "baho",
+   "ipa": "/ɡreɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "line graph",
+   "uz": "chiziqli grafik",
+   "ipa": "/ˈlaɪn ɡrɑːf/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "features",
+   "uz": "xususiyatlar, imkoniyatlar",
+   "ipa": "/ˈfiːtʃəz/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "the latest model",
+   "uz": "eng so'nggi model",
+   "ipa": "/ðə ˈleɪtɪst ˈmɒdl/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "out of date",
+   "uz": "eskirgan",
+   "ipa": "/aʊt əv deɪt/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "swipe",
+   "uz": "surmoq (ekranda barmoq bilan)",
+   "ipa": "/swaɪp/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "charger",
+   "uz": "quvvatlagich",
+   "ipa": "/ˈtʃɑːdʒə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "as soon as",
+   "uz": "...bilanoq",
+   "ipa": "/əz suːn əz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "as well as",
+   "uz": "shuningdek, ...dan tashqari",
+   "ipa": "/əz wel əz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "as long as",
+   "uz": "...sharti bilan, ...ekan",
+   "ipa": "/əz lɒŋ əz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ]
+}

@@ -464,6 +464,9 @@ class AppState extends ChangeNotifier {
   /// Pullik markaz kitobi va hali sotib olinmagan.
   bool locked(Book b) => b.paid && !owned.contains(b.id);
 
+  /// Pullik kitobning 1-uniti namuna sifatida bepul, qolganlari sotib olingach ochiladi.
+  bool unitLocked(Book b, int unit) => locked(b) && unit > 1;
+
   List<Word> words(String b, int u) {
     if (b == myBookId) {
       final s = (u - 1) * 20;

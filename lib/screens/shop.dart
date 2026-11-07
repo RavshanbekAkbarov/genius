@@ -50,7 +50,7 @@ class ShopTab extends StatelessWidget {
                 Expanded(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                     Text(b.title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
-                    Text("${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
+                    Text("${b.fixedUnits} unit · 1-unit bepul namuna",
                         style: TextStyle(color: C.mut, fontSize: 12)),
                     const SizedBox(height: 10),
                     if (s.owned.contains(b.id))
@@ -86,7 +86,7 @@ void showBookBuySheet(BuildContext context, Book b) {
           Text("${money(b.price)} so'm", style: const TextStyle(fontWeight: FontWeight.w800)),
         ]),
         const SizedBox(height: 12),
-        const PayStepsText(),
+        PayStepsText(what: "${b.title} kitobining hamma unitlari"),
         const SizedBox(height: 14),
         Btn("Telegram orqali sotib olish", kind: BtnKind.telegram, onTap: () {
           Navigator.pop(ctx);

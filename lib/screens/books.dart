@@ -126,7 +126,7 @@ class BookRow extends StatelessWidget {
                 b.isMine
                     ? "${s.myWords.length} so'z · o'zingiz qo'shasiz"
                     : locked
-                        ? "${b.fixedUnits} unit · ${money(b.price)} so'm"
+                        ? "${b.fixedUnits} unit · 1-unit bepul · ${money(b.price)} so'm"
                         : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
                 style: TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
             const SizedBox(height: 9),
@@ -147,13 +147,9 @@ class BookRow extends StatelessWidget {
   }
 }
 
-/// Kitobni ochish: pullik va sotib olinmagan bo'lsa do'kondagi sotib olish oynasi.
+/// Kitobni ochish. Pullik kitobda ham unitlar ro'yxati ochiladi: 1-unit bepul namuna,
+/// qolgan unitlar qulfda turadi va bosilsa sotib olish oynasi chiqadi.
 void openBook(BuildContext context, Book b) {
-  final s = AppScope.read(context);
-  if (s.locked(b)) {
-    showBookBuySheet(context, b);
-    return;
-  }
   push(context, UnitsScreen(bookId: b.id));
 }
 
@@ -200,6 +196,25 @@ class UnitsScreen extends StatelessWidget {
             Btn('Mashq qilish', icon: const Icon(Icons.play_arrow_rounded), onTap: empty ? null : () => openSetup(context, b.id)),
           ]),
         ),
+        if (s.locked(b)) ...[
+          const SizedBox(height: 12),
+          AppCard(
+            padding: const EdgeInsets.all(14),
+            border: C.gold.withValues(alpha: .5),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+              Row(children: [
+                Icon(Icons.lock_open_rounded, color: C.gold, size: 20),
+                const SizedBox(width: 8),
+                const Expanded(
+                    child: Text("1-unit bepul namuna. Qolgan unitlar kitobni sotib olgach ochiladi.",
+                        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13.5))),
+              ]),
+              const SizedBox(height: 10),
+              Btn("${money(b.price)} so'm · Sotib olish",
+                  kind: BtnKind.telegram, onTap: () => showBookBuySheet(context, b)),
+            ]),
+          ),
+        ],
         const SizedBox(height: 20),
         if (empty)
           const EmptyBox(
@@ -235,6 +250,18 @@ class _UnitTile extends StatelessWidget {
     final l = s.unitLearned(book.id, unit);
     final done = w > 0 && l == w;
     final total = book.isMine ? w : (w == 0 ? 20 : w);
+    if (s.unitLocked(book, unit)) {
+      return AppCard(
+        padding: const EdgeInsets.all(10),
+        onTap: () => showBookBuySheet(context, book),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(width: 46, height: 46, child: Icon(Icons.lock_rounded, color: C.gold, size: 24)),
+          const SizedBox(height: 8),
+          Text('Unit $unit', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13)),
+          Text('pullik', style: TextStyle(color: C.mut, fontSize: 11.5, fontWeight: FontWeight.w600)),
+        ]),
+      );
+    }
     return Opacity(
       opacity: w == 0 ? .45 : 1,
       child: AppCard(

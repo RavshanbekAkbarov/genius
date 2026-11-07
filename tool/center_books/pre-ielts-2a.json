@@ -1,0 +1,2265 @@
+{
+ "2a|1": [
+  {
+   "en": "man-made",
+   "uz": "inson qo'li bilan yaratilgan",
+   "ipa": "/ˌmæn ˈmeɪd/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "bungalow",
+   "uz": "bir qavatli uy",
+   "ipa": "/ˈbʌŋɡələʊ/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "ceiling",
+   "uz": "ship",
+   "ipa": "/ˈsiːlɪŋ/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "cellar",
+   "uz": "yerto'la (ombor)",
+   "ipa": "/ˈselə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "remote",
+   "uz": "chekka, olis",
+   "ipa": "/rɪˈməʊt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "glamorous",
+   "uz": "jozibali, hashamatli",
+   "ipa": "/ˈɡlæmərəs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "marble",
+   "uz": "marmar",
+   "ipa": "/ˈmɑːbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "skyscraper",
+   "uz": "osmono'par bino",
+   "ipa": "/ˈskaɪskreɪpə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "spacious",
+   "uz": "keng, kenglikka ega",
+   "ipa": "/ˈspeɪʃəs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "staircase",
+   "uz": "zinapoya",
+   "ipa": "/ˈsteəkeɪs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "skim",
+   "uz": "ko'z yugurtirib o'qimoq",
+   "ipa": "/skɪm/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "scan",
+   "uz": "aniq ma'lumot izlab o'qimoq",
+   "ipa": "/skæn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "residence",
+   "uz": "qarorgoh, turar joy",
+   "ipa": "/ˈrezɪdəns/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "extravagant",
+   "uz": "dabdabali, isrofgar",
+   "ipa": "/ɪkˈstrævəɡənt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "chandelier",
+   "uz": "qandil",
+   "ipa": "/ˌʃændəˈlɪə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "exposure",
+   "uz": "ta'sir ostida bo'lish (quyosh nuri)",
+   "ipa": "/ɪkˈspəʊʒə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "desirable",
+   "uz": "orzu qilinadigan, ma'qul",
+   "ipa": "/dɪˈzaɪərəbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "magnificent",
+   "uz": "ajoyib, muhtasham",
+   "ipa": "/mæɡˈnɪfɪsnt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "equipped",
+   "uz": "jihozlangan",
+   "ipa": "/ɪˈkwɪpt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "inherit",
+   "uz": "meros qilib olmoq",
+   "ipa": "/ɪnˈherɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "estate",
+   "uz": "mulk, yer-mulk",
+   "ipa": "/ɪˈsteɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "donate",
+   "uz": "hadya qilmoq",
+   "ipa": "/dəʊˈneɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "maintenance",
+   "uz": "ta'mirlash, saqlash xarajati",
+   "ipa": "/ˈmeɪntənəns/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "monastery",
+   "uz": "monastir",
+   "ipa": "/ˈmɒnəstri/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "simultaneous",
+   "uz": "bir vaqtda sodir bo'ladigan",
+   "ipa": "/ˌsɪmlˈteɪniəs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "urgently",
+   "uz": "zudlik bilan",
+   "ipa": "/ˈɜːdʒəntli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "ridiculous",
+   "uz": "kulgili, bema'ni",
+   "ipa": "/rɪˈdɪkjələs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "proficient",
+   "uz": "mohir, malakali",
+   "ipa": "/prəˈfɪʃnt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "insulated",
+   "uz": "izolyatsiyalangan",
+   "ipa": "/ˈɪnsjuleɪtɪd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "ambitious",
+   "uz": "katta maqsadli, shijoatli",
+   "ipa": "/æmˈbɪʃəs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "thirst",
+   "uz": "chanqoq",
+   "ipa": "/θɜːst/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "essential",
+   "uz": "juda zarur",
+   "ipa": "/ɪˈsenʃl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "estate agent",
+   "uz": "ko'chmas mulk agenti",
+   "ipa": "/ɪˈsteɪt ˌeɪdʒənt/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make an offer",
+   "uz": "narx taklif qilmoq",
+   "ipa": "/meɪk ən ˈɒfə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "come up with",
+   "uz": "o'ylab topmoq",
+   "ipa": "/kʌm ʌp wɪð/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "do the trick",
+   "uz": "ish bermoq, natija bermoq",
+   "ipa": "/duː ðə trɪk/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "lead the way",
+   "uz": "yo'l boshlamoq, birinchi bo'lmoq",
+   "ipa": "/liːd ðə weɪ/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take pity on someone",
+   "uz": "kimgadir rahmi kelmoq",
+   "ipa": "/teɪk ˈpɪti ɒn/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "be in touch with someone",
+   "uz": "kim bilandir aloqada bo'lmoq",
+   "ipa": "/biː ɪn tʌtʃ wɪð/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "take off",
+   "uz": "havoga ko'tarilmoq (samolyot)",
+   "ipa": "/teɪk ɒf/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "move in",
+   "uz": "yangi uyga ko'chib kirmoq",
+   "ipa": "/muːv ɪn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "2a|2": [
+  {
+   "en": "leisure",
+   "uz": "bo'sh vaqt, hordiq",
+   "ipa": "/ˈleʒə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "recreation",
+   "uz": "dam olish, ko'ngilochar mashg'ulot",
+   "ipa": "/ˌrekriˈeɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "legendary",
+   "uz": "afsonaviy",
+   "ipa": "/ˈledʒəndri/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "appeal",
+   "uz": "jozibasi, jalb qiluvchanlik",
+   "ipa": "/əˈpiːl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "work ethic",
+   "uz": "mehnatsevarlik",
+   "ipa": "/ˈwɜːk ˌeθɪk/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "fearless",
+   "uz": "qo'rqmas",
+   "ipa": "/ˈfɪələs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "stand up for something",
+   "uz": "biror narsani himoya qilmoq",
+   "ipa": "/stænd ʌp fɔː/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "boast",
+   "uz": "maqtanmoq",
+   "ipa": "/bəʊst/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "dominate",
+   "uz": "ustunlik qilmoq",
+   "ipa": "/ˈdɒmɪneɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "determination",
+   "uz": "qat'iyat",
+   "ipa": "/dɪˌtɜːmɪˈneɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "upbringing",
+   "uz": "tarbiya",
+   "ipa": "/ˈʌpbrɪŋɪŋ/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "under pressure",
+   "uz": "bosim ostida",
+   "ipa": "/ˈʌndə ˈpreʃə/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "opponent",
+   "uz": "raqib",
+   "ipa": "/əˈpəʊnənt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "aggressive",
+   "uz": "tajovuzkor",
+   "ipa": "/əˈɡresɪv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "self-belief",
+   "uz": "o'ziga ishonch",
+   "ipa": "/ˌself bɪˈliːf/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "origins",
+   "uz": "kelib chiqishi",
+   "ipa": "/ˈɒrɪdʒɪnz/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "equivalent",
+   "uz": "ekvivalent, tengi",
+   "ipa": "/ɪˈkwɪvələnt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "violent",
+   "uz": "zo'ravon, shafqatsiz",
+   "ipa": "/ˈvaɪələnt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "ban",
+   "uz": "taqiqlamoq; taqiq",
+   "ipa": "/bæn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "archery",
+   "uz": "kamondan otish",
+   "ipa": "/ˈɑːtʃəri/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "referee",
+   "uz": "hakam",
+   "ipa": "/ˌrefəˈriː/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lift a ban",
+   "uz": "taqiqni bekor qilmoq",
+   "ipa": "/lɪft ə bæn/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "deliberately",
+   "uz": "ataylab",
+   "ipa": "/dɪˈlɪbərətli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "elaborate",
+   "uz": "murakkab, puxta ishlangan",
+   "ipa": "/ɪˈlæbərət/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "contemporary",
+   "uz": "zamonaviy",
+   "ipa": "/kənˈtemprəri/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "enthusiastic",
+   "uz": "ishtiyoqli",
+   "ipa": "/ɪnˌθjuːziˈæstɪk/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "influential",
+   "uz": "ta'sirli, nufuzli",
+   "ipa": "/ˌɪnfluˈenʃl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "mainstream",
+   "uz": "asosiy oqim, ommabop",
+   "ipa": "/ˈmeɪnstriːm/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "flexibility",
+   "uz": "egiluvchanlik",
+   "ipa": "/ˌfleksəˈbɪləti/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "phenomenon",
+   "uz": "hodisa",
+   "ipa": "/fəˈnɒmɪnən/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "bend",
+   "uz": "burilish (yo'lda)",
+   "ipa": "/bend/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "flyover",
+   "uz": "ko'prik (yo'l ustidan)",
+   "ipa": "/ˈflaɪəʊvə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "junction",
+   "uz": "chorraha, tutashuv",
+   "ipa": "/ˈdʒʌŋkʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "take the third exit",
+   "uz": "uchinchi burilishga chiqmoq",
+   "ipa": "/teɪk ðə θɜːd ˈeksɪt/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "be in charge of something",
+   "uz": "biror narsaga mas'ul bo'lmoq",
+   "ipa": "/biː ɪn tʃɑːdʒ ɒv/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "volunteer",
+   "uz": "ko'ngilli",
+   "ipa": "/ˌvɒlənˈtɪə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "short-sighted",
+   "uz": "uzoqni yaxshi ko'rmaydigan",
+   "ipa": "/ˌʃɔːt ˈsaɪtɪd/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "fundraising",
+   "uz": "mablag' yig'ish",
+   "ipa": "/ˈfʌndreɪzɪŋ/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "casualty",
+   "uz": "jabrlanuvchi",
+   "ipa": "/ˈkæʒuəlti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "be keen on something",
+   "uz": "biror narsaga qiziqmoq",
+   "ipa": "/biː kiːn ɒn/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "be into something",
+   "uz": "biror narsani yaxshi ko'rmoq",
+   "ipa": "/biː ˈɪntə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "be partial to something",
+   "uz": "biror narsaga moyil bo'lmoq",
+   "ipa": "/biː ˈpɑːʃl tuː/",
+   "daraja": "C1",
+   "tur": "birikma"
+  }
+ ],
+ "2a|3": [
+  {
+   "en": "consume",
+   "uz": "iste'mol qilmoq",
+   "ipa": "/kənˈsjuːm/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "access",
+   "uz": "kirish imkoniyati; kirmoq",
+   "ipa": "/ˈækses/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "impact",
+   "uz": "ta'sir",
+   "ipa": "/ˈɪmpækt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "consequently",
+   "uz": "natijada",
+   "ipa": "/ˈkɒnsɪkwəntli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "addict",
+   "uz": "qaram odam",
+   "ipa": "/ˈædɪkt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "rely on something",
+   "uz": "biror narsaga tayanmoq",
+   "ipa": "/rɪˈlaɪ ɒn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "bulletin",
+   "uz": "axborot dasturi, xabarnoma",
+   "ipa": "/ˈbʊlətɪn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "as a matter of habit",
+   "uz": "odatga ko'ra",
+   "ipa": "/əz ə ˈmætər əv ˈhæbɪt/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "reveal",
+   "uz": "oshkor qilmoq",
+   "ipa": "/rɪˈviːl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "trend",
+   "uz": "tendensiya, yo'nalish",
+   "ipa": "/trend/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "disengaged",
+   "uz": "befarq, uzilgan",
+   "ipa": "/ˌdɪsɪnˈɡeɪdʒd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "keep up to date with something",
+   "uz": "biror narsadan xabardor bo'lib turmoq",
+   "ipa": "/kiːp ʌp tə deɪt wɪð/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "seek out",
+   "uz": "qidirib topmoq",
+   "ipa": "/siːk aʊt/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "encounter",
+   "uz": "duch kelmoq",
+   "ipa": "/ɪnˈkaʊntə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "catch someone's eye",
+   "uz": "kimningdir e'tiborini tortmoq",
+   "ipa": "/kætʃ saɪ/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "breaking news",
+   "uz": "shoshilinch yangilik",
+   "ipa": "/ˌbreɪkɪŋ ˈnjuːz/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "accuracy",
+   "uz": "aniqlik",
+   "ipa": "/ˈækjərəsi/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "reliability",
+   "uz": "ishonchlilik",
+   "ipa": "/rɪˌlaɪəˈbɪləti/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "sense of duty",
+   "uz": "burch hissi",
+   "ipa": "/sens əv ˈdjuːti/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "regardless of",
+   "uz": "...ga qaramay, ...dan qat'i nazar",
+   "ipa": "/rɪˈɡɑːdləs ɒv/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "headline",
+   "uz": "sarlavha",
+   "ipa": "/ˈhedlaɪn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "unconscious",
+   "uz": "hushsiz",
+   "ipa": "/ʌnˈkɒnʃəs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "humankind",
+   "uz": "insoniyat",
+   "ipa": "/ˌhjuːmənˈkaɪnd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "depict",
+   "uz": "tasvirlamoq",
+   "ipa": "/dɪˈpɪkt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "primitive",
+   "uz": "ibtidoiy",
+   "ipa": "/ˈprɪmətɪv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "tomb",
+   "uz": "maqbara, qabr",
+   "ipa": "/tuːm/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "cherished",
+   "uz": "aziz, qadrli",
+   "ipa": "/ˈtʃerɪʃt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lifelike",
+   "uz": "tirikdek, haqiqiyga o'xshash",
+   "ipa": "/ˈlaɪflaɪk/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "durable",
+   "uz": "bardoshli, chidamli",
+   "ipa": "/ˈdjʊərəbl/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "mass produced",
+   "uz": "ommaviy ishlab chiqarilgan",
+   "ipa": "/ˌmæs prəˈdjuːst/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "manufacturer",
+   "uz": "ishlab chiqaruvchi",
+   "ipa": "/ˌmænjuˈfæktʃərə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "mould",
+   "uz": "qolip",
+   "ipa": "/məʊld/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "distinctive",
+   "uz": "o'ziga xos",
+   "ipa": "/dɪˈstɪŋktɪv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "sought after",
+   "uz": "talab yuqori, qidiriladigan",
+   "ipa": "/ˈsɔːt ɑːftə/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "unrivalled",
+   "uz": "tengsiz",
+   "ipa": "/ʌnˈraɪvld/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "fall out of favour",
+   "uz": "obro'sini yo'qotmoq, mashhurlikdan qolmoq",
+   "ipa": "/fɔːl aʊt əv ˈfeɪvə/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "craftsmanship",
+   "uz": "ustalik, hunarmandlik",
+   "ipa": "/ˈkrɑːftsmənʃɪp/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "attitude",
+   "uz": "munosabat",
+   "ipa": "/ˈætɪtjuːd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "intonation",
+   "uz": "ohang",
+   "ipa": "/ˌɪntəˈneɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "expedition",
+   "uz": "ekspeditsiya",
+   "ipa": "/ˌekspəˈdɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "isolation",
+   "uz": "yakkalanish",
+   "ipa": "/ˌaɪsəˈleɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "cope with",
+   "uz": "uddalamoq, bardosh bermoq",
+   "ipa": "/kəʊp wɪð/",
+   "daraja": "B2",
+   "tur": "birikma"
+  }
+ ],
+ "2a|4": [
+  {
+   "en": "attraction",
+   "uz": "diqqatga sazovor joy",
+   "ipa": "/əˈtrækʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "local",
+   "uz": "mahalliy aholi vakili",
+   "ipa": "/ˈləʊkl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "cancellation",
+   "uz": "bekor qilish",
+   "ipa": "/ˌkænsəˈleɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "mother tongue",
+   "uz": "ona tili",
+   "ipa": "/ˌmʌðə ˈtʌŋ/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "custom",
+   "uz": "urf-odat",
+   "ipa": "/ˈkʌstəm/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "body language",
+   "uz": "tana tili, imo-ishoralar",
+   "ipa": "/ˈbɒdi ˌlæŋɡwɪdʒ/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "native",
+   "uz": "mahalliy (tug'ma)",
+   "ipa": "/ˈneɪtɪv/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "integrate",
+   "uz": "qo'shilib ketmoq, moslashmoq",
+   "ipa": "/ˈɪntɪɡreɪt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "offend",
+   "uz": "xafa qilmoq",
+   "ipa": "/əˈfend/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "socialise",
+   "uz": "muloqot qilmoq, odamlar bilan aralashmoq",
+   "ipa": "/ˈsəʊʃəlaɪz/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "go to plan",
+   "uz": "reja bo'yicha ketmoq",
+   "ipa": "/ɡəʊ tə plæn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "flexible",
+   "uz": "moslashuvchan",
+   "ipa": "/ˈfleksəbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "observe",
+   "uz": "kuzatmoq",
+   "ipa": "/əbˈzɜːv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "construction",
+   "uz": "qurilish",
+   "ipa": "/kənˈstrʌkʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "capture the imagination",
+   "uz": "hayolni o'ziga tortmoq",
+   "ipa": "/ˈkæptʃə ði ɪˌmædʒɪˈneɪʃn/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "from far and wide",
+   "uz": "har tarafdan",
+   "ipa": "/frəm fɑːr ən waɪd/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "convict",
+   "uz": "mahkum",
+   "ipa": "/ˈkɒnvɪkt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "migrate",
+   "uz": "ko'chmoq",
+   "ipa": "/maɪˈɡreɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "controversy",
+   "uz": "bahs-munozara",
+   "ipa": "/ˈkɒntrəvɜːsi/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "transformation",
+   "uz": "o'zgarish, aylanish",
+   "ipa": "/ˌtrænsfəˈmeɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "relocate",
+   "uz": "boshqa joyga ko'chmoq",
+   "ipa": "/ˌriːləʊˈkeɪt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "renowned",
+   "uz": "mashhur, taniqli",
+   "ipa": "/rɪˈnaʊnd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "standardize",
+   "uz": "standartlashtirmoq",
+   "ipa": "/ˈstændədaɪz/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "passionate",
+   "uz": "ishtiyoqli",
+   "ipa": "/ˈpæʃənət/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "trail behind",
+   "uz": "ortda qolmoq",
+   "ipa": "/treɪl bɪˈhaɪnd/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "at the forefront of",
+   "uz": "...ning oldingi safida",
+   "ipa": "/ət ðə ˈfɔːfrʌnt ɒv/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "prestigious",
+   "uz": "nufuzli",
+   "ipa": "/preˈstɪdʒəs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "fundamental",
+   "uz": "asosiy, tub",
+   "ipa": "/ˌfʌndəˈmentl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "significant",
+   "uz": "muhim, sezilarli",
+   "ipa": "/sɪɡˈnɪfɪkənt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "pattern",
+   "uz": "qonuniyat, naqsh",
+   "ipa": "/ˈpætn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "reputation",
+   "uz": "obro', nom",
+   "ipa": "/ˌrepjuˈteɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "enhance",
+   "uz": "oshirmoq, kuchaytirmoq",
+   "ipa": "/ɪnˈhɑːns/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "congestion",
+   "uz": "tirbandlik",
+   "ipa": "/kənˈdʒestʃən/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "pedestrian area",
+   "uz": "piyodalar hududi",
+   "ipa": "/pəˈdestriən ˈeəriə/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "park and ride",
+   "uz": "mashinani qoldirib avtobusga o'tish tizimi",
+   "ipa": "/ˌpɑːk ən ˈraɪd/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "residential",
+   "uz": "turar joy (hududi)",
+   "ipa": "/ˌrezɪˈdenʃl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "bypass",
+   "uz": "aylanma yo'l",
+   "ipa": "/ˈbaɪpɑːs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "express doubt",
+   "uz": "shubha bildirmoq",
+   "ipa": "/ɪkˈspres daʊt/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "fall into place",
+   "uz": "o'z o'rniga tushmoq, oydinlashmoq",
+   "ipa": "/fɔːl ˈɪntə pleɪs/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "pay attention to",
+   "uz": "...ga e'tibor bermoq",
+   "ipa": "/peɪ əˈtenʃn tuː/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "2a|5": [
+  {
+   "en": "theory",
+   "uz": "nazariya",
+   "ipa": "/ˈθɪəri/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "production line",
+   "uz": "ishlab chiqarish liniyasi",
+   "ipa": "/prəˈdʌkʃn laɪn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "self-taught",
+   "uz": "o'zi o'rgangan",
+   "ipa": "/ˌself ˈtɔːt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "generous",
+   "uz": "saxiy",
+   "ipa": "/ˈdʒenərəs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "contribution",
+   "uz": "hissa",
+   "ipa": "/ˌkɒntrɪˈbjuːʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "foundation",
+   "uz": "jamg'arma, fond",
+   "ipa": "/faʊnˈdeɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "founder",
+   "uz": "asoschi",
+   "ipa": "/ˈfaʊndə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "afford",
+   "uz": "puli yetmoq, imkoni bo'lmoq",
+   "ipa": "/əˈfɔːd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "the masses",
+   "uz": "keng omma",
+   "ipa": "/ðə ˈmæsɪz/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "assembly line",
+   "uz": "konveyer liniyasi",
+   "ipa": "/əˈsembli laɪn/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "efficiently",
+   "uz": "samarali",
+   "ipa": "/ɪˈfɪʃntli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "make a fortune",
+   "uz": "katta boylik orttirmoq",
+   "ipa": "/meɪk ə ˈfɔːtʃuːn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "innovative",
+   "uz": "innovatsion, yangilikka boy",
+   "ipa": "/ˈɪnəveɪtɪv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "self-made",
+   "uz": "o'z mehnati bilan erishgan",
+   "ipa": "/ˌself ˈmeɪd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "first-rate",
+   "uz": "eng yuqori sifatli",
+   "ipa": "/ˌfɜːst ˈreɪt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "entrepreneur",
+   "uz": "tadbirkor",
+   "ipa": "/ˌɒntrəprəˈnɜː/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "start-up",
+   "uz": "yangi tashkil etilgan kompaniya",
+   "ipa": "/ˈstɑːt ʌp/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "immeasurable",
+   "uz": "o'lchab bo'lmas",
+   "ipa": "/ɪˈmeʒərəbl/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "criticism",
+   "uz": "tanqid",
+   "ipa": "/ˈkrɪtɪsɪzəm/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "prospect",
+   "uz": "istiqbol, imkoniyat",
+   "ipa": "/ˈprɒspekt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "convinced",
+   "uz": "ishonch hosil qilgan",
+   "ipa": "/kənˈvɪnst/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "altitude",
+   "uz": "balandlik",
+   "ipa": "/ˈæltɪtjuːd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "search and rescue",
+   "uz": "qidiruv-qutqaruv",
+   "ipa": "/ˌsɜːtʃ ən ˈreskjuː/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "activist",
+   "uz": "faol",
+   "ipa": "/ˈæktɪvɪst/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sustainable",
+   "uz": "barqaror (tabiatga zarar bermaydigan)",
+   "ipa": "/səˈsteɪnəbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "greenhouse",
+   "uz": "issiqxona",
+   "ipa": "/ˈɡriːnhaʊs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "job satisfaction",
+   "uz": "ishdan qoniqish",
+   "ipa": "/dʒɒb ˌsætɪsˈfækʃn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take something for granted",
+   "uz": "biror narsaning qadriga yetmaslik",
+   "ipa": "/teɪk fə ˈɡrɑːntɪd/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "commodity",
+   "uz": "tovar, mahsulot",
+   "ipa": "/kəˈmɒdəti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "currency",
+   "uz": "valyuta, pul birligi",
+   "ipa": "/ˈkʌrənsi/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "superstition",
+   "uz": "xurofot, irim",
+   "ipa": "/ˌsuːpəˈstɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "smuggling",
+   "uz": "kontrabanda",
+   "ipa": "/ˈsmʌɡlɪŋ/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "deficiency",
+   "uz": "yetishmovchilik",
+   "ipa": "/dɪˈfɪʃnsi/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sole trader",
+   "uz": "yakka tadbirkor",
+   "ipa": "/ˌsəʊl ˈtreɪdə/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "partnership",
+   "uz": "sheriklik",
+   "ipa": "/ˈpɑːtnəʃɪp/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "limited liability company",
+   "uz": "mas'uliyati cheklangan jamiyat (MChJ)",
+   "ipa": "/ˈlɪmɪtɪd ˌlaɪəˈbɪləti ˈkʌmpəni/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "shareholder",
+   "uz": "aksiyador",
+   "ipa": "/ˈʃeəhəʊldə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "pay debts",
+   "uz": "qarzlarni to'lamoq",
+   "ipa": "/peɪ dets/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "borrow money",
+   "uz": "qarz olmoq",
+   "ipa": "/ˈbɒrəʊ ˈmʌni/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "set up a business",
+   "uz": "biznes ochmoq",
+   "ipa": "/set ʌp ə ˈbɪznəs/",
+   "daraja": "B1",
+   "tur": "birikma"
+  }
+ ],
+ "2a|6": [
+  {
+   "en": "captivity",
+   "uz": "asirlik, qafasda saqlash",
+   "ipa": "/kæpˈtɪvəti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "conservation",
+   "uz": "tabiatni muhofaza qilish",
+   "ipa": "/ˌkɒnsəˈveɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "endangered",
+   "uz": "yo'qolib ketish xavfidagi",
+   "ipa": "/ɪnˈdeɪndʒəd/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "extinction",
+   "uz": "yo'qolib ketish",
+   "ipa": "/ɪkˈstɪŋkʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "habitat",
+   "uz": "yashash muhiti",
+   "ipa": "/ˈhæbɪtæt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "poach",
+   "uz": "brakonerlik qilmoq",
+   "ipa": "/pəʊtʃ/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "species",
+   "uz": "tur (hayvon, o'simlik)",
+   "ipa": "/ˈspiːʃiːz/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "threaten",
+   "uz": "tahdid qilmoq",
+   "ipa": "/ˈθretn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "go to great lengths",
+   "uz": "qo'lidan kelgan barcha ishni qilmoq",
+   "ipa": "/ɡəʊ tə ɡreɪt leŋθs/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "make a difference",
+   "uz": "o'zgarish yasamoq, ta'sir qilmoq",
+   "ipa": "/meɪk ə ˈdɪfrəns/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "decline",
+   "uz": "kamayish, pasayish",
+   "ipa": "/dɪˈklaɪn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "biodiversity",
+   "uz": "biologik xilma-xillik",
+   "ipa": "/ˌbaɪəʊdaɪˈvɜːsəti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "captive breeding",
+   "uz": "asirlikda ko'paytirish",
+   "ipa": "/ˌkæptɪv ˈbriːdɪŋ/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "reintroduction",
+   "uz": "qayta tabiatga qo'yib yuborish",
+   "ipa": "/ˌriːɪntrəˈdʌkʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "genetic diversity",
+   "uz": "genetik xilma-xillik",
+   "ipa": "/dʒəˌnetɪk daɪˈvɜːsəti/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "raise awareness",
+   "uz": "xabardorlikni oshirmoq",
+   "ipa": "/reɪz əˈweənəs/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "critically endangered",
+   "uz": "yo'qolib ketish arafasida",
+   "ipa": "/ˌkrɪtɪkli ɪnˈdeɪndʒəd/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "invasion",
+   "uz": "bostirib kirish",
+   "ipa": "/ɪnˈveɪʒn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "refugee",
+   "uz": "qochoq",
+   "ipa": "/ˌrefjuˈdʒiː/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "exotic",
+   "uz": "ekzotik, g'ayrioddiy",
+   "ipa": "/ɪɡˈzɒtɪk/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "undetectable",
+   "uz": "aniqlab bo'lmaydigan",
+   "ipa": "/ˌʌndɪˈtektəbl/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "ecosystem",
+   "uz": "ekotizim",
+   "ipa": "/ˈiːkəʊsɪstəm/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "safeguard",
+   "uz": "himoya qilmoq",
+   "ipa": "/ˈseɪfɡɑːd/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "indigenous",
+   "uz": "tub (mahalliy aholi)",
+   "ipa": "/ɪnˈdɪdʒənəs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "soar",
+   "uz": "keskin oshmoq",
+   "ipa": "/sɔː/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "opulent",
+   "uz": "hashamatli, dabdabali",
+   "ipa": "/ˈɒpjələnt/",
+   "daraja": "C2",
+   "tur": "so'z"
+  },
+  {
+   "en": "brutality",
+   "uz": "shafqatsizlik",
+   "ipa": "/bruːˈtæləti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "plantation",
+   "uz": "plantatsiya",
+   "ipa": "/plɑːnˈteɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "renewable",
+   "uz": "qayta tiklanadigan",
+   "ipa": "/rɪˈnjuːəbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "non-renewable",
+   "uz": "qayta tiklanmaydigan",
+   "ipa": "/ˌnɒn rɪˈnjuːəbl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "fracking",
+   "uz": "gidravlik yorish (gaz qazib olish)",
+   "ipa": "/ˈfrækɪŋ/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "wind turbine",
+   "uz": "shamol turbinasi",
+   "ipa": "/ˈwɪnd ˌtɜːbaɪn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "global warming",
+   "uz": "global isish",
+   "ipa": "/ˌɡləʊbl ˈwɔːmɪŋ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "climate change",
+   "uz": "iqlim o'zgarishi",
+   "ipa": "/ˈklaɪmət tʃeɪndʒ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "energy bills",
+   "uz": "energiya to'lovlari (kommunal)",
+   "ipa": "/ˈenədʒi bɪlz/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "requirements",
+   "uz": "ehtiyojlar, talablar",
+   "ipa": "/rɪˈkwaɪəmənts/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "in the long term",
+   "uz": "uzoq muddatda",
+   "ipa": "/ɪn ðə lɒŋ tɜːm/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "take over",
+   "uz": "egallab olmoq",
+   "ipa": "/teɪk ˈəʊvə/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "so do I / neither do I",
+   "uz": "men ham (shunday) / men ham (yo'q)",
+   "ipa": "/səʊ duː aɪ/",
+   "daraja": "A2",
+   "tur": "birikma"
+  }
+ ],
+ "2a|7": [
+  {
+   "en": "assignment",
+   "uz": "topshiriq",
+   "ipa": "/əˈsaɪnmənt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "submit",
+   "uz": "topshirmoq",
+   "ipa": "/səbˈmɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "deadline",
+   "uz": "oxirgi muddat",
+   "ipa": "/ˈdedlaɪn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "enrol",
+   "uz": "ro'yxatdan o'tmoq (kursga)",
+   "ipa": "/ɪnˈrəʊl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "faculty",
+   "uz": "fakultet",
+   "ipa": "/ˈfæklti/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "undergraduate",
+   "uz": "bakalavriat talabasi",
+   "ipa": "/ˌʌndəˈɡrædʒuət/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "postgraduate",
+   "uz": "magistratura talabasi",
+   "ipa": "/ˌpəʊstˈɡrædʒuət/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "bachelor's degree",
+   "uz": "bakalavr darajasi",
+   "ipa": "/ˈbætʃələz dɪˌɡriː/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "master's degree",
+   "uz": "magistr darajasi",
+   "ipa": "/ˈmɑːstəz dɪˌɡriː/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "prospectus",
+   "uz": "universitet risolasi",
+   "ipa": "/prəˈspektəs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "campus",
+   "uz": "universitet hududi",
+   "ipa": "/ˈkæmpəs/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "lecture",
+   "uz": "ma'ruza",
+   "ipa": "/ˈlektʃə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "tutorial",
+   "uz": "kichik guruhli dars",
+   "ipa": "/tjuːˈtɔːriəl/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "sponsor",
+   "uz": "homiylik qilmoq",
+   "ipa": "/ˈspɒnsə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "student visa",
+   "uz": "talaba vizasi",
+   "ipa": "/ˈstjuːdnt ˌviːzə/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "proof of admission",
+   "uz": "qabul qilinganlik tasdig'i",
+   "ipa": "/pruːf əv ədˈmɪʃn/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "funds",
+   "uz": "mablag'",
+   "ipa": "/fʌndz/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "preferential treatment",
+   "uz": "imtiyozli munosabat",
+   "ipa": "/ˌprefəˈrenʃl ˈtriːtmənt/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "self-discipline",
+   "uz": "o'zini tuta bilish, intizom",
+   "ipa": "/ˌself ˈdɪsəplɪn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "obligation",
+   "uz": "majburiyat",
+   "ipa": "/ˌɒblɪˈɡeɪʃn/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "lever",
+   "uz": "richag, dasta",
+   "ipa": "/ˈliːvə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "attached",
+   "uz": "biriktirilgan",
+   "ipa": "/əˈtætʃt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "storage",
+   "uz": "saqlash (xotira)",
+   "ipa": "/ˈstɔːrɪdʒ/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "processor",
+   "uz": "protsessor",
+   "ipa": "/ˈprəʊsesə/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "high-resolution",
+   "uz": "yuqori aniqlikdagi",
+   "ipa": "/ˌhaɪ rezəˈluːʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "honours",
+   "uz": "imtiyozli (diplom)",
+   "ipa": "/ˈɒnəz/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "doctoral degree",
+   "uz": "doktorlik darajasi",
+   "ipa": "/ˈdɒktərəl dɪˌɡriː/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "dissertation",
+   "uz": "dissertatsiya",
+   "ipa": "/ˌdɪsəˈteɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "coursework",
+   "uz": "kurs ishi",
+   "ipa": "/ˈkɔːswɜːk/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "vibrant",
+   "uz": "yorqin, jo'shqin",
+   "ipa": "/ˈvaɪbrənt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "landscape",
+   "uz": "manzara",
+   "ipa": "/ˈlændskeɪp/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "rehabilitation",
+   "uz": "reabilitatsiya, tiklanish",
+   "ipa": "/ˌriːəˌbɪlɪˈteɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "prominent",
+   "uz": "ko'zga tashlanadigan, taniqli",
+   "ipa": "/ˈprɒmɪnənt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "in abundance",
+   "uz": "mo'l-ko'l",
+   "ipa": "/ɪn əˈbʌndəns/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "draw inspiration from",
+   "uz": "...dan ilhom olmoq",
+   "ipa": "/drɔː ˌɪnspəˈreɪʃn frɒm/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "first degree",
+   "uz": "birinchi oliy ma'lumot",
+   "ipa": "/ˌfɜːst dɪˈɡriː/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "full-time / part-time",
+   "uz": "kunduzgi / sirtqi (yarim stavka)",
+   "ipa": "/ˌfʊl ˈtaɪm/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "educational institution",
+   "uz": "ta'lim muassasasi",
+   "ipa": "/ˌedʒuˈkeɪʃənl ˌɪnstɪˈtjuːʃn/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "tutor",
+   "uz": "ustoz, kurator",
+   "ipa": "/ˈtjuːtə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  }
+ ],
+ "2a|8": [
+  {
+   "en": "festival",
+   "uz": "festival, bayram",
+   "ipa": "/ˈfestɪvl/",
+   "daraja": "A2",
+   "tur": "so'z"
+  },
+  {
+   "en": "tradition",
+   "uz": "an'ana",
+   "ipa": "/trəˈdɪʃn/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "over-ripe",
+   "uz": "haddan tashqari pishgan",
+   "ipa": "/ˌəʊvə ˈraɪp/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "issue tickets",
+   "uz": "chipta bermoq (sotmoq)",
+   "ipa": "/ˈɪʃuː ˈtɪkɪts/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "ingredient",
+   "uz": "tarkibiy qism",
+   "ipa": "/ɪnˈɡriːdiənt/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "potential customer",
+   "uz": "potensial xaridor",
+   "ipa": "/pəˈtenʃl ˈkʌstəmə/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "fireworks display",
+   "uz": "mushakbozlik",
+   "ipa": "/ˈfaɪəwɜːks dɪˌspleɪ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "bank holiday",
+   "uz": "rasmiy dam olish kuni",
+   "ipa": "/ˌbæŋk ˈhɒlədeɪ/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "altar",
+   "uz": "qurbongoh",
+   "ipa": "/ˈɔːltə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "grave",
+   "uz": "qabr",
+   "ipa": "/ɡreɪv/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "parade",
+   "uz": "parad, kortej",
+   "ipa": "/pəˈreɪd/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "annual",
+   "uz": "har yillik",
+   "ipa": "/ˈænjuəl/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "sculpture",
+   "uz": "haykal",
+   "ipa": "/ˈskʌlptʃə/",
+   "daraja": "B1",
+   "tur": "so'z"
+  },
+  {
+   "en": "exhibit",
+   "uz": "ko'rgazma buyumi",
+   "ipa": "/ɪɡˈzɪbɪt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "weather permitting",
+   "uz": "ob-havo imkon bersa",
+   "ipa": "/ˈweðə pəˈmɪtɪŋ/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "in protest against",
+   "uz": "...ga qarshi norozilik sifatida",
+   "ipa": "/ɪn ˈprəʊtest əˈɡenst/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "reunion",
+   "uz": "qayta uchrashuv, yig'in",
+   "ipa": "/riːˈjuːniən/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "fancy dress",
+   "uz": "karnaval kostyumi",
+   "ipa": "/ˌfænsi ˈdres/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "masked",
+   "uz": "niqobli",
+   "ipa": "/mɑːskt/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "reinvent",
+   "uz": "qayta jonlantirmoq",
+   "ipa": "/ˌriːɪnˈvent/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "social status",
+   "uz": "ijtimoiy mavqe",
+   "ipa": "/ˈsəʊʃl ˈsteɪtəs/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "dress up",
+   "uz": "chiroyli kiyinmoq, kostyum kiymoq",
+   "ipa": "/dres ʌp/",
+   "daraja": "B1",
+   "tur": "birikma"
+  },
+  {
+   "en": "breathtaking",
+   "uz": "hayratlanarli",
+   "ipa": "/ˈbreθteɪkɪŋ/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "costly",
+   "uz": "qimmat",
+   "ipa": "/ˈkɒstli/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "polymath",
+   "uz": "ko'p sohani biluvchi olim",
+   "ipa": "/ˈpɒlimæθ/",
+   "daraja": "C2",
+   "tur": "so'z"
+  },
+  {
+   "en": "genius",
+   "uz": "daho",
+   "ipa": "/ˈdʒiːniəs/",
+   "daraja": "B2",
+   "tur": "so'z"
+  },
+  {
+   "en": "contender",
+   "uz": "da'vogar",
+   "ipa": "/kənˈtendə/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "hypothesis",
+   "uz": "faraz, gipoteza",
+   "ipa": "/haɪˈpɒθəsɪs/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "child prodigy",
+   "uz": "vunderkind, iqtidorli bola",
+   "ipa": "/ˌtʃaɪld ˈprɒdədʒi/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "boarding school",
+   "uz": "internat maktab",
+   "ipa": "/ˈbɔːdɪŋ skuːl/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "pursue a career",
+   "uz": "kasb yo'lidan bormoq",
+   "ipa": "/pəˈsjuː ə kəˈrɪə/",
+   "daraja": "C1",
+   "tur": "birikma"
+  },
+  {
+   "en": "physician",
+   "uz": "shifokor",
+   "ipa": "/fɪˈzɪʃn/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "accomplished",
+   "uz": "mohir, yetuk",
+   "ipa": "/əˈkʌmplɪʃt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "dispute",
+   "uz": "bahs, nizo",
+   "ipa": "/dɪˈspjuːt/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "call off",
+   "uz": "bekor qilmoq",
+   "ipa": "/kɔːl ɒf/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "sponsorship",
+   "uz": "homiylik",
+   "ipa": "/ˈspɒnsəʃɪp/",
+   "daraja": "C1",
+   "tur": "so'z"
+  },
+  {
+   "en": "take off",
+   "uz": "rivojlanib ketmoq (ish)",
+   "ipa": "/teɪk ɒf/",
+   "daraja": "B2",
+   "tur": "birikma"
+  },
+  {
+   "en": "in reserve",
+   "uz": "zaxirada",
+   "ipa": "/ɪn rɪˈzɜːv/",
+   "daraja": "C1",
+   "tur": "birikma"
+  }
+ ]
+}
