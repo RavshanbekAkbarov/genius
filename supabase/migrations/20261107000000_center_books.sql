@@ -1,6 +1,6 @@
 -- Markaz kitoblari: unit bo'yicha tanlangan so'zlar va so'z birikmalari.
 -- tool/center_books/make_seed.py yaratgan; qo'lda tahrirlamang.
--- Kitoblar yashirin qo'shiladi: narx va "Ilovada" belgisi admin paneldan qo'yiladi.
+-- Kitoblar yashirin, 15 000 so'm narx bilan qo'shiladi; "Ilovada" belgisi admin paneldan yoqiladi.
 
 insert into public.books (id, title, badge, color1, color2, units, price, published, sort) values ('aura-beginner', 'Beginner', 'B', '#FFB347', '#F07B1D', 27, 15000, false, 10) on conflict (id) do nothing;
 insert into public.words (book_id, unit, idx, en, uz, ipa, ex) values

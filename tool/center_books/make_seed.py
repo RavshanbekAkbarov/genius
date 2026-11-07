@@ -30,7 +30,7 @@ def main():
     lines = [
         '-- Markaz kitoblari: unit bo\'yicha tanlangan so\'zlar va so\'z birikmalari.',
         '-- tool/center_books/make_seed.py yaratgan; qo\'lda tahrirlamang.',
-        '-- Kitoblar yashirin qo\'shiladi: narx va "Ilovada" belgisi admin paneldan qo\'yiladi.',
+        '-- Kitoblar yashirin, 15 000 so\'m narx bilan qo\'shiladi; "Ilovada" belgisi admin paneldan yoqiladi.',
         '',
     ]
     for fname, bid, badge, title, c1, c2, sort in BOOKS:
