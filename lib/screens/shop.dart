@@ -50,7 +50,7 @@ class ShopTab extends StatelessWidget {
                 Expanded(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                     Text(b.title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
-                    Text("${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
+                    Text("${b.fixedUnits} unit · 1-unit bepul namuna",
                         style: TextStyle(color: C.mut, fontSize: 12)),
                     const SizedBox(height: 10),
                     if (s.owned.contains(b.id))

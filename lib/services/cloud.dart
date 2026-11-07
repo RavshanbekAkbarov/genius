@@ -178,8 +178,10 @@ class Cloud {
       final list = [for (final r in rows) Book.fromJson(r)];
       final words = <String, List<Word>>{};
       for (final b in list) {
-        if (b.paid && !s.owned.contains(b.id)) continue;
-        final ws = await _db.from('words').select('unit, idx, en, uz, ipa, ex').eq('book_id', b.id).order('unit').order('idx');
+        // Sotib olinmagan pullik kitobdan faqat bepul namuna (1-unit) keladi.
+        var q = _db.from('words').select('unit, idx, en, uz, ipa, ex').eq('book_id', b.id);
+        if (s.locked(b)) q = q.eq('unit', 1);
+        final ws = await q.order('unit').order('idx');
         for (final w in ws) {
           words.putIfAbsent('${b.id}|${w['unit']}', () => []).add(Word.fromJson(w));
         }

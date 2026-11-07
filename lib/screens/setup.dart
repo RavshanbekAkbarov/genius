@@ -7,6 +7,7 @@ import '../state/scope.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/tools.dart';
+import 'shop.dart';
 import 'study.dart';
 
 enum WordOrder { standart, mixed, hardFirst, easyFirst }
@@ -217,6 +218,10 @@ class _SetupScreenState extends State<SetupScreen> {
       label: 'Unit $u${done ? ', yodlangan' : ''}',
       child: GestureDetector(
         onTap: () {
+          if (s.unitLocked(b, u)) {
+            showBookBuySheet(context, b);
+            return;
+          }
           if (w == 0) {
             toast(context, "Bu unit so'zlari hali qo'shilmagan");
             return;
