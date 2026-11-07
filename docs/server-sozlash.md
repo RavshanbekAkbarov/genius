@@ -67,7 +67,7 @@ Yana bir nechta qiymat tayyorlab qo'ying:
   To'lov cheklari aynan shu Telegram hisobga keladi.
 - **TG_WEBHOOK_SECRET** — o'zingiz o'ylab topadigan uzun maxfiy so'z: faqat lotin harflari va raqamlar,
   kamida 30 ta belgi, masalan `k7Hq2mZp9xLw4rTb8nVc3sYd6fGj1aQe`. Daftarga yozing.
-- **CARD_NUMBER** — to'lov qabul qilinadigan karta raqami, masalan `8600123456789012`.
+- **CARD_NUMBER** — to'lov qabul qilinadigan karta raqami (ixtiyoriy: bo'lmasa botdagi asosiy karta ishlatiladi).
   Bot «To'lov qilasizmi?» savoliga «Ha» deyilganda va ilovada xarid boshlanganda shu raqamni summa bilan
   avtomatik yuboradi (raqamni bosib nusxa olish mumkin).
 - **CARD_OWNER** — karta egasining ismi, masalan `Akbarov R.` (bo'lmasa bo'sh qoldiring).
@@ -98,8 +98,8 @@ Yana bir nechta qiymat tayyorlab qo'ying:
    | `TG_WEBHOOK_SECRET` | o'zingiz o'ylab topgan maxfiy so'z |
    | `ADMIN_CHAT_ID` | @userinfobot bergan raqam |
    | `CLICK_QR_URL` | QR rasm manzili (bo'lmasa qo'shmang) |
-   | `CARD_NUMBER` | to'lov kartasi raqami |
-   | `CARD_OWNER` | karta egasining ismi (bo'lmasa qo'shmang) |
+   | `CARD_NUMBER` | boshqa karta kerak bo'lsa (bo'lmasa qo'shmang) |
+   | `CARD_OWNER` | boshqa karta egasi (bo'lmasa qo'shmang) |
    | `APP_URL` | ilovani yuklab olish havolasi (bo'lmasa qo'shmang) |
    | `APP_INFO` | ilova haqida qo'shimcha matn (bo'lmasa qo'shmang) |
    | `PAY_TEXT` | to'lov matni (bo'lmasa qo'shmang) |

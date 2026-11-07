@@ -9,9 +9,10 @@ const TG_WEBHOOK_SECRET = Deno.env.get("TG_WEBHOOK_SECRET") ?? "";
 const ADMIN_CHAT_ID = (Deno.env.get("ADMIN_CHAT_ID") ?? "").trim();
 const CLICK_QR_URL = (Deno.env.get("CLICK_QR_URL") ?? "").trim();
 const PAY_TEXT = (Deno.env.get("PAY_TEXT") ?? "").trim();
-// To'lov uchun karta raqami va egasining ismi (bot to'lovda avtomatik yuboradi)
-const CARD_NUMBER = (Deno.env.get("CARD_NUMBER") ?? "").trim();
-const CARD_OWNER = (Deno.env.get("CARD_OWNER") ?? "").trim();
+// To'lov uchun karta raqami va egasining ismi (bot to'lovda avtomatik yuboradi).
+// To'lovchilarga baribir ko'rsatiladi, shuning uchun koddagi qiymat; CARD_NUMBER / CARD_OWNER secret'i bo'lsa o'shani oladi.
+const CARD_NUMBER = (Deno.env.get("CARD_NUMBER") || "9860040118741160").trim();
+const CARD_OWNER = (Deno.env.get("CARD_OWNER") || "Ravshanbek Akbarov").trim();
 // Ilovani yuklab olish havolasi (Play Market yoki boshqa) va ixtiyoriy qo'shimcha ma'lumot matni
 const APP_URL = (Deno.env.get("APP_URL") ?? "").trim();
 const APP_INFO = (Deno.env.get("APP_INFO") ?? "").trim();
