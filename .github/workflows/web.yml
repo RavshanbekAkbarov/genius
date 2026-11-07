@@ -1,0 +1,51 @@
+name: Web (sayt)
+
+# Ilovaning sayt (PWA) versiyasini yig'ib, GitHub Pages'ga joylaydi.
+# Bir martalik sozlash: Settings -> Pages -> Source: "GitHub Actions".
+# Manzil: https://<github-login>.github.io/genius/
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: >-
+          flutter build web --release --no-web-resources-cdn
+          --base-href /${{ github.event.repository.name }}/
+          --dart-define=SUPABASE_URL=${{ vars.SUPABASE_URL }}
+          --dart-define=SUPABASE_ANON_KEY=${{ vars.SUPABASE_ANON_KEY }}
+          --dart-define=BOT_USERNAME=${{ vars.BOT_USERNAME || 'GeniusAuraBot' }}
+      # Sahifani yangilaganda ham ochilishi uchun (Pages'da 404 o'rniga ilova chiqadi).
+      - run: cp build/web/index.html build/web/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
