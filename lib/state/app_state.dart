@@ -152,7 +152,7 @@ class AppState extends ChangeNotifier {
 
   // Hisob
   bool loginSeen = false; // birinchi ochilishdagi kirish oynasi ko'rsatildimi
-  String? account; // 'google' | 'telegram' | null
+  String? account; // 'telegram' | null
   String? accountLabel;
   int updatedAt = 0; // oxirgi o'zgarish vaqti (ms), server nusxasi bilan solishtirish uchun
 

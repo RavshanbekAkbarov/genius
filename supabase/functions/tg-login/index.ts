@@ -93,8 +93,11 @@ Deno.serve(async (req) => {
     if (userId && !prof) {
       // Profilga Telegram ma'lumotlarini yozamiz (profilni trigger yaratgan)
       const patch: Record<string, unknown> = { tg_id: tgId, tg_username: tgUsername };
-      if (isNew && tgUsername && [...tgUsername].length >= 2 && [...tgUsername].length <= 20) {
-        patch.nickname = tgUsername;
+      if (isNew) {
+        // Taxallus: botda ulashilgan ism, bo'lmasa Telegram username
+        const { data: tu } = await db.from("tg_users").select("first_name").eq("tg_id", tgId).maybeSingle();
+        const nick = [...String(tu?.first_name ?? tgUsername ?? "").trim()].slice(0, 20).join("");
+        if ([...nick].length >= 2) patch.nickname = nick;
       }
       const { error: pErr } = await db.from("profiles").update(patch).eq("id", userId);
       if (pErr) console.error("profilni yangilab bo'lmadi:", pErr);

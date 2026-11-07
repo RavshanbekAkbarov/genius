@@ -90,7 +90,7 @@ class _ProfileTabState extends State<ProfileTab> {
           ),
           if (!Cloud.signedIn) ...[
             const SizedBox(height: 10),
-            Btn('Hisobga kirish (Google yoki Telegram)', kind: BtnKind.ghost, onTap: () => push(context, const LoginScreen())),
+            Btn('Telegram orqali kirish', kind: BtnKind.ghost, onTap: () => push(context, const LoginScreen())),
           ],
           const SizedBox(height: 12),
           Row(children: [
@@ -355,7 +355,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               title: const Text('Hisob', style: TextStyle(fontWeight: FontWeight.w700)),
               subtitle: Text(
                   Cloud.signedIn
-                      ? '${s.account == 'telegram' ? 'Telegram' : 'Google'} · ${s.accountLabel ?? ''}'
+                      ? 'Telegram · ${s.accountLabel ?? ''}'
                       : 'Kirilmagan',
                   style: TextStyle(color: C.mut, fontSize: 12)),
               trailing: Cloud.signedIn

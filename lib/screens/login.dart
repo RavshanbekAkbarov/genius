@@ -6,7 +6,7 @@ import '../theme.dart';
 import '../widgets/common.dart';
 import 'shell.dart';
 
-/// Kirish: Google yoki Telegram bilan bitta bosishda. Ism, familiya va raqam so'ralmaydi.
+/// Kirish: faqat Telegram bilan bitta bosishda (markaz kitoblari pullik, to'lov ham Telegram botida). Ism, familiya va raqam so'ralmaydi.
 /// [first] bo'lsa ilova birinchi ochilganda ko'rsatiladi va keyin asosiy oynaga o'tadi.
 class LoginScreen extends StatefulWidget {
   final bool first;
@@ -15,26 +15,38 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with WidgetsBindingObserver {
   bool busy = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     Cloud.signedInNotifier.addListener(_onAuth);
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     Cloud.signedInNotifier.removeListener(_onAuth);
     super.dispose();
   }
 
-  void _onAuth() {
-    if (Cloud.signedInNotifier.value && mounted) _done();
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Telegram'dan qaytildi: kirishni kutmasdan darhol tekshiramiz.
+    if (state == AppLifecycleState.resumed) Cloud.pokeTelegram();
   }
 
+  void _onAuth() {
+    // Telegram oqimi o'zi yakunlaydi (dialogni yopib); bu yerda ilova qayta ochilgandagi kirish.
+    if (Cloud.signedInNotifier.value && mounted && !busy) _done();
+  }
+
+  bool _finished = false;
   void _done() {
+    if (_finished) return;
+    _finished = true;
     final s = AppScope.read(context);
     s.loginSeen = true;
     s.refresh();
@@ -43,11 +55,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       Navigator.of(context).maybePop();
     }
-  }
-
-  Future<void> google() async {
-    final err = await Cloud.signInGoogle();
-    if (err != null && mounted) toast(context, err);
   }
 
   Future<void> telegram() async {
@@ -62,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
         content: const Column(mainAxisSize: MainAxisSize.min, children: [
           LinearProgressIndicator(),
           SizedBox(height: 14),
-          Text("Telegram'da botni oching, «START» va «✅ Ha, kiraman» tugmalarini bosing, keyin shu yerga qayting."),
+          Text("Telegram'da botni oching va «START» ni bosing. Birinchi marta bo'lsa «📱 Ismni ulashish» ni bosing, so'ng «✅ Ha, kiraman» ni bosib, shu yerga qayting."),
         ]),
         actions: [
           TextButton(
@@ -118,15 +125,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(fontSize: 11, letterSpacing: 1.4, fontWeight: FontWeight.w800, color: C.mut)),
             const SizedBox(height: 18),
             const Text(
-              "Yutuqlaringiz va Premium boshqa telefonga o'tganda ham yo'qolmasligi uchun hisob yarating. Ism, familiya va raqam so'ralmaydi.",
+              "Telegram orqali kiring: yutuqlaringiz, Premium va sotib olgan kitoblaringiz shu hisobga bog'lanadi va boshqa telefonda ham yo'qolmaydi.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, height: 1.4),
             ),
             const SizedBox(height: 22),
-            Btn('Google bilan kirish',
-                icon: const Text('G', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: C.onAc)),
-                onTap: busy ? null : google),
-            const SizedBox(height: 10),
             Btn('Telegram bilan kirish',
                 kind: BtnKind.telegram,
                 icon: const Icon(Icons.send_rounded, color: Colors.white, size: 20),
@@ -135,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Btn('Hozircha kirmasdan boshlash', kind: BtnKind.text, onTap: skip),
             const SizedBox(height: 8),
             Text(
-              "Telegram bilan kirsangiz to'lov ham shu hisobga bog'lanadi. Kirmasangiz ham ilova ishlaydi, faqat to'lov uchun hisob kerak.",
+              "Kirmasangiz ham bepul kitoblar ishlaydi. Pullik kitob va Premium uchun Telegram orqali kirish kerak.",
               textAlign: TextAlign.center,
               style: TextStyle(color: C.mut, fontSize: 12),
             ),

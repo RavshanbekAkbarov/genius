@@ -67,14 +67,21 @@ Yana bir nechta qiymat tayyorlab qo'ying:
   To'lov cheklari aynan shu Telegram hisobga keladi.
 - **TG_WEBHOOK_SECRET** — o'zingiz o'ylab topadigan uzun maxfiy so'z: faqat lotin harflari va raqamlar,
   kamida 30 ta belgi, masalan `k7Hq2mZp9xLw4rTb8nVc3sYd6fGj1aQe`. Daftarga yozing.
-- **PAY_TEXT** — to'lov haqida qo'shimcha matn, masalan:
-  `Karta raqami: 8600 1234 5678 9012 (Aliyev Vali)`. Kerak bo'lmasa bo'sh qoldiring.
+- **CARD_NUMBER** — to'lov qabul qilinadigan karta raqami, masalan `8600123456789012`.
+  Bot «To'lov qilasizmi?» savoliga «Ha» deyilganda va ilovada xarid boshlanganda shu raqamni summa bilan
+  avtomatik yuboradi (raqamni bosib nusxa olish mumkin).
+- **CARD_OWNER** — karta egasining ismi, masalan `Akbarov R.` (bo'lmasa bo'sh qoldiring).
+- **APP_URL** — ilovani yuklab olish havolasi (Play Market yoki boshqa). Bot «Ilova haqida ma'lumot» da
+  «📲 Ilovani yuklab olish» tugmasini chiqaradi. Hali bo'lmasa bo'sh qoldiring.
+- **APP_INFO** — ilova haqidagi ma'lumotga qo'shiladigan matn (masalan markaz manzili, telefon). Ixtiyoriy.
+- **PAY_TEXT** — to'lov haqida qo'shimcha matn, masalan `To'lov Click yoki Payme orqali ham bo'ladi`.
+  Kerak bo'lmasa bo'sh qoldiring.
 - **CLICK_QR_URL** — Click QR kodingiz rasmining internetdagi manzili. Uni Supabase'ga shunday yuklaysiz:
   1. Supabase → chapdagi **Storage** → **New bucket** → nomi `public`, **Public bucket** ni yoqing → **Create**.
   2. `public` ichiga kiring → **Upload file** → QR rasmni (`qr.png`) tanlang.
   3. Rasm ustidagi **⋯ → Get URL** (yoki **Copy URL**) ni bosing — chiqqan manzilni daftarga yozing.
 
-  QR bo'lmasa, bu qiymatni bo'sh qoldiring — bot faqat matn yuboradi.
+  QR bo'lmasa, bu qiymatni bo'sh qoldiring — bot faqat matn yuboradi. CARD_NUMBER berilgan bo'lsa QR ishlatilmaydi.
 
 ## 4-qadam. GitHub'ga secret'larni qo'shish va serverni ishga tushirish
 
@@ -91,6 +98,10 @@ Yana bir nechta qiymat tayyorlab qo'ying:
    | `TG_WEBHOOK_SECRET` | o'zingiz o'ylab topgan maxfiy so'z |
    | `ADMIN_CHAT_ID` | @userinfobot bergan raqam |
    | `CLICK_QR_URL` | QR rasm manzili (bo'lmasa qo'shmang) |
+   | `CARD_NUMBER` | to'lov kartasi raqami |
+   | `CARD_OWNER` | karta egasining ismi (bo'lmasa qo'shmang) |
+   | `APP_URL` | ilovani yuklab olish havolasi (bo'lmasa qo'shmang) |
+   | `APP_INFO` | ilova haqida qo'shimcha matn (bo'lmasa qo'shmang) |
    | `PAY_TEXT` | to'lov matni (bo'lmasa qo'shmang) |
 
 4. Yuqoridagi **Actions** yorlig'iga o'ting → chapdan **Deploy server** ni tanlang →
@@ -98,39 +109,18 @@ Yana bir nechta qiymat tayyorlab qo'ying:
 5. 2–4 daqiqa kuting. Yashil ✅ belgi chiqsa — server tayyor.
    Qizil ❌ chiqsa, ustiga bosib qaysi qadam xato bo'lganini ko'ring (ko'pincha secret noto'g'ri yozilgan bo'ladi),
    tuzatib, yana **Run workflow** ni bosing.
-6. Tekshirish: Telegram'da botingizni oching va **/start** yozing — bot o'zbekcha salom bilan javob berishi kerak.
+6. Tekshirish: Telegram'da botingizni oching va **/start** yozing. Bot avval «📱 Ismni ulashish» tugmasini
+   chiqaradi; bosganingizdan keyin ismingiz bilan salomlashib, «To'lov qilasizmi?» va so'ng
+   «Ilova haqida ma'lumot kerakmi?» deb so'raydi.
 
 > Keyinchalik serverga o'zgarish kiritilsa, bu ish avtomatik qayta ishlaydi.
 > Secret'lardan birini o'zgartirsangiz, **Run workflow** ni qo'lda bosing.
 
-## 5-qadam. Google orqali kirishni yoqish
+## 5-qadam. Kirish usuli
 
-**A. Google Cloud'da kalit olish**
-
-1. [console.cloud.google.com](https://console.cloud.google.com) ga Gmail bilan kiring.
-2. Yuqoridagi loyiha tanlagichdan **New project** → nomi `Genius` → **Create**. So'ng shu loyihani tanlang.
-3. Qidiruvga **Google Auth Platform** (yoki **OAuth consent screen**) deb yozing va oching →
-   **Get started**:
-   - **App name:** `Genius`, **User support email:** emailingiz;
-   - **Audience:** **External**;
-   - **Contact information:** emailingiz → **Create**.
-4. **Audience** bo'limida **Publish app** tugmasini bosing (aks holda faqat sinov foydalanuvchilari kira oladi).
-5. **Clients** bo'limi → **Create client**:
-   - **Application type:** **Web application**
-   - **Name:** `Genius Supabase`
-   - **Authorized redirect URIs** → **Add URI** →
-     `https://<PROJECT_REF>.supabase.co/auth/v1/callback`
-     (`<PROJECT_REF>` o'rniga o'zingizning project ref'ingizni yozing).
-   - **Create** ni bosing.
-6. Chiqqan **Client ID** va **Client secret** ni daftarga yozing.
-
-**B. Supabase'da yoqish**
-
-1. Supabase → **Authentication → Sign In / Providers** (yoki **Providers**) → **Google** →
-   **Enable** ni yoqing → **Client ID** va **Client Secret** ni qo'ying → **Save**.
-2. **Authentication → URL Configuration** → **Redirect URLs** → **Add URL** →
-   `uz.auraacademy.genius://login-callback` → **Save URLs**.
-3. Shu yerda **Email** provayderi yoqilgan holda qolsin (u admin kirishi va Telegram orqali kirish uchun kerak).
+Ilovaga faqat **Telegram** orqali kiriladi (markaz kitoblari pullik, to'lov ham Telegram botida bo'ladi),
+shuning uchun Google sozlash shart emas. Supabase → **Authentication → Sign In / Providers** da **Email**
+provayderi yoqilgan holda qolsin: u admin kirishi va Telegram orqali kirish uchun kerak.
 
 ## 6-qadam. Admin (o'zingiz uchun) hisob yaratish
 
@@ -208,7 +198,7 @@ Ma'lumotlarni bazadagi himoya qoidalari (RLS) qo'riqlaydi.
 > - **service_role / Secret key**,
 > - **DB parol** va `SUPABASE_DB_URL`,
 > - **bot tokeni**,
-> - **Access token** (`sbp_...`), Google **Client secret**, **TG_WEBHOOK_SECRET**.
+> - **Access token** (`sbp_...`), **TG_WEBHOOK_SECRET**.
 >
 > Bular faqat GitHub secret'lari va Supabase sozlamalarida turadi.
 
@@ -221,7 +211,5 @@ Ma'lumotlarni bazadagi himoya qoidalari (RLS) qo'riqlaydi.
   Xato sababini Supabase → **Edge Functions → bot → Logs** da ko'rish mumkin.
 - **Admin panelda "Bu hisob administrator emas".** 6-qadamdagi SQL buyrug'ini to'g'ri email bilan bajaring.
 - **Admin panel ochilmayapti yoki "PASTE" haqida yozyapti.** 7-qadamni qayta tekshiring (URL va kalit to'g'ri qo'yilganmi).
-- **Google bilan kirishda `redirect_uri_mismatch` xatosi.** 5-qadam A-5 dagi manzilni tekshiring:
-  `https://<PROJECT_REF>.supabase.co/auth/v1/callback` — bo'sh joy va ortiqcha `/` bo'lmasin.
 - **Bepul tarif chegaralari:** baza hajmi ~500 MB, oyiga ~50 000 faol foydalanuvchi, 1 GB fayl xotirasi.
   O'quv markazi uchun bu yetarli. Hajmni Supabase → **Reports** (yoki **Usage**) da ko'rish mumkin.

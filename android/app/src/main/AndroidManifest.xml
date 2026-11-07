@@ -31,13 +31,6 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <!-- Google bilan kirgandan keyin brauzer ilovaga shu manzil orqali qaytadi -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="uz.auraacademy.genius" android:host="login-callback"/>
-            </intent-filter>
         </activity>
         <service
             android:name=".ListenService"
