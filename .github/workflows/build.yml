@@ -33,3 +33,13 @@ jobs:
         with:
           name: genius-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+      # Play Market versiyasi: ilova ichida sotib olish tugmalari va narxlar yo'q (Google qoidasi).
+      - run: >-
+          flutter build apk --release --dart-define=STORE=play
+          --dart-define=SUPABASE_URL=${{ vars.SUPABASE_URL }}
+          --dart-define=SUPABASE_ANON_KEY=${{ vars.SUPABASE_ANON_KEY }}
+          --dart-define=BOT_USERNAME=${{ vars.BOT_USERNAME || 'GeniusAuraBot' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: genius-play-apk
+          path: build/app/outputs/flutter-apk/app-release.apk

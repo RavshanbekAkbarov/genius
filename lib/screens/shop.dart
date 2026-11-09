@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../config.dart';
 import '../data/catalog.dart';
 import '../state/scope.dart';
 import '../theme.dart';
@@ -56,8 +57,9 @@ class ShopTab extends StatelessWidget {
                     if (s.owned.contains(b.id))
                       Pill('Sizda bor', bg: C.good, fg: Color(0xFF052611))
                     else
-                      Btn("${money(b.price)} so'm · Sotib olish",
-                          kind: BtnKind.telegram, onTap: () => showBookBuySheet(context, b)),
+                      Btn(inAppPurchase ? "${money(b.price)} so'm · Sotib olish" : 'Qanday ochiladi?',
+                          kind: inAppPurchase ? BtnKind.telegram : BtnKind.ghost,
+                          onTap: () => showBookBuySheet(context, b)),
                   ]),
                 ),
               ]),
@@ -72,6 +74,29 @@ class ShopTab extends StatelessWidget {
 
 /// Pullik markaz kitobini sotib olish: to'lov Telegram bot orqali.
 void showBookBuySheet(BuildContext context, Book b) {
+  if (!inAppPurchase) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: C.sf,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+      builder: (ctx) => Padding(
+        padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
+        child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Row(children: [
+            BookBadge(b, size: 28),
+            const SizedBox(width: 10),
+            Expanded(child: Text(b.title, style: display(17))),
+          ]),
+          const SizedBox(height: 12),
+          Text("1-unit bepul. Qolgan unitlarni ochish uchun $askTeacherTail",
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+          const SizedBox(height: 16),
+          Btn('Tushunarli', onTap: () => Navigator.pop(ctx)),
+        ]),
+      ),
+    );
+    return;
+  }
   showModalBottomSheet(
     context: context,
     backgroundColor: C.sf,

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../config.dart';
 import '../data/catalog.dart';
 import '../theme.dart';
 
@@ -527,7 +528,7 @@ class PremiumPromo extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(color: const Color(0xFF241200), borderRadius: BorderRadius.circular(14)),
-                  child: Text("Premium · ${money(premiumPrice)} so'm/oy",
+                  child: Text(inAppPurchase ? "Premium · ${money(premiumPrice)} so'm/oy" : 'Premium haqida',
                       style: TextStyle(color: C.gold, fontWeight: FontWeight.w800)),
                 ),
               ]),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../config.dart';
 import '../data/catalog.dart';
 import '../data/stories.dart';
 import '../data/words.dart';
@@ -126,7 +127,7 @@ class BookRow extends StatelessWidget {
                 b.isMine
                     ? "${s.myWords.length} so'z · o'zingiz qo'shasiz"
                     : locked
-                        ? "${b.fixedUnits} unit · 1-unit bepul · ${money(b.price)} so'm"
+                        ? "${b.fixedUnits} unit · 1-unit bepul${inAppPurchase ? " · ${money(b.price)} so'm" : ''}"
                         : "${b.fixedUnits} unit · ${b.fixedUnits * 20} so'z",
                 style: TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
             const SizedBox(height: 9),
@@ -206,12 +207,17 @@ class UnitsScreen extends StatelessWidget {
                 Icon(Icons.lock_open_rounded, color: C.gold, size: 20),
                 const SizedBox(width: 8),
                 const Expanded(
-                    child: Text("1-unit bepul namuna. Qolgan unitlar kitobni sotib olgach ochiladi.",
+                    child: Text(inAppPurchase
+                            ? "1-unit bepul namuna. Qolgan unitlar kitobni sotib olgach ochiladi."
+                            : "1-unit bepul namuna. Qolgan unitlar kitob ochilgach ishlaydi.",
                         style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13.5))),
               ]),
               const SizedBox(height: 10),
-              Btn("${money(b.price)} so'm · Sotib olish",
-                  kind: BtnKind.telegram, onTap: () => showBookBuySheet(context, b)),
+              if (inAppPurchase)
+                Btn("${money(b.price)} so'm · Sotib olish",
+                    kind: BtnKind.telegram, onTap: () => showBookBuySheet(context, b))
+              else
+                Text(askTeacherText, style: TextStyle(color: C.mut, fontSize: 12.5, fontWeight: FontWeight.w600)),
             ]),
           ),
         ],
